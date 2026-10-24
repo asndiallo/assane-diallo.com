@@ -70,7 +70,7 @@ _Product page on a phone, at the size buttons. Left: before. Right: after._
 
 ### Reviews and a welcome offer
 
-- **Product reviews with photos,** built into the shop with no outside widget. Seven days after an order is completed, the customer gets one email with a personal link, so only real customers can leave a review. The owner approves each one before it's published.
+- **Product reviews with photos,** built into the shop with no outside widget. Seven days after an order is completed, the customer gets one email asking for a review. Customers who bought in person at a salon can leave one on the product page. The owner approves each review before it's published, and reviews linked to an online order get a “verified purchase” badge.
 - **10% off a first order** in exchange for an email address: a single-use code, shown right away and sent by email. The offer appears only after scrolling, never as a pop-up on arrival.
 
 ### Google
