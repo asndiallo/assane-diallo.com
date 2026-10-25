@@ -70,7 +70,7 @@ _Fiche produit sur téléphone, au niveau du choix de taille. À gauche : avant.
 
 ### Avis clients et offre de bienvenue
 
-- **Des avis clients avec photos,** intégrés à la boutique sans service extérieur. Sept jours après une commande terminée, la cliente reçoit un seul e-mail avec un lien personnel : seules de vraies clientes peuvent laisser un avis. La propriétaire valide chaque avis avant publication.
+- **Des avis clients avec photos,** intégrés à la boutique sans service extérieur. Sept jours après une commande terminée, la cliente reçoit un seul e-mail qui l’invite à donner son avis. Les clientes qui ont acheté en salon peuvent aussi en laisser un sur la fiche produit. La propriétaire valide chaque avis avant publication, et ceux liés à une commande en ligne portent la mention « Achat vérifié ».
 - **−10 % sur la première commande** contre une adresse e-mail : un code à usage unique, affiché tout de suite et envoyé par e-mail. L’offre n’apparaît qu’après avoir fait défiler la page, jamais en fenêtre surgissante à l’arrivée.
 
 ### Google
