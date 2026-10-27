@@ -47,7 +47,10 @@ export interface Tier {
   id: TierId;
   founding: Price;
   standard: Price;
+  /** Paid once, with the setup. */
   includes: readonly ServiceId[];
+  /** Ongoing work the monthly price covers. Part of the package; cancel anytime. */
+  monthly: readonly ServiceId[];
 }
 
 export const pricing = {
@@ -59,15 +62,17 @@ export const pricing = {
   tiers: [
     {
       id: "profile",
-      founding: { setup: 200, monthly: 79 },
-      standard: { setup: 350, monthly: 99 },
-      includes: ["profile", "reviews", "report"],
+      founding: { setup: 300, monthly: 79 },
+      standard: { setup: 450, monthly: 99 },
+      includes: ["profile", "reviews"],
+      monthly: ["report"],
     },
     {
       id: "website",
-      founding: { setup: 450, monthly: 129 },
-      standard: { setup: 750, monthly: 179 },
-      includes: ["profile", "website", "searchPages", "reviews", "report"],
+      founding: { setup: 650, monthly: 129 },
+      standard: { setup: 1000, monthly: 179 },
+      includes: ["profile", "website", "searchPages", "reviews"],
+      monthly: ["report"],
     },
   ] satisfies readonly Tier[],
 } as const;

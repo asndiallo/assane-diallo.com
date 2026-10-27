@@ -6,7 +6,7 @@ import sharp from "sharp";
 import { SITE_NAME, SITE_URL } from "../src/config.ts";
 
 const headline = ["Get found on Google.", "Get more calls and bookings."];
-const subline = "Local SEO for African-owned businesses in the US";
+const subline = "Local SEO for small businesses in the US";
 const footer = `${SITE_NAME}  ·  English &amp; French  ·  ${new URL(SITE_URL).hostname}`;
 
 const serif = "Iowan Old Style, Palatino, Georgia, serif";

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Offer site for Assane Diallo: local SEO and Google Business Profile packages for African-owned small businesses in the US. It's a credibility page that turns a referral or a Google check into a WhatsApp conversation.
+Offer site for Assane Diallo: local SEO and Google Business Profile packages for small businesses in the US, with a focus on African-owned businesses. It's a credibility page that turns a referral or a Google check into a WhatsApp conversation.
 
 Astro 7 (static) · Tailwind 4 · TypeScript strict · pnpm · Cloudflare Workers static assets, deployed by GitHub Actions.
 
@@ -46,7 +46,7 @@ Port 4321 is often taken by another local project. Tests use 4399.
 - Language: `/` redirects French devices to `/fr/` (inline script in `src/lib/inline-scripts.ts`); a choice made with the header switch wins.
 - Security: hash-based CSP (Astro `security.csp`). Never add an `is:inline` script other than `src/lib/inline-scripts.ts` (it is hashed in astro.config.ts); use bundled `<script>` instead. Headers live in `public/_headers`, redirects in `public/_redirects`.
 - Market: US businesses only, in English and French. Online shops are a quiet side line ("audits by request"), never in the main pitch or home proof cards.
-- No spots-left counter. Prices are "starting at", with "final quote after a free check-up".
+- No spots-left counter. Prices are "starting at", with "final quote after a free check-up". Setup is paid once; the monthly part (updates + report) is included in every package, cancel anytime (`monthly` in each tier in `config.ts`). Never call it optional.
 
 ## Technical rules
 
@@ -58,3 +58,4 @@ Port 4321 is often taken by another local project. Tests use 4399.
 - `develop` is protected by a ruleset: changes land through pull requests with CI (`check`) passing; no force pushes or deletion. Merge only after CI passes.
 - Add no dependency without a one-line justification in PLAN.md §2.
 - Small conventional commits. Run `pnpm check` before claiming done.
+- Every PR adds a line under `## [Unreleased]` in `CHANGELOG.md` (Keep a Changelog sections: Added, Changed, Fixed, Removed).

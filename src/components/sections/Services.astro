@@ -14,9 +14,10 @@ const shop = (await getLocalized("work", Astro.props.locale)).find(
   (e) => e.data.vertical === "online-shop",
 );
 const websiteTier = prices.tiers.website.name;
-const ids = pricing.tiers.at(-1)?.includes ?? [];
+const last = pricing.tiers.at(-1);
+const ids = last ? [...last.includes, ...last.monthly] : [];
 const inEveryTier = (id: (typeof ids)[number]) =>
-  pricing.tiers.every((tier) => (tier.includes as readonly string[]).includes(id));
+  pricing.tiers.every((tier) => [...tier.includes, ...tier.monthly].includes(id));
 ---
 
 <Section id="services" heading={services.h2}>

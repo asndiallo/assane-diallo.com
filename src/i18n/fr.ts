@@ -44,7 +44,7 @@ export const fr: Dictionary = {
   },
   footer: {
     tagline:
-      "Référencement local et fiche d'établissement Google pour les entreprises africaines aux États-Unis.",
+      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis, en particulier les entreprises africaines.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
     social: "Suivre sur les réseaux sociaux",
@@ -52,14 +52,13 @@ export const fr: Dictionary = {
   },
   home: {
     meta: {
-      title: "SEO local pour entreprises africaines | Assane Diallo",
+      title: "SEO local pour petites entreprises aux USA | Assane Diallo",
       description:
-        "J'aide les entreprises africaines aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan Google gratuit.",
+        "J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan gratuit.",
     },
     hero: {
       h1: "Soyez visible sur Google. Recevez plus d'appels et de réservations.",
-      subhead:
-        "J'aide les entreprises africaines aux États-Unis à apparaître quand les clients cherchent près d'elles, et à faciliter les appels, les réservations et les visites.",
+      subhead: `J'aide les petites entreprises aux États-Unis à apparaître quand les clients cherchent près d'elles, et à faciliter les appels, les réservations et les visites. Ma spécialité${nb}: les entreprises africaines.`,
       languages: "English et français.",
     },
     listing: {
@@ -75,9 +74,10 @@ export const fr: Dictionary = {
     },
     whoFor: {
       h2: `Pour qui${nb}?`,
-      intro: "Les entreprises africaines aux États-Unis qui servent une clientèle locale.",
+      intro:
+        "Les petites entreprises aux États-Unis qui servent une clientèle locale, en particulier les entreprises africaines.",
       points: [
-        "Salons, restaurants, boutiques et services dont les clients viennent de leur ville.",
+        "Salons, restaurants, artisans, garages et boutiques dont les clients viennent de leur ville.",
         "Les propriétaires trop occupés par leur activité pour apprendre Google.",
         "Ceux qui veulent plus d'appels et de réservations, pas un plan marketing compliqué.",
       ],
@@ -87,7 +87,7 @@ export const fr: Dictionary = {
     problem: {
       h2: `Vos clients cherchent. Est-ce qu'ils vous trouvent${nb}?`,
       points: [
-        `Les gens tapent «${nb}braiding near me${nb}» ou «${nb}African restaurant near me${nb}» et choisissent parmi les premiers résultats.`,
+        `Les gens tapent «${nb}plumber near me${nb}», «${nb}auto repair near me${nb}» ou «${nb}African restaurant near me${nb}» et choisissent parmi les premiers résultats.`,
         "Si vos horaires, votre numéro ou vos prix sont faux ou absents sur Google, ils appellent quelqu'un d'autre.",
         "Si réserver est compliqué, ils abandonnent.",
       ],
@@ -105,15 +105,15 @@ export const fr: Dictionary = {
         },
         searchPages: {
           title: "Des pages pour ce que les gens cherchent vraiment.",
-          body: "Par exemple, la coiffure ou le plat, suivi de votre ville.",
+          body: "Par exemple, votre service, votre coiffure ou votre plat, suivi de votre ville.",
         },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
           body: "Un lien et un court message à envoyer à vos clients satisfaits.",
         },
         report: {
-          title: "Un rapport mensuel en langage clair.",
-          body: "Appels, demandes d'itinéraire, ce qui a changé et la suite.",
+          title: "Un suivi mensuel et un rapport en langage clair.",
+          body: "Je garde votre fiche à jour et je vous montre les appels, les demandes d'itinéraire, ce qui a changé et la suite.",
         },
       },
       websiteOnly: `Le site et les pages de recherche sont inclus dans la formule ${names.website}.`,
@@ -133,7 +133,7 @@ export const fr: Dictionary = {
         },
         {
           title: "Croissance.",
-          body: "Des mises à jour chaque mois et un court rapport pour voir ce qui marche.",
+          body: "Chaque mois, je garde votre fiche à jour et je vous envoie un court rapport sur ce qui marche. C'est compris dans la formule. Résiliable à tout moment.",
         },
       ],
     },
@@ -151,10 +151,11 @@ export const fr: Dictionary = {
       startingAtLower: "à partir de",
       setup: "de mise en place",
       perMonth: "par mois",
-      includes: "Inclus",
+      includes: "Mise en place, payée une fois",
+      monthlyPlan: "Chaque mois, résiliable à tout moment",
       notes: [
         "Devis final après un bilan gratuit.",
-        "Pas d'engagement long. Paiement au mois. Résiliable à tout moment.",
+        `La mise en place se paie une fois. Le suivi mensuel et le rapport sont compris dans la formule, sans engagement${nb}: résiliable à tout moment.`,
       ],
       tiers: {
         profile: {
@@ -199,11 +200,11 @@ export const fr: Dictionary = {
         },
         {
           q: `Combien ça coûte${nb}?`,
-          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
+          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. Le suivi mensuel garde votre fiche à jour et comprend un rapport en langage clair. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
         },
         {
           q: `Y a-t-il un contrat${nb}?`,
-          a: "Pas d'engagement long. Vous payez au mois et pouvez arrêter à tout moment.",
+          a: "Pas d'engagement long. Le suivi mensuel se paie au mois et vous pouvez arrêter à tout moment.",
         },
         {
           q: `Travaillez-vous avec des entreprises hors de votre ville${nb}?`,
@@ -226,7 +227,7 @@ export const fr: Dictionary = {
     meta: {
       title: `Réalisations${nb}: études de cas SEO local | Assane Diallo`,
       description:
-        "De vrais projets pour des entreprises africaines : ce que j'ai mis en place et ce qui a changé. Publiés avec l'accord de chaque propriétaire.",
+        "De vrais projets pour des petites entreprises : ce que j'ai mis en place et ce qui a changé. Publiés avec l'accord de chaque propriétaire.",
     },
     h1: "Réalisations",
     lead: "De vrais projets, publiés avec l'accord de chaque propriétaire. Je ne partage que les chiffres qu'il a validés.",
@@ -260,11 +261,12 @@ export const fr: Dictionary = {
     meta: {
       title: "À propos d'Assane Diallo | SEO local en français",
       description:
-        "Je m'appelle Assane. J'aide les entreprises africaines aux États-Unis à être trouvées sur Google. Ingénieur logiciel, je travaille en français et en anglais.",
+        "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google. Ingénieur logiciel, français et anglais.",
     },
     h1: "À propos",
     paragraphs: [
-      "Je m'appelle Assane. J'aide les entreprises africaines aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations.",
+      "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations.",
+      "Ma spécialité, ce sont les entreprises africaines. Nous partageons la même culture, donc on se comprend vite.",
       "Je suis ingénieur logiciel, avec un master en Data Engineering et IA. J'ai créé et développé une boutique en ligne d'environ 800 pages grâce au référencement naturel, sans publicité payante.",
       "Je travaille en français et en anglais, surtout sur WhatsApp, pour ne pas vous imposer de longues réunions.",
       "Vos comptes restent à votre nom. Je vous explique toujours ce que je fais, pourquoi, et ce que ça a donné.",
