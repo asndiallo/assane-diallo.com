@@ -11,23 +11,16 @@ merge date.
 
 ### Added
 
-- Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.
-- Business-type pages, in English and French: home services, home health care, clinics & med
-  spas, daycares, tax & immigration services, auto repair, cargo & money transfer.
-- This changelog.
-- Lighthouse CI requires 100 in all four categories on every page (was ≥ 95).
+- This changelog and a pull request template.
 
 ### Changed
 
 - Positioning: local SEO for small businesses in the US, with a focus on African-owned businesses
   (was: African-owned businesses only). Home, About, client work, footer and share image, in
   English and French.
-- Pricing: the setup is paid once, and the monthly plan (updates and a report) is optional.
-  Founding prices: Get Found $300 setup, Get Booked $650; optional monthly from $79.
-  Standard: $450 and $1,000; monthly from $99.
-- Footer: links grouped into Services and About columns, with one "Business types" link
-  instead of one link per business type.
-- Home "Who this is for": links to the new business-types page instead of listing every type.
+- Pricing: founding prices Get Found $300 setup + $79 a month, Get Booked $650 + $129 a month
+  (standard $450 + $99 and $1,000 + $179). The setup is paid once; monthly updates and the report
+  are part of the package, cancel anytime.
 
 ### Fixed
 

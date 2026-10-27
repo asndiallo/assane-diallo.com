@@ -29,8 +29,7 @@ Status: **approved with the decisions below; in progress.**
 | D19 | Proof and launch                                                           | Home shows only case studies with approved results, never placeholder cards. Personal relationships are disclosed on the card and the page (`disclosure` field: Isa is Assane's cousin). Go-live approved 2026-10-18.                                                                                                                                                                |
 | D20 | Names, Pages, repo, history                                                | Packages renamed Get Found / Get Booked (FR: Visibilité / Visibilité + Réservations). GitHub Pages dropped (nobody used the old address); repo renamed `asndiallo/assane-diallo.com`. History rewritten to remove `.vscode/settings.json` and the old resume PDFs.                                                                                                                   |
 | D21 | Positioning (2026-10-27)                                                   | **Supersedes the "African-owned only" line.** Local SEO for small businesses in the US, with a focus on African-owned businesses (shared culture; no birthplace claim). Social posts stay. Qualify leads by business (repeat or high-ticket customers), not by background. Outreach test (50 African-owned vs 50 other local businesses) runs outside the site. |
-| D22 | Pricing model (2026-10-27)                                                 | **Supersedes D6/D8 for the monthly part.** Setup paid once; monthly plan (updates + report) optional, month to month. Get Found $300 + optional $79/mo (standard $450 + $99). Get Booked $650 + optional $129/mo (standard $1,000 + $179). Still "starting at", final quote after the free check-up. The free check-up stays 15 minutes. |
-| D23 | Verticals (2026-10-27)                                                     | **Extends D10.** Adds home services, home health care, clinics & med spas, daycares, tax & immigration services, auto repair, cargo & money transfer. One `/for/` index page lists them all; the footer and home link to it instead of to each page. |
+| D22 | Pricing model (2026-10-27)                                                 | **Supersedes D6/D8 for the monthly part.** Setup paid once; the monthly part (profile updates + plain-language report) is included in every package, month to month, cancel anytime. It is not presented as optional: the report is where the long-term value shows. Get Found $300 + $79/mo (standard $450 + $99). Get Booked $650 + $129/mo (standard $1,000 + $179). Still "starting at", final quote after the free check-up. The free check-up stays 15 minutes. |
 
 ---
 
@@ -61,7 +60,7 @@ Nothing in the repo is a reason to move away from your stack, so **I'll use it a
 | Client JS      | **None.** WhatsApp, mailto and the form are plain links and an HTML form. | The only possible script is the analytics beacon, and it loads only when the env flag is set.                                                                                                       |
 | Lint/format    | **Biome 2**                                                               | Biome handles TS, JS, JSON, CSS and Astro frontmatter. Astro _templates_ get partial coverage, and `astro check` covers the rest.                                                                   |
 | Smoke test     | **Playwright** (Chromium only)                                            | Runs against `astro preview` of the built `dist/`.                                                                                                                                                  |
-| Perf/a11y gate | **Lighthouse CI** (`@lhci/cli`), mobile preset                            | Asserts 100 in Performance, Accessibility, Best Practices and SEO on every page.                                                                                                                     |
+| Perf/a11y gate | **Lighthouse CI** (`@lhci/cli`), mobile preset                            | Asserts ≥ 0.95 in Performance, Accessibility, Best Practices and SEO on every page.                                                                                                                     |
 | Link check     | **linkinator** on `dist/`                                                 | Checks internal links and anchors. External links are checked too, except `wa.me` and `mailto:`, which can't be checked.                                                                            |
 | Deploy         | GitHub Actions → `actions/deploy-pages`                                   | Gated per D2.                                                                                                                                                                                       |
 
@@ -209,7 +208,7 @@ Nothing else. In particular: no UI framework, no icon library (inline SVG), no i
 - [ ] Analytics: `PUBLIC_ANALYTICS=cloudflare|plausible|` + `PUBLIC_ANALYTICS_TOKEN` / `PUBLIC_PLAUSIBLE_DOMAIN`. Empty means no script. **Recommend Cloudflare Web Analytics**: free, cookieless, one deferred beacon.
 - [ ] Contact: `https://wa.me/<number>?text=<prefilled, url-encoded>` click-to-chat link, `mailto:`, booking link, and a plain HTML `<form method="POST" action={PUBLIC_FORM_ENDPOINT}>` with a honeypot field and redirect to `/thanks/`. **The form doesn't render if the env var is empty.** It works with Formspree, Web3Forms or Basin. You pick one (TODO).
 - [ ] `robots.txt` and sitemap; `/thanks/` and 404 are `noindex`.
-- [ ] Lighthouse CI 100 ×4, mobile, every route.
+- [ ] Lighthouse CI ≥ 0.95 ×4, mobile, every route.
 
 ---
 
@@ -243,7 +242,7 @@ Nothing else. In particular: no UI framework, no icon library (inline SVG), no i
 3. `pnpm typecheck` (astro check)
 4. `pnpm build` (astro build + TODO report → warnings)
 5. `pnpm test:e2e` (Playwright smoke against `astro preview`)
-6. `pnpm lhci` (Lighthouse CI on `dist/`, mobile, asserts 100 ×4)
+6. `pnpm lhci` (Lighthouse CI on `dist/`, mobile, asserts ≥ 0.95 ×4)
 7. `pnpm linkcheck` (linkinator on `dist/`)
 
 `deploy.yml`: build, then `upload-pages-artifact` and `deploy-pages`. It's manual-only until you say otherwise (D2). Env vars come from repo **Variables** (`PUBLIC_*`, none of them secret).
