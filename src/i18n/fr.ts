@@ -44,7 +44,7 @@ export const fr: Dictionary = {
   },
   footer: {
     tagline:
-      "Référencement local et fiche d'établissement Google pour les entreprises africaines aux États-Unis.",
+      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis, en particulier les entreprises africaines.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
     social: "Suivre sur les réseaux sociaux",
@@ -52,14 +52,13 @@ export const fr: Dictionary = {
   },
   home: {
     meta: {
-      title: "SEO local pour entreprises africaines | Assane Diallo",
+      title: "SEO local pour petites entreprises aux USA | Assane Diallo",
       description:
-        "J'aide les entreprises africaines aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan Google gratuit.",
+        "J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan gratuit.",
     },
     hero: {
       h1: "Soyez visible sur Google. Recevez plus d'appels et de réservations.",
-      subhead:
-        "J'aide les entreprises africaines aux États-Unis à apparaître quand les clients cherchent près d'elles, et à faciliter les appels, les réservations et les visites.",
+      subhead: `J'aide les petites entreprises aux États-Unis à apparaître quand les clients cherchent près d'elles, et à faciliter les appels, les réservations et les visites. Ma spécialité${nb}: les entreprises africaines.`,
       languages: "English et français.",
     },
     listing: {
@@ -75,9 +74,10 @@ export const fr: Dictionary = {
     },
     whoFor: {
       h2: `Pour qui${nb}?`,
-      intro: "Les entreprises africaines aux États-Unis qui servent une clientèle locale.",
+      intro:
+        "Les petites entreprises aux États-Unis qui servent une clientèle locale, en particulier les entreprises africaines.",
       points: [
-        "Salons, restaurants, boutiques et services dont les clients viennent de leur ville.",
+        "Salons, restaurants, artisans, garages et boutiques dont les clients viennent de leur ville.",
         "Les propriétaires trop occupés par leur activité pour apprendre Google.",
         "Ceux qui veulent plus d'appels et de réservations, pas un plan marketing compliqué.",
       ],
@@ -87,7 +87,7 @@ export const fr: Dictionary = {
     problem: {
       h2: `Vos clients cherchent. Est-ce qu'ils vous trouvent${nb}?`,
       points: [
-        `Les gens tapent «${nb}braiding near me${nb}» ou «${nb}African restaurant near me${nb}» et choisissent parmi les premiers résultats.`,
+        `Les gens tapent «${nb}plumber near me${nb}», «${nb}auto repair near me${nb}» ou «${nb}African restaurant near me${nb}» et choisissent parmi les premiers résultats.`,
         "Si vos horaires, votre numéro ou vos prix sont faux ou absents sur Google, ils appellent quelqu'un d'autre.",
         "Si réserver est compliqué, ils abandonnent.",
       ],
@@ -105,7 +105,7 @@ export const fr: Dictionary = {
         },
         searchPages: {
           title: "Des pages pour ce que les gens cherchent vraiment.",
-          body: "Par exemple, la coiffure ou le plat, suivi de votre ville.",
+          body: "Par exemple, votre service, votre coiffure ou votre plat, suivi de votre ville.",
         },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
@@ -227,7 +227,7 @@ export const fr: Dictionary = {
     meta: {
       title: `Réalisations${nb}: études de cas SEO local | Assane Diallo`,
       description:
-        "De vrais projets pour des entreprises africaines : ce que j'ai mis en place et ce qui a changé. Publiés avec l'accord de chaque propriétaire.",
+        "De vrais projets pour des petites entreprises : ce que j'ai mis en place et ce qui a changé. Publiés avec l'accord de chaque propriétaire.",
     },
     h1: "Réalisations",
     lead: "De vrais projets, publiés avec l'accord de chaque propriétaire. Je ne partage que les chiffres qu'il a validés.",
@@ -261,11 +261,12 @@ export const fr: Dictionary = {
     meta: {
       title: "À propos d'Assane Diallo | SEO local en français",
       description:
-        "Je m'appelle Assane. J'aide les entreprises africaines aux États-Unis à être trouvées sur Google. Ingénieur logiciel, je travaille en français et en anglais.",
+        "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google. Ingénieur logiciel, français et anglais.",
     },
     h1: "À propos",
     paragraphs: [
-      "Je m'appelle Assane. J'aide les entreprises africaines aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations.",
+      "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations.",
+      "Ma spécialité, ce sont les entreprises africaines. Nous partageons la même culture, donc on se comprend vite.",
       "Je suis ingénieur logiciel, avec un master en Data Engineering et IA. J'ai créé et développé une boutique en ligne d'environ 800 pages grâce au référencement naturel, sans publicité payante.",
       "Je travaille en français et en anglais, surtout sur WhatsApp, pour ne pas vous imposer de longues réunions.",
       "Vos comptes restent à votre nom. Je vous explique toujours ce que je fais, pourquoi, et ce que ça a donné.",

@@ -42,7 +42,8 @@ export const en = {
     email: "Email me",
   },
   footer: {
-    tagline: "Local SEO and Google Business Profile setup for African-owned businesses in the US.",
+    tagline:
+      "Local SEO and Google Business Profile setup for small businesses in the US, with a focus on African-owned businesses.",
     engineering: "My software engineering work",
     privacy: "Privacy",
     social: "Follow on social media",
@@ -50,14 +51,14 @@ export const en = {
   },
   home: {
     meta: {
-      title: "Local SEO for African-owned businesses | Assane Diallo",
+      title: "Local SEO for small businesses in the US | Assane Diallo",
       description:
-        "I help African-owned businesses in the US get found on Google and win more calls and bookings. Free 15-minute Google check-up. English & French.",
+        "I help small businesses in the US, especially African-owned ones, get found on Google and win more calls and bookings. Free check-up. English & French.",
     },
     hero: {
       h1: "Get found on Google. Get more calls and bookings.",
       subhead:
-        "I help African-owned businesses across the US show up when customers search nearby, and make it easy for them to call, book, or visit.",
+        "I help small businesses across the US show up when customers search nearby, and make it easy for them to call, book, or visit. My focus: African-owned businesses.",
       languages: "English et français.",
     },
     listing: {
@@ -73,9 +74,10 @@ export const en = {
     },
     whoFor: {
       h2: "Who this is for",
-      intro: "African-owned businesses in the US that serve customers nearby.",
+      intro:
+        "Small businesses in the US that serve customers nearby, with a focus on African-owned businesses.",
       points: [
-        "Salons, restaurants, shops, and services that get customers from their own city.",
+        "Salons, restaurants, home services, garages, and shops that get customers from their own city.",
         "Owners who are busy running the business and don't have time to learn Google.",
         "Anyone who wants more calls and bookings, not a complicated marketing plan.",
       ],
@@ -85,7 +87,7 @@ export const en = {
     problem: {
       h2: "Your customers are searching. Are they finding you?",
       points: [
-        'People search things like "braiding near me" or "African restaurant near me" and choose from the first few results.',
+        'People search things like "plumber near me", "auto repair near me" or "African restaurant near me" and choose from the first few results.',
         "If your hours, phone number, or prices are wrong or missing on Google, they call someone else.",
         "If booking is hard, they give up.",
       ],
@@ -103,7 +105,7 @@ export const en = {
         },
         searchPages: {
           title: "Pages for what people actually search.",
-          body: "For example, the style or dish plus your city.",
+          body: "For example, your service, style, or dish plus your city.",
         },
         reviews: {
           title: "An easy way to get reviews.",
@@ -225,7 +227,7 @@ export const en = {
     meta: {
       title: "Client work: local SEO case studies | Assane Diallo",
       description:
-        "Real projects for African-owned businesses: what I set up and what changed. Published with each owner's permission.",
+        "Real projects for small businesses: what I set up and what changed. Published with each owner's permission.",
     },
     h1: "Client work",
     lead: "Real projects, published with each owner's permission. I only share numbers the owner has approved.",
@@ -260,11 +262,12 @@ export const en = {
     meta: {
       title: "About Assane Diallo | Local SEO in English & French",
       description:
-        "I'm Assane. I help African-owned businesses in the US get found on Google. Software engineer. I work in English and French.",
+        "I'm Assane. I help small businesses in the US, especially African-owned ones, get found on Google. Software engineer. English and French.",
     },
     h1: "About me",
     paragraphs: [
-      "I'm Assane. I help African-owned businesses in the US get found on Google and get more calls and bookings.",
+      "I'm Assane. I help small businesses in the US get found on Google and get more calls and bookings.",
+      "My focus is African-owned businesses. I share the culture, so we start on the same page.",
       "I'm a software engineer with a Master's in Data Engineering & AI. I built and grew an SEO-driven ecommerce store to about 800 pages with no ad spend.",
       "I work in English and French, mostly over WhatsApp, so we don't have to schedule long meetings.",
       "Your accounts stay in your name. I'll always tell you what I'm doing, why, and what it did.",
