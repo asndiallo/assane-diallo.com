@@ -11,6 +11,8 @@ merge date.
 
 ### Added
 
+- Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.
+- Business-type pages, in English and French: home services and auto repair.
 - This changelog and a pull request template.
 
 ### Changed
@@ -21,6 +23,9 @@ merge date.
 - Pricing: founding prices Get Found $300 setup + $79 a month, Get Booked $650 + $129 a month
   (standard $450 + $99 and $1,000 + $179). The setup is paid once; monthly updates and the report
   are part of the package, cancel anytime.
+- Footer: links grouped into Services and About columns, with one "Business types" link
+  instead of one link per business type.
+- Home "Who this is for": links to the new business-types page instead of listing every type.
 
 ### Fixed
 
