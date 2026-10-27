@@ -9,6 +9,14 @@ merge date.
 
 ## [Unreleased]
 
+### Added
+
+- Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.
+- Business-type pages, in English and French: home services, home health care, clinics & med
+  spas, daycares, tax & immigration services, auto repair, cargo & money transfer.
+- This changelog.
+- Lighthouse CI requires 100 in all four categories on every page (was ≥ 95).
+
 ### Changed
 
 - Positioning: local SEO for small businesses in the US, with a focus on African-owned businesses
@@ -26,14 +34,6 @@ merge date.
 - Client work: every card in the first row loads eagerly (Djidiawax was lazy but above the
   fold on desktop); the main image on client work and case study pages gets
   `fetchpriority="high"`.
-
-### Added
-
-- Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.
-- Business-type pages, in English and French: home services, home health care, clinics & med
-  spas, daycares, tax & immigration services, auto repair, cargo & money transfer.
-- This changelog.
-- Lighthouse CI requires 100 in all four categories on every page (was ≥ 95).
 
 ## 2026-10-25
 
