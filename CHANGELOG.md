@@ -21,6 +21,12 @@ merge date.
   instead of one link per business type.
 - Home "Who this is for": links to the new business-types page instead of listing every type.
 
+### Fixed
+
+- Client work: every card in the first row loads eagerly (Djidiawax was lazy but above the
+  fold on desktop); the main image on client work and case study pages gets
+  `fetchpriority="high"`.
+
 ### Added
 
 - Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.

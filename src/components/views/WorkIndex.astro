@@ -11,7 +11,9 @@ interface Props {
 const { locale } = Astro.props;
 const t = getDictionary(locale);
 const entries = await getLocalized("work", locale);
-// Only the first card is eager: it's the one above the fold on phones, where most visitors are.
+// The first row is eager: one card on phones, up to three on wide screens (lg:grid-cols-3).
+// The first card is the LCP on phones, where most visitors are.
+const FIRST_ROW = 3;
 ---
 
 <Page
@@ -26,7 +28,7 @@ const entries = await getLocalized("work", locale);
     entries.length > 0 ? (
       <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {entries.map((entry, i) => (
-          <CaseStudyCard t={t} entry={entry} headingLevel="h2" eager={i === 0} />
+          <CaseStudyCard t={t} entry={entry} headingLevel="h2" eager={i < FIRST_ROW} priority={i === 0} />
         ))}
       </div>
     ) : (
