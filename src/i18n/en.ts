@@ -110,8 +110,8 @@ export const en = {
           body: "A link and a short message you can send to happy customers.",
         },
         report: {
-          title: "A monthly report in plain language.",
-          body: "Calls, direction requests, what changed, and what's next.",
+          title: "Monthly updates and a report in plain language.",
+          body: "I keep your profile fresh and show you calls, direction requests, what changed, and what's next.",
         },
       } satisfies Record<ServiceId, { title: string; body: string }>,
       websiteOnly: `Website and search pages come with the ${names.website} package.`,
@@ -131,7 +131,7 @@ export const en = {
         },
         {
           title: "Grow.",
-          body: "Monthly updates and a short report so you can see what's working.",
+          body: "Every month I keep your profile up to date and send a short report on what's working. It's part of the package. Cancel anytime.",
         },
       ],
     },
@@ -149,10 +149,11 @@ export const en = {
       startingAtLower: "starting at",
       setup: "setup",
       perMonth: "a month",
-      includes: "Includes",
+      includes: "Setup, paid once",
+      monthlyPlan: "Every month, cancel anytime",
       notes: [
         "Final quote after a free check-up.",
-        "No long contract. Month to month. Cancel anytime.",
+        "The setup is paid once. Monthly updates and the report are part of the package, with no contract: cancel anytime.",
       ],
       tiers: {
         profile: {
@@ -197,11 +198,11 @@ export const en = {
         },
         {
           q: "What does it cost?",
-          a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)} setup and ${money(tier("profile").founding.monthly)} a month. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)} setup and ${money(tier("website").founding.monthly)} a month. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
+          a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)} setup and ${money(tier("profile").founding.monthly)} a month. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)} setup and ${money(tier("website").founding.monthly)} a month. The monthly part keeps your profile up to date and includes a plain-language report. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
         },
         {
           q: "Is there a contract?",
-          a: "No long contract. You pay month to month and can cancel anytime.",
+          a: "No long contract. The monthly part is month to month, and you can cancel anytime.",
         },
         {
           q: "Do you work with businesses outside your city?",

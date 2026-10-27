@@ -112,8 +112,8 @@ export const fr: Dictionary = {
           body: "Un lien et un court message à envoyer à vos clients satisfaits.",
         },
         report: {
-          title: "Un rapport mensuel en langage clair.",
-          body: "Appels, demandes d'itinéraire, ce qui a changé et la suite.",
+          title: "Un suivi mensuel et un rapport en langage clair.",
+          body: "Je garde votre fiche à jour et je vous montre les appels, les demandes d'itinéraire, ce qui a changé et la suite.",
         },
       },
       websiteOnly: `Le site et les pages de recherche sont inclus dans la formule ${names.website}.`,
@@ -133,7 +133,7 @@ export const fr: Dictionary = {
         },
         {
           title: "Croissance.",
-          body: "Des mises à jour chaque mois et un court rapport pour voir ce qui marche.",
+          body: "Chaque mois, je garde votre fiche à jour et je vous envoie un court rapport sur ce qui marche. C'est compris dans la formule. Résiliable à tout moment.",
         },
       ],
     },
@@ -151,10 +151,11 @@ export const fr: Dictionary = {
       startingAtLower: "à partir de",
       setup: "de mise en place",
       perMonth: "par mois",
-      includes: "Inclus",
+      includes: "Mise en place, payée une fois",
+      monthlyPlan: "Chaque mois, résiliable à tout moment",
       notes: [
         "Devis final après un bilan gratuit.",
-        "Pas d'engagement long. Paiement au mois. Résiliable à tout moment.",
+        `La mise en place se paie une fois. Le suivi mensuel et le rapport sont compris dans la formule, sans engagement${nb}: résiliable à tout moment.`,
       ],
       tiers: {
         profile: {
@@ -199,11 +200,11 @@ export const fr: Dictionary = {
         },
         {
           q: `Combien ça coûte${nb}?`,
-          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
+          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. Le suivi mensuel garde votre fiche à jour et comprend un rapport en langage clair. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
         },
         {
           q: `Y a-t-il un contrat${nb}?`,
-          a: "Pas d'engagement long. Vous payez au mois et pouvez arrêter à tout moment.",
+          a: "Pas d'engagement long. Le suivi mensuel se paie au mois et vous pouvez arrêter à tout moment.",
         },
         {
           q: `Travaillez-vous avec des entreprises hors de votre ville${nb}?`,
