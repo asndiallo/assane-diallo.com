@@ -42,22 +42,30 @@ export const en = {
     email: "Email me",
   },
   footer: {
-    tagline: "Local SEO and Google Business Profile setup for African-owned businesses in the US.",
+    tagline:
+      "Local SEO and Google Business Profile setup for small businesses in the US, with a focus on African-owned businesses.",
     engineering: "My software engineering work",
     privacy: "Privacy",
     social: "Follow on social media",
     languages: "English et français.",
+    groups: {
+      services: "Services",
+      verticals: "Business types",
+      pricing: "Prices",
+      how: "How it works",
+      about: "About",
+    },
   },
   home: {
     meta: {
-      title: "Local SEO for African-owned businesses | Assane Diallo",
+      title: "Local SEO for small businesses in the US | Assane Diallo",
       description:
-        "I help African-owned businesses in the US get found on Google and win more calls and bookings. Free 15-minute Google check-up. English & French.",
+        "I help small businesses in the US, especially African-owned ones, get found on Google and win more calls and bookings. Free check-up. English & French.",
     },
     hero: {
       h1: "Get found on Google. Get more calls and bookings.",
       subhead:
-        "I help African-owned businesses across the US show up when customers search nearby, and make it easy for them to call, book, or visit.",
+        "I help small businesses across the US show up when customers search nearby, and make it easy for them to call, book, or visit. My focus: African-owned businesses.",
       languages: "English et français.",
     },
     listing: {
@@ -73,19 +81,19 @@ export const en = {
     },
     whoFor: {
       h2: "Who this is for",
-      intro: "African-owned businesses in the US that serve customers nearby.",
+      intro:
+        "Small businesses in the US that serve customers nearby, with a focus on African-owned businesses.",
       points: [
-        "Salons, restaurants, shops, and services that get customers from their own city.",
+        "Home services, care agencies, clinics, daycares, tax offices, garages, salons, and restaurants that get customers from their own city.",
         "Owners who are busy running the business and don't have time to learn Google.",
         "Anyone who wants more calls and bookings, not a complicated marketing plan.",
       ],
-      verticalsLead: "Read more for your kind of business:",
-      or: "or",
+      verticalsLink: "See what I set up for your kind of business",
     },
     problem: {
       h2: "Your customers are searching. Are they finding you?",
       points: [
-        'People search things like "braiding near me" or "African restaurant near me" and choose from the first few results.',
+        'People search things like "plumber near me", "daycare near me" or "African restaurant near me" and choose from the first few results.',
         "If your hours, phone number, or prices are wrong or missing on Google, they call someone else.",
         "If booking is hard, they give up.",
       ],
@@ -103,15 +111,15 @@ export const en = {
         },
         searchPages: {
           title: "Pages for what people actually search.",
-          body: "For example, the style or dish plus your city.",
+          body: "For example, your service, style, or dish plus your city.",
         },
         reviews: {
           title: "An easy way to get reviews.",
           body: "A link and a short message you can send to happy customers.",
         },
         report: {
-          title: "A monthly report in plain language.",
-          body: "Calls, direction requests, what changed, and what's next.",
+          title: "Monthly updates and a report in plain language.",
+          body: "I keep your profile fresh and show you calls, direction requests, what changed, and what's next.",
         },
       } satisfies Record<ServiceId, { title: string; body: string }>,
       websiteOnly: `Website and search pages come with the ${names.website} package.`,
@@ -130,8 +138,8 @@ export const en = {
           body: `I do the work. You approve your photos, prices, and wording. Usually ${pricing.setupWeeks} weeks.`,
         },
         {
-          title: "Grow.",
-          body: "Monthly updates and a short report so you can see what's working.",
+          title: "Grow (optional).",
+          body: "If you want, monthly updates and a short report so you can see what's working. Month to month.",
         },
       ],
     },
@@ -149,10 +157,12 @@ export const en = {
       startingAtLower: "starting at",
       setup: "setup",
       perMonth: "a month",
-      includes: "Includes",
+      optional: ", optional",
+      includes: "Setup, paid once",
+      monthlyPlan: "Optional monthly plan",
       notes: [
         "Final quote after a free check-up.",
-        "No long contract. Month to month. Cancel anytime.",
+        "You pay the setup once. The monthly plan is optional: no contract, cancel anytime.",
       ],
       tiers: {
         profile: {
@@ -197,11 +207,11 @@ export const en = {
         },
         {
           q: "What does it cost?",
-          a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)} setup and ${money(tier("profile").founding.monthly)} a month. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)} setup and ${money(tier("website").founding.monthly)} a month. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
+          a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)}, paid once. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)}, paid once. Monthly updates and a report are optional, from ${money(tier("profile").founding.monthly)} a month. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
         },
         {
           q: "Is there a contract?",
-          a: "No long contract. You pay month to month and can cancel anytime.",
+          a: "No. You pay the setup once. If you add the monthly plan, it's month to month and you can cancel anytime.",
         },
         {
           q: "Do you work with businesses outside your city?",
@@ -224,11 +234,22 @@ export const en = {
     meta: {
       title: "Client work: local SEO case studies | Assane Diallo",
       description:
-        "Real projects for African-owned businesses: what I set up and what changed. Published with each owner's permission.",
+        "Real projects for small businesses: what I set up and what changed. Published with each owner's permission.",
     },
     h1: "Client work",
     lead: "Real projects, published with each owner's permission. I only share numbers the owner has approved.",
     empty: "I'm writing up my first client projects now. Ask me about them on WhatsApp.",
+  },
+  verticals: {
+    meta: {
+      title: "Local SEO by type of business | Assane Diallo",
+      description:
+        "Google profile and local SEO setup for home services, care agencies, clinics, daycares, tax offices, garages, salons, restaurants and more.",
+    },
+    h1: "Who I help",
+    lead: "Small businesses that get their customers nearby. Pick yours to see what customers look for and what I set up.",
+    notListed:
+      "Don't see your kind of business? Message me anyway: if customers search for you nearby, I can probably help.",
   },
   caseStudy: {
     title: (business: string, location: string) => `${business}, ${location}: what changed`,
@@ -259,11 +280,12 @@ export const en = {
     meta: {
       title: "About Assane Diallo | Local SEO in English & French",
       description:
-        "I'm Assane. I help African-owned businesses in the US get found on Google. Software engineer. I work in English and French.",
+        "I'm Assane. I help small businesses in the US, especially African-owned ones, get found on Google. Software engineer. English and French.",
     },
     h1: "About me",
     paragraphs: [
-      "I'm Assane. I help African-owned businesses in the US get found on Google and get more calls and bookings.",
+      "I'm Assane. I help small businesses in the US get found on Google and get more calls and bookings.",
+      "My focus is African-owned businesses. I share the culture, so we start on the same page.",
       "I'm a software engineer with a Master's in Data Engineering & AI. I built and grew an SEO-driven ecommerce store to about 800 pages with no ad spend.",
       "I work in English and French, mostly over WhatsApp, so we don't have to schedule long meetings.",
       "Your accounts stay in your name. I'll always tell you what I'm doing, why, and what it did.",

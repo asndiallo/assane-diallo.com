@@ -19,6 +19,7 @@ async function collectionGroups(collection: "work" | "verticals"): Promise<Alter
 export async function getPageGroups(): Promise<Alternates[]> {
   return [
     staticRoutes.home,
+    staticRoutes.verticals,
     ...(await collectionGroups("verticals")),
     staticRoutes.work,
     ...(await collectionGroups("work")),
