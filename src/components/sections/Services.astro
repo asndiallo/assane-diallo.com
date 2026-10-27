@@ -14,9 +14,15 @@ const shop = (await getLocalized("work", Astro.props.locale)).find(
   (e) => e.data.vertical === "online-shop",
 );
 const websiteTier = prices.tiers.website.name;
-const ids = pricing.tiers.at(-1)?.includes ?? [];
+const last = pricing.tiers.at(-1);
+const ids = last ? [...last.includes, ...last.monthly] : [];
 const inEveryTier = (id: (typeof ids)[number]) =>
-  pricing.tiers.every((tier) => (tier.includes as readonly string[]).includes(id));
+  pricing.tiers.every((tier) => [...tier.includes, ...tier.monthly].includes(id));
+const isMonthly = (id: (typeof ids)[number]) =>
+  ((last?.monthly ?? []) as readonly string[]).includes(id);
+// One badge per service: the package it needs, or the optional monthly plan.
+const badge = (id: (typeof ids)[number]) =>
+  !inEveryTier(id) ? websiteTier : isMonthly(id) ? prices.monthlyPlan : undefined;
 ---
 
 <Section id="services" heading={services.h2}>
@@ -26,12 +32,12 @@ const inEveryTier = (id: (typeof ids)[number]) =>
         <li class="measure">
           <h3>
             {services.items[id].title}
-            {!inEveryTier(id) && <span class="sr-only"> ({websiteTier})</span>}
+            {badge(id) && <span class="sr-only"> ({badge(id)})</span>}
           </h3>
           <p class="mt-1 text-muted">{services.items[id].body}</p>
-          {!inEveryTier(id) && (
+          {badge(id) && (
             <p class="mt-2 inline-block rounded-full bg-wash px-3 py-0.5 text-sm" aria-hidden="true">
-              {websiteTier}
+              {badge(id)}
             </p>
           )}
         </li>
