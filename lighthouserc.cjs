@@ -1,12 +1,15 @@
-/** Lighthouse CI: every built page, mobile (the default form factor), ≥ 0.95 in all four categories. */
+/** Lighthouse CI: every built page, mobile (the default form factor), 100 in all four categories. */
 const min = (score) => ["error", { minScore: score }];
 // Pages that are noindex on purpose (404 and the form thank-you pages in each language).
 const NOINDEX = "(404\\.html|thanks/|fr/merci/)";
 
+// Every page scores 100 today; any drop is a regression, so the gate is a perfect score.
+const PERFECT = 1;
+
 const categories = {
-  "categories:performance": min(0.95),
-  "categories:accessibility": min(0.95),
-  "categories:best-practices": min(0.95),
+  "categories:performance": min(PERFECT),
+  "categories:accessibility": min(PERFECT),
+  "categories:best-practices": min(PERFECT),
 };
 
 module.exports = {
@@ -26,7 +29,7 @@ module.exports = {
         { matchingUrlPattern: `/${NOINDEX}`, assertions: categories },
         {
           matchingUrlPattern: `^(?!.*/${NOINDEX}).*$`,
-          assertions: { ...categories, "categories:seo": min(0.95) },
+          assertions: { ...categories, "categories:seo": min(PERFECT) },
         },
       ],
     },
