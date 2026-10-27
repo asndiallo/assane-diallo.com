@@ -1,7 +1,6 @@
 ---
 import { SITE_NAME, site } from "../config.ts";
-import { type Dictionary, type Locale, staticRoutes } from "../i18n/index.ts";
-import { entryPath, getLocalized } from "../lib/content.ts";
+import { type Dictionary, homeAnchor, type Locale, staticRoutes } from "../i18n/index.ts";
 import Link from "./Link.astro";
 import SocialLinks from "./SocialLinks.astro";
 
@@ -10,33 +9,69 @@ interface Props {
   locale: Locale;
 }
 const { t, locale } = Astro.props;
-const verticals = await getLocalized("verticals", locale);
+const { groups } = t.footer;
+
+interface FooterLink {
+  href: string;
+  label: string;
+  hreflang?: string;
+  /** Another site: rendered with Link.astro (new tab, rel=me). */
+  external?: boolean;
+}
+
+// Grouped links instead of one per business type: the business-types page lists them all.
+const columns: { heading: string; links: FooterLink[] }[] = [
+  {
+    heading: groups.services,
+    links: [
+      { href: staticRoutes.verticals[locale], label: groups.verticals },
+      { href: homeAnchor(locale, "pricing"), label: groups.pricing },
+      { href: homeAnchor(locale, "how"), label: groups.how },
+      { href: staticRoutes.work[locale], label: t.nav.work },
+    ],
+  },
+  {
+    heading: groups.about,
+    links: [
+      { href: staticRoutes.about[locale], label: t.nav.about },
+      { href: staticRoutes.engineering.en, label: t.footer.engineering, hreflang: "en" },
+      { href: site.social.linkedin, label: "LinkedIn", external: true },
+      { href: site.social.github, label: "GitHub", external: true },
+    ],
+  },
+];
 ---
 
 <footer class="mt-auto border-t border-line bg-wash">
-  <div class="container-page grid gap-8 py-12 text-[0.95rem] sm:grid-cols-[2fr_1fr_1fr]">
+  <div class="container-page grid gap-10 py-12 text-[0.95rem] sm:grid-cols-[2fr_1fr_1fr]">
     <div class="measure space-y-2">
       <p class="font-serif text-lg font-bold">Assane Diallo</p>
       <p class="text-muted">{t.footer.tagline}</p>
       <p class="text-muted">{t.footer.languages}</p>
       <div class="pt-2"><SocialLinks label={t.footer.social} /></div>
     </div>
-    <ul class="space-y-2">
-      <li><a href={staticRoutes.work[locale]}>{t.nav.work}</a></li>
-      {
-        verticals.map((v) => (
-          <li>
-            <a href={entryPath("verticals", v)}>{v.data.name}</a>
-          </li>
-        ))
-      }
-      <li><a href={staticRoutes.about[locale]}>{t.nav.about}</a></li>
-    </ul>
-    <ul class="space-y-2">
-      <li><a href={staticRoutes.engineering.en} hreflang="en">{t.footer.engineering}</a></li>
-      <li><Link href={site.social.linkedin} rel="me">LinkedIn</Link></li>
-      <li><Link href={site.social.github} rel="me">GitHub</Link></li>
-    </ul>
+    {
+      columns.map((column) => (
+        <nav aria-label={column.heading}>
+          <h2 class="text-sm font-semibold tracking-wide text-muted uppercase">{column.heading}</h2>
+          <ul class="mt-3 space-y-2">
+            {column.links.map((link) => (
+              <li>
+                {link.external ? (
+                  <Link href={link.href} rel="me">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a href={link.href} hreflang={link.hreflang}>
+                    {link.label}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))
+    }
   </div>
   <p class="container-page pb-8 text-sm text-muted">
     © {new Date().getFullYear()} {SITE_NAME} · <a href={staticRoutes.privacy[locale]}>{t.footer.privacy}</a>

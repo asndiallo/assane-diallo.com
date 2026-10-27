@@ -29,9 +29,11 @@ test("sitemap lists the core pages", async ({ page }) => {
     "/work/",
     "/about/",
     "/engineering/",
+    "/for/",
     "/fr/",
     "/fr/realisations/",
     "/fr/a-propos/",
+    "/fr/pour/",
   ]) {
     expect(paths).toContain(path);
   }
@@ -39,6 +41,21 @@ test("sitemap lists the core pages", async ({ page }) => {
   expect(paths.filter((p) => p.startsWith("/fr/pour/")).length).toBeGreaterThanOrEqual(2);
   expect(paths).not.toContain("/thanks/");
   expect(paths).not.toContain("/fr/merci/");
+});
+
+test("the business-types page links every business type, and the footer links to it", async ({
+  page,
+}) => {
+  const paths = await sitemapPaths(page);
+  for (const index of ["/for/", "/fr/pour/"]) {
+    const expected = paths.filter((p) => p.startsWith(index) && p !== index).sort();
+    await page.goto(index);
+    const linked = await page
+      .locator("main li h2 a")
+      .evaluateAll((links) => links.map((a) => new URL((a as HTMLAnchorElement).href).pathname));
+    expect(linked.sort(), index).toEqual(expected);
+    await expect(page.locator(`footer a[href="${index}"]`), index).toHaveCount(1);
+  }
 });
 
 test("every page has one h1, unique title and description, canonical, and no console errors", async ({

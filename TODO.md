@@ -56,13 +56,16 @@ Everything I wrote that isn't word-for-word from your `site-copy.md`:
 - [x] **/work/**: intro line; **/engineering/**: lightly edited from your old portfolio (YoBool now also mentions auth, Stripe Connect and the React Native app, from your resume)
 - [x] **OG image** text (`scripts/generate-og.ts`)
 
-### Broader positioning (2026-10-27, PLAN.md D21–D22)
+### Broader positioning (2026-10-27, PLAN.md D21–D23)
 
 Everything below is my draft. Approve or change it before merging:
 
 - [ ] **Positioning line** (EN and FR): "small businesses in the US, with a focus on African-owned businesses" on home, about, client work, footer, OG image
 - [ ] **About**, new paragraph: "My focus is African-owned businesses. I share the culture, so we start on the same page." (no birthplace claim)
 - [ ] **New prices**: Get Found $300 setup (standard $450), Get Booked $650 (standard $1,000); monthly $79 / $129 (standard $99 / $179), included in the package, cancel anytime. Check the FAQ, pricing notes and step 3 wording.
+- [ ] **2 new business-type pages**, EN and FR (`src/content/verticals/{en,fr}/`): home services, auto repair. Check each "What I won't do" promise is one you'll keep.
+- [ ] **Business types page** (`/for/`, `/fr/pour/`): heading, intro and "Don't see your kind of business?" line
+- [ ] **Held until a credential-check process exists**: home health care, clinics & med spas, daycares, tax & immigration (drafts on branch `parked/credentialed-verticals`). Decide how you'll verify a client's licence (state care licence, medical licence, childcare licence, PTIN / enrolled agent / DOJ accreditation) before publishing.
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
 
 ### Hosting, domain and email (status in DOMAIN-SETUP.md)

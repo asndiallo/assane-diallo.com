@@ -49,6 +49,13 @@ export const fr: Dictionary = {
     privacy: "Confidentialité",
     social: "Suivre sur les réseaux sociaux",
     languages: "English et français.",
+    groups: {
+      services: "Services",
+      verticals: "Types d'entreprises",
+      pricing: "Tarifs",
+      how: "Fonctionnement",
+      about: "À propos",
+    },
   },
   home: {
     meta: {
@@ -81,8 +88,7 @@ export const fr: Dictionary = {
         "Les propriétaires trop occupés par leur activité pour apprendre Google.",
         "Ceux qui veulent plus d'appels et de réservations, pas un plan marketing compliqué.",
       ],
-      verticalsLead: `En savoir plus pour votre type d'entreprise${nb}:`,
-      or: "ou",
+      verticalsLink: "Voir ce que je mets en place pour votre type d'entreprise",
     },
     problem: {
       h2: `Vos clients cherchent. Est-ce qu'ils vous trouvent${nb}?`,
@@ -232,6 +238,16 @@ export const fr: Dictionary = {
     h1: "Réalisations",
     lead: "De vrais projets, publiés avec l'accord de chaque propriétaire. Je ne partage que les chiffres qu'il a validés.",
     empty: "Je rédige mes premières études de cas. Posez-moi la question sur WhatsApp.",
+  },
+  verticals: {
+    meta: {
+      title: "SEO local par type d'entreprise | Assane Diallo",
+      description:
+        "Fiche Google et SEO local pour artisans, garages, salons de tresses, restaurants et autres entreprises locales.",
+    },
+    h1: "Qui j'aide",
+    lead: "Les petites entreprises dont les clients viennent du quartier. Choisissez la vôtre pour voir ce que les clients regardent et ce que je mets en place.",
+    notListed: `Votre activité n'est pas dans la liste${nb}? Écrivez-moi quand même${nb}: si vos clients vous cherchent près de chez eux, je peux sûrement vous aider.`,
   },
   caseStudy: {
     title: (business, location) => `${business}, ${location}${nb}: ce qui a changé`,

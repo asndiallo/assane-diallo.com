@@ -14,6 +14,7 @@ export const localeMeta = {
 export const staticRoutes = {
   home: { en: "/", fr: "/fr/" },
   work: { en: "/work/", fr: "/fr/realisations/" },
+  verticals: { en: "/for/", fr: "/fr/pour/" },
   about: { en: "/about/", fr: "/fr/a-propos/" },
   thanks: { en: "/thanks/", fr: "/fr/merci/" },
   privacy: { en: "/privacy/", fr: "/fr/confidentialite/" },
@@ -22,6 +23,6 @@ export const staticRoutes = {
 
 /** URL prefix for content collections, per locale. Entry slugs are appended. */
 export const collectionBase = {
-  work: { en: "/work/", fr: "/fr/realisations/" },
-  verticals: { en: "/for/", fr: "/fr/pour/" },
+  work: staticRoutes.work,
+  verticals: staticRoutes.verticals,
 } as const satisfies Record<string, Record<Locale, string>>;
