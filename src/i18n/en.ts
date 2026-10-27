@@ -48,6 +48,13 @@ export const en = {
     privacy: "Privacy",
     social: "Follow on social media",
     languages: "English et français.",
+    groups: {
+      services: "Services",
+      verticals: "Business types",
+      pricing: "Prices",
+      how: "How it works",
+      about: "About",
+    },
   },
   home: {
     meta: {
@@ -81,8 +88,7 @@ export const en = {
         "Owners who are busy running the business and don't have time to learn Google.",
         "Anyone who wants more calls and bookings, not a complicated marketing plan.",
       ],
-      verticalsLead: "Read more for your kind of business:",
-      or: "or",
+      verticalsLink: "See what I set up for your kind of business",
     },
     problem: {
       h2: "Your customers are searching. Are they finding you?",
@@ -232,6 +238,17 @@ export const en = {
     h1: "Client work",
     lead: "Real projects, published with each owner's permission. I only share numbers the owner has approved.",
     empty: "I'm writing up my first client projects now. Ask me about them on WhatsApp.",
+  },
+  verticals: {
+    meta: {
+      title: "Local SEO by type of business | Assane Diallo",
+      description:
+        "Google profile and local SEO setup for home services, auto repair shops, braiding salons, restaurants and other local businesses.",
+    },
+    h1: "Who I help",
+    lead: "Small businesses that get their customers nearby. Pick yours to see what customers look for and what I set up.",
+    notListed:
+      "Don't see your kind of business? Message me anyway: if customers search for you nearby, I can probably help.",
   },
   caseStudy: {
     title: (business: string, location: string) => `${business}, ${location}: what changed`,

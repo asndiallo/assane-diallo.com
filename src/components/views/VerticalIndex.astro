@@ -1,0 +1,40 @@
+---
+import { getDictionary, type Locale, staticRoutes } from "../../i18n/index.ts";
+import Page from "../../layouts/Page.astro";
+import { entryPath, getLocalized } from "../../lib/content.ts";
+import CtaWhatsApp from "../CtaWhatsApp.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const entries = await getLocalized("verticals", locale);
+---
+
+<Page
+  title={t.verticals.meta.title}
+  description={t.verticals.meta.description}
+  h1={t.verticals.h1}
+  lead={t.verticals.lead}
+  locale={locale}
+  alternates={staticRoutes.verticals}
+>
+  <ul class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {
+      entries.map((entry) => (
+        <li class="relative flex flex-col rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-brand">
+          <h2 class="text-2xl">
+            {/* The whole card is clickable; the link text stays the business type. */}
+            <a href={entryPath("verticals", entry)} class="no-underline after:absolute after:inset-0">
+              {entry.data.name}
+            </a>
+          </h2>
+          <p class="mt-2 text-muted">{entry.data.intro}</p>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="measure mt-10">{t.verticals.notListed}</p>
+  <div class="mt-6"><CtaWhatsApp t={t} /></div>
+</Page>
