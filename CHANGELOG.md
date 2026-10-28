@@ -11,6 +11,8 @@ merge date.
 
 ### Added
 
+- Billing runbook (`STRIPE-SETUP.md`): Stripe catalog, quote-to-subscription flow, tax and
+  Dashboard settings. No code or keys on the site.
 - Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.
 - Business-type pages, in English and French: home services and auto repair.
 - This changelog and a pull request template.
