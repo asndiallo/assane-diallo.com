@@ -22,11 +22,14 @@ env:
   PUBLIC_PLAUSIBLE_DOMAIN: ${{ vars.PUBLIC_PLAUSIBLE_DOMAIN }}
 
 jobs:
-  check:
+  # Lint, typecheck, build, Playwright, link check. Uploads the tested dist/ for the deploy.
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: ./.github/actions/setup
 
       - name: Lint
@@ -36,12 +39,12 @@ jobs:
       - name: Build (lists remaining [TODO] markers as warnings)
         run: pnpm build
 
+      # No --with-deps: the runner image already has Chrome's system libraries, and the apt
+      # mirror can crawl (12 min for 20 MB once), which timed the whole job out.
       - name: Install Playwright browser
-        run: pnpm exec playwright install --with-deps chromium
+        run: pnpm exec playwright install chromium
       - name: Smoke test
         run: pnpm test:e2e
-      - name: Lighthouse CI
-        run: pnpm lhci
       - name: Link check
         run: pnpm linkcheck
 
@@ -56,9 +59,50 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: reports
+          name: test-reports
           path: |
             playwright-report/
             test-results/
-            .lighthouseci/
           retention-days: 7
+
+  # Every page × 3 runs takes ~16 min on one runner and grows with each page, so it runs beside
+  # `test`, split across shards, each with its own build (a few seconds). The repo is public, so
+  # the extra runners cost nothing.
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup
+      - name: Build
+        run: pnpm build
+      - name: Lighthouse CI
+        run: pnpm lhci
+        env:
+          LHCI_SHARD: ${{ matrix.shard }}/4
+      - name: Upload reports
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: lighthouse-reports-${{ matrix.shard }}
+          path: .lighthouseci/
+          retention-days: 7
+
+  # The required status check in the develop ruleset. A matrix reports one result for all its
+  # shards, so this fails if any job above failed, was cancelled or was skipped.
+  check:
+    needs: [test, lighthouse]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: All checks passed
+        run: echo "$RESULTS" | jq -e 'all(.[]; .result == "success")'
+        env:
+          RESULTS: ${{ toJSON(needs) }}
