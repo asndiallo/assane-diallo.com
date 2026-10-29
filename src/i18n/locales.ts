@@ -18,6 +18,7 @@ export const staticRoutes = {
   about: { en: "/about/", fr: "/fr/a-propos/" },
   thanks: { en: "/thanks/", fr: "/fr/merci/" },
   privacy: { en: "/privacy/", fr: "/fr/confidentialite/" },
+  terms: { en: "/terms/", fr: "/fr/conditions/" },
   engineering: { en: "/engineering/" },
 } as const satisfies Record<string, Alternates>;
 

@@ -1,0 +1,53 @@
+---
+import { getDictionary, type Locale, staticRoutes } from "../../i18n/index.ts";
+import Page from "../../layouts/Page.astro";
+import { whatsappHref } from "../../lib/contact.ts";
+import EmailLink from "../EmailLink.astro";
+import Link from "../Link.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const copy = t.terms;
+
+/** Change this date whenever the terms change, and tell current clients by email. */
+const updated = new Date("2026-10-28").toLocaleDateString(locale, {
+  dateStyle: "long",
+  timeZone: "UTC",
+});
+
+const whatsapp = whatsappHref(copy.contact.whatsappMessage);
+const heading = "mt-12 text-2xl sm:text-3xl";
+---
+
+<Page
+  title={copy.meta.title}
+  description={copy.meta.description}
+  h1={copy.h1}
+  lead={copy.lead}
+  locale={locale}
+  alternates={staticRoutes.terms}
+>
+  <div class="measure">
+    <p class="mt-4 text-sm text-muted">{copy.updated}{t.colon} {updated}</p>
+
+    {
+      copy.sections.map((section) => (
+        <>
+          <h2 class={heading}>{section.h2}</h2>
+          <div class="mt-4 space-y-4">{section.paragraphs.map((p) => <p>{p}</p>)}</div>
+        </>
+      ))
+    }
+
+    <h2 class={heading}>{copy.contact.h2}</h2>
+    <p class="mt-4">{copy.contact.body}</p>
+    <ul class="mt-4 space-y-2">
+      {whatsapp && <li><Link href={whatsapp}>{t.cta.whatsapp}</Link></li>}
+      <li><EmailLink>{t.cta.email}</EmailLink></li>
+      <li><a href={staticRoutes.privacy[locale]}>{t.home.contact.privacy}</a></li>
+    </ul>
+  </div>
+</Page>

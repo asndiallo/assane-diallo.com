@@ -26,5 +26,6 @@ export async function getPageGroups(): Promise<Alternates[]> {
     staticRoutes.about,
     staticRoutes.engineering,
     staticRoutes.privacy,
+    staticRoutes.terms,
   ];
 }
