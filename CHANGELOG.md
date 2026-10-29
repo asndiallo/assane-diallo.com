@@ -24,6 +24,8 @@ merge date.
 
 ### Changed
 
+- Billing runbook: profile and monthly products use Website Data Processing (`txcd_10701300`)
+  instead of Data Processing (same Texas tax); terms checkbox live on the payment links.
 - Privacy: a "When you hire me" section (Stripe billing, manager access to the client's accounts),
   billing records kept as tax law requires, Stripe in the list of services.
 - Positioning: local SEO for small businesses in the US, with a focus on African-owned businesses
