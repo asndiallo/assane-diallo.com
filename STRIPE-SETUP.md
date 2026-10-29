@@ -106,7 +106,8 @@ All four (live, 2026-10-28): automatic tax, billing address and phone required, 
 subscription description "Monthly part includes updates and a report. Cancel anytime.",
 metadata `tier` and `pricing`. Never put these links on the site (no checkout on the site).
 After the 3rd founding client, deactivate both founding links (**Payment links → ⋯ →
-Deactivate**). They only take real payments once the account is activated.
+Deactivate**). The first Dashboard-made Get Found link (`…oc00`) is deactivated: it lacked
+these settings.
 
 ## Changes and cancelling
 
@@ -121,8 +122,8 @@ Deactivate**). They only take real payments once the account is activated.
       (512 px PNG), brand `#0b6b4c`, accent `#07503a`, the site's `brand` and `brand-strong`
       tokens. No wide logo yet.
 - [x] Roll the test secret key that was pasted in a chat (done 2026-10-28).
-- [ ] **Settings → Payment methods**: cards and ACH Direct Debit (cheaper for clients paying
-      by bank).
+- [x] **Settings → Payment methods** (live, 2026-10-28): cards and ACH Direct Debit (cheaper
+      for clients paying by bank), plus Stripe's defaults (Apple Pay, Google Pay, Link…).
 - [x] **Settings → Business → Public details** (live, 2026-10-28): support email is the pro
       address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
       Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
@@ -150,7 +151,7 @@ Deactivate**). They only take real payments once the account is activated.
 - [ ] When the Texas permit arrives: check that its start date matches 2026-11-01 (update the
       Stripe registration if not) and note the filing frequency here.
 - [ ] Ask an accountant: data processing or advertising for profile and SEO work (see Catalog).
-- [ ] Activate the account (bank details, identity) before going live.
+- [x] Account activated (bank details, identity), 2026-10-28.
 
 ## Sources
 
