@@ -427,7 +427,7 @@ test.describe("home page follows the device language", () => {
 test("nothing personal is published", async ({ page }) => {
   for (const path of [...(await sitemapPaths(page)), "/404.html"]) {
     await page.goto(path);
-    const text = (await page.locator("body").innerText()).toLowerCase();
+    const text = ((await page.locator("body").textContent()) ?? "").toLowerCase();
     for (const banned of ["army", "military", "veteran", "sergeant", "savannah, ga 314"]) {
       expect(text, `${path} contains "${banned}"`).not.toContain(banned);
     }
