@@ -13,7 +13,8 @@
       "!**/.lighthouseci",
       "!**/test-results",
       "!**/playwright-report",
-      "!**/.wrangler"
+      "!**/.wrangler",
+      "!pnpm-lock.yaml"
     ]
   },
   "formatter": {
@@ -29,6 +30,11 @@
     "enabled": true,
     "rules": {
       "preset": "recommended"
+    }
+  },
+  "markdown": {
+    "formatter": {
+      "enabled": false
     }
   },
   "javascript": {
