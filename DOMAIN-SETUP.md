@@ -64,7 +64,6 @@ The runbook for how the site is hosted and how the domain and email are wired. T
 ## Initial dashboard steps (done)
 
 These need the dashboard: the CLI has no command for 1 and 3, and for 2 you create the secret yourself so it never passes through Claude.
-
 1. **workers.dev subdomain.** Go to **Workers & Pages**, then click **Change** next to _Your subdomain_, and enter `assane-diallo`. URLs look like `<worker>.assane-diallo.workers.dev`, so a bare `assane-diallo.workers.dev` isn't possible. It's used for previews only; it's switched off for the main site at go-live.
 2. **Deploy API token.** Go to **Manage account → Account API tokens → Create Token**:
    - Choose the template **Edit Cloudflare Workers**.
@@ -75,7 +74,6 @@ These need the dashboard: the CLI has no command for 1 and 3, and for 2 you crea
 ## Go-live (Claude runs these after you say go)
 
 Each step is shown before it runs.
-
 1. **Custom domain.** Add `{ "pattern": "assane-diallo.com", "custom_domain": true }` to `routes` in `wrangler.jsonc` and set `"workers_dev": false`. On deploy, Cloudflare creates the DNS record and the certificate. ([Custom Domains](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/))
 2. **www → apex.** Create a proxied placeholder record `AAAA www → 100::` and a Single Redirect rule: `https://www.*` → `https://${1}`, status 301, query string preserved. ([Redirect from WWW to root](https://developers.cloudflare.com/rules/url-forwarding/examples/redirect-www-to-root/); the placeholder record is required per the Custom Domains doc)
 3. **Zone settings.** Turn on Always Use HTTPS and set minimum TLS to 1.2.

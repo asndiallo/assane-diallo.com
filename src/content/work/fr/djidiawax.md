@@ -4,20 +4,20 @@ location: Boutique en ligne en France
 vertical: online-shop
 status: in-progress
 homepage: false
-summary: 'Une boutique de mode refaite pour le téléphone : pages 10 fois plus légères, paiement corrigé, avis avec photos, Google mieux guidé. Résultats à venir.'
+summary: "Une boutique de mode refaite pour le téléphone : pages 10 fois plus légères, paiement corrigé, avis avec photos, Google mieux guidé. Résultats à venir."
 consent: true
-disclosure: 'Transparence : la propriétaire de Djidiawax est ma sœur.'
+disclosure: "Transparence : la propriétaire de Djidiawax est ma sœur."
 website: https://djidiawax.com/
 services:
   - Accueil et fiches produits pensées pour le téléphone
-  - 'Vitesse du site : photos, extensions, cache'
-  - 'Paiement corrigé : livraison offerte, précommandes'
+  - "Vitesse du site : photos, extensions, cache"
+  - "Paiement corrigé : livraison offerte, précommandes"
   - Avis clients avec photos
   - Offre de bienvenue et inscriptions par e-mail
-  - 'SEO technique : titres, catégories, plan du site, données structurées'
+  - "SEO technique : titres, catégories, plan du site, données structurées"
 image:
   src: ../../../assets/work/djidiawax/fr/hero.png
-  alt: 'La nouvelle page d’accueil de djidiawax.com : le titre « Blazers et ensembles en wax » à côté d’une femme portant un blazer en wax bordeaux et rose.'
+  alt: "La nouvelle page d’accueil de djidiawax.com : le titre « Blazers et ensembles en wax » à côté d’une femme portant un blazer en wax bordeaux et rose."
 order: 10
 ---
 
@@ -28,7 +28,6 @@ Djidiawax vend en ligne, depuis la France, des vêtements afro-contemporains : b
 ## Avant
 
 Les photos étaient belles, mais la boutique perdait des clientes en route vers le paiement :
-
 - **La livraison offerte était promise mais jamais appliquée.** Le bandeau annonçait « livraison offerte dès 200 € », mais le paiement comptait toujours les frais de port.
 - **Les précommandes ne pouvaient pas être payées.** Les cinq ensembles en précommande n’avaient qu’un formulaire e-mail.
 - **Le contenu de démonstration du thème était encore en ligne.** La page Contact affichait les textes anglais du thème et des numéros américains, et 16 articles de blog d’exemple en anglais étaient envoyés à Google.

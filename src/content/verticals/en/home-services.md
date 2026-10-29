@@ -1,8 +1,8 @@
 ---
 name: Home services
 order: 3
-title: 'Google setup for home service pros | Assane Diallo'
-description: 'Get your HVAC, plumbing, cleaning or handyman business found on Google, with your service area, reviews, and a quick way to call. Free 15-minute check-up.'
+title: "Google setup for home service pros | Assane Diallo"
+description: "Get your HVAC, plumbing, cleaning or handyman business found on Google, with your service area, reviews, and a quick way to call. Free 15-minute check-up."
 h1: Get your home service business found on Google
 intro: When the AC breaks or a pipe leaks, people search, call one of the first few names, and hire whoever picks up. I help your business be one of those names.
 lookFor:
@@ -18,7 +18,7 @@ setup:
   items:
     - A Google profile with the right categories, your service area, and photos of your work
     - A simple page for each main service in each city you cover (for example, AC repair in your city)
-    - 'Tap-to-call and a quote request that work on a phone'
+    - "Tap-to-call and a quote request that work on a phone"
     - A short review request you can send after each job
 wontDo:
   h2: What I won't do

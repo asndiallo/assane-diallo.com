@@ -21,19 +21,19 @@ Each package is two products: a one-time setup and a monthly part. Each has a fo
 (first 3 clients) and a standard price. Find prices by lookup key, not by ID (IDs differ between
 test mode and live mode).
 
-| Product | Lookup key | Amount |
-| --- | --- | --- |
-| Get Found — setup | `profile_setup_founding` / `profile_setup_standard` | $300 / $450, once |
-| Get Found — monthly | `profile_monthly_founding` / `profile_monthly_standard` | $79 / $99 a month |
-| Get Booked — setup | `website_setup_founding` / `website_setup_standard` | $650 / $1,000, once |
+| Product              | Lookup key                                              | Amount              |
+| -------------------- | ------------------------------------------------------- | ------------------- |
+| Get Found — setup    | `profile_setup_founding` / `profile_setup_standard`     | $300 / $450, once   |
+| Get Found — monthly  | `profile_monthly_founding` / `profile_monthly_standard` | $79 / $99 a month   |
+| Get Booked — setup   | `website_setup_founding` / `website_setup_standard`     | $650 / $1,000, once |
 | Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $179 a month |
 
 Tax codes (live and test mode, set 2026-10-29):
 
-| Product | Tax code | Texas tax per $100 |
-| --- | --- | --- |
-| Get Booked — setup | `txcd_10701200` (Website Design) | $6.60 |
-| Get Found — setup, both monthly parts | `txcd_10701300` (Website Data Processing) | $6.60 |
+| Product                               | Tax code                                  | Texas tax per $100 |
+| ------------------------------------- | ----------------------------------------- | ------------------ |
+| Get Booked — setup                    | `txcd_10701200` (Website Design)          | $6.60              |
+| Get Found — setup, both monthly parts | `txcd_10701300` (Website Data Processing) | $6.60              |
 
 Website Data Processing, not Data Processing (`txcd_20060009`): Stripe defines the latter as
 work "not performed online" and points online work to Website Data Processing. The work here is
@@ -71,7 +71,6 @@ Override the price on the quote line rather than editing the catalog.
 
 The client pays **once** to start (setup + month one, one invoice), and later months are charged
 to the same card automatically. Tested end to end in test mode on 2026-10-28.
-
 1. **Customers → Add customer**: business name, billing email, and the billing address (Stripe
    Tax needs it). No personal notes in Stripe.
 2. **Subscriptions → Create subscription** for that customer:
@@ -103,9 +102,9 @@ then pays setup + month one. Stripe creates the customer and a subscription that
 same card every month. Nothing to switch afterwards. Use an invoice (above) whenever the price
 differs from the catalog.
 
-| Package | Founding | Standard |
-| --- | --- | --- |
-| Get Found | <https://buy.stripe.com/bJe9AT2wx92H9sSf5e9oc04> | <https://buy.stripe.com/5kQ8wP9YZ3IndJ8bT29oc01> |
+| Package    | Founding                                         | Standard                                         |
+| ---------- | ------------------------------------------------ | ------------------------------------------------ |
+| Get Found  | <https://buy.stripe.com/bJe9AT2wx92H9sSf5e9oc04> | <https://buy.stripe.com/5kQ8wP9YZ3IndJ8bT29oc01> |
 | Get Booked | <https://buy.stripe.com/4gM9ATc770wbeNc3mw9oc02> | <https://buy.stripe.com/00w00j8UV7YDbB02is9oc03> |
 
 All four (live, 2026-10-28): automatic tax, billing address and phone required, business name,
@@ -125,50 +124,50 @@ these settings.
 ## One-time Dashboard settings
 
 - [x] **Settings → Business → Branding** (live, 2026-10-28): icon from `public/favicon.svg`
-      (512 px PNG), brand `#0b6b4c`, accent `#07503a`, the site's `brand` and `brand-strong`
-      tokens. No wide logo yet.
+  (512 px PNG), brand `#0b6b4c`, accent `#07503a`, the site's `brand` and `brand-strong`
+  tokens. No wide logo yet.
 - [x] Roll the test secret key that was pasted in a chat (done 2026-10-28).
 - [x] **Settings → Payment methods** (live, 2026-10-28): cards and ACH Direct Debit (cheaper
-      for clients paying by bank), plus Stripe's defaults (Apple Pay, Google Pay, Link…).
+  for clients paying by bank), plus Stripe's defaults (Apple Pay, Google Pay, Link…).
 - [x] **Settings → Business → Public details** (live, 2026-10-28): support email is the pro
-      address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
-      Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
-      sending from our own domain needs DNS records (Cloudflare, owner's approval).
+  address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
+  Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
+  sending from our own domain needs DNS records (Cloudflare, owner's approval).
 - [x] **Terms and privacy links** (live, 2026-10-29). Public details and the invoice footer are
-      Dashboard only (the API can't edit the account's own settings):
-      - **Settings → Business → Public details**: terms of service URL
-        `https://assane-diallo.com/terms/`, privacy policy URL `https://assane-diallo.com/privacy/`.
-        Stripe's checkout pages link to both.
-      - **Settings → Billing → Invoices → Default footer**: "Terms:
-        https://assane-diallo.com/terms/ · Privacy: https://assane-diallo.com/privacy/".
-      - The four payment links: `consent_collection.terms_of_service = required`, a checkbox the
-        client must tick ("I agree to … Terms of Service and Privacy Policy", both linked).
-        Stripe refuses it until the terms URL is set in Public details. A payment link's invoice
-        footer can't be changed after creation; the default footer covers its invoices.
-      - When the terms change: update the "Last updated" date and email current clients before
-        the change applies (the terms promise it).
+  Dashboard only (the API can't edit the account's own settings):
+  - **Settings → Business → Public details**: terms of service URL
+    `https://assane-diallo.com/terms/`, privacy policy URL `https://assane-diallo.com/privacy/`.
+    Stripe's checkout pages link to both.
+  - **Settings → Billing → Invoices → Default footer**: "Terms:
+    https://assane-diallo.com/terms/ · Privacy: https://assane-diallo.com/privacy/".
+  - The four payment links: `consent_collection.terms_of_service = required`, a checkbox the
+    client must tick ("I agree to … Terms of Service and Privacy Policy", both linked).
+    Stripe refuses it until the terms URL is set in Public details. A payment link's invoice
+    footer can't be changed after creation; the default footer covers its invoices.
+  - When the terms change: update the "Last updated" date and email current clients before
+    the change applies (the terms promise it).
 - [x] **Settings → Business → Customer emails**: receipts on for successful payments and
-      refunds.
+  refunds.
 - [x] **Settings → Billing → Customer portal** (live): cancel at period end with a reason,
-      card and billing info updates, invoice history. No plan switching. Login link:
-      <https://billing.stripe.com/p/login/6oUfZh8UVdiXbB07CM9oc00> (the client enters their
-      email to sign in).
+  card and billing info updates, invoice history. No plan switching. Login link:
+  <https://billing.stripe.com/p/login/6oUfZh8UVdiXbB07CM9oc00> (the client enters their
+  email to sign in).
 - [x] **Settings → Billing → Subscriptions and emails**: emails for expiring cards and failed
-      card or bank payments, linking to Stripe's hosted page (switch confirmed, irreversible).
-      Emails include a link to the customer portal.
+  card or bank payments, linking to Stripe's hosted page (switch confirmed, irreversible).
+  Emails include a link to the customer portal.
 - [x] **Revenue recovery → Retries**: Smart Retries on (up to 8 times within 2 weeks), then
-      cancel the subscription.
+  cancel the subscription.
 - [x] **Settings → Tax** (live): active, head office set, default tax code `txcd_10701300`,
-      tax-exclusive. Texas registration scheduled from 2026-11-01 (see Sales tax); threshold
-      monitoring watches the other states.
+  tax-exclusive. Texas registration scheduled from 2026-11-01 (see Sales tax); threshold
+  monitoring watches the other states.
 - [x] **Settings → Tax → Integrations**: "Use automatic tax" on (live), so new Dashboard
-      invoices, subscriptions, quotes and payment links calculate tax by default.
+  invoices, subscriptions, quotes and payment links calculate tax by default.
 - [x] **Plan**: Tax Basic, pay as you go: 0.5% of each transaction in a state where we're
-      registered (Texas only). No monthly fee. Tax Complete (from $90/month, 1-year contract,
-      filing included) isn't worth it at this volume: file Texas returns ourselves from the
-      Stripe location report.
+  registered (Texas only). No monthly fee. Tax Complete (from $90/month, 1-year contract,
+  filing included) isn't worth it at this volume: file Texas returns ourselves from the
+  Stripe location report.
 - [ ] When the Texas permit arrives: check that its start date matches 2026-11-01 (update the
-      Stripe registration if not) and note the filing frequency here.
+  Stripe registration if not) and note the filing frequency here.
 - [ ] Ask an accountant: data processing or advertising for profile and SEO work (see Catalog).
 - [x] Account activated (bank details, identity), 2026-10-28.
 

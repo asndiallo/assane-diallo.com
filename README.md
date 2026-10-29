@@ -41,7 +41,6 @@ For local builds, put env values in `.env` (git-ignored). For deploys, set them 
 ## Deploy
 
 Hosting is **Cloudflare Workers static assets** (`wrangler.jsonc`). The architecture, status, go-live steps and rollback are in **[DOMAIN-SETUP.md](DOMAIN-SETUP.md)**.
-
 - **Pull requests:** CI runs the full `pnpm check`. PRs from this repo also get a **preview URL** (`pr-<n>-assane-diallo.<subdomain>.workers.dev`), posted as a comment.
 - **Production:** Actions → **Deploy** → _Run workflow_. It reruns every check, then deploys exactly the build that passed (`wrangler deploy`). With `SITE_LIVE=true` (set), it then runs `pnpm verify:domain` against the live domain.
 - **Rollback:** `pnpm exec wrangler rollback`.
@@ -51,7 +50,6 @@ Hosting is **Cloudflare Workers static assets** (`wrangler.jsonc`). The architec
 ## Languages and theme
 
 The site is in English (`/`) and French (`/fr/`), for African-owned businesses in the US.
-
 - UI and home page copy: `src/i18n/en.ts` and `src/i18n/fr.ts`. `fr.ts` is typed as the English dictionary, so a missing French key fails `pnpm typecheck`.
 - URLs per language: `src/i18n/locales.ts` (`staticRoutes`, `collectionBase`). French URLs are translated (`/fr/realisations/`, `/fr/a-propos/`, `/fr/pour/…`).
 - hreflang, the sitemap and the language switch in the header all read the same alternates, so a page only links to translations that exist. A test fails if a page (other than `/engineering/`) is missing its French or English version.
@@ -65,6 +63,7 @@ The site is in English (`/`) and French (`/fr/`), for African-owned businesses i
 
 ```markdown
 ---
+
 business: 'Business name'
 location: City, ST # or "Online shop"
 vertical: braiding-salons # braiding-salons | restaurants | online-shop | other
@@ -76,19 +75,20 @@ highlight: '450 calls from Google in 3 months.' # optional: word for word from s
 consent: true # required: the build fails without it
 website: https://example.com/ # optional
 services:
-  - Google Business Profile
-results: # optional: only numbers the owner approved
-  - label: Calls from Google, per month # example format only
-    value: '12 → 31'
-    source: Google Business Profile insights, Jan vs. Apr 2027
-quote: # optional: only with permission
+- Google Business Profile
+  results: # optional: only numbers the owner approved
+- label: Calls from Google, per month # example format only
+  value: '12 → 31'
+  source: Google Business Profile insights, Jan vs. Apr 2027
+  quote: # optional: only with permission
   text: '…'
   author: Name, Business
-image:
+  image:
   src: ../../../assets/work/<file>.png
   alt: 'What the image shows.'
-order: 2 # position on the home page and the work page
-urlSlug: … # optional: a different URL segment for this language
+  order: 2 # position on the home page and the work page
+  urlSlug: … # optional: a different URL segment for this language
+
 ---
 
 ## Before

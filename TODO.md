@@ -44,7 +44,6 @@ The site shouldn't go live (manual deploy) until the **Before launch** section i
 ### Copy to approve
 
 Everything I wrote that isn't word-for-word from your `site-copy.md`:
-
 - [x] Home, **"Who this is for"** section (the spec asked for it; your copy doc didn't have it)
 - [x] Home, **services heading** changed from "One clear package, done for you" to **"What I set up for you"**, since there are now two packages. There's also a note that the website and search pages come with Profile + Website.
 - [x] Home, **pricing section**: heading "Prices", intro line, tier summaries ("For businesses that don't need a website yet." / "Everything in Google Profile, plus…")
@@ -59,7 +58,6 @@ Everything I wrote that isn't word-for-word from your `site-copy.md`:
 ### Broader positioning (2026-10-27, PLAN.md D21–D23)
 
 Everything below is my draft. Approve or change it before merging:
-
 - [ ] **Positioning line** (EN and FR): "small businesses in the US, with a focus on African-owned businesses" on home, about, client work, footer, OG image
 - [ ] **About**, new paragraph: "My focus is African-owned businesses. I share the culture, so we start on the same page." (no birthplace claim)
 - [ ] **New prices**: Get Found $300 setup (standard $450), Get Booked $650 (standard $1,000); monthly $79 / $129 (standard $99 / $179), included in the package, cancel anytime. Check the FAQ, pricing notes and step 3 wording.
