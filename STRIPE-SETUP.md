@@ -28,19 +28,24 @@ test mode and live mode).
 | Get Booked — setup | `website_setup_founding` / `website_setup_standard` | $650 / $1,000, once |
 | Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $179 a month |
 
-Tax codes (live, set 2026-10-28):
+Tax codes (live and test mode, set 2026-10-29):
 
 | Product | Tax code | Texas tax per $100 |
 | --- | --- | --- |
 | Get Booked — setup | `txcd_10701200` (Website Design) | $6.60 |
-| Get Found — setup, both monthly parts | `txcd_20060009` (Data Processing) | $6.60 |
+| Get Found — setup, both monthly parts | `txcd_10701300` (Website Data Processing) | $6.60 |
+
+Website Data Processing, not Data Processing (`txcd_20060009`): Stripe defines the latter as
+work "not performed online" and points online work to Website Data Processing. The work here is
+done online and delivered electronically. Switched on 2026-10-29; a test-mode calculation that day
+gave the same Texas tax for both ($6.60 per $100), so no client amount changed.
 
 Texas taxes data processing and website design on 80% of the price (8.25% × 80% = 6.6%).
-Amounts come from a test-mode tax calculation on 2026-10-28; for comparison, General ESS
-(`txcd_10000000`) gave $8.25 and Advertising Services (`txcd_20060002`) gave $0. Data processing
-is the cautious choice: if an accountant or a Comptroller ruling says advertising, switch the
-three products to `txcd_20060002` and stop collecting. Never leave a product on General ESS: it
-over-collects in Texas.
+For comparison (test mode, 2026-10-28), General ESS (`txcd_10000000`) gave $8.25 and
+Advertising Services (`txcd_20060002`) gave $0. Data processing is the cautious choice: if an
+accountant or a Comptroller ruling says advertising, switch the three products to
+`txcd_20060002` and stop collecting. Never leave a product on General ESS: it over-collects in
+Texas.
 
 Created in test mode on 2026-10-28, then copied to live with **⋯ → Copy to live mode** on each
 product. Checked in live the same day: all eight prices kept their lookup keys and
@@ -129,16 +134,17 @@ these settings.
       address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
       Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
       sending from our own domain needs DNS records (Cloudflare, owner's approval).
-- [ ] **Terms and privacy links**, once `/terms/` is live (Dashboard only: the API can't edit
-      the account's own public details):
+- [x] **Terms and privacy links** (live, 2026-10-29). Public details and the invoice footer are
+      Dashboard only (the API can't edit the account's own settings):
       - **Settings → Business → Public details**: terms of service URL
         `https://assane-diallo.com/terms/`, privacy policy URL `https://assane-diallo.com/privacy/`.
         Stripe's checkout pages link to both.
       - **Settings → Billing → Invoices → Default footer**: "Terms:
         https://assane-diallo.com/terms/ · Privacy: https://assane-diallo.com/privacy/".
-      - The four payment links: `consent_collection.terms_of_service = required` (a checkbox the
-        client must tick) and the same footer in `subscription_data.invoice_settings.footer`.
-        Stripe refuses the checkbox until the terms URL is set in Public details.
+      - The four payment links: `consent_collection.terms_of_service = required`, a checkbox the
+        client must tick ("I agree to … Terms of Service and Privacy Policy", both linked).
+        Stripe refuses it until the terms URL is set in Public details. A payment link's invoice
+        footer can't be changed after creation; the default footer covers its invoices.
       - When the terms change: update the "Last updated" date and email current clients before
         the change applies (the terms promise it).
 - [x] **Settings → Business → Customer emails**: receipts on for successful payments and
@@ -152,7 +158,7 @@ these settings.
       Emails include a link to the customer portal.
 - [x] **Revenue recovery → Retries**: Smart Retries on (up to 8 times within 2 weeks), then
       cancel the subscription.
-- [x] **Settings → Tax** (live): active, head office set, default tax code `txcd_20060009`,
+- [x] **Settings → Tax** (live): active, head office set, default tax code `txcd_10701300`,
       tax-exclusive. Texas registration scheduled from 2026-11-01 (see Sales tax); threshold
       monitoring watches the other states.
 - [x] **Settings → Tax → Integrations**: "Use automatic tax" on (live), so new Dashboard
