@@ -5,7 +5,6 @@ This repository builds the static website at <https://assane-diallo.com>. There 
 ## Reporting a vulnerability
 
 Please report security issues privately, not in a public issue:
-
 - **Preferred:** use GitHub's private reporting: the **Security** tab of this repository → **Report a vulnerability**.
 - Or email **<hello@assane-diallo.com>** with "Security" in the subject.
 

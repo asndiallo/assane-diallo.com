@@ -24,8 +24,9 @@ merge date.
 
 ### Changed
 
-- Biome 2.6: Markdown formatting stays off (its new formatter rewrote frontmatter and broke the
-  content data), and `pnpm-lock.yaml` is excluded as a generated file. Markdown is still linted.
+- Biome 2.6 formats Markdown too, with frontmatter parsing on (without it, frontmatter is read as
+  Markdown and rewritten). One-time reformat of the docs and content; the built site is unchanged.
+  `pnpm-lock.yaml` is excluded as a generated file.
 - CI: Lighthouse runs beside the tests, split across 4 parallel jobs (still every page, 3 runs
   each), and Playwright no longer installs system packages from apt. Checks take about 5 minutes
   instead of 16+; a slow apt mirror had pushed a Dependabot PR past the 20-minute limit. Checkouts
