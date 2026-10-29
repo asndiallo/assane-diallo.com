@@ -28,6 +28,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: ./.github/actions/setup
 
       - name: Lint
@@ -63,27 +65,37 @@ jobs:
             test-results/
           retention-days: 7
 
-  # Every page × 3 runs takes ~16 min and grows with each page, so it runs beside `test`
-  # with its own build (a few seconds) instead of after it.
+  # Every page × 3 runs takes ~16 min on one runner and grows with each page, so it runs beside
+  # `test`, split across shards, each with its own build (a few seconds). The repo is public, so
+  # the extra runners cost nothing.
   lighthouse:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: ./.github/actions/setup
       - name: Build
         run: pnpm build
       - name: Lighthouse CI
         run: pnpm lhci
+        env:
+          LHCI_SHARD: ${{ matrix.shard }}/4
       - name: Upload reports
         if: failure()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: lighthouse-reports
+          name: lighthouse-reports-${{ matrix.shard }}
           path: .lighthouseci/
           retention-days: 7
 
-  # The required status check in the develop ruleset: passes only when every job above passed.
+  # The required status check in the develop ruleset. A matrix reports one result for all its
+  # shards, so this fails if any job above failed, was cancelled or was skipped.
   check:
     needs: [test, lighthouse]
     if: always()
@@ -91,4 +103,6 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: All checks passed
-        run: test "${{ needs.test.result }}" = success && test "${{ needs.lighthouse.result }}" = success
+        run: echo "$RESULTS" | jq -e 'all(.[]; .result == "success")'
+        env:
+          RESULTS: ${{ toJSON(needs) }}
