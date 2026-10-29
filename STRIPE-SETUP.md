@@ -28,13 +28,36 @@ test mode and live mode).
 | Get Booked — setup | `website_setup_founding` / `website_setup_standard` | $650 / $1,000, once |
 | Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $179 a month |
 
-Tax code on all four products: `txcd_20060002` (Advertising Services). To confirm with an
-accountant: Get Booked setup includes a website, and some states tax website design
-(`txcd_10701200`) differently.
+Tax codes (live, set 2026-10-28):
+
+| Product | Tax code | Texas tax per $100 |
+| --- | --- | --- |
+| Get Booked — setup | `txcd_10701200` (Website Design) | $6.60 |
+| Get Found — setup, both monthly parts | `txcd_20060009` (Data Processing) | $6.60 |
+
+Texas taxes data processing and website design on 80% of the price (8.25% × 80% = 6.6%).
+Amounts come from a test-mode tax calculation on 2026-10-28; for comparison, General ESS
+(`txcd_10000000`) gave $8.25 and Advertising Services (`txcd_20060002`) gave $0. Data processing
+is the cautious choice: if an accountant or a Comptroller ruling says advertising, switch the
+three products to `txcd_20060002` and stop collecting. Never leave a product on General ESS: it
+over-collects in Texas.
 
 Created in test mode on 2026-10-28, then copied to live with **⋯ → Copy to live mode** on each
-product. Checked in live the same day: all eight prices kept their lookup keys, the tax code
-and tax-exclusive behaviour. Repeat the check after any future copy.
+product. Checked in live the same day: all eight prices kept their lookup keys and
+tax-exclusive behaviour. Later that day the live tax codes turned out to be General ESS and were
+fixed by hand (cause unknown). Check the tax codes after any future copy or edit.
+
+## Sales tax
+
+- **Texas**: Stripe registration `state_sales_tax`, scheduled to start **2026-11-01 00:00
+  Central** (the first taxable sales date on the Comptroller application). The head office is in
+  Texas, so Texas clients pay the head office's local rate (origin-based). Clients in other
+  states pay $0 until Stripe's threshold monitoring says to register there.
+- The Texas taxpayer number and permit are in the owner's records, not in this repo.
+- Texas returns are due even when no tax was collected. The Comptroller sets the filing
+  frequency when it issues the permit. File on the Comptroller's Webfile using the
+  **Tax → Locations → Texas** report (automated filing needs Tax Complete).
+- Test mode has a Texas registration (active now), so tax shows up on test invoices.
 
 ## Billing a new client
 
@@ -54,7 +77,7 @@ to the same card automatically. Tested end to end in test mode on 2026-10-28.
      (`payment_settings.save_default_payment_method = on_subscription`). Without this, the
      client has to pay a new emailed invoice every month.
    - Payment methods: card and US bank account (ACH).
-   - Automatic tax: on (once Tax is set up).
+   - Automatic tax: on. The customer needs a billing address.
    - Footer: "Monthly part includes updates and a report. Cancel anytime."
 3. Stripe emails one invoice with both lines (e.g. $300 setup + $79 first month = $379). The
    client pays on Stripe's invoice page.
@@ -65,6 +88,25 @@ to the same card automatically. Tested end to end in test mode on 2026-10-28.
 
 Quotes (**Quotes → Create quote**, same two lines) give the client an accept step first, if the
 account plan includes them. Not tested here: the Stripe MCP has no Quotes operations.
+
+### Payment links (catalog price, no custom quote)
+
+When the check-up confirms the catalog price, send the package's link in WhatsApp instead of
+steps 1–4. The client enters business name, their name, phone and billing address (for tax),
+then pays setup + month one. Stripe creates the customer and a subscription that charges the
+same card every month. Nothing to switch afterwards. Use an invoice (above) whenever the price
+differs from the catalog.
+
+| Package | Founding | Standard |
+| --- | --- | --- |
+| Get Found | <https://buy.stripe.com/bJe9AT2wx92H9sSf5e9oc04> | <https://buy.stripe.com/5kQ8wP9YZ3IndJ8bT29oc01> |
+| Get Booked | <https://buy.stripe.com/4gM9ATc770wbeNc3mw9oc02> | <https://buy.stripe.com/00w00j8UV7YDbB02is9oc03> |
+
+All four (live, 2026-10-28): automatic tax, billing address and phone required, business name,
+subscription description "Monthly part includes updates and a report. Cancel anytime.",
+metadata `tier` and `pricing`. Never put these links on the site (no checkout on the site).
+After the 3rd founding client, deactivate both founding links (**Payment links → ⋯ →
+Deactivate**). They only take real payments once the account is activated.
 
 ## Changes and cancelling
 
@@ -96,9 +138,18 @@ account plan includes them. Not tested here: the Stripe MCP has no Quotes operat
       Emails include a link to the customer portal.
 - [x] **Revenue recovery → Retries**: Smart Retries on (up to 8 times within 2 weeks), then
       cancel the subscription.
-- [x] **Settings → Tax** (live): active, head office set, default tax code `txcd_20060002`,
-      tax-exclusive. No registrations yet, so no tax is collected; threshold monitoring alerts
-      before a state requires one. Add registrations only after checking with an accountant.
+- [x] **Settings → Tax** (live): active, head office set, default tax code `txcd_20060009`,
+      tax-exclusive. Texas registration scheduled from 2026-11-01 (see Sales tax); threshold
+      monitoring watches the other states.
+- [x] **Settings → Tax → Integrations**: "Use automatic tax" on (live), so new Dashboard
+      invoices, subscriptions, quotes and payment links calculate tax by default.
+- [x] **Plan**: Tax Basic, pay as you go: 0.5% of each transaction in a state where we're
+      registered (Texas only). No monthly fee. Tax Complete (from $90/month, 1-year contract,
+      filing included) isn't worth it at this volume: file Texas returns ourselves from the
+      Stripe location report.
+- [ ] When the Texas permit arrives: check that its start date matches 2026-11-01 (update the
+      Stripe registration if not) and note the filing frequency here.
+- [ ] Ask an accountant: data processing or advertising for profile and SEO work (see Catalog).
 - [ ] Activate the account (bank details, identity) before going live.
 
 ## Sources

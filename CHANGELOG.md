@@ -13,6 +13,8 @@ merge date.
 
 - Billing runbook (`STRIPE-SETUP.md`): Stripe catalog, quote-to-subscription flow, tax and
   Dashboard settings. No code or keys on the site.
+- Texas sales tax section in the billing runbook: tax codes per product, registration from
+  2026-11-01, filing notes.
 - Business-types page (`/for/`, `/fr/pour/`) listing every business type as a card.
 - Business-type pages, in English and French: home services and auto repair.
 - This changelog and a pull request template.
