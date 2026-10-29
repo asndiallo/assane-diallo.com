@@ -24,6 +24,8 @@ merge date.
 
 ### Changed
 
+- CI: Lighthouse runs in its own job beside the tests, and Playwright no longer installs
+  system packages from apt. A slow apt mirror had pushed a Dependabot PR past the 20-minute limit.
 - Billing runbook: profile and monthly products use Website Data Processing (`txcd_10701300`)
   instead of Data Processing (same Texas tax); terms checkbox live on the payment links.
 - Privacy: a "When you hire me" section (Stripe billing, manager access to the client's accounts),
