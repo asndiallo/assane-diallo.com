@@ -12,7 +12,8 @@ merge date.
 ### Added
 
 - Terms of service page (`/terms/`, `/fr/conditions/`), linked in the footer: billing, cancelling
-  at the end of the paid month, setup refunds, client accounts, no ranking guarantees.
+  at the end of the paid month, setup refunds, client accounts, no ranking guarantees. The billing
+  runbook lists the Stripe steps that link to it (public details, invoice footer, payment links).
 - Billing runbook (`STRIPE-SETUP.md`): Stripe catalog, quote-to-subscription flow, tax and
   Dashboard settings. No code or keys on the site.
 - Texas sales tax section in the billing runbook: tax codes per product, registration from
