@@ -46,6 +46,7 @@ export const en = {
       "Local SEO and Google Business Profile setup for small businesses in the US, with a focus on African-owned businesses.",
     engineering: "My software engineering work",
     privacy: "Privacy",
+    terms: "Terms",
     social: "Follow on social media",
     languages: "English et français.",
     groups: {
@@ -306,7 +307,7 @@ export const en = {
     meta: {
       title: "Privacy | Assane Diallo",
       description:
-        "What this site collects (no cookies, no ads) and how I handle your details when you message me, email me or book a free check-up.",
+        "What this site collects (no cookies, no ads) and how I handle your details when you message me, book a free check-up or hire me.",
     },
     h1: "Privacy",
     lead: "No cookies, no ads, no tracking across sites. When you contact me, I use your details only to reply and, if we work together, to do the work.",
@@ -339,13 +340,20 @@ export const en = {
         body: "your name, your business, how to reach you and your message, delivered to me by a form service.",
       },
     },
+    work: {
+      h2: "When you hire me",
+      paragraphs: [
+        "Billing goes through Stripe. On an invoice or a payment link, you enter your name, your business name, your email, your phone and your billing address. Stripe uses the address to work out sales tax. Card and bank details go to Stripe only: I never see them.",
+        "To do the work, I'm added as a manager on the accounts it needs: your Google profile, and tools such as Google Search Console (the searches that bring people to your site) or your website's analytics. I see what those accounts show, such as your statistics and reviews, and I use it only for your work and your monthly report.",
+      ],
+    },
     use: {
       h2: "How I use it",
       body: "Only to reply to you, prepare your free check-up and, if you hire me, do the work and bill for it. I don't sell your details, I don't share them for advertising, and I don't add you to a mailing list.",
     },
     keep: {
       h2: "How long I keep it",
-      body: "While we're talking or working together. If we don't end up working together, I delete our messages and your details within 12 months of our last contact. For clients, I keep what the work and my tax records require.",
+      body: "While we're talking or working together. If we don't end up working together, I delete our messages and your details within 12 months of our last contact. For clients, I keep what the work needs, and invoices and billing records for as long as tax law requires (in Texas, at least 4 years).",
     },
     rights: {
       h2: "Seeing, correcting or deleting your details",
@@ -355,6 +363,93 @@ export const en = {
     services: {
       h2: "Services involved",
       intro: "Each one has its own privacy policy:",
+    },
+  },
+  terms: {
+    meta: {
+      title: "Terms of service | Assane Diallo",
+      description:
+        "How setup, monthly billing, cancelling and refunds work when you hire me for your Google profile or website. Plain language, no long contract.",
+    },
+    h1: "Terms of service",
+    lead: "The rules for working together, in plain language. Paying an invoice or a payment link from me means you agree to them.",
+    updated: "Last updated",
+    sections: [
+      {
+        h2: "What you get",
+        paragraphs: [
+          "Your package and its price are the ones on your quote, invoice or payment link. Every package has a setup, paid once, and a monthly part (updates and a report) that is included in it.",
+          `I usually finish the setup ${pricing.setupWeeks} weeks after I have what I need from you.`,
+        ],
+      },
+      {
+        h2: "Paying",
+        paragraphs: [
+          "You pay the setup and the first month together, before I start. After that, the monthly price is charged to the same card or bank account at the start of each month, and Stripe emails you a receipt.",
+          "Prices don't include sales tax. When tax is due, it's added on top and shown on the invoice.",
+          "If a payment fails, Stripe tries again for up to 2 weeks. If it still fails, the subscription ends and the monthly work stops.",
+          "If I change my prices, I'll tell you at least 30 days before. Founding clients keep their founding price.",
+        ],
+      },
+      {
+        h2: "Cancelling",
+        paragraphs: [
+          "There's no long contract. Cancel anytime with the link in your Stripe emails, or just tell me. Cancelling takes effect at the end of the month you've already paid for, and I keep working until then.",
+        ],
+      },
+      {
+        h2: "Refunds",
+        paragraphs: [
+          "Setup: a full refund if you cancel before I start the work. I'll tell you on WhatsApp or by email the day I start. Once I've started, the setup isn't refunded, because that work is done up front.",
+          "Monthly: no refund for a month that has already started, unless we agree otherwise.",
+          "If I stop the work myself before the setup is finished, I refund the part I haven't done.",
+        ],
+      },
+      {
+        h2: "What I need from you",
+        paragraphs: [
+          `Access to your Google profile and to the other tools the work needs (such as Google Search Console, or your website for ${names.website}), your hours, prices and photos, and your OK on the wording. I can only go as fast as I get these.`,
+          "If I'm waiting on you for more than 60 days, I finish what I can and the setup counts as done. The monthly part keeps running until you cancel.",
+          "You're responsible for the information you give me being true, and for having the right to use the photos and logos you send.",
+        ],
+      },
+      {
+        h2: "Your accounts stay yours",
+        paragraphs: [
+          "Your Google profile, your Search Console and analytics accounts, your domain, your website hosting and any other account stay in your name. You pay for the domain and hosting directly: they're not part of my prices. I'm added as a manager, never as the owner, and I never need your passwords.",
+          "When we stop working together, just remove me from your accounts. Everything I made for you and you paid for (website, pages, text) is yours to keep.",
+        ],
+      },
+      {
+        h2: "No ranking guarantees",
+        paragraphs: [
+          "Google decides rankings, and it can change how search works or suspend a profile at any time. I don't guarantee a ranking, a position or a timeline: SEO usually takes months. What I promise is to do the work in your package and to show you what changed in the monthly report.",
+        ],
+      },
+      {
+        h2: "Sharing your results",
+        paragraphs: [
+          "I only publish your business name, results, screenshots or words with your OK in writing (a WhatsApp message counts).",
+        ],
+      },
+      {
+        h2: "Responsibility",
+        paragraphs: [
+          "If something goes wrong because of my work, my responsibility is limited to what you paid me in the 12 months before. I'm not responsible for lost sales, or for decisions made by Google or other platforms.",
+        ],
+      },
+      {
+        h2: "Everything else",
+        paragraphs: [
+          "If there's a problem, talk to me first: most things can be fixed in a message, and it's faster than a dispute with your bank.",
+          "These terms follow Texas law. If I change them, I'll tell current clients by email before the change applies. The French version is a translation: if the two differ, the English one applies.",
+        ],
+      },
+    ] as { h2: string; paragraphs: string[] }[],
+    contact: {
+      h2: "Questions",
+      body: "Ask me before you pay, or anytime after.",
+      whatsappMessage: "Hi Assane, a question about your terms: ",
     },
   },
   form: {

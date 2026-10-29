@@ -78,7 +78,8 @@ to the same card automatically. Tested end to end in test mode on 2026-10-28.
      client has to pay a new emailed invoice every month.
    - Payment methods: card and US bank account (ACH).
    - Automatic tax: on. The customer needs a billing address.
-   - Footer: "Monthly part includes updates and a report. Cancel anytime."
+   - Footer: "Monthly part includes updates and a report. Cancel anytime." followed by the
+     terms and privacy links (the account's default invoice footer, see One-time settings).
 3. Stripe emails one invoice with both lines (e.g. $300 setup + $79 first month = $379). The
    client pays on Stripe's invoice page.
 4. Once it's paid, start the 1–2 week setup. Then open the subscription and change the payment
@@ -128,6 +129,18 @@ these settings.
       address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
       Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
       sending from our own domain needs DNS records (Cloudflare, owner's approval).
+- [ ] **Terms and privacy links**, once `/terms/` is live (Dashboard only: the API can't edit
+      the account's own public details):
+      - **Settings → Business → Public details**: terms of service URL
+        `https://assane-diallo.com/terms/`, privacy policy URL `https://assane-diallo.com/privacy/`.
+        Stripe's checkout pages link to both.
+      - **Settings → Billing → Invoices → Default footer**: "Terms:
+        https://assane-diallo.com/terms/ · Privacy: https://assane-diallo.com/privacy/".
+      - The four payment links: `consent_collection.terms_of_service = required` (a checkbox the
+        client must tick) and the same footer in `subscription_data.invoice_settings.footer`.
+        Stripe refuses the checkbox until the terms URL is set in Public details.
+      - When the terms change: update the "Last updated" date and email current clients before
+        the change applies (the terms promise it).
 - [x] **Settings → Business → Customer emails**: receipts on for successful payments and
       refunds.
 - [x] **Settings → Billing → Customer portal** (live): cancel at period end with a reason,

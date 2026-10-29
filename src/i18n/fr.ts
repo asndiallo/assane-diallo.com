@@ -47,6 +47,7 @@ export const fr: Dictionary = {
       "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis, en particulier les entreprises africaines.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
+    terms: "Conditions",
     social: "Suivre sur les réseaux sociaux",
     languages: "English et français.",
     groups: {
@@ -304,7 +305,7 @@ export const fr: Dictionary = {
     meta: {
       title: "Confidentialité | Assane Diallo",
       description:
-        "Ce que ce site collecte (pas de cookies, pas de publicité) et ce que je fais de vos informations quand vous m'écrivez ou réservez un bilan gratuit.",
+        "Ce que ce site collecte (pas de cookies, pas de publicité) et ce que je fais de vos informations quand vous m'écrivez, réservez un bilan ou m'engagez.",
     },
     h1: "Confidentialité",
     lead: "Pas de cookies, pas de publicité, pas de suivi d'un site à l'autre. Quand vous me contactez, j'utilise vos informations uniquement pour vous répondre et, si nous travaillons ensemble, pour faire le travail.",
@@ -337,13 +338,20 @@ export const fr: Dictionary = {
         body: "votre nom, votre entreprise, le moyen de vous répondre et votre message, que me transmet un service de formulaires.",
       },
     },
+    work: {
+      h2: "Quand vous faites appel à moi",
+      paragraphs: [
+        `La facturation passe par Stripe. Sur une facture ou un lien de paiement, vous indiquez votre nom, le nom de votre entreprise, votre e-mail, votre téléphone et votre adresse de facturation. Stripe utilise l'adresse pour calculer la taxe de vente (sales tax). Les informations de carte et de compte bancaire vont uniquement à Stripe${nb}: je ne les vois jamais.`,
+        `Pour faire le travail, je suis ajouté comme gestionnaire des comptes nécessaires${nb}: votre fiche Google, et des outils comme Google Search Console (les recherches qui amènent les gens sur votre site) ou les statistiques de votre site. Je vois ce que ces comptes affichent, comme vos statistiques et vos avis, et je ne m'en sers que pour votre travail et votre rapport mensuel.`,
+      ],
+    },
     use: {
       h2: "Ce que j'en fais",
       body: "Uniquement vous répondre, préparer votre bilan gratuit et, si vous faites appel à moi, faire le travail et le facturer. Je ne vends pas vos informations, je ne les partage pas à des fins publicitaires et je ne vous inscris à aucune liste de diffusion.",
     },
     keep: {
       h2: "Combien de temps je les garde",
-      body: "Tant que nous échangeons ou travaillons ensemble. Si nous ne travaillons finalement pas ensemble, je supprime nos messages et vos informations dans les 12 mois suivant notre dernier échange. Pour mes clients, je garde ce qu'exigent le travail et mes obligations fiscales.",
+      body: `Tant que nous échangeons ou travaillons ensemble. Si nous ne travaillons finalement pas ensemble, je supprime nos messages et vos informations dans les 12 mois suivant notre dernier échange. Pour mes clients, je garde ce dont le travail a besoin, ainsi que les factures et les données de facturation aussi longtemps que la loi fiscale l'exige (au Texas, au moins 4${nb}ans).`,
     },
     rights: {
       h2: "Consulter, corriger ou supprimer vos informations",
@@ -353,6 +361,93 @@ export const fr: Dictionary = {
     services: {
       h2: "Services utilisés",
       intro: `Chacun a sa propre politique de confidentialité${nb}:`,
+    },
+  },
+  terms: {
+    meta: {
+      title: "Conditions de service | Assane Diallo",
+      description:
+        "Mise en place, paiement mensuel, résiliation et remboursements quand vous faites appel à moi pour votre fiche Google ou votre site. Sans long contrat.",
+    },
+    h1: "Conditions de service",
+    lead: "Les règles pour travailler ensemble, en termes simples. Payer une facture ou un lien de paiement de ma part signifie que vous les acceptez.",
+    updated: "Dernière mise à jour",
+    sections: [
+      {
+        h2: "Ce que vous obtenez",
+        paragraphs: [
+          "Votre offre et son prix sont ceux de votre devis, de votre facture ou de votre lien de paiement. Chaque offre comprend une mise en place, payée une seule fois, et une partie mensuelle (mises à jour et rapport) incluse dans l'offre.",
+          `Je termine en général la mise en place ${pricing.setupWeeks}${nb}semaines après avoir reçu ce dont j'ai besoin de votre part.`,
+        ],
+      },
+      {
+        h2: "Paiement",
+        paragraphs: [
+          "Vous payez la mise en place et le premier mois ensemble, avant que je commence. Ensuite, le prix mensuel est prélevé sur la même carte ou le même compte bancaire au début de chaque mois, et Stripe vous envoie un reçu par e-mail.",
+          "Les prix ne comprennent pas la taxe de vente (sales tax). Quand elle est due, elle s'ajoute au prix et figure sur la facture.",
+          `Si un paiement échoue, Stripe réessaie pendant 2${nb}semaines au plus. S'il échoue toujours, l'abonnement prend fin et le travail mensuel s'arrête.`,
+          `Si je change mes prix, je vous préviens au moins 30${nb}jours avant. Les premiers clients gardent leur prix de lancement.`,
+        ],
+      },
+      {
+        h2: "Résiliation",
+        paragraphs: [
+          "Pas de long contrat. Résiliez quand vous voulez avec le lien de vos e-mails Stripe, ou dites-le-moi simplement. La résiliation prend effet à la fin du mois déjà payé, et je continue le travail jusque-là.",
+        ],
+      },
+      {
+        h2: "Remboursements",
+        paragraphs: [
+          `Mise en place${nb}: remboursement complet si vous annulez avant que je commence le travail. Je vous préviens sur WhatsApp ou par e-mail le jour où je commence. Une fois le travail commencé, la mise en place n'est pas remboursée, car ce travail se fait au début.`,
+          `Mensuel${nb}: pas de remboursement d'un mois déjà commencé, sauf accord entre nous.`,
+          "Si j'arrête moi-même le travail avant la fin de la mise en place, je rembourse la partie non faite.",
+        ],
+      },
+      {
+        h2: "Ce dont j'ai besoin de votre part",
+        paragraphs: [
+          `L'accès à votre fiche Google et aux autres outils nécessaires (comme Google Search Console, ou votre site pour l'offre ${names.website}), vos horaires, vos prix et vos photos, et votre accord sur les textes. Je ne peux pas avancer plus vite que je ne les reçois.`,
+          `Si j'attends après vous pendant plus de 60${nb}jours, je termine ce que je peux et la mise en place est considérée comme terminée. La partie mensuelle continue jusqu'à ce que vous résiliiez.`,
+          "Vous êtes responsable de l'exactitude des informations que vous me donnez, et d'avoir le droit d'utiliser les photos et logos que vous m'envoyez.",
+        ],
+      },
+      {
+        h2: "Vos comptes restent à vous",
+        paragraphs: [
+          `Votre fiche Google, vos comptes Search Console et de statistiques, votre nom de domaine, l'hébergement de votre site et tout autre compte restent à votre nom. Vous payez le domaine et l'hébergement directement${nb}: ils ne font pas partie de mes prix. Je suis ajouté comme gestionnaire, jamais comme propriétaire, et je n'ai jamais besoin de vos mots de passe.`,
+          "Quand nous arrêtons de travailler ensemble, il vous suffit de me retirer de vos comptes. Tout ce que j'ai fait pour vous et que vous avez payé (site, pages, textes) vous appartient.",
+        ],
+      },
+      {
+        h2: "Aucune garantie de classement",
+        paragraphs: [
+          `C'est Google qui décide des classements, et il peut changer le fonctionnement de la recherche ou suspendre une fiche à tout moment. Je ne garantis ni un classement, ni une position, ni un délai${nb}: le référencement prend en général plusieurs mois. Ce que je promets, c'est de faire le travail prévu dans votre offre et de vous montrer ce qui a changé dans le rapport mensuel.`,
+        ],
+      },
+      {
+        h2: "Partager vos résultats",
+        paragraphs: [
+          "Je ne publie le nom de votre entreprise, vos résultats, des captures d'écran ou vos mots qu'avec votre accord écrit (un message WhatsApp suffit).",
+        ],
+      },
+      {
+        h2: "Responsabilité",
+        paragraphs: [
+          `Si un problème vient de mon travail, ma responsabilité se limite à ce que vous m'avez payé pendant les 12${nb}mois précédents. Je ne suis pas responsable des ventes perdues, ni des décisions de Google ou d'autres plateformes.`,
+        ],
+      },
+      {
+        h2: "Le reste",
+        paragraphs: [
+          `En cas de problème, parlez-m'en d'abord${nb}: la plupart des choses se règlent en un message, et c'est plus rapide qu'une contestation auprès de votre banque.`,
+          `Ces conditions relèvent du droit du Texas. Si je les modifie, je préviens mes clients actuels par e-mail avant que le changement s'applique. La version française est une traduction${nb}: en cas de différence, la version anglaise s'applique.`,
+        ],
+      },
+    ],
+    contact: {
+      h2: `Des questions${nb}?`,
+      body: "Posez-les-moi avant de payer, ou à tout moment après.",
+      whatsappMessage: `Bonjour Assane, une question sur vos conditions${nb}: `,
     },
   },
   form: {
