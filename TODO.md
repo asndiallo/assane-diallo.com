@@ -58,7 +58,7 @@ Everything I wrote that isn't word-for-word from your `site-copy.md`:
 ### Broader positioning (2026-10-27, PLAN.md D21–D23)
 
 Everything below is my draft. Approve or change it before merging:
-- [ ] **Positioning line** (EN and FR): "small businesses in the US, with a focus on African-owned businesses" on home, about, client work, footer, OG image
+- [ ] **Positioning line** (EN and FR): home and footer say "small businesses in the US"; the African-owned focus stays on About, the braiding/restaurant pages and social (PLAN.md D24). Approve the wording.
 - [ ] **About**, new paragraph: "My focus is African-owned businesses. I share the culture, so we start on the same page." (no birthplace claim)
 - [ ] **New prices**: Get Found $300 setup (standard $450), Get Booked $650 (standard $1,000); monthly $79 / $129 (standard $99 / $179), included in the package, cancel anytime. Check the FAQ, pricing notes and step 3 wording.
 - [ ] **2 new business-type pages**, EN and FR (`src/content/verticals/{en,fr}/`): home services, auto repair. Check each "What I won't do" promise is one you'll keep.
