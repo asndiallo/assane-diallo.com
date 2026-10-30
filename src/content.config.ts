@@ -30,6 +30,8 @@ const work = defineCollection({
         consent: z.literal(true),
         /** Any personal relationship with the client, shown on the card and the page. */
         disclosure: z.string().optional(),
+        /** What the numbers can't show (no baseline, no attribution), shown wherever they are. */
+        resultsNote: z.string().optional(),
         website: z.url().optional(),
         services: z.array(z.string()).min(1),
         /** Only numbers the owner approved, each with where it came from. */

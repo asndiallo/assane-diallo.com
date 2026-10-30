@@ -66,7 +66,7 @@ export const en = {
     hero: {
       h1: "Get found on Google. Get more calls and bookings.",
       subhead:
-        "I help small businesses across the US show up when customers search nearby, and make it easy for them to call, book, or visit. My focus: African-owned businesses.",
+        "I help small businesses across the US, especially African-owned ones, look right on Google: correct hours, real photos, a booking link that works. You run your business. I handle the Google part.",
       languages: "English et français.",
     },
     listing: {
@@ -132,11 +132,11 @@ export const en = {
       items: [
         {
           title: "Free check-up (15 minutes).",
-          body: "On WhatsApp or by phone, I look at how your business appears on Google and tell you the top three fixes. No obligation.",
+          body: "On WhatsApp or by phone, I look at how your business shows up on Google and tell you the top three fixes, even if you don't hire me.",
         },
         {
           title: "Setup.",
-          body: `I do the work. You approve your photos, prices, and wording. Usually ${pricing.setupWeeks} weeks.`,
+          body: `I do the work. You approve your photos, prices, and wording before anything goes live. Usually ${pricing.setupWeeks} weeks. If it's going to take longer, I'll tell you before, not after.`,
         },
         {
           title: "Grow.",
@@ -179,7 +179,7 @@ export const en = {
     },
     about: {
       h2: "Who I am",
-      body: "I'm Assane. I'm a software engineer with a Master's in Data Engineering & AI. I built and grew an SEO-driven ecommerce store to about 800 pages with no ad spend. I speak French and English, and I build things that bring customers to small businesses.",
+      body: "I'm Assane. My cousin runs a braiding salon in Savannah, and her Google profile had never been claimed. Fixing it and building her website is how this started. I'm a software engineer with a Master's in Data Engineering & AI, and I built and grew an SEO-driven ecommerce store to about 800 pages with no ad spend. I speak French and English, and I work with owners across the US, mostly over WhatsApp.",
       more: "More about me",
     },
     faq: {

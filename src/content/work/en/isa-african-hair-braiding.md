@@ -2,10 +2,11 @@
 business: "Isa's African Hair Braiding"
 location: Savannah, GA
 vertical: braiding-salons
-summary: "Claimed and fixed the salon's Google profile, built a fast website, and set up free booking alerts. 450 calls from Google in 3 months."
-highlight: "450 calls from Google in 3 months."
+summary: "Claimed and fixed the salon's Google profile, built a fast website, and set up free booking alerts. 450 calls from her Google profile in 3 months."
+highlight: "450 calls from her Google profile in 3 months."
 consent: true
 disclosure: "Disclosure: Isa, the owner, is my cousin."
+resultsNote: 'Her Google profile had never been claimed, so there''s no "before" number to compare. These are totals for the last 3 months, not a before-and-after.'
 website: https://isabraiding.com/
 services:
   - Claimed and updated the Google Business Profile

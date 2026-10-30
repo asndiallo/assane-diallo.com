@@ -24,6 +24,11 @@ merge date.
 
 ### Changed
 
+- Home copy, more personal (English and French): the hero names what goes wrong on Google
+  (hours, photos, booking link), the check-up gives the top three fixes even if you don't hire me,
+  setup promises a heads-up before any delay, and "Who I am" opens with how the work started.
+- Isa's case study: the headline reads "calls from her Google profile" (not "from Google"), and a
+  new `resultsNote` field says, wherever the numbers appear, that there's no "before" to compare.
 - Biome 2.6 formats Markdown too, with frontmatter parsing on (without it, frontmatter is read as
   Markdown and rewritten). One-time reformat of the docs and content; the built site is unchanged.
   `pnpm-lock.yaml` is excluded as a generated file.
