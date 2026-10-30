@@ -71,9 +71,9 @@ export const fr: Dictionary = {
     },
     listing: {
       caption: `Illustration${nb}: à quoi peut ressembler votre entreprise sur Google quand votre fiche est complète.`,
-      query: "braiding near me",
+      query: "plumber near me",
       name: "Le nom de votre entreprise",
-      category: "Salon de tresses",
+      category: "Plombier",
       open: "Ouvert",
       closes: `Ferme à 19${nb}h`,
       prices: "Prix affichés",

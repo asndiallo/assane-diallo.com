@@ -70,9 +70,9 @@ export const en = {
     },
     listing: {
       caption: "Illustration: how your business can look on Google when your profile is complete.",
-      query: "braiding near me",
+      query: "plumber near me",
       name: "Your business name",
-      category: "Hair braiding salon",
+      category: "Plumber",
       open: "Open now",
       closes: "Closes 7 PM",
       prices: "Prices listed",

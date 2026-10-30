@@ -27,6 +27,7 @@ merge date.
 - Positioning: the home page (meta description, hero, "Who this is for") and the footer say "small
   businesses in the US" without naming a community, in English and French. The African-owned
   focus stays on About, the braiding and restaurant pages, and Isa's case study (PLAN.md D24).
+  The hero's example listing is a plumber (was a braiding salon).
 - Home copy, more personal (English and French): the hero names what goes wrong on Google
   (hours, photos, booking link), the check-up gives the top three fixes even if you don't hire me,
   setup promises a heads-up before any delay, and "Who I am" opens with how the work started.
