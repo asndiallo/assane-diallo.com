@@ -66,7 +66,7 @@ export const fr: Dictionary = {
     },
     hero: {
       h1: "Soyez visible sur Google. Recevez plus d'appels et de réservations.",
-      subhead: `J'aide les petites entreprises aux États-Unis à apparaître quand les clients cherchent près d'elles, et à faciliter les appels, les réservations et les visites. Ma spécialité${nb}: les entreprises africaines.`,
+      subhead: `J'aide les petites entreprises aux États-Unis, surtout africaines, à être bien présentées sur Google${nb}: les bons horaires, de vraies photos, un lien de réservation qui marche. Vous gérez votre entreprise. Je m'occupe de Google.`,
       languages: "English et français.",
     },
     listing: {
@@ -132,11 +132,11 @@ export const fr: Dictionary = {
       items: [
         {
           title: "Bilan gratuit (15 minutes).",
-          body: "Sur WhatsApp ou par téléphone, je regarde comment votre entreprise apparaît sur Google et je vous donne les trois corrections prioritaires. Sans engagement.",
+          body: "Sur WhatsApp ou par téléphone, je regarde comment votre entreprise apparaît sur Google et je vous donne les trois corrections prioritaires, même si vous ne travaillez pas avec moi ensuite.",
         },
         {
           title: "Mise en place.",
-          body: `Je fais le travail. Vous validez vos photos, vos prix et les textes. En général ${pricing.setupWeeks}${nb}semaines.`,
+          body: `Je fais le travail. Vous validez vos photos, vos prix et les textes avant que quoi que ce soit soit en ligne. En général ${pricing.setupWeeks}${nb}semaines. Si ça doit prendre plus longtemps, je vous préviens avant, pas après.`,
         },
         {
           title: "Croissance.",
@@ -179,7 +179,7 @@ export const fr: Dictionary = {
     },
     about: {
       h2: "Qui je suis",
-      body: "Je m'appelle Assane. Je suis ingénieur logiciel, avec un master en Data Engineering et IA. J'ai créé et développé une boutique en ligne d'environ 800 pages grâce au référencement naturel, sans publicité payante. Je parle français et anglais, et je construis des outils qui amènent des clients aux petites entreprises.",
+      body: "Je m'appelle Assane. Ma cousine tient un salon de tresses à Savannah, et sa fiche Google n'avait jamais été revendiquée. Tout a commencé quand je l'ai corrigée et que j'ai créé son site. Je suis ingénieur logiciel, avec un master en Data Engineering et IA, et j'ai créé et développé une boutique en ligne d'environ 800 pages grâce au référencement naturel, sans publicité payante. Je parle français et anglais, et je travaille avec des entreprises partout aux États-Unis, surtout sur WhatsApp.",
       more: "En savoir plus sur moi",
     },
     faq: {
