@@ -44,7 +44,7 @@ export const fr: Dictionary = {
   },
   footer: {
     tagline:
-      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis, en particulier les entreprises africaines.",
+      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
     terms: "Conditions",
@@ -62,18 +62,18 @@ export const fr: Dictionary = {
     meta: {
       title: "SEO local pour petites entreprises aux USA | Assane Diallo",
       description:
-        "J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan gratuit.",
+        "J'aide les petites entreprises aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan gratuit.",
     },
     hero: {
       h1: "Soyez visible sur Google. Recevez plus d'appels et de réservations.",
-      subhead: `J'aide les petites entreprises aux États-Unis, surtout africaines, à être bien présentées sur Google${nb}: les bons horaires, de vraies photos, un lien de réservation qui marche. Vous gérez votre entreprise. Je m'occupe de Google.`,
+      subhead: `J'aide les petites entreprises aux États-Unis à être bien présentées sur Google${nb}: les bons horaires, de vraies photos, un lien de réservation qui marche. Vous gérez votre entreprise. Je m'occupe de Google.`,
       languages: "English et français.",
     },
     listing: {
       caption: `Illustration${nb}: à quoi peut ressembler votre entreprise sur Google quand votre fiche est complète.`,
-      query: "braiding near me",
+      query: "plumber near me",
       name: "Le nom de votre entreprise",
-      category: "Salon de tresses",
+      category: "Plombier",
       open: "Ouvert",
       closes: `Ferme à 19${nb}h`,
       prices: "Prix affichés",
@@ -82,8 +82,7 @@ export const fr: Dictionary = {
     },
     whoFor: {
       h2: `Pour qui${nb}?`,
-      intro:
-        "Les petites entreprises aux États-Unis qui servent une clientèle locale, en particulier les entreprises africaines.",
+      intro: "Les petites entreprises aux États-Unis qui servent une clientèle locale.",
       points: [
         "Salons, restaurants, artisans, garages et boutiques dont les clients viennent de leur ville.",
         "Les propriétaires trop occupés par leur activité pour apprendre Google.",

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Offer site for Assane Diallo: local SEO and Google Business Profile packages for small businesses in the US, with a focus on African-owned businesses. It's a credibility page that turns a referral or a Google check into a WhatsApp conversation.
+Offer site for Assane Diallo: local SEO and Google Business Profile packages for small businesses in the US. The home page and footer name no community; the African-owned focus lives on About, the braiding and restaurant pages, and Isa's case study (PLAN.md D24). It's a credibility page that turns a referral or a Google check into a WhatsApp conversation.
 
 Astro 7 (static) · Tailwind 4 · TypeScript strict · pnpm · Cloudflare Workers static assets, deployed by GitHub Actions.
 

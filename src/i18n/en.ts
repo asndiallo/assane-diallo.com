@@ -42,8 +42,7 @@ export const en = {
     email: "Email me",
   },
   footer: {
-    tagline:
-      "Local SEO and Google Business Profile setup for small businesses in the US, with a focus on African-owned businesses.",
+    tagline: "Local SEO and Google Business Profile setup for small businesses in the US.",
     engineering: "My software engineering work",
     privacy: "Privacy",
     terms: "Terms",
@@ -61,19 +60,19 @@ export const en = {
     meta: {
       title: "Local SEO for small businesses in the US | Assane Diallo",
       description:
-        "I help small businesses in the US, especially African-owned ones, get found on Google and win more calls and bookings. Free check-up. English & French.",
+        "I help small businesses in the US get found on Google and win more calls and bookings. Free check-up. English & French.",
     },
     hero: {
       h1: "Get found on Google. Get more calls and bookings.",
       subhead:
-        "I help small businesses across the US, especially African-owned ones, look right on Google: correct hours, real photos, a booking link that works. You run your business. I handle the Google part.",
+        "I help small businesses across the US look right on Google: correct hours, real photos, a booking link that works. You run your business. I handle the Google part.",
       languages: "English et français.",
     },
     listing: {
       caption: "Illustration: how your business can look on Google when your profile is complete.",
-      query: "braiding near me",
+      query: "plumber near me",
       name: "Your business name",
-      category: "Hair braiding salon",
+      category: "Plumber",
       open: "Open now",
       closes: "Closes 7 PM",
       prices: "Prices listed",
@@ -82,8 +81,7 @@ export const en = {
     },
     whoFor: {
       h2: "Who this is for",
-      intro:
-        "Small businesses in the US that serve customers nearby, with a focus on African-owned businesses.",
+      intro: "Small businesses in the US that serve customers nearby.",
       points: [
         "Salons, restaurants, home services, garages, and shops that get customers from their own city.",
         "Owners who are busy running the business and don't have time to learn Google.",
