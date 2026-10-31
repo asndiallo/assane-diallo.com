@@ -171,7 +171,7 @@ export const en = {
       monthlyItems: {
         posts: `${posts} Google posts a month`,
         reviewReplies: `Replies to every review within ${hours} hours`,
-        profileUpkeep: "Hours, photos and Q&A kept right",
+        profileUpkeep: "Hours, photos and services kept right",
         editWatch: "Wrong edits caught and fixed",
         listingsCheck: "Apple Maps, Bing and Yelp checked quarterly",
         report: "A report in plain language",
@@ -255,7 +255,7 @@ export const en = {
         },
         {
           q: "What do you do every month?",
-          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, your hours, photos and Q&A kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
+          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, your hours, photos and services kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
         },
         {
           q: "If I cancel, do I keep my website?",

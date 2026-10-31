@@ -172,7 +172,7 @@ export const fr: Dictionary = {
       monthlyItems: {
         posts: `${posts}${nb}publications Google par mois`,
         reviewReplies: `Une réponse à chaque avis sous ${hours}${nb}heures`,
-        profileUpkeep: "Horaires, photos et questions-réponses à jour",
+        profileUpkeep: "Horaires, photos et services à jour",
         editWatch: "Modifications erronées repérées et corrigées",
         listingsCheck: "Apple Plans, Bing et Yelp vérifiés chaque trimestre",
         report: "Un rapport en langage clair",
@@ -256,7 +256,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Que faites-vous chaque mois${nb}?`,
-          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, vos horaires, photos et questions-réponses tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
+          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
         },
         {
           q: `Si je résilie, est-ce que je garde mon site${nb}?`,

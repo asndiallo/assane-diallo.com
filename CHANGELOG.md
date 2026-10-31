@@ -24,6 +24,8 @@ merge date.
 
 ### Changed
 
+- Monthly profile upkeep now reads "hours, photos and services kept right" (EN and FR,
+  prices and FAQ): Google retired the Business Profile Q&A section, so it's no longer promised.
 - Packages: each monthly price now lists the work it pays for (Google posts, review replies,
   profile upkeep, Apple Maps/Bing/Yelp checks, the report; Get Booked adds hosting, monthly
   edits, a quarterly local page, Search Console, button clicks in the report and a quarterly
