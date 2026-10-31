@@ -478,6 +478,16 @@ export const en = {
         ],
       },
       {
+        h2: "If Google suspends your profile",
+        paragraphs: [
+          "Google sometimes suspends a Business Profile, often without saying why. If it happens, I tell you the same day, stop all changes to the profile, and prepare and file the appeal with you. The appeal is included in your package.",
+          "While the profile is suspended, you only pay for work I can still do. If something I did caused the suspension, the monthly price is paused until your profile is back, whatever your package.",
+          `If it's a Google error or the cause isn't clear: with ${names.profile}, the monthly price is paused from the next bill, because almost all of that work is on the profile. With ${names.website}, it keeps running, because the work on your website goes on.`,
+          `If the suspension comes from something Google's rules don't allow (for example an address that doesn't qualify, extra keywords in the business name, or paid reviews), I file the appeal once that's fixed. Meanwhile, the monthly price is paused with ${names.profile} and keeps running with ${names.website}. If you'd rather not fix it, we stop working together, as described under “Cancelling”.`,
+          "I tell you in writing which case applies and why. Payments restart the day your profile is back.",
+        ],
+      },
+      {
         h2: "Sharing your results",
         paragraphs: [
           "I only publish your business name, results, screenshots or words with your OK in writing (a WhatsApp message counts).",
