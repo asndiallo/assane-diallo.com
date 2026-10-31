@@ -172,7 +172,7 @@ export const fr: Dictionary = {
       monthlyItems: {
         posts: `${posts}${nb}publications Google par mois`,
         reviewReplies: `Une réponse à chaque avis sous ${hours}${nb}heures`,
-        profileUpkeep: "Horaires, photos et questions-réponses à jour",
+        profileUpkeep: "Horaires, photos et services à jour",
         editWatch: "Modifications erronées repérées et corrigées",
         listingsCheck: "Apple Plans, Bing et Yelp vérifiés chaque trimestre",
         report: "Un rapport en langage clair",
@@ -198,7 +198,7 @@ export const fr: Dictionary = {
         },
         {
           title: "Votre site reste à vous",
-          body: "Si vous partez, vous gardez votre domaine et votre site. Je transfère le site sur votre propre compte gratuit.",
+          body: "Si vous partez, vous gardez votre domaine et votre site. Le site tourne déjà sur un compte gratuit à votre nom.",
         },
       ],
       tiers: {
@@ -232,7 +232,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Est-ce que je garde le contrôle de mes comptes${nb}?`,
-          a: "Oui. Votre fiche Google et votre nom de domaine restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment. Si j'héberge votre site, vous l'emportez quand vous partez.",
+          a: "Oui. Votre fiche Google, votre nom de domaine et le compte d'hébergement de votre site restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment.",
         },
         {
           q: `De quoi avez-vous besoin de ma part${nb}?`,
@@ -256,11 +256,11 @@ export const fr: Dictionary = {
         },
         {
           q: `Que faites-vous chaque mois${nb}?`,
-          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, vos horaires, photos et questions-réponses tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
+          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
         },
         {
           q: `Si je résilie, est-ce que je garde mon site${nb}?`,
-          a: `Oui. Votre nom de domaine est toujours à votre nom. Le site reste en ligne ${pricing.handoverDays}${nb}jours après votre dernier mois payé${nb}: je vous envoie tous ses fichiers et je le transfère sur un compte d'hébergement gratuit à votre nom, sans frais. Si vous aviez déjà votre propre hébergeur, rien ne change.`,
+          a: `Oui. Votre nom de domaine et votre compte d'hébergement sont toujours à votre nom${nb}: le site reste en ligne et rien n'a besoin d'être transféré. Dans les ${pricing.handoverDays}${nb}jours qui suivent votre dernier mois payé, je vous envoie tous ses fichiers et je retire mon accès. Si vous aviez déjà votre propre hébergeur, rien ne change.`,
         },
         {
           q: `Travaillez-vous avec des entreprises hors de votre ville${nb}?`,
@@ -435,7 +435,7 @@ export const fr: Dictionary = {
         paragraphs: [
           "Vous payez la mise en place et le premier mois ensemble, avant que je commence. Ensuite, le prix mensuel est prélevé sur la même carte ou le même compte bancaire au début de chaque mois, et Stripe vous envoie un reçu par e-mail.",
           "Les prix ne comprennent pas la taxe de vente (sales tax). Quand elle est due, elle s'ajoute au prix et figure sur la facture.",
-          `Si un paiement échoue, Stripe réessaie pendant 2${nb}semaines au plus. S'il échoue toujours, l'abonnement prend fin, le travail mensuel s'arrête et un site que j'héberge vous est transféré comme indiqué dans «${nb}Vos comptes et votre site restent à vous${nb}».`,
+          `Si un paiement échoue, Stripe réessaie pendant 2${nb}semaines au plus. S'il échoue toujours, l'abonnement prend fin, le travail mensuel s'arrête et un site que j'ai créé reste à vous, comme indiqué dans «${nb}Vos comptes et votre site restent à vous${nb}».`,
           `Si je change mes prix, je vous préviens au moins 30${nb}jours avant. Les premiers clients gardent leur prix de lancement.`,
         ],
       },
@@ -465,9 +465,9 @@ export const fr: Dictionary = {
         h2: "Vos comptes et votre site restent à vous",
         paragraphs: [
           `Votre fiche Google, vos comptes Search Console et de statistiques, votre nom de domaine et tout autre compte restent à votre nom. Vous achetez et payez votre nom de domaine directement${nb}: il ne fait pas partie de mes prix. Je suis ajouté comme gestionnaire, jamais comme propriétaire, et je n'ai jamais besoin de vos mots de passe.`,
-          `Hébergement${nb}: pour un site que je crée avec ${names.website}, l'hébergement est compris dans le prix mensuel et se fait sur mon compte. Si vous avez déjà votre propre hébergeur, vous le gardez et le payez directement.`,
+          `Hébergement${nb}: un site que je crée avec ${names.website} tourne sur un compte d'hébergement gratuit à votre nom, où je suis ajouté comme administrateur. Le faire fonctionner (mises à jour, SSL, surveillance) est compris dans le prix mensuel. Si vous avez déjà votre propre hébergeur, vous le gardez et le payez directement.`,
           "Quand nous arrêtons de travailler ensemble, il vous suffit de me retirer de vos comptes. Tout ce que j'ai fait pour vous et que vous avez payé (site, pages, textes) vous appartient.",
-          `Un site que j'héberge reste en ligne ${pricing.handoverDays}${nb}jours après votre dernier mois payé. Pendant ce temps, je vous envoie tous ses fichiers et, si vous le souhaitez, je le transfère sur un compte d'hébergement gratuit à votre nom, sans frais. Ensuite, je le retire de mon compte.`,
+          `Quand la partie mensuelle prend fin, le site continue de tourner sur votre compte. Dans les ${pricing.handoverDays}${nb}jours, je vous envoie tous ses fichiers et je retire mon accès, sans frais.`,
         ],
       },
       {

@@ -80,7 +80,7 @@ export const pricing = {
   postsPerMonth: 2,
   reviewReplyHours: 48,
   requestReplyDays: 2,
-  /** After the last paid month, a site I host stays live this long while I move it to the client. */
+  /** Sites run on the client's own free hosting account; within this many days of the last paid month I send the files and remove my access. */
   handoverDays: 30,
   /** A Get Found client who upgrades within this many months gets that setup price off Get Booked's. */
   upgradeCreditMonths: 6,

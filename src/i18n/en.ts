@@ -171,7 +171,7 @@ export const en = {
       monthlyItems: {
         posts: `${posts} Google posts a month`,
         reviewReplies: `Replies to every review within ${hours} hours`,
-        profileUpkeep: "Hours, photos and Q&A kept right",
+        profileUpkeep: "Hours, photos and services kept right",
         editWatch: "Wrong edits caught and fixed",
         listingsCheck: "Apple Maps, Bing and Yelp checked quarterly",
         report: "A report in plain language",
@@ -197,7 +197,7 @@ export const en = {
         },
         {
           title: "Your site stays yours",
-          body: "If you leave, you keep your domain and website. I move the site to your own free account.",
+          body: "If you leave, you keep your domain and website. The site already runs on a free account in your name.",
         },
       ],
       tiers: {
@@ -231,7 +231,7 @@ export const en = {
         },
         {
           q: "Do I keep control of my accounts?",
-          a: "Yes. Your Google profile and domain stay in your name. I'm added as a manager, and you can remove me anytime. If I host your website, you take it with you when you leave.",
+          a: "Yes. Your Google profile, your domain and your website's hosting account stay in your name. I'm added as a manager, and you can remove me anytime.",
         },
         {
           q: "What do you need from me?",
@@ -255,11 +255,11 @@ export const en = {
         },
         {
           q: "What do you do every month?",
-          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, your hours, photos and Q&A kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
+          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, your hours, photos and services kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
         },
         {
           q: "If I cancel, do I keep my website?",
-          a: `Yes. Your domain is always in your name. The site stays live for ${pricing.handoverDays} days after your last paid month: I send you all its files and move it to a free hosting account in your name, at no cost. If you already had your own host, nothing needs to move.`,
+          a: `Yes. Your domain and your hosting account are always in your name, so the site stays live and nothing needs to move. Within ${pricing.handoverDays} days of your last paid month, I send you all its files and remove my access. If you already had your own host, nothing changes.`,
         },
         {
           q: "Do you work with businesses outside your city?",
@@ -436,7 +436,7 @@ export const en = {
         paragraphs: [
           "You pay the setup and the first month together, before I start. After that, the monthly price is charged to the same card or bank account at the start of each month, and Stripe emails you a receipt.",
           "Prices don't include sales tax. When tax is due, it's added on top and shown on the invoice.",
-          "If a payment fails, Stripe tries again for up to 2 weeks. If it still fails, the subscription ends, the monthly work stops, and a website I host is handed over as described under “Your accounts and your website stay yours”.",
+          "If a payment fails, Stripe tries again for up to 2 weeks. If it still fails, the subscription ends, the monthly work stops, and a website I built stays yours, as described under “Your accounts and your website stay yours”.",
           "If I change my prices, I'll tell you at least 30 days before. Founding clients keep their founding price.",
         ],
       },
@@ -466,9 +466,9 @@ export const en = {
         h2: "Your accounts and your website stay yours",
         paragraphs: [
           "Your Google profile, your Search Console and analytics accounts, your domain and any other account stay in your name. You buy your domain and pay for it directly: it's not part of my prices. I'm added as a manager, never as the owner, and I never need your passwords.",
-          `Hosting: for a website I build with ${names.website}, hosting is included in the monthly price and runs on my account. If you already have your own host, you keep it and pay for it directly.`,
+          `Hosting: a website I build with ${names.website} runs on a free hosting account in your name, where I'm added as an administrator. Keeping it running (updates, SSL, uptime) is included in the monthly price. If you already have your own host, you keep it and pay for it directly.`,
           "When we stop working together, just remove me from your accounts. Everything I made for you and you paid for (website, pages, text) is yours to keep.",
-          `A site I host stays live for ${pricing.handoverDays} days after your last paid month. In that time I send you all its files and, if you want, move it to a free hosting account in your name, at no cost. After that, I take it off my account.`,
+          `When the monthly part ends, the site keeps running on your account. Within ${pricing.handoverDays} days, I send you all its files and remove my access, at no cost.`,
         ],
       },
       {
