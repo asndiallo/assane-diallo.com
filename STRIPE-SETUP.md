@@ -54,6 +54,12 @@ work "not performed online" and points online work to Website Data Processing. T
 done online and delivered electronically. Switched on 2026-10-29; a test-mode calculation that day
 gave the same Texas tax for both ($6.60 per $100), so no client amount changed.
 
+Get Booked — monthly includes hosting since 2026-10-30 (PLAN.md D25) and keeps Website Data
+Processing: most of the monthly work is profile and site upkeep, and a product has one tax code.
+Stripe's Website Hosting (`txcd_10701100`) gives the same Texas tax: a test-mode calculation on
+2026-10-30 (Austin, TX) gave $6.60 per $100 for both. Revisit if another state registration
+starts, since states treat hosting differently. Include it in the accountant question.
+
 Texas taxes data processing and website design on 80% of the price (8.25% × 80% = 6.6%).
 For comparison (test mode, 2026-10-28), General ESS (`txcd_10000000`) gave $8.25 and
 Advertising Services (`txcd_20060002`) gave $0. Data processing is the cautious choice: if an

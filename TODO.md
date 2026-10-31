@@ -67,7 +67,7 @@ Everything below is my draft. Approve or change it before merging:
 - [ ] **Monthly scope and hosting (PLAN.md D25)**: check the monthly lists on both price cards, the new notes, the two new FAQ answers ("What do you do every month?", "If I cancel, do I keep my website?") and the terms changes (hosting, 30-day handover, upgrade credit, 2-business-day requests), EN and FR
 - [x] **Stripe catalog (PLAN.md D25)**: product descriptions and upgrade-credit coupons, live and test (2026-10-30)
 - [ ] **Upgrade flow**: run the Get Found → Get Booked upgrade once in test mode (STRIPE-SETUP.md) before the first real one
-- [ ] **Texas tax on Get Booked monthly**: it now includes hosting. Ask your accountant whether `txcd_10701300` still fits
+- [ ] **Accountant**: Get Booked monthly now includes hosting; kept on Website Data Processing (same Texas tax as Website Hosting, see STRIPE-SETUP.md). Confirm with the data-processing vs advertising question
 - [ ] **Client sites**: add click tracking for the call, WhatsApp and booking buttons (for the Get Booked report), and keep one private repo per client so a handover is one export
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
 
