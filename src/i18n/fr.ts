@@ -74,9 +74,9 @@ export const fr: Dictionary = {
       caption: `Illustration${nb}: à quoi peut ressembler votre entreprise sur Google quand votre fiche est complète.`,
       // The searches stay in English: US customers search in English.
       searches: [
-        { query: "plumber near me", category: "Plombier" },
+        { query: "hair salon near me", category: "Salon de coiffure" },
         { query: "auto repair near me", category: "Garage automobile" },
-        { query: "braiding salon near me", category: "Salon de tresses" },
+        { query: "plumber near me", category: "Plombier" },
         { query: "restaurant near me", category: "Restaurant" },
       ],
       name: "Le nom de votre entreprise",
