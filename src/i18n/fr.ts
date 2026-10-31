@@ -477,6 +477,16 @@ export const fr: Dictionary = {
         ],
       },
       {
+        h2: "Si Google suspend votre fiche",
+        paragraphs: [
+          "Google suspend parfois une fiche d'établissement, souvent sans dire pourquoi. Si cela arrive, je vous préviens le jour même, j'arrête toute modification de la fiche, et je prépare et dépose la demande de réexamen avec vous. Cette démarche est comprise dans votre formule.",
+          "Pendant la suspension, vous ne payez que le travail que je peux encore faire. Si la suspension vient de quelque chose que j'ai fait, le prix mensuel est suspendu jusqu'au retour de votre fiche, quelle que soit votre formule.",
+          `Si c'est une erreur de Google ou si la cause n'est pas claire${nb}: avec la formule ${names.profile}, le prix mensuel est suspendu à partir de la facture suivante, car presque tout ce travail se fait sur la fiche. Avec la formule ${names.website}, il continue, car le travail sur votre site continue.`,
+          `Si la suspension vient de quelque chose que les règles de Google n'autorisent pas (par exemple une adresse qui ne remplit pas les conditions, des mots-clés ajoutés au nom de l'établissement ou des avis payés), je dépose la demande une fois le problème corrigé. Entre-temps, le prix mensuel est suspendu avec la formule ${names.profile} et continue avec la formule ${names.website}. Si vous préférez ne pas corriger, nous arrêtons de travailler ensemble, comme indiqué dans «${nb}Résiliation${nb}».`,
+          "Je vous dis par écrit quel cas s'applique et pourquoi. Les paiements reprennent le jour où votre fiche revient.",
+        ],
+      },
+      {
         h2: "Partager vos résultats",
         paragraphs: [
           "Je ne publie le nom de votre entreprise, vos résultats, des captures d'écran ou vos mots qu'avec votre accord écrit (un message WhatsApp suffit).",
