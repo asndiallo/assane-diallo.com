@@ -9,63 +9,112 @@ interface Props {
 }
 const { t } = Astro.props;
 const { pricing: copy, services } = t.home;
+const check = "m5 12.5 4.5 4.5L19 7.5";
 ---
 
 <Section id="pricing" heading={copy.h2} band="wash">
   <p class="measure mt-4 text-lg">{copy.intro}</p>
   <div class="mt-10 grid gap-6 md:grid-cols-2">
     {
-      pricing.tiers.map((tier) => (
-        <article class="flex flex-col rounded-2xl border-2 border-ink bg-paper p-6 sm:p-8">
-          <h3 class="text-2xl">{copy.tiers[tier.id].name}</h3>
-          <p class="mt-0.5 font-semibold text-brand">{copy.tiers[tier.id].tagline}</p>
-          <p class="mt-2 text-muted">{copy.tiers[tier.id].summary}</p>
+      pricing.tiers.map((tier, i) => {
+        // A higher tier lists only what it adds to the one before it.
+        const prev = pricing.tiers[i - 1];
+        const prevName = prev ? copy.tiers[prev.id].name : "";
+        const setup = tier.includes
+          .filter((id) => !prev?.includes.some((p) => p === id))
+          .map((id) => services.items[id].title.replace(/\.$/, ""));
+        const monthly = tier.monthly
+          .filter((id) => !prev?.monthly.some((p) => p === id))
+          .map((id) => copy.monthlyItems[id]);
+        return (
+          <article
+            class:list={[
+              "flex flex-col rounded-2xl border-2 bg-paper p-6 sm:p-8",
+              tier.recommended ? "border-brand" : "border-line",
+            ]}
+          >
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="text-2xl">{copy.tiers[tier.id].name}</h3>
+              {tier.recommended && (
+                <p class="rounded-full bg-brand px-3 py-0.5 text-sm font-semibold text-on-brand">
+                  {copy.recommended}
+                </p>
+              )}
+            </div>
+            <p class="mt-1 text-muted">{copy.tiers[tier.id].tagline}</p>
 
-          <p class="mt-6 inline-block self-start rounded-full bg-sun/25 px-3 py-0.5 text-sm font-semibold">
-            {copy.foundingLabel}
-          </p>
-          <p class="mt-2">
-            <span class="text-muted">{copy.startingAt} </span>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <p class="rounded-full bg-sun/25 px-3 py-0.5 text-sm font-semibold">{copy.foundingLabel}</p>
+              {tier.includes.some((id) => id === "website") && (
+                <p class="rounded-full bg-wash px-3 py-0.5 text-sm font-semibold text-brand">
+                  {copy.websiteIncluded}
+                </p>
+              )}
+            </div>
             <!-- Each amount stays on one line with its unit. -->
-            <span class="whitespace-nowrap">
-              <span class="font-serif text-3xl font-bold">{t.money(tier.founding.setup)}</span>{" "}
-              {copy.setup}
-            </span>
-            <span class="text-muted"> + </span>
-            <span class="whitespace-nowrap">
-              <span class="font-serif text-3xl font-bold">{t.money(tier.founding.monthly)}</span>{" "}
-              {copy.perMonth}
-            </span>
-          </p>
-          <p class="mt-2 text-sm text-muted">
-            {copy.standardLabel}{t.colon} {copy.startingAtLower} {t.money(tier.standard.setup)}{" "}
-            {copy.setup} + {t.money(tier.standard.monthly)} {copy.perMonth}.
-          </p>
+            <p class="mt-3">
+              <span class="block text-sm text-muted">{copy.startingAt}</span>
+              <span class="whitespace-nowrap">
+                <span class="font-serif text-4xl font-bold">{t.money(tier.founding.monthly)}</span>{" "}
+                {copy.perMonth}
+              </span>
+              <span class="block text-muted">
+                + <span class="whitespace-nowrap">{t.money(tier.founding.setup)}</span> {copy.setupOnce}
+              </span>
+            </p>
+            <p class="mt-3 text-sm text-muted">
+              {copy.standardLabel}{t.colon} {t.money(tier.standard.monthly)} {copy.perMonth} +{" "}
+              {t.money(tier.standard.setup)} {copy.setup}.
+            </p>
 
-          {[
-            { h4: copy.includes, ids: tier.includes },
-            { h4: copy.monthlyPlan, ids: tier.monthly },
-          ].map((group) => (
-            <>
-              <h4 class="mt-6 font-semibold">{group.h4}</h4>
-              <ul class="mt-2 space-y-2">
-                {group.ids.map((id) => (
+            <h4 class="mt-6 border-t border-line pt-6 font-semibold">{copy.monthlyPlan}</h4>
+            {prev && <p class="mt-1 text-sm text-muted">{copy.everythingIn(prevName)}</p>}
+            <ul class="mt-3 space-y-2">
+              {monthly.map((label) => (
+                <li class="flex gap-2">
+                  <svg aria-hidden="true" class="mt-1 h-5 w-5 shrink-0 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d={check} />
+                  </svg>
+                  {label}
+                </li>
+              ))}
+            </ul>
+
+            <details class="group mt-auto pt-6">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 border-t border-line pt-4 font-semibold [&::-webkit-details-marker]:hidden">
+                {copy.includes}
+                <span aria-hidden="true" class="text-2xl leading-none text-brand transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              {prev && <p class="mt-3 text-sm text-muted">{copy.everythingIn(prevName)}</p>}
+              <ul class="mt-3 space-y-2">
+                {setup.map((label) => (
                   <li class="flex gap-2">
                     <svg aria-hidden="true" class="mt-1 h-5 w-5 shrink-0 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="m5 12.5 4.5 4.5L19 7.5" />
+                      <path d={check} />
                     </svg>
-                    {services.items[id].title.replace(/\.$/, "")}
+                    {label}
                   </li>
                 ))}
               </ul>
-            </>
-          ))}
-        </article>
-      ))
+            </details>
+          </article>
+        );
+      })
     }
   </div>
-  <ul class="mt-8 space-y-1">
-    {copy.notes.map((note) => <li>{note}</li>)}
+  <p class="mt-4 text-sm text-muted">{copy.quote}</p>
+
+  <ul class="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      copy.promises.map((promise) => (
+        <li class="border-l-2 border-brand pl-4">
+          <h3 class="text-base font-semibold">{promise.title}</h3>
+          <p class="mt-1 text-sm text-muted">{promise.body}</p>
+        </li>
+      ))
+    }
   </ul>
-  <div class="mt-8"><CtaWhatsApp t={t} /></div>
+  <div class="mt-10"><CtaWhatsApp t={t} /></div>
 </Section>

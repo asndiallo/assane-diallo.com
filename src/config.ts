@@ -36,7 +36,22 @@ export const site = {
 } as const;
 
 export type TierId = "profile" | "website";
-export type ServiceId = "profile" | "website" | "searchPages" | "reviews" | "report";
+/** Work done once, during the setup. */
+export type SetupId = "profile" | "listings" | "website" | "searchPages" | "reviews";
+/** Work done every month (or quarter) the client is subscribed. */
+export type MonthlyId =
+  | "posts"
+  | "reviewReplies"
+  | "profileUpkeep"
+  | "editWatch"
+  | "listingsCheck"
+  | "report"
+  | "hosting"
+  | "siteEdits"
+  | "localPage"
+  | "searchConsole"
+  | "siteClicks"
+  | "quarterlyCall";
 
 interface Price {
   setup: number;
@@ -47,10 +62,12 @@ export interface Tier {
   id: TierId;
   founding: Price;
   standard: Price;
+  /** Highlighted card: the package we steer owners toward. */
+  recommended?: boolean;
   /** Paid once, with the setup. */
-  includes: readonly ServiceId[];
+  includes: readonly SetupId[];
   /** Ongoing work the monthly price covers. Part of the package; cancel anytime. */
-  monthly: readonly ServiceId[];
+  monthly: readonly MonthlyId[];
 }
 
 export const pricing = {
@@ -59,20 +76,42 @@ export const pricing = {
   foundingClients: 3,
   /** Usual time from approval to a finished setup. */
   setupWeeks: "1–2",
+  /** Monthly promises, quoted in the copy and the terms. */
+  postsPerMonth: 2,
+  reviewReplyHours: 48,
+  requestReplyDays: 2,
+  /** After the last paid month, a site I host stays live this long while I move it to the client. */
+  handoverDays: 30,
+  /** A Get Found client who upgrades within this many months gets that setup price off Get Booked's. */
+  upgradeCreditMonths: 6,
   tiers: [
     {
       id: "profile",
       founding: { setup: 300, monthly: 79 },
       standard: { setup: 450, monthly: 99 },
-      includes: ["profile", "reviews"],
-      monthly: ["report"],
+      includes: ["profile", "listings", "reviews"],
+      monthly: ["posts", "reviewReplies", "profileUpkeep", "editWatch", "listingsCheck", "report"],
     },
     {
       id: "website",
       founding: { setup: 650, monthly: 129 },
       standard: { setup: 1000, monthly: 179 },
-      includes: ["profile", "website", "searchPages", "reviews"],
-      monthly: ["report"],
+      recommended: true,
+      includes: ["profile", "listings", "reviews", "website", "searchPages"],
+      monthly: [
+        "posts",
+        "reviewReplies",
+        "profileUpkeep",
+        "editWatch",
+        "listingsCheck",
+        "report",
+        "hosting",
+        "siteEdits",
+        "localPage",
+        "searchConsole",
+        "siteClicks",
+        "quarterlyCall",
+      ],
     },
   ] satisfies readonly Tier[],
 } as const;

@@ -24,6 +24,15 @@ merge date.
 
 ### Changed
 
+- Packages: each monthly price now lists the work it pays for (Google posts, review replies,
+  profile upkeep, Apple Maps/Bing/Yelp checks, the report; Get Booked adds hosting, monthly
+  edits, a quarterly local page, Search Console, button clicks in the report and a quarterly
+  call). Get Booked is marked "Recommended" and lists only what it adds to Get Found. New FAQ
+  answers and terms: small requests in 2 business days, upgrade credit, hosting included for
+  sites I build, and a free move of the site within 30 days when a client leaves (PLAN.md D25).
+- Prices section redesign: the monthly price leads, setup items fold into a "What the setup
+  includes" toggle, list items are shorter, and the notes become four promise tiles.
+- FAQ: "How is this different from an agency?", answered with how I work, no competitor prices.
 - Positioning: the home page (meta description, hero, "Who this is for") and the footer say "small
   businesses in the US" without naming a community, in English and French. The African-owned
   focus stays on About, the braiding and restaurant pages, and Isa's case study (PLAN.md D24).
