@@ -24,6 +24,9 @@ merge date.
 
 ### Changed
 
+- Hosting promise (EN and FR, prices, FAQ, terms): a Get Booked site runs on a free hosting
+  account in the client's name, so nothing moves when they leave; they get the
+  files and my access is removed.
 - Monthly profile upkeep now reads "hours, photos and services kept right" (EN and FR,
   prices and FAQ): Google retired the Business Profile Q&A section, so it's no longer promised.
 - Packages: each monthly price now lists the work it pays for (Google posts, review replies,
