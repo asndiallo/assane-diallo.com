@@ -9,6 +9,11 @@ merge date.
 
 ## [Unreleased]
 
+### Changed
+
+- `pnpm check` runs Lighthouse in parallel shards with one run per page (about 2 min instead
+  of 15), and the link check before it. CI still gates on the median of 3 runs.
+
 ### Added
 
 - Terms: "If Google suspends your profile" (EN and FR): the appeal is included, and the monthly

@@ -17,10 +17,11 @@ pnpm dev            # http://localhost:4321 (or the next free port)
 Before you push:
 
 ```bash
-pnpm check          # lint → typecheck → build → Playwright → Lighthouse CI → link check
+pnpm check          # lint → typecheck → build → Playwright → link check → Lighthouse CI
 ```
 
 The first time, run `pnpm exec playwright install chromium`. Lighthouse uses your installed Chrome.
+Locally it audits every page once, in parallel shards (about 2 min); CI takes the median of 3 runs.
 
 `pnpm build` ends with a list of every `[TODO]` placeholder still on the site. It warns but never fails.
 
