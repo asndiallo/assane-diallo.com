@@ -72,9 +72,14 @@ export const fr: Dictionary = {
     },
     listing: {
       caption: `Illustration${nb}: à quoi peut ressembler votre entreprise sur Google quand votre fiche est complète.`,
-      query: "plumber near me",
+      // The searches stay in English: US customers search in English.
+      searches: [
+        { query: "hair salon near me", category: "Salon de coiffure" },
+        { query: "auto repair near me", category: "Garage automobile" },
+        { query: "plumber near me", category: "Plombier" },
+        { query: "restaurant near me", category: "Restaurant" },
+      ],
       name: "Le nom de votre entreprise",
-      category: "Plombier",
       open: "Ouvert",
       closes: `Ferme à 19${nb}h`,
       prices: "Prix affichés",

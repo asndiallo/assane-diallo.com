@@ -71,9 +71,14 @@ export const en = {
     },
     listing: {
       caption: "Illustration: how your business can look on Google when your profile is complete.",
-      query: "plumber near me",
+      // Rotated in the hero, one pair at a time: the search and the matching category.
+      searches: [
+        { query: "hair salon near me", category: "Hair salon" },
+        { query: "auto repair near me", category: "Auto repair shop" },
+        { query: "plumber near me", category: "Plumber" },
+        { query: "restaurant near me", category: "Restaurant" },
+      ],
       name: "Your business name",
-      category: "Plumber",
       open: "Open now",
       closes: "Closes 7 PM",
       prices: "Prices listed",

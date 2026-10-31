@@ -59,12 +59,16 @@ const booking = bookingHref();
         </svg>
 
         <div class="rounded-full border border-line bg-paper px-4 py-2.5 text-[0.95rem] text-muted shadow-sm">
-          <svg aria-hidden="true" class="mr-2 inline h-4 w-4 align-[-2px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m20 20-4.8-4.8" /></svg>{listing.query}
+          <svg aria-hidden="true" class="mr-2 inline h-4 w-4 align-[-2px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m20 20-4.8-4.8" /></svg><span class="rotate inline-grid" data-rotate>
+            {listing.searches.map((search, i) => <span class:list={{ "is-active": i === 0 }}>{search.query}</span>)}
+          </span>
         </div>
 
         <div class="mt-4 rounded-2xl border-2 border-ink bg-paper p-5 shadow-[6px_6px_0_var(--color-ink)]">
           <p class="text-lg font-bold">{listing.name}</p>
-          <p class="text-[0.95rem] text-muted">{listing.category}</p>
+          <p class="rotate grid text-[0.95rem] text-muted" data-rotate>
+            {listing.searches.map((search, i) => <span class:list={{ "is-active": i === 0 }}>{search.category}</span>)}
+          </p>
           <p class="mt-2 flex items-center gap-1 text-[0.95rem]">
             <span class="tracking-widest text-sun">★★★★★</span>
             <span class="text-muted">{listing.reviews}</span>
@@ -103,4 +107,41 @@ const booking = bookingHref();
     background-size: 7.5rem 6rem;
     background-position: -1.5rem 1rem;
   }
+
+  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift. */
+  .rotate > * {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .rotate > .is-active {
+    opacity: 1;
+  }
 </style>
+
+<script>
+  // One slow pass through the verticals, ending back on the first. The illustration is
+  // aria-hidden, so screen readers never hear the changes; reduced motion keeps the first pair.
+  const groups = document.querySelectorAll<HTMLElement>("[data-rotate]");
+  const count = groups[0]?.children.length ?? 0;
+  const delay = 2600;
+
+  if (count > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let index = 0;
+    const step = () => {
+      // A hidden tab waits: the visitor should see the pass, not miss it.
+      if (document.hidden) {
+        document.addEventListener("visibilitychange", step, { once: true });
+        return;
+      }
+      index = (index + 1) % count;
+      for (const group of groups) {
+        for (const [i, item] of [...group.children].entries()) {
+          item.classList.toggle("is-active", i === index);
+        }
+      }
+      if (index !== 0) setTimeout(step, delay);
+    };
+    setTimeout(step, delay);
+  }
+</script>

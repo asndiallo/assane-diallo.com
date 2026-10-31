@@ -18,6 +18,8 @@ merge date.
 
 - Terms: "If Google suspends your profile" (EN and FR): the appeal is included, and the monthly
   price is paused or keeps running depending on the cause and the package.
+- Hero listing: the search and category fade once through hair salon, auto repair, plumber and
+  restaurant, then rest on hair salon. Size reserved (no layout shift), still for reduced motion.
 - Terms of service page (`/terms/`, `/fr/conditions/`), linked in the footer: billing, cancelling
   at the end of the paid month, setup refunds, client accounts, no ranking guarantees. The billing
   runbook lists the Stripe steps that link to it (public details, invoice footer, payment links).
