@@ -14,10 +14,10 @@ const shop = (await getLocalized("work", Astro.props.locale)).find(
   (e) => e.data.vertical === "online-shop",
 );
 const websiteTier = prices.tiers.website.name;
-const last = pricing.tiers.at(-1);
-const ids = last ? [...last.includes, ...last.monthly] : [];
+// The setup work of the fullest package; the monthly work is summed up in one last item.
+const ids = pricing.tiers.at(-1)?.includes ?? [];
 const inEveryTier = (id: (typeof ids)[number]) =>
-  pricing.tiers.every((tier) => [...tier.includes, ...tier.monthly].includes(id));
+  pricing.tiers.every((tier) => tier.includes.some((i) => i === id));
 ---
 
 <Section id="services" heading={services.h2}>
@@ -38,6 +38,10 @@ const inEveryTier = (id: (typeof ids)[number]) =>
         </li>
       ))
     }
+    <li class="measure">
+      <h3>{services.monthly.title}</h3>
+      <p class="mt-1 text-muted">{services.monthly.body}</p>
+    </li>
   </ul>
   <p class="measure mt-10 text-muted">{services.websiteOnly}</p>
   <p class="measure mt-3 text-muted">

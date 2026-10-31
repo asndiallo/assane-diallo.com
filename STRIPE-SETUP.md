@@ -28,6 +28,20 @@ test mode and live mode).
 | Get Booked — setup   | `website_setup_founding` / `website_setup_standard`     | $650 / $1,000, once |
 | Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $179 a month |
 
+Product descriptions (shown on checkout and invoices) list the setup and monthly work of
+PLAN.md D25. Updated in live and test mode on 2026-10-30. Change them with the price cards.
+
+Upgrade-credit coupons (live and test mode, 2026-10-30), same IDs in both modes, both named
+"Get Found setup credit", `duration: once`, restricted to the **Get Booked — setup** product:
+
+| Coupon ID                        | Amount off | Use when the client paid     |
+| -------------------------------- | ---------- | ---------------------------- |
+| `getfound_setup_credit_founding` | $300       | the founding Get Found setup |
+| `getfound_setup_credit_standard` | $450       | the standard Get Found setup |
+
+If the client paid a custom quoted setup, don't use a coupon: override the Get Booked setup
+line instead, so the credit equals what they actually paid.
+
 Tax codes (live and test mode, set 2026-10-29):
 
 | Product                               | Tax code                                  | Texas tax per $100 |
@@ -39,6 +53,12 @@ Website Data Processing, not Data Processing (`txcd_20060009`): Stripe defines t
 work "not performed online" and points online work to Website Data Processing. The work here is
 done online and delivered electronically. Switched on 2026-10-29; a test-mode calculation that day
 gave the same Texas tax for both ($6.60 per $100), so no client amount changed.
+
+Get Booked — monthly includes hosting since 2026-10-30 (PLAN.md D25) and keeps Website Data
+Processing: most of the monthly work is profile and site upkeep, and a product has one tax code.
+Stripe's Website Hosting (`txcd_10701100`) gives the same Texas tax: a test-mode calculation on
+2026-10-30 (Austin, TX) gave $6.60 per $100 for both. Revisit if another state registration
+starts, since states treat hosting differently. Include it in the accountant question.
 
 Texas taxes data processing and website design on 80% of the price (8.25% × 80% = 6.6%).
 For comparison (test mode, 2026-10-28), General ESS (`txcd_10000000`) gave $8.25 and
@@ -82,7 +102,7 @@ to the same card automatically. Tested end to end in test mode on 2026-10-28.
      client has to pay a new emailed invoice every month.
    - Payment methods: card and US bank account (ACH).
    - Automatic tax: on. The customer needs a billing address.
-   - Footer: "Monthly part includes updates and a report. Cancel anytime." followed by the
+   - Footer: "Monthly work as listed for your package on assane-diallo.com. Cancel anytime." followed by the
      terms and privacy links (the account's default invoice footer, see One-time settings).
 3. Stripe emails one invoice with both lines (e.g. $300 setup + $79 first month = $379). The
    client pays on Stripe's invoice page.
@@ -108,13 +128,29 @@ differs from the catalog.
 | Get Booked | <https://buy.stripe.com/4gM9ATc770wbeNc3mw9oc02> | <https://buy.stripe.com/00w00j8UV7YDbB02is9oc03> |
 
 All four (live, 2026-10-28): automatic tax, billing address and phone required, business name,
-subscription description "Monthly part includes updates and a report. Cancel anytime.",
+subscription description "Monthly part includes updates and a report. Cancel anytime."
+(Stripe can't edit it after creation; still true, and the product descriptions carry the detail),
 metadata `tier` and `pricing`. Never put these links on the site (no checkout on the site).
 After the 3rd founding client, deactivate both founding links (**Payment links → ⋯ →
 Deactivate**). The first Dashboard-made Get Found link (`…oc00`) is deactivated: it lacked
 these settings.
 
 ## Changes and cancelling
+
+- **Upgrading Get Found → Get Booked** (the site promises: within 6 months of the Get Found
+  setup, what they paid for that setup comes off the Get Booked setup). Check the 6 months
+  against the first invoice date. Then, on the client's subscription, **Update subscription**:
+  1. Replace the monthly price with Get Booked's at the same level (`profile_monthly_founding`
+     → `website_monthly_founding`, standard → standard). Founding stays founding.
+  2. **Proration: none**, and start the new price at the next billing date, so nobody pays
+     for a half month twice.
+  3. Add a one-time item: the Get Booked setup at the same level, with the coupon above.
+     After 6 months, no coupon.
+  4. Bill it on the next invoice, or invoice now if the client wants the website to start now.
+     The invoice shows "Get Found setup credit −$300" as its own line. Test the flow in test mode
+     before the first real upgrade.
+- **Leaving with a site I host**: nothing changes in Stripe. The subscription ends as usual;
+  the 30-day handover (terms, PLAN.md D25) happens outside Stripe.
 
 - **Cancel anytime**: in the Customer Portal, the client can cancel (at period end) and update
   their card. Send them the portal link, or cancel for them in the Dashboard

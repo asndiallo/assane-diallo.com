@@ -1,6 +1,7 @@
-import { pricing, type ServiceId, type TierId, getTier as tier } from "../config.ts";
+import { type MonthlyId, pricing, type SetupId, type TierId, getTier as tier } from "../config.ts";
 
 const n = pricing.foundingClients;
+const { postsPerMonth: posts, reviewReplyHours: hours, requestReplyDays: days } = pricing;
 /** Package names, defined once: pricing, the services note and the FAQ all use these. */
 const names = { profile: "Get Found", website: "Get Booked" } satisfies Record<TierId, string>;
 const money = (amount: number): string => `$${amount.toLocaleString("en-US")}`;
@@ -112,15 +113,19 @@ export const en = {
           title: "Pages for what people actually search.",
           body: "For example, your service, style, or dish plus your city.",
         },
+        listings: {
+          title: "Apple Maps, Bing and Yelp listings.",
+          body: "The same name, hours and phone everywhere, so people who don't search on Google find you too.",
+        },
         reviews: {
           title: "An easy way to get reviews.",
           body: "A link and a short message you can send to happy customers.",
         },
-        report: {
-          title: "Monthly updates and a report in plain language.",
-          body: "I keep your profile fresh and show you calls, direction requests, what changed, and what's next.",
-        },
-      } satisfies Record<ServiceId, { title: string; body: string }>,
+      } satisfies Record<SetupId, { title: string; body: string }>,
+      monthly: {
+        title: "Then, every month, the work keeps going.",
+        body: `${posts} Google posts, a reply to every review, your details kept right, and a plain-language report. With ${names.website}, I also host your site, make your edits and add new pages.`,
+      },
       websiteOnly: `Website and search pages come with the ${names.website} package.`,
       onlineShops: "Online shops: audits by request.",
       onlineShopsLink: "See the shop I'm working with now",
@@ -138,7 +143,7 @@ export const en = {
         },
         {
           title: "Grow.",
-          body: "Every month I keep your profile up to date and send a short report on what's working. It's part of the package. Cancel anytime.",
+          body: "Every month I post on your profile, reply to your reviews and keep your details right, then send a short report on what changed. It's part of the package. Cancel anytime.",
         },
       ],
     },
@@ -155,12 +160,45 @@ export const en = {
       startingAt: "Starting at",
       startingAtLower: "starting at",
       setup: "setup",
+      setupOnce: "setup, paid once",
       perMonth: "a month",
-      includes: "Setup, paid once",
-      monthlyPlan: "Every month, cancel anytime",
-      notes: [
-        "Final quote after a free check-up.",
-        "The setup is paid once. Monthly updates and the report are part of the package, with no contract: cancel anytime.",
+      quote: "Final quote after a free check-up.",
+      includes: "What the setup includes",
+      monthlyPlan: "Every month",
+      recommended: "Recommended",
+      everythingIn: (name: string) => `Everything in ${name}, plus:`,
+      websiteIncluded: "Website and hosting included",
+      monthlyItems: {
+        posts: `${posts} Google posts a month`,
+        reviewReplies: `Replies to every review within ${hours} hours`,
+        profileUpkeep: "Hours, photos and Q&A kept right",
+        editWatch: "Wrong edits caught and fixed",
+        listingsCheck: "Apple Maps, Bing and Yelp checked quarterly",
+        report: "A report in plain language",
+        hosting: "Hosting, SSL and uptime",
+        siteEdits: "Small edits each month (prices, menu, services)",
+        localPage: "A new or improved local page each quarter",
+        searchConsole: "Search Console check and fixes",
+        siteClicks: "Call and booking clicks in your report",
+        quarterlyCall: "A 15-minute call each quarter",
+      } satisfies Record<MonthlyId, string>,
+      promises: [
+        {
+          title: "No contract",
+          body: "The setup is paid once. The monthly work is month to month: cancel anytime.",
+        },
+        {
+          title: "Quick changes",
+          body: `A new price or a holiday closure? Done within ${days} business days.`,
+        },
+        {
+          title: "Upgrade credit",
+          body: `Move up to ${names.website} within ${pricing.upgradeCreditMonths} months and your ${names.profile} setup comes off its price.`,
+        },
+        {
+          title: "Your site stays yours",
+          body: "If you leave, you keep your domain and website. I move the site to your own free account.",
+        },
       ],
       tiers: {
         profile: {
@@ -171,7 +209,7 @@ export const en = {
         website: {
           name: names.website,
           tagline: "Google profile + website",
-          summary: `Everything in ${names.profile}, plus a simple website and pages for what people search.`,
+          summary: `Everything in ${names.profile}, plus a simple website that I host and keep up to date, and pages for what people search.`,
         },
       } satisfies Record<TierId, { name: string; tagline: string; summary: string }>,
     },
@@ -193,7 +231,7 @@ export const en = {
         },
         {
           q: "Do I keep control of my accounts?",
-          a: "Yes. Your Google profile and domain stay in your name. I'm added as a manager, and you can remove me anytime.",
+          a: "Yes. Your Google profile and domain stay in your name. I'm added as a manager, and you can remove me anytime. If I host your website, you take it with you when you leave.",
         },
         {
           q: "What do you need from me?",
@@ -205,11 +243,23 @@ export const en = {
         },
         {
           q: "What does it cost?",
-          a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)} setup and ${money(tier("profile").founding.monthly)} a month. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)} setup and ${money(tier("website").founding.monthly)} a month. The monthly part keeps your profile up to date and includes a plain-language report. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
+          a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)} setup and ${money(tier("profile").founding.monthly)} a month. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)} setup and ${money(tier("website").founding.monthly)} a month. The monthly part pays for the ongoing work: Google posts, review replies and a plain-language report, plus hosting, edits and new pages with ${names.website}. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
         },
         {
           q: "Is there a contract?",
           a: "No long contract. The monthly part is month to month, and you can cancel anytime.",
+        },
+        {
+          q: "How is this different from an agency?",
+          a: "You work with one person, me, from the free check-up to the monthly report, on WhatsApp, in English or French. There's no long contract. Your profile, your domain and your accounts stay in your name, and if you leave, you keep your website. And the monthly price pays for named work you can check every month, listed in the prices above.",
+        },
+        {
+          q: "What do you do every month?",
+          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, your hours, photos and Q&A kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
+        },
+        {
+          q: "If I cancel, do I keep my website?",
+          a: `Yes. Your domain is always in your name. The site stays live for ${pricing.handoverDays} days after your last paid month: I send you all its files and move it to a free hosting account in your name, at no cost. If you already had your own host, nothing needs to move.`,
         },
         {
           q: "Do you work with businesses outside your city?",
@@ -376,8 +426,9 @@ export const en = {
       {
         h2: "What you get",
         paragraphs: [
-          "Your package and its price are the ones on your quote, invoice or payment link. Every package has a setup, paid once, and a monthly part (updates and a report) that is included in it.",
-          `I usually finish the setup ${pricing.setupWeeks} weeks after I have what I need from you.`,
+          "Your package and its price are the ones on your quote, invoice or payment link. Every package has a setup, paid once, and a monthly part that is included in it: the ongoing work listed for your package in the prices on my home page.",
+          `I usually finish the setup ${pricing.setupWeeks} weeks after I have what I need from you. After that, I do small requests (a new price, a holiday closure) within ${days} business days.`,
+          `Upgrading: if you move from ${names.profile} to ${names.website} within ${pricing.upgradeCreditMonths} months of your ${names.profile} setup, what you paid for that setup comes off the ${names.website} setup.`,
         ],
       },
       {
@@ -385,7 +436,7 @@ export const en = {
         paragraphs: [
           "You pay the setup and the first month together, before I start. After that, the monthly price is charged to the same card or bank account at the start of each month, and Stripe emails you a receipt.",
           "Prices don't include sales tax. When tax is due, it's added on top and shown on the invoice.",
-          "If a payment fails, Stripe tries again for up to 2 weeks. If it still fails, the subscription ends and the monthly work stops.",
+          "If a payment fails, Stripe tries again for up to 2 weeks. If it still fails, the subscription ends, the monthly work stops, and a website I host is handed over as described under “Your accounts and your website stay yours”.",
           "If I change my prices, I'll tell you at least 30 days before. Founding clients keep their founding price.",
         ],
       },
@@ -412,10 +463,12 @@ export const en = {
         ],
       },
       {
-        h2: "Your accounts stay yours",
+        h2: "Your accounts and your website stay yours",
         paragraphs: [
-          "Your Google profile, your Search Console and analytics accounts, your domain, your website hosting and any other account stay in your name. You pay for the domain and hosting directly: they're not part of my prices. I'm added as a manager, never as the owner, and I never need your passwords.",
+          "Your Google profile, your Search Console and analytics accounts, your domain and any other account stay in your name. You buy your domain and pay for it directly: it's not part of my prices. I'm added as a manager, never as the owner, and I never need your passwords.",
+          `Hosting: for a website I build with ${names.website}, hosting is included in the monthly price and runs on my account. If you already have your own host, you keep it and pay for it directly.`,
           "When we stop working together, just remove me from your accounts. Everything I made for you and you paid for (website, pages, text) is yours to keep.",
+          `A site I host stays live for ${pricing.handoverDays} days after your last paid month. In that time I send you all its files and, if you want, move it to a free hosting account in your name, at no cost. After that, I take it off my account.`,
         ],
       },
       {

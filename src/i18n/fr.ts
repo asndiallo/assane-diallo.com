@@ -3,6 +3,7 @@ import { pricing, getTier as tier } from "../config.ts";
 import type { Dictionary } from "./en.ts";
 
 const n = pricing.foundingClients;
+const { postsPerMonth: posts, reviewReplyHours: hours, requestReplyDays: days } = pricing;
 const names = { profile: "Visibilité", website: "Visibilité + Réservations" };
 const nb = " "; // French typography: non-breaking space before ? ! : and currency
 const money = (amount: number): string => `${amount.toLocaleString("fr-FR")}${nb}$`;
@@ -113,14 +114,18 @@ export const fr: Dictionary = {
           title: "Des pages pour ce que les gens cherchent vraiment.",
           body: "Par exemple, votre service, votre coiffure ou votre plat, suivi de votre ville.",
         },
+        listings: {
+          title: "Vos fiches Apple Plans, Bing et Yelp.",
+          body: "Le même nom, les mêmes horaires et le même numéro partout, pour que ceux qui ne cherchent pas sur Google vous trouvent aussi.",
+        },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
           body: "Un lien et un court message à envoyer à vos clients satisfaits.",
         },
-        report: {
-          title: "Un suivi mensuel et un rapport en langage clair.",
-          body: "Je garde votre fiche à jour et je vous montre les appels, les demandes d'itinéraire, ce qui a changé et la suite.",
-        },
+      },
+      monthly: {
+        title: "Ensuite, chaque mois, le travail continue.",
+        body: `${posts}${nb}publications Google, une réponse à chaque avis, vos informations tenues à jour et un rapport en langage clair. Avec ${names.website}, j'héberge aussi votre site, je fais vos modifications et j'ajoute de nouvelles pages.`,
       },
       websiteOnly: `Le site et les pages de recherche sont inclus dans la formule ${names.website}.`,
       onlineShops: `Boutiques en ligne${nb}: audits sur demande.`,
@@ -139,7 +144,7 @@ export const fr: Dictionary = {
         },
         {
           title: "Croissance.",
-          body: "Chaque mois, je garde votre fiche à jour et je vous envoie un court rapport sur ce qui marche. C'est compris dans la formule. Résiliable à tout moment.",
+          body: "Chaque mois, je publie sur votre fiche, je réponds à vos avis et je garde vos informations à jour, puis je vous envoie un court rapport sur ce qui a changé. C'est compris dans la formule. Résiliable à tout moment.",
         },
       ],
     },
@@ -156,12 +161,45 @@ export const fr: Dictionary = {
       startingAt: "À partir de",
       startingAtLower: "à partir de",
       setup: "de mise en place",
+      setupOnce: "de mise en place, payée une fois",
       perMonth: "par mois",
-      includes: "Mise en place, payée une fois",
-      monthlyPlan: "Chaque mois, résiliable à tout moment",
-      notes: [
-        "Devis final après un bilan gratuit.",
-        `La mise en place se paie une fois. Le suivi mensuel et le rapport sont compris dans la formule, sans engagement${nb}: résiliable à tout moment.`,
+      quote: "Devis final après un bilan gratuit.",
+      includes: "Ce que comprend la mise en place",
+      monthlyPlan: "Chaque mois",
+      recommended: "Recommandée",
+      everythingIn: (name: string) => `Tout ce qu'inclut ${name}, plus${nb}:`,
+      websiteIncluded: "Site et hébergement compris",
+      monthlyItems: {
+        posts: `${posts}${nb}publications Google par mois`,
+        reviewReplies: `Une réponse à chaque avis sous ${hours}${nb}heures`,
+        profileUpkeep: "Horaires, photos et questions-réponses à jour",
+        editWatch: "Modifications erronées repérées et corrigées",
+        listingsCheck: "Apple Plans, Bing et Yelp vérifiés chaque trimestre",
+        report: "Un rapport en langage clair",
+        hosting: "Hébergement, SSL et surveillance",
+        siteEdits: "Petites modifications chaque mois (prix, menu, services)",
+        localPage: "Une page locale nouvelle ou améliorée par trimestre",
+        searchConsole: "Vérification de Search Console et corrections",
+        siteClicks: "Clics Appeler et Réserver dans votre rapport",
+        quarterlyCall: `Un appel de 15${nb}minutes par trimestre`,
+      },
+      promises: [
+        {
+          title: "Sans engagement",
+          body: `La mise en place se paie une fois. Le travail mensuel se paie au mois${nb}: résiliable à tout moment.`,
+        },
+        {
+          title: "Changements rapides",
+          body: `Un nouveau prix ou une fermeture un jour férié${nb}? C'est fait sous ${days}${nb}jours ouvrés.`,
+        },
+        {
+          title: "Crédit de changement d'offre",
+          body: `Passez à ${names.website} dans les ${pricing.upgradeCreditMonths}${nb}mois et votre mise en place ${names.profile} est déduite de son prix.`,
+        },
+        {
+          title: "Votre site reste à vous",
+          body: "Si vous partez, vous gardez votre domaine et votre site. Je transfère le site sur votre propre compte gratuit.",
+        },
       ],
       tiers: {
         profile: {
@@ -172,7 +210,7 @@ export const fr: Dictionary = {
         website: {
           name: names.website,
           tagline: "Fiche Google + site",
-          summary: `Tout ce qu'inclut ${names.profile}, plus un site simple et des pages pour ce que les gens cherchent.`,
+          summary: `Tout ce qu'inclut ${names.profile}, plus un site simple que j'héberge et tiens à jour, et des pages pour ce que les gens cherchent.`,
         },
       },
     },
@@ -194,7 +232,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Est-ce que je garde le contrôle de mes comptes${nb}?`,
-          a: "Oui. Votre fiche Google et votre nom de domaine restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment.",
+          a: "Oui. Votre fiche Google et votre nom de domaine restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment. Si j'héberge votre site, vous l'emportez quand vous partez.",
         },
         {
           q: `De quoi avez-vous besoin de ma part${nb}?`,
@@ -206,11 +244,23 @@ export const fr: Dictionary = {
         },
         {
           q: `Combien ça coûte${nb}?`,
-          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. Le suivi mensuel garde votre fiche à jour et comprend un rapport en langage clair. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
+          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. La partie mensuelle paie le travail continu${nb}: publications Google, réponses aux avis et rapport en langage clair, plus l'hébergement, les modifications et de nouvelles pages avec ${names.website}. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
         },
         {
           q: `Y a-t-il un contrat${nb}?`,
           a: "Pas d'engagement long. Le suivi mensuel se paie au mois et vous pouvez arrêter à tout moment.",
+        },
+        {
+          q: `Quelle différence avec une agence${nb}?`,
+          a: "Vous travaillez avec une seule personne, moi, du bilan gratuit au rapport mensuel, sur WhatsApp, en français ou en anglais. Pas de long contrat. Votre fiche, votre nom de domaine et vos comptes restent à votre nom, et si vous partez, vous gardez votre site. Et le prix mensuel paie un travail précis que vous pouvez vérifier chaque mois, détaillé dans les tarifs plus haut.",
+        },
+        {
+          q: `Que faites-vous chaque mois${nb}?`,
+          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, vos horaires, photos et questions-réponses tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
+        },
+        {
+          q: `Si je résilie, est-ce que je garde mon site${nb}?`,
+          a: `Oui. Votre nom de domaine est toujours à votre nom. Le site reste en ligne ${pricing.handoverDays}${nb}jours après votre dernier mois payé${nb}: je vous envoie tous ses fichiers et je le transfère sur un compte d'hébergement gratuit à votre nom, sans frais. Si vous aviez déjà votre propre hébergeur, rien ne change.`,
         },
         {
           q: `Travaillez-vous avec des entreprises hors de votre ville${nb}?`,
@@ -375,8 +425,9 @@ export const fr: Dictionary = {
       {
         h2: "Ce que vous obtenez",
         paragraphs: [
-          "Votre offre et son prix sont ceux de votre devis, de votre facture ou de votre lien de paiement. Chaque offre comprend une mise en place, payée une seule fois, et une partie mensuelle (mises à jour et rapport) incluse dans l'offre.",
-          `Je termine en général la mise en place ${pricing.setupWeeks}${nb}semaines après avoir reçu ce dont j'ai besoin de votre part.`,
+          `Votre offre et son prix sont ceux de votre devis, de votre facture ou de votre lien de paiement. Chaque offre comprend une mise en place, payée une seule fois, et une partie mensuelle incluse dans l'offre${nb}: le travail continu indiqué pour votre offre dans les tarifs de ma page d'accueil.`,
+          `Je termine en général la mise en place ${pricing.setupWeeks}${nb}semaines après avoir reçu ce dont j'ai besoin de votre part. Ensuite, je fais les petites demandes (un nouveau prix, une fermeture pour un jour férié) sous ${days}${nb}jours ouvrés.`,
+          `Changement d'offre${nb}: si vous passez de ${names.profile} à ${names.website} dans les ${pricing.upgradeCreditMonths}${nb}mois suivant votre mise en place ${names.profile}, ce que vous avez payé pour cette mise en place est déduit de celle de ${names.website}.`,
         ],
       },
       {
@@ -384,7 +435,7 @@ export const fr: Dictionary = {
         paragraphs: [
           "Vous payez la mise en place et le premier mois ensemble, avant que je commence. Ensuite, le prix mensuel est prélevé sur la même carte ou le même compte bancaire au début de chaque mois, et Stripe vous envoie un reçu par e-mail.",
           "Les prix ne comprennent pas la taxe de vente (sales tax). Quand elle est due, elle s'ajoute au prix et figure sur la facture.",
-          `Si un paiement échoue, Stripe réessaie pendant 2${nb}semaines au plus. S'il échoue toujours, l'abonnement prend fin et le travail mensuel s'arrête.`,
+          `Si un paiement échoue, Stripe réessaie pendant 2${nb}semaines au plus. S'il échoue toujours, l'abonnement prend fin, le travail mensuel s'arrête et un site que j'héberge vous est transféré comme indiqué dans «${nb}Vos comptes et votre site restent à vous${nb}».`,
           `Si je change mes prix, je vous préviens au moins 30${nb}jours avant. Les premiers clients gardent leur prix de lancement.`,
         ],
       },
@@ -411,10 +462,12 @@ export const fr: Dictionary = {
         ],
       },
       {
-        h2: "Vos comptes restent à vous",
+        h2: "Vos comptes et votre site restent à vous",
         paragraphs: [
-          `Votre fiche Google, vos comptes Search Console et de statistiques, votre nom de domaine, l'hébergement de votre site et tout autre compte restent à votre nom. Vous payez le domaine et l'hébergement directement${nb}: ils ne font pas partie de mes prix. Je suis ajouté comme gestionnaire, jamais comme propriétaire, et je n'ai jamais besoin de vos mots de passe.`,
+          `Votre fiche Google, vos comptes Search Console et de statistiques, votre nom de domaine et tout autre compte restent à votre nom. Vous achetez et payez votre nom de domaine directement${nb}: il ne fait pas partie de mes prix. Je suis ajouté comme gestionnaire, jamais comme propriétaire, et je n'ai jamais besoin de vos mots de passe.`,
+          `Hébergement${nb}: pour un site que je crée avec ${names.website}, l'hébergement est compris dans le prix mensuel et se fait sur mon compte. Si vous avez déjà votre propre hébergeur, vous le gardez et le payez directement.`,
           "Quand nous arrêtons de travailler ensemble, il vous suffit de me retirer de vos comptes. Tout ce que j'ai fait pour vous et que vous avez payé (site, pages, textes) vous appartient.",
+          `Un site que j'héberge reste en ligne ${pricing.handoverDays}${nb}jours après votre dernier mois payé. Pendant ce temps, je vous envoie tous ses fichiers et, si vous le souhaitez, je le transfère sur un compte d'hébergement gratuit à votre nom, sans frais. Ensuite, je le retire de mon compte.`,
         ],
       },
       {

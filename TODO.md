@@ -64,6 +64,11 @@ Everything below is my draft. Approve or change it before merging:
 - [ ] **2 new business-type pages**, EN and FR (`src/content/verticals/{en,fr}/`): home services, auto repair. Check each "What I won't do" promise is one you'll keep.
 - [ ] **Business types page** (`/for/`, `/fr/pour/`): heading, intro and "Don't see your kind of business?" line
 - [ ] **Held until a credential-check process exists**: home health care, clinics & med spas, daycares, tax & immigration (drafts on branch `parked/credentialed-verticals`). Decide how you'll verify a client's licence (state care licence, medical licence, childcare licence, PTIN / enrolled agent / DOJ accreditation) before publishing.
+- [ ] **Monthly scope and hosting (PLAN.md D25)**: check the monthly lists on both price cards, the new notes, the two new FAQ answers ("What do you do every month?", "If I cancel, do I keep my website?") and the terms changes (hosting, 30-day handover, upgrade credit, 2-business-day requests), EN and FR
+- [x] **Stripe catalog (PLAN.md D25)**: product descriptions and upgrade-credit coupons, live and test (2026-10-30)
+- [ ] **Upgrade flow**: run the Get Found → Get Booked upgrade once in test mode (STRIPE-SETUP.md) before the first real one
+- [ ] **Accountant**: Get Booked monthly now includes hosting; kept on Website Data Processing (same Texas tax as Website Hosting, see STRIPE-SETUP.md). Confirm with the data-processing vs advertising question
+- [ ] **Client sites**: add click tracking for the call, WhatsApp and booking buttons (for the Get Booked report), and keep one private repo per client so a handover is one export
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
 
 ### Hosting, domain and email (status in DOMAIN-SETUP.md)

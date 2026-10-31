@@ -318,8 +318,8 @@ test("external links open in a new tab, safely, with a screen-reader hint", asyn
 test("prices read with spaces, in both languages", async ({ page }) => {
   // Astro drops line breaks between tags; a glued price ("$79a month") is easy to miss.
   for (const [path, pattern] of [
-    ["/", /\$\d[\d,]* setup \+ \$\d[\d,]* a month/],
-    ["/fr/", /\d[\d\s]*\u00a0\$ de mise en place \+ \d[\d\s]*\u00a0\$ par mois/],
+    ["/", /\$\d[\d,]* a month \+ \$\d[\d,]* setup/],
+    ["/fr/", /\d[\d\s]*\u00a0\$ par mois \+ \d[\d\s]*\u00a0\$ de mise en place/],
   ] as const) {
     await page.goto(path);
     const text = (await page.locator("#pricing article").first().textContent())?.replace(
