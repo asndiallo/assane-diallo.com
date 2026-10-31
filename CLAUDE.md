@@ -12,7 +12,8 @@ pnpm lint         # biome check (lint + format check). `pnpm format` fixes.
 pnpm typecheck    # astro check
 pnpm build        # astro build + [TODO] report (warns, never fails)
 pnpm test:e2e     # Playwright smoke test against the built dist/ (port 4399)
-pnpm lhci         # Lighthouse CI, mobile, ≥ 0.95 in all four categories
+pnpm lhci         # Lighthouse CI, mobile, ≥ 0.95 in all four categories (CI: 3 runs/page)
+pnpm lhci:local   # same pages and gate, 1 run/page in parallel shards (used by `check`)
 pnpm linkcheck    # linkinator on dist/
 pnpm check        # all of the above, in order. Run before saying "done".
 pnpm og           # regenerate public/og-default.png

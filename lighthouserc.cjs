@@ -29,7 +29,8 @@ module.exports = {
       staticDistDir: DIST,
       url: pages, // paths; lhci serves them from DIST
       // Median of 3 runs per page: a single run on a shared CI machine is too noisy to gate on.
-      numberOfRuns: 3,
+      // Local runs (scripts/lhci-local.ts) do 1: a quiet machine with scores at 1.00 doesn't need it.
+      numberOfRuns: process.env.CI ? 3 : 1,
       // The analytics beacon is a third-party request; keep scores about the site itself.
       settings: { blockedUrlPatterns: ["*cloudflareinsights.com*"] },
     },
