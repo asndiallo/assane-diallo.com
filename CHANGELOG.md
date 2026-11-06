@@ -17,6 +17,9 @@ merge date.
   one new customer is worth (EN and FR, PLAN.md D29).
 - Price cards lead with 3–4 outcomes and a WhatsApp button per package; the full task lists
   sit behind "See everything I do", and Get Booked comes first on phones (PLAN.md D30).
+- Each price card opens with an illustration of what it makes: the hero's Google listing, plus
+  a phone showing the website for Get Booked. The hero and the cards share one listing
+  component (PLAN.md D31).
 - `pnpm check` runs Lighthouse in parallel shards with one run per page (about 2 min instead
   of 15), and the link check before it. CI still gates on the median of 3 runs.
 

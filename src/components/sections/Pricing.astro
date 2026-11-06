@@ -2,6 +2,7 @@
 import { pricing } from "../../config.ts";
 import type { Dictionary } from "../../i18n/index.ts";
 import CtaWhatsApp from "../CtaWhatsApp.astro";
+import PackagePreview from "../PackagePreview.astro";
 import Section from "../Section.astro";
 
 interface Props {
@@ -45,6 +46,7 @@ const check = "m5 12.5 4.5 4.5L19 7.5";
               tier.recommended ? "order-first border-brand md:order-none" : "border-line",
             ]}
           >
+            <PackagePreview t={t} tier={tier} />
             <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
               <h3 class="text-2xl">{name}</h3>
               {tier.recommended && <p class="text-sm font-semibold text-brand">{copy.recommended}</p>}

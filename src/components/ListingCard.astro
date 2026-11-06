@@ -1,0 +1,63 @@
+---
+/**
+ * The illustrated Google listing: the site's signature picture of "found on Google".
+ * Used large in the hero (category rotating through the verticals) and small on the price cards.
+ * Decorative: callers wrap it in an aria-hidden container.
+ */
+import type { Dictionary } from "../i18n/index.ts";
+
+interface Props {
+  t: Dictionary;
+  /** Small version for the price cards. */
+  compact?: boolean;
+  /** Rotate the category with the hero's search box (the hero script drives [data-rotate]). */
+  rotate?: boolean;
+  class?: string;
+}
+const { t, compact = false, rotate = false, class: extra } = Astro.props;
+const { listing } = t.home;
+const line = compact ? "text-[0.8rem]" : "text-[0.95rem]";
+---
+
+<div
+  class:list={[
+    "rounded-2xl border-2 border-ink bg-paper",
+    compact ? "p-3.5 shadow-[4px_4px_0_var(--color-ink)]" : "p-5 shadow-[6px_6px_0_var(--color-ink)]",
+    extra,
+  ]}
+>
+  <p class:list={["font-bold", compact ? "text-[0.95rem]" : "text-lg"]}>{listing.name}</p>
+  {
+    rotate ? (
+      <p class:list={["rotate grid text-muted", line]} data-rotate>
+        {listing.searches.map((search, i) => <span class:list={{ "is-active": i === 0 }}>{search.category}</span>)}
+      </p>
+    ) : (
+      <p class:list={["text-muted", line]}>{listing.searches[0]?.category}</p>
+    )
+  }
+  <p class:list={["mt-1.5 flex items-center gap-1", line]}>
+    <span class="tracking-widest text-sun">★★★★★</span>
+    <span class="text-muted">{listing.reviews}</span>
+  </p>
+  <p class:list={["mt-1", line]}>
+    <span class="font-semibold text-brand">{listing.open}</span>
+    <span class="text-muted"> · {listing.closes}</span>
+  </p>
+  {!compact && <p class:list={["mt-1 text-muted", line]}>{listing.prices}</p>}
+  <div class:list={["grid grid-cols-3", compact ? "mt-3 gap-1.5" : "mt-4 gap-2"]}>
+    {
+      listing.actions.map((action, i) => (
+        <span
+          class:list={[
+            "rounded-full text-center font-semibold",
+            compact ? "py-1 text-[0.65rem]" : "py-2 text-sm",
+            i === 0 ? "bg-brand text-on-brand" : "border border-line text-brand",
+          ]}
+        >
+          {action}
+        </span>
+      ))
+    }
+  </div>
+</div>

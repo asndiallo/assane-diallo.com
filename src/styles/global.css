@@ -135,6 +135,37 @@
     @apply border-2 border-brand bg-paper text-brand hover:bg-wash hover:text-brand-strong;
   }
 
+  /* Listing illustrations (hero, price cards): a street grid as the "map" behind the listing. */
+  .map-grid {
+    background-image:
+      linear-gradient(
+        90deg,
+        transparent 47%,
+        var(--color-paper) 47%,
+        var(--color-paper) 53%,
+        transparent 53%
+      ),
+      linear-gradient(
+        0deg,
+        transparent 47%,
+        var(--color-paper) 47%,
+        var(--color-paper) 53%,
+        transparent 53%
+      );
+    background-size: 7.5rem 6rem;
+    background-position: -1.5rem 1rem;
+  }
+
+  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift. */
+  .rotate > * {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .rotate > .is-active {
+    opacity: 1;
+  }
+
   /* Markdown bodies (case studies). */
   .prose {
     max-width: 65ch;
