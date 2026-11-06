@@ -2,7 +2,8 @@
 const fs = require("node:fs");
 const path = require("node:path");
 
-const DIST = "./dist";
+// Absolute, so scripts/lhci-local.ts can run each shard from its own working directory.
+const DIST = path.join(__dirname, "dist");
 // CI splits the pages across parallel jobs: LHCI_SHARD="2/4" audits every 4th page from the 2nd.
 // Unset (local runs) audits them all.
 const [shard, shards] = (process.env.LHCI_SHARD ?? "1/1").split("/").map(Number);
@@ -44,6 +45,6 @@ module.exports = {
         },
       ],
     },
-    upload: { target: "filesystem", outputDir: "./.lighthouseci/reports" },
+    upload: { target: "filesystem", outputDir: path.join(__dirname, ".lighthouseci/reports") },
   },
 };

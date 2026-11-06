@@ -137,6 +137,7 @@ Webpack/*
 dist/
 .astro/
 .lighthouseci/
+.lighthouseci-shards/
 test-results/
 playwright-report/
 .wrangler/

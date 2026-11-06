@@ -1,0 +1,55 @@
+---
+/**
+ * The top of a price card: a picture of what the package makes, before any words.
+ * Every package gets the Google listing; a package with a website adds a phone showing it.
+ * Decorative (aria-hidden): the card's text says the same thing.
+ */
+import type { Tier } from "../config.ts";
+import type { Dictionary } from "../i18n/index.ts";
+import ListingCard from "./ListingCard.astro";
+import MapPin from "./MapPin.astro";
+
+interface Props {
+  t: Dictionary;
+  tier: Tier;
+}
+const { t, tier } = Astro.props;
+const { listing } = t.home;
+const website = tier.includes.some((id) => id === "website");
+// Placeholder text lines on the phone's page: widths only, no words to read.
+const lines = ["w-full", "w-4/5", "w-11/12"];
+---
+
+<div
+  aria-hidden="true"
+  class="map-grid relative -mx-6 -mt-6 mb-6 h-56 overflow-hidden rounded-t-[0.875rem] bg-wash sm:-mx-8 sm:-mt-8"
+>
+  <div class="relative mx-auto h-full w-full max-w-[21rem]">
+    {
+      website ? (
+        <>
+          <ListingCard t={t} compact class="absolute top-12 left-2 w-[13.5rem]" />
+          <div class="absolute top-5 right-2 z-10 w-[7.5rem] rounded-[1.5rem] border-2 border-ink bg-paper p-1.5 shadow-[4px_4px_0_var(--color-ink)]">
+            <div class="mx-auto mb-1.5 h-1.5 w-8 rounded-full bg-line" />
+            <div class="overflow-hidden rounded-[1rem] border border-line">
+              <p class="bg-band px-2 py-2.5 text-[0.6rem] leading-tight font-bold text-on-band">{listing.name}</p>
+              <div class="space-y-1.5 px-2 pt-2.5 pb-3">
+                {lines.map((width) => <div class:list={["h-1.5 rounded-full bg-line", width]} />)}
+                <p class="!mt-3 rounded-full bg-brand py-1 text-center text-[0.6rem] font-semibold text-on-brand">
+                  {listing.actions[1]}
+                </p>
+                {lines.map((width) => <div class:list={["h-1.5 rounded-full bg-line", width]} />)}
+                {lines.map((width) => <div class:list={["h-1.5 rounded-full bg-line", width]} />)}
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <MapPin class="absolute top-2 right-3 h-10 w-10" />
+          <ListingCard t={t} compact class="absolute top-11 left-1/2 w-[15rem] -translate-x-1/2" />
+        </>
+      )
+    }
+  </div>
+</div>

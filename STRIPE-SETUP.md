@@ -26,10 +26,14 @@ test mode and live mode).
 | Get Found — setup    | `profile_setup_founding` / `profile_setup_standard`     | $300 / $450, once   |
 | Get Found — monthly  | `profile_monthly_founding` / `profile_monthly_standard` | $79 / $99 a month   |
 | Get Booked — setup   | `website_setup_founding` / `website_setup_standard`     | $650 / $1,000, once |
-| Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $179 a month |
+| Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $199 a month |
 
 Product descriptions (shown on checkout and invoices) list the setup and monthly work of
 PLAN.md D25. Updated in live and test mode on 2026-10-30. Change them with the price cards.
+
+2026-11-05 (PLAN.md D29), live and test: Get Booked standard monthly moved from $179 to $199
+(new price, lookup key transferred, $179 price archived; no subscription used it), and the
+Get Found monthly description lists the monthly review reminder.
 
 Upgrade-credit coupons (live and test mode, 2026-10-30), same IDs in both modes, both named
 "Get Found setup credit", `duration: once`, restricted to the **Get Booked — setup** product:
@@ -125,7 +129,7 @@ differs from the catalog.
 | Package    | Founding                                         | Standard                                         |
 | ---------- | ------------------------------------------------ | ------------------------------------------------ |
 | Get Found  | <https://buy.stripe.com/bJe9AT2wx92H9sSf5e9oc04> | <https://buy.stripe.com/5kQ8wP9YZ3IndJ8bT29oc01> |
-| Get Booked | <https://buy.stripe.com/4gM9ATc770wbeNc3mw9oc02> | <https://buy.stripe.com/00w00j8UV7YDbB02is9oc03> |
+| Get Booked | <https://buy.stripe.com/4gM9ATc770wbeNc3mw9oc02> | <https://buy.stripe.com/eVqfZh1st6Uz5cCf5e9oc05> |
 
 All four (live, 2026-10-28): automatic tax, billing address and phone required, business name,
 subscription description "Monthly part includes updates and a report. Cancel anytime."
@@ -133,7 +137,8 @@ subscription description "Monthly part includes updates and a report. Cancel any
 metadata `tier` and `pricing`. Never put these links on the site (no checkout on the site).
 After the 3rd founding client, deactivate both founding links (**Payment links → ⋯ →
 Deactivate**). The first Dashboard-made Get Found link (`…oc00`) is deactivated: it lacked
-these settings.
+these settings. The first Get Booked standard link (`…oc03`, $179 a month) is deactivated:
+replaced by `…oc05` at $199 on 2026-11-05 (PLAN.md D29), same settings.
 
 ## Changes and cancelling
 
