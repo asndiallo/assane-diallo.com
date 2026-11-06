@@ -125,12 +125,12 @@ export const fr: Dictionary = {
         },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
-          body: "Un lien et un court message à envoyer à vos clients satisfaits.",
+          body: "Un lien, un QR code et un court message à envoyer à vos clients satisfaits.",
         },
       },
       monthly: {
         title: "Ensuite, chaque mois, le travail continue.",
-        body: `${posts}${nb}publications Google, une réponse à chaque avis, vos informations tenues à jour et un rapport en langage clair. Avec ${names.website}, j'héberge aussi votre site, je fais vos modifications et j'ajoute de nouvelles pages.`,
+        body: `${posts}${nb}publications Google, une réponse à chaque avis, un rappel mensuel pour en demander de nouveaux, vos informations tenues à jour et un rapport en langage clair. Avec ${names.website}, j'héberge aussi votre site, je fais vos modifications et j'ajoute de nouvelles pages.`,
       },
       websiteOnly: `Le site et les pages de recherche sont inclus dans la formule ${names.website}.`,
       onlineShops: `Boutiques en ligne${nb}: audits sur demande.`,
@@ -161,6 +161,7 @@ export const fr: Dictionary = {
     pricing: {
       h2: "Tarifs",
       intro: "Deux formules. Choisissez celle qui correspond à votre entreprise aujourd'hui.",
+      payback: `Une façon simple de juger${nb}: pensez à ce que vous rapporte un nouveau client. Si un ou deux clients de plus par mois couvrent le prix mensuel, le travail est rentabilisé.`,
       foundingLabel: `Pour mes ${n} premiers clients`,
       standardLabel: `Après mes ${n} premiers clients`,
       startingAt: "À partir de",
@@ -177,6 +178,8 @@ export const fr: Dictionary = {
       monthlyItems: {
         posts: `${posts}${nb}publications Google par mois`,
         reviewReplies: `Une réponse à chaque avis sous ${hours}${nb}heures`,
+        reviewRequests:
+          "Un rappel mensuel pour demander des avis, et les nouveaux avis comptés dans votre rapport",
         profileUpkeep: "Horaires, photos et services à jour",
         editWatch: "Modifications erronées repérées et corrigées",
         listingsCheck: "Apple Plans, Bing et Yelp vérifiés chaque trimestre",
@@ -261,7 +264,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Que faites-vous chaque mois${nb}?`,
-          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
+          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, un rappel mensuel pour demander des avis (les nouveaux comptés dans votre rapport), vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
         },
         {
           q: `Si je résilie, est-ce que je garde mon site${nb}?`,

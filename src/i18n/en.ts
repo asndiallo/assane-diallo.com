@@ -124,12 +124,12 @@ export const en = {
         },
         reviews: {
           title: "An easy way to get reviews.",
-          body: "A link and a short message you can send to happy customers.",
+          body: "A link, a QR code and a short message you can send to happy customers.",
         },
       } satisfies Record<SetupId, { title: string; body: string }>,
       monthly: {
         title: "Then, every month, the work keeps going.",
-        body: `${posts} Google posts, a reply to every review, your details kept right, and a plain-language report. With ${names.website}, I also host your site, make your edits and add new pages.`,
+        body: `${posts} Google posts, a reply to every review, a monthly reminder to ask for new ones, your details kept right, and a plain-language report. With ${names.website}, I also host your site, make your edits and add new pages.`,
       },
       websiteOnly: `Website and search pages come with the ${names.website} package.`,
       onlineShops: "Online shops: audits by request.",
@@ -160,6 +160,8 @@ export const en = {
     pricing: {
       h2: "Prices",
       intro: "Two packages. Pick the one that fits where your business is today.",
+      payback:
+        "One way to judge it: think of what one new customer is worth to you. If one or two extra customers a month cover the monthly price, the work pays for itself.",
       foundingLabel: `For my first ${n} clients`,
       standardLabel: `After my first ${n} clients`,
       startingAt: "Starting at",
@@ -176,6 +178,8 @@ export const en = {
       monthlyItems: {
         posts: `${posts} Google posts a month`,
         reviewReplies: `Replies to every review within ${hours} hours`,
+        reviewRequests:
+          "A monthly reminder to ask for reviews, with new reviews counted in your report",
         profileUpkeep: "Hours, photos and services kept right",
         editWatch: "Wrong edits caught and fixed",
         listingsCheck: "Apple Maps, Bing and Yelp checked quarterly",
@@ -260,7 +264,7 @@ export const en = {
         },
         {
           q: "What do you do every month?",
-          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, your hours, photos and services kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
+          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, a monthly reminder to ask for reviews (with the new ones counted in your report), your hours, photos and services kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
         },
         {
           q: "If I cancel, do I keep my website?",

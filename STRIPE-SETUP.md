@@ -26,7 +26,7 @@ test mode and live mode).
 | Get Found — setup    | `profile_setup_founding` / `profile_setup_standard`     | $300 / $450, once   |
 | Get Found — monthly  | `profile_monthly_founding` / `profile_monthly_standard` | $79 / $99 a month   |
 | Get Booked — setup   | `website_setup_founding` / `website_setup_standard`     | $650 / $1,000, once |
-| Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $179 a month |
+| Get Booked — monthly | `website_monthly_founding` / `website_monthly_standard` | $129 / $199 a month |
 
 Product descriptions (shown on checkout and invoices) list the setup and monthly work of
 PLAN.md D25. Updated in live and test mode on 2026-10-30. Change them with the price cards.

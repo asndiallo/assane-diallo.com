@@ -42,6 +42,7 @@ export type SetupId = "profile" | "listings" | "website" | "searchPages" | "revi
 export type MonthlyId =
   | "posts"
   | "reviewReplies"
+  | "reviewRequests"
   | "profileUpkeep"
   | "editWatch"
   | "listingsCheck"
@@ -90,17 +91,26 @@ export const pricing = {
       founding: { setup: 300, monthly: 79 },
       standard: { setup: 450, monthly: 99 },
       includes: ["profile", "listings", "reviews"],
-      monthly: ["posts", "reviewReplies", "profileUpkeep", "editWatch", "listingsCheck", "report"],
+      monthly: [
+        "posts",
+        "reviewReplies",
+        "reviewRequests",
+        "profileUpkeep",
+        "editWatch",
+        "listingsCheck",
+        "report",
+      ],
     },
     {
       id: "website",
       founding: { setup: 650, monthly: 129 },
-      standard: { setup: 1000, monthly: 179 },
+      standard: { setup: 1000, monthly: 199 },
       recommended: true,
       includes: ["profile", "listings", "reviews", "website", "searchPages"],
       monthly: [
         "posts",
         "reviewReplies",
+        "reviewRequests",
         "profileUpkeep",
         "editWatch",
         "listingsCheck",

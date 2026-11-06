@@ -11,6 +11,10 @@ merge date.
 
 ### Changed
 
+- Prices: both packages now include a monthly reminder to ask for reviews, with new reviews
+  counted in the report; the setup review kit adds a QR code; Get Booked's standard monthly
+  price goes from $179 to $199; the pricing section adds a line on judging the price by what
+  one new customer is worth (EN and FR, PLAN.md D29).
 - `pnpm check` runs Lighthouse in parallel shards with one run per page (about 2 min instead
   of 15), and the link check before it. CI still gates on the median of 3 runs.
 
