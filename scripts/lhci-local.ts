@@ -3,20 +3,28 @@
  * but the shards run side by side on this machine instead of on separate runners: each audit
  * mostly waits on Chrome, so 4 at once take about a third of the time of one after another.
  * Scores stay well above the 0.95 gate under that load; CI's median of 3 runs is still the gate.
+ *
+ * LHCI names each result lhr-<Date.now()>.json, so shards sharing one folder overwrite each other
+ * when two finish in the same millisecond. Each shard collects in its own folder instead, and the
+ * results are merged into .lighthouseci/ before `lhci assert`.
  */
 import { spawn } from "node:child_process";
-import { readdirSync, rmSync } from "node:fs";
+import { copyFileSync, mkdirSync, readdirSync, rmSync } from "node:fs";
 import { createRequire } from "node:module";
 import { availableParallelism } from "node:os";
+import { join, resolve } from "node:path";
 
 const DIR = ".lighthouseci";
+const SHARD_ROOT = ".lighthouseci-shards";
+const CONFIG = resolve("lighthouserc.cjs");
 const SHARDS = Math.max(1, Math.min(4, Math.floor(availableParallelism() / 2)));
 const { ci } = createRequire(import.meta.url)("../lighthouserc.cjs");
 const expected = ci.collect.url.length * ci.collect.numberOfRuns;
 
-const run = (args: string[], env: NodeJS.ProcessEnv = {}, quiet = false) =>
+const run = (args: string[], env: NodeJS.ProcessEnv = {}, quiet = false, cwd = process.cwd()) =>
   new Promise<number>((resolve) => {
     const child = spawn("lhci", args, {
+      cwd,
       env: { ...process.env, ...env },
       stdio: quiet ? ["ignore", "pipe", "pipe"] : "inherit",
     });
@@ -30,14 +38,28 @@ const run = (args: string[], env: NodeJS.ProcessEnv = {}, quiet = false) =>
   });
 
 rmSync(DIR, { recursive: true, force: true });
+rmSync(SHARD_ROOT, { recursive: true, force: true });
 console.log(`Lighthouse: ${expected} runs in ${SHARDS} parallel shards…`);
-const shards = Array.from({ length: SHARDS }, (_, i) =>
-  run(["collect", "--additive"], { LHCI_SHARD: `${i + 1}/${SHARDS}` }, true),
-);
+const shardDirs = Array.from({ length: SHARDS }, (_, i) => join(SHARD_ROOT, String(i + 1)));
+const shards = shardDirs.map((cwd, i) => {
+  mkdirSync(cwd, { recursive: true });
+  return run(["collect", `--config=${CONFIG}`], { LHCI_SHARD: `${i + 1}/${SHARDS}` }, true, cwd);
+});
 if ((await Promise.all(shards)).some((code) => code !== 0)) process.exit(1);
 
-// Shards write lhr-<timestamp>.json into the same folder; make sure none overwrote another.
-const collected = readdirSync(DIR).filter((f) => /^lhr-.*\.json$/.test(f)).length;
+// Merge: lhr-<timestamp>.json becomes lhr-<timestamp><shard>.json, unique across shards and still
+// matching LHCI's /^lhr-\d+\.json$/ (the .html report beside it keeps the same name).
+mkdirSync(DIR, { recursive: true });
+shardDirs.forEach((cwd, i) => {
+  const from = join(cwd, DIR);
+  for (const file of readdirSync(from)) {
+    const match = /^lhr-(\d+)\.(json|html)$/.exec(file);
+    if (match) copyFileSync(join(from, file), join(DIR, `lhr-${match[1]}${i + 1}.${match[2]}`));
+  }
+});
+rmSync(SHARD_ROOT, { recursive: true, force: true });
+
+const collected = readdirSync(DIR).filter((f) => /^lhr-\d+\.json$/.test(f)).length;
 if (collected !== expected) {
   console.error(`Expected ${expected} Lighthouse results, found ${collected}.`);
   process.exit(1);
