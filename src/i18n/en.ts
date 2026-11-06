@@ -1,4 +1,11 @@
-import { type MonthlyId, pricing, type SetupId, type TierId, getTier as tier } from "../config.ts";
+import {
+  type MonthlyId,
+  type OutcomeId,
+  pricing,
+  type SetupId,
+  type TierId,
+  getTier as tier,
+} from "../config.ts";
 
 const n = pricing.foundingClients;
 const { postsPerMonth: posts, reviewReplyHours: hours, requestReplyDays: days } = pricing;
@@ -161,7 +168,7 @@ export const en = {
       h2: "Prices",
       intro: "Two packages. Pick the one that fits where your business is today.",
       payback:
-        "One way to judge it: think of what one new customer is worth to you. If one or two extra customers a month cover the monthly price, the work pays for itself.",
+        "If one or two new customers a month are worth more than the monthly price, it pays for itself.",
       foundingLabel: `For my first ${n} clients`,
       standardLabel: `After my first ${n} clients`,
       startingAt: "Starting at",
@@ -170,11 +177,31 @@ export const en = {
       setupOnce: "setup, paid once",
       perMonth: "a month",
       quote: "Final quote after a free check-up.",
-      includes: "What the setup includes",
+      details: "See everything I do",
+      includes: "Setup, done once",
+      choose: (name: string) => `Start with ${name}`,
+      chooseMessage: (name: string) => `Hi Assane, I'm interested in ${name}. My business is: `,
       monthlyPlan: "Every month",
       recommended: "Recommended",
       everythingIn: (name: string) => `Everything in ${name}, plus:`,
-      websiteIncluded: "Website and hosting included",
+      outcomes: {
+        maps: {
+          title: "Found on Google Maps",
+          body: `Your profile set up right, ${posts} posts a month, and Apple Maps, Bing and Yelp to match.`,
+        },
+        reviews: {
+          title: "Reviews asked for and answered",
+          body: `A monthly reminder to ask, and a reply to each one within ${hours} hours.`,
+        },
+        website: {
+          title: "Your own website, hosted",
+          body: "Edits each month and a new local page each quarter.",
+        },
+        report: {
+          title: "A report in plain words",
+          body: "Every month: what changed and what's next.",
+        },
+      } satisfies Record<OutcomeId, { title: string; body: string }>,
       monthlyItems: {
         posts: `${posts} Google posts a month`,
         reviewReplies: `Replies to every review within ${hours} hours`,
@@ -194,33 +221,31 @@ export const en = {
       promises: [
         {
           title: "No contract",
-          body: "The setup is paid once. The monthly work is month to month: cancel anytime.",
+          body: "Setup paid once. Monthly, cancel anytime.",
         },
         {
           title: "Quick changes",
-          body: `A new price or a holiday closure? Done within ${days} business days.`,
+          body: `New prices or holiday hours, done within ${days} business days.`,
         },
         {
           title: "Upgrade credit",
-          body: `Move up to ${names.website} within ${pricing.upgradeCreditMonths} months and your ${names.profile} setup comes off its price.`,
+          body: `Move up to ${names.website} within ${pricing.upgradeCreditMonths} months: your ${names.profile} setup comes off.`,
         },
         {
           title: "Your site stays yours",
-          body: "If you leave, you keep your domain and website. The site already runs on a free account in your name.",
+          body: "If you leave, you keep your domain and website.",
         },
       ],
       tiers: {
         profile: {
           name: names.profile,
-          tagline: "Google profile setup",
-          summary: "For businesses that don't need a website yet.",
+          tagline: "Show up on Google. No website needed.",
         },
         website: {
           name: names.website,
-          tagline: "Google profile + website",
-          summary: `Everything in ${names.profile}, plus a simple website that I host and keep up to date, and pages for what people search.`,
+          tagline: "Show up on Google, with a website that takes calls and bookings.",
         },
-      } satisfies Record<TierId, { name: string; tagline: string; summary: string }>,
+      } satisfies Record<TierId, { name: string; tagline: string }>,
     },
     about: {
       h2: "Who I am",

@@ -161,7 +161,8 @@ export const fr: Dictionary = {
     pricing: {
       h2: "Tarifs",
       intro: "Deux formules. Choisissez celle qui correspond à votre entreprise aujourd'hui.",
-      payback: `Une façon simple de juger${nb}: pensez à ce que vous rapporte un nouveau client. Si un ou deux clients de plus par mois couvrent le prix mensuel, le travail est rentabilisé.`,
+      payback:
+        "Si un ou deux nouveaux clients par mois vous rapportent plus que le prix mensuel, c'est rentabilisé.",
       foundingLabel: `Pour mes ${n} premiers clients`,
       standardLabel: `Après mes ${n} premiers clients`,
       startingAt: "À partir de",
@@ -170,11 +171,32 @@ export const fr: Dictionary = {
       setupOnce: "de mise en place, payée une fois",
       perMonth: "par mois",
       quote: "Devis final après un bilan gratuit.",
-      includes: "Ce que comprend la mise en place",
+      details: "Voir tout ce que je fais",
+      includes: "Mise en place, faite une fois",
+      choose: (name: string) => `Choisir ${name}`,
+      chooseMessage: (name: string) =>
+        `Bonjour Assane, la formule ${name} m'intéresse. Mon entreprise${nb}: `,
       monthlyPlan: "Chaque mois",
       recommended: "Recommandée",
       everythingIn: (name: string) => `Tout ce qu'inclut ${name}, plus${nb}:`,
-      websiteIncluded: "Site et hébergement compris",
+      outcomes: {
+        maps: {
+          title: "Visible sur Google Maps",
+          body: `Votre fiche bien configurée, ${posts}${nb}publications par mois, et Apple Plans, Bing et Yelp à l'identique.`,
+        },
+        reviews: {
+          title: "Des avis demandés et répondus",
+          body: `Un rappel mensuel pour en demander, et une réponse à chacun sous ${hours}${nb}heures.`,
+        },
+        website: {
+          title: "Votre propre site, hébergé",
+          body: "Des modifications chaque mois et une nouvelle page locale chaque trimestre.",
+        },
+        report: {
+          title: "Un rapport en langage clair",
+          body: `Chaque mois${nb}: ce qui a changé et la suite.`,
+        },
+      },
       monthlyItems: {
         posts: `${posts}${nb}publications Google par mois`,
         reviewReplies: `Une réponse à chaque avis sous ${hours}${nb}heures`,
@@ -194,31 +216,29 @@ export const fr: Dictionary = {
       promises: [
         {
           title: "Sans engagement",
-          body: `La mise en place se paie une fois. Le travail mensuel se paie au mois${nb}: résiliable à tout moment.`,
+          body: "Mise en place payée une fois. Au mois, résiliable à tout moment.",
         },
         {
           title: "Changements rapides",
-          body: `Un nouveau prix ou une fermeture un jour férié${nb}? C'est fait sous ${days}${nb}jours ouvrés.`,
+          body: `Nouveaux prix ou horaires de fêtes, faits sous ${days}${nb}jours ouvrés.`,
         },
         {
           title: "Crédit de changement d'offre",
-          body: `Passez à ${names.website} dans les ${pricing.upgradeCreditMonths}${nb}mois et votre mise en place ${names.profile} est déduite de son prix.`,
+          body: `Passez à ${names.website} dans les ${pricing.upgradeCreditMonths}${nb}mois${nb}: votre mise en place ${names.profile} est déduite.`,
         },
         {
           title: "Votre site reste à vous",
-          body: "Si vous partez, vous gardez votre domaine et votre site. Le site tourne déjà sur un compte gratuit à votre nom.",
+          body: "Si vous partez, vous gardez votre domaine et votre site.",
         },
       ],
       tiers: {
         profile: {
           name: names.profile,
-          tagline: "Configuration de la fiche Google",
-          summary: "Pour les entreprises qui n'ont pas encore besoin d'un site.",
+          tagline: "Visible sur Google. Pas besoin de site.",
         },
         website: {
           name: names.website,
-          tagline: "Fiche Google + site",
-          summary: `Tout ce qu'inclut ${names.profile}, plus un site simple que j'héberge et tiens à jour, et des pages pour ce que les gens cherchent.`,
+          tagline: "Visible sur Google, avec un site qui reçoit appels et réservations.",
         },
       },
     },

@@ -70,6 +70,7 @@ Everything below is my draft. Approve or change it before merging:
 - [ ] **Accountant**: Get Booked monthly now includes hosting; kept on Website Data Processing (same Texas tax as Website Hosting, see STRIPE-SETUP.md). Confirm with the data-processing vs advertising question
 - [ ] **Client sites**: add click tracking for the call, WhatsApp and booking buttons (for the Get Booked report), and keep one private repo per client so a handover is one export
 - [ ] **Review requests and $199 (PLAN.md D29)**: approve the new monthly item, the QR code in the setup kit and the payback line (EN and FR)
+- [ ] **Price cards (PLAN.md D30)**: approve the outcome titles and lines, the new taglines, the shorter promises and the "Start with …" buttons (EN and FR)
 - [ ] **Stripe, Get Booked standard monthly $179 → $199**: create a new $199 price, move the `website_monthly_standard` lookup key to it (transfer the lookup key), archive the $179 price, live and test mode. Add review requests to both product descriptions.
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
 

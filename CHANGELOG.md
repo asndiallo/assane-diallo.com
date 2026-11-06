@@ -15,6 +15,8 @@ merge date.
   counted in the report; the setup review kit adds a QR code; Get Booked's standard monthly
   price goes from $179 to $199; the pricing section adds a line on judging the price by what
   one new customer is worth (EN and FR, PLAN.md D29).
+- Price cards lead with 3–4 outcomes and a WhatsApp button per package; the full task lists
+  sit behind "See everything I do", and Get Booked comes first on phones (PLAN.md D30).
 - `pnpm check` runs Lighthouse in parallel shards with one run per page (about 2 min instead
   of 15), and the link check before it. CI still gates on the median of 3 runs.
 
@@ -83,6 +85,8 @@ merge date.
 
 ### Fixed
 
+- `pnpm lhci:local` no longer loses results: each parallel shard collects in its own folder
+  before the merge (results saved in the same millisecond used to overwrite each other).
 - Client work: every card in the first row loads eagerly (Djidiawax was lazy but above the
   fold on desktop); the main image on client work and case study pages gets
   `fetchpriority="high"`.

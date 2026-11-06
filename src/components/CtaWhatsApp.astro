@@ -7,14 +7,20 @@ import Todo from "./Todo.astro";
 interface Props {
   t: Dictionary;
   /** "inverse" is for dark backgrounds. */
-  variant?: "default" | "inverse";
+  variant?: "default" | "secondary" | "inverse";
+  /** Default: the generic free check-up button and message. */
+  label?: string;
+  message?: string;
+  class?: string;
 }
-const { t, variant = "default" } = Astro.props;
-const href = whatsappHref(t.cta.whatsappMessage);
-const style =
-  variant === "inverse"
-    ? "btn bg-paper text-brand hover:bg-wash hover:text-brand-strong"
-    : "btn btn-primary";
+const { t, variant = "default", label = t.cta.whatsapp, message = t.cta.whatsappMessage, class: extra } = Astro.props;
+const href = whatsappHref(message);
+const variants = {
+  default: "btn btn-primary",
+  secondary: "btn btn-secondary",
+  inverse: "btn bg-paper text-brand hover:bg-wash hover:text-brand-strong",
+};
+const style = [variants[variant], extra].filter(Boolean).join(" ");
 ---
 
 {
@@ -23,11 +29,11 @@ const style =
       <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z" />
       </svg>
-      {t.cta.whatsapp}
+      {label}
     </Link>
   ) : (
     <span class={`${style} flex-col gap-1`} data-cta="whatsapp">
-      {t.cta.whatsapp}
+      {label}
       <Todo label="WhatsApp number in src/config.ts" />
     </span>
   )

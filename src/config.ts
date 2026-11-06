@@ -38,6 +38,8 @@ export const site = {
 export type TierId = "profile" | "website";
 /** Work done once, during the setup. */
 export type SetupId = "profile" | "listings" | "website" | "searchPages" | "reviews";
+/** What the owner gets, in a few words: the face of each price card. The task lists sit behind it. */
+export type OutcomeId = "maps" | "reviews" | "website" | "report";
 /** Work done every month (or quarter) the client is subscribed. */
 export type MonthlyId =
   | "posts"
@@ -65,6 +67,8 @@ export interface Tier {
   standard: Price;
   /** Highlighted card: the package we steer owners toward. */
   recommended?: boolean;
+  /** Shown first on the card, before the detailed lists. */
+  outcomes: readonly OutcomeId[];
   /** Paid once, with the setup. */
   includes: readonly SetupId[];
   /** Ongoing work the monthly price covers. Part of the package; cancel anytime. */
@@ -90,6 +94,7 @@ export const pricing = {
       id: "profile",
       founding: { setup: 300, monthly: 79 },
       standard: { setup: 450, monthly: 99 },
+      outcomes: ["maps", "reviews", "report"],
       includes: ["profile", "listings", "reviews"],
       monthly: [
         "posts",
@@ -106,6 +111,7 @@ export const pricing = {
       founding: { setup: 650, monthly: 129 },
       standard: { setup: 1000, monthly: 199 },
       recommended: true,
+      outcomes: ["maps", "reviews", "website", "report"],
       includes: ["profile", "listings", "reviews", "website", "searchPages"],
       monthly: [
         "posts",
