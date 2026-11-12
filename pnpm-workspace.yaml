@@ -1,3 +1,10 @@
 allowBuilds:
   esbuild: true
   workerd: true
+# astro 7.4.7+ brings rolldown, whose optional wasm32 binding (never installed on macOS/Linux)
+# pins @emnapi 2.0.0-beta.2. pnpm then reuses that beta for @astrojs/check's peer, next to
+# @emnapi/core 1.x, and the checker crashes on load (CI: "@astrojs/check and typescript are
+# required"). Keep that binding on the stable 1.x line. Drop once rolldown ships a stable pin.
+overrides:
+  "@rolldown/binding-wasm32-wasi>@emnapi/core": "^1.11.3"
+  "@rolldown/binding-wasm32-wasi>@emnapi/runtime": "^1.11.3"
