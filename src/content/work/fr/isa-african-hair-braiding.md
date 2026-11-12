@@ -53,6 +53,7 @@ La fiche d'établissement Google du salon n'avait jamais été revendiquée. La 
 ## Les 3 derniers mois
 
 D'après la fiche d'établissement Google du salon, sur les 3 mois jusqu'à octobre 2026 :
+
 - **4 723 personnes ont vu la fiche.** 87 % d'entre elles (4 092) l'ont trouvée sur la recherche Google depuis un téléphone. 312 autres l'ont trouvée sur Google Maps depuis un téléphone.
 - **975 personnes ont agi :** 450 ont appelé, 302 ont demandé l'itinéraire et 223 ont cliqué vers le site.
 - **La fiche est apparue dans 1 230 recherches.** Les principales :

@@ -28,6 +28,7 @@ Djidiawax vend en ligne, depuis la France, des vêtements afro-contemporains : b
 ## Avant
 
 Les photos étaient belles, mais la boutique perdait des clientes en route vers le paiement :
+
 - **La livraison offerte était promise mais jamais appliquée.** Le bandeau annonçait « livraison offerte dès 200 € », mais le paiement comptait toujours les frais de port.
 - **Les précommandes ne pouvaient pas être payées.** Les cinq ensembles en précommande n’avaient qu’un formulaire e-mail.
 - **Le contenu de démonstration du thème était encore en ligne.** La page Contact affichait les textes anglais du thème et des numéros américains, et 16 articles de blog d’exemple en anglais étaient envoyés à Google.

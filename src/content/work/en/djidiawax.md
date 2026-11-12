@@ -28,6 +28,7 @@ Djidiawax sells afro-contemporary clothing online from France: blazers, sets, ja
 ## Before
 
 The photos were good, but the shop lost people on the way to checkout:
+
 - **Free delivery was promised but never applied.** The banner said "free delivery from €200," but checkout still charged shipping.
 - **Pre-orders couldn't be paid for.** Five sets on pre-order only had an email form.
 - **The theme's sample content was still live.** The contact page showed the theme's English text and US phone numbers, and 16 sample blog posts in English were sent to Google.
