@@ -11,6 +11,10 @@ merge date.
 
 ### Changed
 
+- Offer: the home hero and meta name ChatGPT next to Google; the free check-up looks at what
+  ChatGPT says about the business; both packages add a quarterly check of what ChatGPT says,
+  in the report; a new FAQ says no one can promise what an AI will say; the check-up button
+  and WhatsApp message drop "Google" (EN and FR, PLAN.md D33).
 - Dependencies: astro 7.4.7, markdown-satteri 0.4.7, Tailwind 4.3.4, Biome 2.6.5, Wrangler
   4.156.1. A pnpm override keeps rolldown's optional wasm binding off the @emnapi 2.0 beta,
   which broke `astro check`; Markdown files gain a blank line before lists (Biome).

@@ -48,6 +48,7 @@ export type MonthlyId =
   | "profileUpkeep"
   | "editWatch"
   | "listingsCheck"
+  | "aiCheck"
   | "report"
   | "hosting"
   | "siteEdits"
@@ -103,6 +104,7 @@ export const pricing = {
         "profileUpkeep",
         "editWatch",
         "listingsCheck",
+        "aiCheck",
         "report",
       ],
     },
@@ -120,6 +122,7 @@ export const pricing = {
         "profileUpkeep",
         "editWatch",
         "listingsCheck",
+        "aiCheck",
         "report",
         "hosting",
         "siteEdits",
