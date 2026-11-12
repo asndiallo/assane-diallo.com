@@ -56,6 +56,7 @@ export const fr: Dictionary = {
       verticals: "Types d'entreprises",
       pricing: "Tarifs",
       how: "Fonctionnement",
+      checklist: "Checklist Google gratuite",
       about: "À propos",
     },
   },
@@ -538,6 +539,140 @@ export const fr: Dictionary = {
       h2: `Des questions${nb}?`,
       body: "Posez-les-moi avant de payer, ou à tout moment après.",
       whatsappMessage: `Bonjour Assane, une question sur vos conditions${nb}: `,
+    },
+  },
+  checklist: {
+    meta: {
+      title: "Checklist gratuite pour votre fiche Google | Assane Diallo",
+      description: `Vérifiez votre fiche Google comme vos clients la voient${nb}: accès, horaires, photos, avis, tarifs. Environ 10 minutes, gratuit, sans inscription.`,
+    },
+    h1: "Checklist de votre fiche Google",
+    lead: (count) =>
+      `${count} points à vérifier sur votre fiche d'établissement Google, celle que les gens voient avant de vous appeler. Environ 10 minutes sur votre téléphone. Gratuit, sans inscription.`,
+    honesty:
+      "Cette checklist vous dit quoi vérifier, pas quoi acheter. Personne ne peut honnêtement vous garantir une position sur Google, et je ne le fais pas.",
+    mustHave: "À corriger d'abord",
+    mustHaveNote: `Les points marqués «${nb}À corriger d'abord${nb}» vous font perdre des clients dès qu'ils sont faux. Commencez par eux.`,
+    sections: [
+      {
+        h2: `1. Première impression${nb}: ce que voit un client qui vous cherche`,
+        items: [
+          {
+            must: true,
+            title: "Vous pouvez vous connecter et modifier votre fiche vous-même.",
+            body: "Si un ancien employé, un proche ou une agence l'a créée, demandez-leur de vous ajouter comme propriétaire. Tant que vous ne pouvez pas la modifier, rien d'autre sur cette liste ne peut être corrigé.",
+          },
+          {
+            title: "Le nom est écrit comme vos clients vous connaissent.",
+            body: `Sans mots-clés ajoutés comme «${nb}meilleures tresses de la ville${nb}». Les règles de Google l'interdisent, et cela peut faire suspendre une fiche.`,
+          },
+          {
+            title: "Votre catégorie principale est la plus précise possible.",
+            body: `Par exemple «${nb}Restaurant mexicain${nb}», pas seulement «${nb}Restaurant${nb}». Ajoutez ensuite les autres catégories qui correspondent vraiment à votre activité.`,
+          },
+          {
+            must: true,
+            title: "Au moins une vraie photo de votre travail, de votre équipe ou de votre lieu.",
+            body: "Pas seulement un logo ou une image d'illustration. De vraies photos montrent à un inconnu que vous existez vraiment, avant qu'il appelle.",
+          },
+          {
+            title: "Votre description dit ce que vous faites, pour qui et où.",
+            body: "Avec vos propres mots. Pas de texte copié d'un autre site.",
+          },
+        ],
+      },
+      {
+        h2: `2. Peut-on vous joindre${nb}?`,
+        items: [
+          {
+            must: true,
+            title: "Vos horaires sont justes, jours fériés compris.",
+            body: "Utilisez les horaires exceptionnels pour les jours fériés. Des horaires faux, c'est le moyen le plus rapide de perdre un client qui s'est déplacé.",
+          },
+          {
+            must: true,
+            title: "Le numéro de téléphone fonctionne, et c'est celui auquel vous répondez.",
+            body: "Appelez-le depuis un autre téléphone pour en être sûr.",
+          },
+          {
+            must: true,
+            title: "Il y a un moyen simple d'appeler ou de réserver.",
+            body: "Un bouton d'appel, un lien de réservation, ou les deux. Si vous prenez les réservations sur un autre site, le lien y mène directement, pas vers votre page d'accueil.",
+          },
+          {
+            title: "Le lien vers votre site fonctionne et ouvre une page utile.",
+            body: `Services, tarifs ou réservation${nb}: ce que le client cherche. Pas une page morte.`,
+          },
+          {
+            title: "Le repère sur Google Maps est bien devant votre porte.",
+            body: "Et l'adresse est juste. Si c'est vous qui vous déplacez chez vos clients, votre zone desservie est renseignée et votre adresse personnelle est masquée.",
+          },
+        ],
+      },
+      {
+        h2: `3. Confiance${nb}: pourquoi un inconnu vous choisit plutôt que le voisin`,
+        items: [
+          {
+            title: "Au moins un avis des 3 derniers mois.",
+            body: `Des avis anciens uniquement donnent l'impression que l'entreprise est fermée. Demandez à vos clients satisfaits, mais ne payez jamais et n'offrez jamais de réduction contre un avis${nb}: Google l'interdit.`,
+          },
+          {
+            title: "Chaque avis a une réponse.",
+            body: "Remerciez pour les bons. Répondez aux mauvais calmement, en public.",
+          },
+          {
+            title: "Vos tarifs, ou une fourchette de prix, sont faciles à trouver.",
+            body: `Sur votre fiche, votre site ou vos publications. «${nb}Appelez pour le prix${nb}» partout vous coûte des appels.`,
+          },
+          {
+            title: "Vos attributs sont renseignés.",
+            body: `Par exemple${nb}: entreprise détenue par une personne noire ou par une femme, entrée accessible en fauteuil roulant, moyens de paiement acceptés. Ils aident les bons clients à vous trouver.`,
+          },
+          {
+            title: "Quelque chose de nouveau dans le dernier mois.",
+            body: "Une publication, une photo, une offre. Une fiche qui n'a pas bougé depuis un an a l'air abandonnée.",
+          },
+        ],
+      },
+      {
+        h2: "4. Trouvé par de nouveaux clients",
+        items: [
+          {
+            title: "Vous apparaissez quand vous cherchez comme un nouveau client.",
+            body: `Sur votre téléphone, essayez «${nb}[votre service] près de moi${nb}» ou «${nb}[votre service] [votre ville]${nb}», pas le nom de votre entreprise. C'est cette recherche qui amène les gens qui ne vous connaissent pas encore.`,
+          },
+          {
+            title: "Vos services sont listés sur votre fiche.",
+            body: "Avec les mots que vos clients tapent vraiment, pas seulement vos propres noms.",
+          },
+          {
+            title: "Votre nom, téléphone et site sont les mêmes partout.",
+            body: "Sur Google, Facebook, Instagram, Yelp et votre site. Un ancien numéro sur Yelp envoie vos clients au mauvais endroit, et des informations différentes ne vous aident pas sur Google.",
+          },
+          {
+            title: "Votre entreprise n'a qu'une seule fiche Google.",
+            body: "Cherchez votre nom sur Google Maps. Une ancienne fiche avec une ancienne adresse ou un ancien numéro divise vos avis et envoie les gens au mauvais endroit.",
+          },
+        ],
+      },
+    ],
+    score: {
+      h2: "Votre score",
+      live: (checked, total) => `${checked} sur ${total} cochés.`,
+      mustLeft: (left) =>
+        left === 1
+          ? `Il reste 1 point «${nb}À corriger d'abord${nb}»${nb}: commencez par lui.`
+          : `Il reste ${left} points «${nb}À corriger d'abord${nb}»${nb}: commencez par eux.`,
+      range: (from, to) => `${from} à ${to} cochés`,
+      under: (n) => `Moins de ${n}`,
+      good: "En bonne forme. Continuez avec les avis et les publications.",
+      fair: `Quelques corrections rapides se verront vite. Commencez par les points «${nb}À corriger d'abord${nb}», puis répondez à un avis.`,
+      poor: `Votre fiche vous coûte probablement des appels. Corrigez les points «${nb}À corriger d'abord${nb}», puis descendez dans la liste.`,
+    },
+    cta: {
+      h2: `Vous voulez que je vérifie la vôtre${nb}?`,
+      body: `Bilan Google gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
+      whatsappMessage: `Bonjour Assane, j'ai fait votre checklist Google et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
     },
   },
   form: {

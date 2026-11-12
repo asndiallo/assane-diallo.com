@@ -422,6 +422,28 @@ test.describe("home page follows the device language", () => {
   });
 });
 
+test("checklist: the score follows the ticked boxes, and the footer links to it", async ({
+  page,
+}) => {
+  for (const path of ["/google-checklist/", "/fr/checklist-google/"]) {
+    await page.goto(path);
+    const boxes = page.locator("main input[type=checkbox]");
+    const total = await boxes.count();
+    expect(total, path).toBeGreaterThan(10);
+    const count = page.locator("[data-score-count]");
+    await expect(count, path).toBeVisible();
+    await expect(count, path).toContainText(`0`);
+    await expect(page.locator("[data-band][data-current]"), path).toHaveCount(1);
+
+    // Ticking every box clears the "fix first" note and selects the top band.
+    for (const box of await boxes.all()) await box.check();
+    await expect(count, path).toContainText(`${total}`);
+    await expect(page.locator("[data-score-must]"), path).toHaveText("");
+    await expect(page.locator("[data-band]").first(), path).toHaveAttribute("data-current");
+    await expect(page.locator(`footer a[href="${path}"]`), path).toHaveCount(1);
+  }
+});
+
 // The personal phone number is deliberately not listed here: any form of it (digits or a hash,
 // which is trivially reversible for a phone number) would publish it in this repository.
 test("nothing personal is published", async ({ page }) => {

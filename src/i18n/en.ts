@@ -61,6 +61,7 @@ export const en = {
       verticals: "Business types",
       pricing: "Prices",
       how: "How it works",
+      checklist: "Free Google checklist",
       about: "About",
     },
   },
@@ -545,6 +546,142 @@ export const en = {
       h2: "Questions",
       body: "Ask me before you pay, or anytime after.",
       whatsappMessage: "Hi Assane, a question about your terms: ",
+    },
+  },
+  checklist: {
+    meta: {
+      title: "Free Google Business Profile checklist | Assane Diallo",
+      description:
+        "Check your Google listing the way customers see it: access, hours, photos, reviews, prices and more. About 10 minutes, free, no sign-up.",
+    },
+    h1: "Google profile checklist",
+    lead: (count: number) =>
+      `${count} things to check on your Google Business Profile, the listing people see before they call you. About 10 minutes on your phone. Free, no sign-up.`,
+    honesty:
+      "This checklist tells you what to check, not what to buy. Nobody can honestly guarantee you a ranking on Google, and I don't.",
+    mustHave: "Fix first",
+    mustHaveNote: "Items marked “Fix first” cost you customers the day they're wrong. Start there.",
+    sections: [
+      {
+        h2: "1. First impression: what people see when they look you up",
+        items: [
+          {
+            must: true,
+            title: "You can sign in and edit your profile yourself.",
+            body: "If a former employee, a relative or an agency set it up, ask them to add you as an owner. Until you can edit it, nothing else on this list can be fixed.",
+          },
+          {
+            title: "Your business name is spelled the way customers know you.",
+            body: "No extra keywords like “best braids in town”. Google's rules forbid it, and it can get a profile suspended.",
+          },
+          {
+            title: "Your main category is the most specific one that fits.",
+            body: "For example “Mexican restaurant”, not just “Restaurant”. Then add the other categories that match what you really do.",
+          },
+          {
+            must: true,
+            title: "At least one real photo of your work, your team or your place.",
+            body: "Not only a logo or a stock picture. Real photos show a stranger you're real before they call.",
+          },
+          {
+            title: "Your description says what you do, who it's for and where.",
+            body: "In your own words. No text copied from another site.",
+          },
+        ],
+      },
+      {
+        h2: "2. Can they reach you?",
+        items: [
+          {
+            must: true,
+            title: "Your hours are right, holidays included.",
+            body: "Use special hours for holidays. Wrong hours are the fastest way to lose a customer who drove over.",
+          },
+          {
+            must: true,
+            title: "The phone number works, and it's the one you answer.",
+            body: "Call it from another phone to be sure.",
+          },
+          {
+            must: true,
+            title: "There's an easy way to call or book.",
+            body: "A Call button, a booking link, or both. If you take bookings on another site, the link goes straight to it, not to your home page.",
+          },
+          {
+            title: "Your website link works and opens a useful page.",
+            body: "Services, prices or booking: what a customer wants. Not a dead page.",
+          },
+          {
+            title: "The pin on Google Maps sits on your front door.",
+            body: "And the address is right. If you go to your customers instead, your service area is set and your home address is hidden.",
+          },
+        ],
+      },
+      {
+        h2: "3. Trust: why a stranger picks you over the place next door",
+        items: [
+          {
+            title: "At least one review from the last 3 months.",
+            body: "Old reviews alone make a business look closed. Ask happy customers, but never pay or offer a discount for a review: Google forbids it.",
+          },
+          {
+            title: "Every review has a reply.",
+            body: "Thank the good ones. Answer the bad ones calmly, in public.",
+          },
+          {
+            title: "Prices, or a price range, are easy to find.",
+            body: "On your profile, your website or your posts. “Call for price” on everything costs you calls.",
+          },
+          {
+            title: "Your attributes are set.",
+            body: "For example “Identifies as Black-owned”, “Identifies as women-owned”, “Wheelchair-accessible entrance”, or the payments you accept. They help the right customers find you.",
+          },
+          {
+            title: "Something new in the last month.",
+            body: "A post, a photo, an offer. A profile that hasn't changed in a year looks abandoned.",
+          },
+        ],
+      },
+      {
+        h2: "4. Found by new customers",
+        items: [
+          {
+            title: "You show up when you search the way a new customer does.",
+            body: "On your phone, try “[your service] near me” or “[your service] [your town]”, not your business name. That's the search that brings people who don't know you yet.",
+          },
+          {
+            title: "Your services are listed on your profile.",
+            body: "Use the words customers actually search for, not only your own names for them.",
+          },
+          {
+            title: "Your name, phone and website match everywhere.",
+            body: "On Google, Facebook, Instagram, Yelp and your website. An old number on Yelp sends customers to the wrong place, and mixed information doesn't help you on Google.",
+          },
+          {
+            title: "Your business has only one Google profile.",
+            body: "Search your name on Google Maps. An old listing with a former address or phone number splits your reviews and sends people to the wrong place.",
+          },
+        ],
+      },
+    ] as { h2: string; items: { title: string; body: string; must?: boolean }[] }[],
+    score: {
+      h2: "Your score",
+      live: (checked: number, total: number) => `${checked} of ${total} checked.`,
+      mustLeft: (left: number) =>
+        left === 1
+          ? "1 “Fix first” item left: start there."
+          : `${left} “Fix first” items left: start there.`,
+      range: (from: number, to: number) => `${from} to ${to} checked`,
+      under: (n: number) => `Under ${n}`,
+      good: "In good shape. Keep the reviews and the posts coming.",
+      fair: "A few quick fixes will show fast. Start with the “Fix first” items, then one review reply.",
+      poor: "Your profile is probably costing you calls. Fix the “Fix first” items, then work down the list.",
+    },
+    cta: {
+      h2: "Want me to check yours?",
+      body: "Free 15-minute Google check-up: I go through this list with your profile and tell you what's missing, in plain language. No obligation.",
+      whatsappMessage:
+        "Hi Assane, I went through your Google checklist and I'd like a free check-up. My business is: ",
     },
   },
   form: {

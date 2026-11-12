@@ -1,0 +1,161 @@
+---
+import { SITE_URL } from "../../config.ts";
+import { getDictionary, type Locale, staticRoutes } from "../../i18n/index.ts";
+import Page from "../../layouts/Page.astro";
+import { bookingHref, whatsappDisplay } from "../../lib/contact.ts";
+import CtaWhatsApp from "../CtaWhatsApp.astro";
+import Link from "../Link.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const copy = t.checklist;
+const { score } = copy;
+
+const items = copy.sections.flatMap((s) => s.items);
+const total = items.length;
+const mustCount = items.filter((i) => i.must).length;
+
+// Score bands follow the number of items, so adding one never leaves the bands wrong.
+const good = total - 3;
+const fair = Math.ceil(total / 2);
+const bands = [
+  { min: good, label: score.range(good, total), body: score.good },
+  { min: fair, label: score.range(fair, good - 1), body: score.fair },
+  { min: 0, label: score.under(fair), body: score.poor },
+];
+// Every live message, rendered here so the script needs no copy of its own.
+const liveText = Array.from({ length: total + 1 }, (_, n) => score.live(n, total));
+const mustText = Array.from({ length: mustCount + 1 }, (_, n) => (n ? score.mustLeft(n) : ""));
+
+const booking = bookingHref();
+const phone = whatsappDisplay();
+const host = new URL(SITE_URL).host;
+const heading = "mt-14 text-2xl sm:text-3xl";
+---
+
+<Page
+  title={copy.meta.title}
+  description={copy.meta.description}
+  h1={copy.h1}
+  lead={copy.lead(total)}
+  locale={locale}
+  alternates={staticRoutes.checklist}
+>
+  <div class="measure">
+    <div class="mt-8 border-l-8 border-sun pl-6">
+      <p class="text-lg">{copy.honesty}</p>
+      <p class="mt-3 text-muted">{copy.mustHaveNote}</p>
+    </div>
+
+    <div data-checklist>
+      {
+        copy.sections.map((section, s) => (
+          <section>
+            <h2 class={heading}>{section.h2}</h2>
+            <ul class="mt-6 space-y-3">
+              {section.items.map((item, i) => {
+                const id = `check-${s + 1}-${i + 1}`;
+                return (
+                  <li>
+                    <label
+                      for={id}
+                      class="flex cursor-pointer gap-4 rounded-xl border border-line p-4 transition-colors hover:border-brand has-checked:border-brand has-checked:bg-wash"
+                    >
+                      <input
+                        id={id}
+                        type="checkbox"
+                        data-must={item.must ? "" : undefined}
+                        class="mt-1 size-5 shrink-0 cursor-pointer accent-brand"
+                      />
+                      <span>
+                        {item.must && (
+                          <span class="mb-1 inline-flex items-center gap-1 rounded-full border border-brand px-2.5 py-0.5 text-xs font-semibold text-brand">
+                            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" class="fill-sun">
+                              <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z" />
+                            </svg>
+                            {copy.mustHave}
+                          </span>
+                        )}
+                        <strong class="block font-semibold">{item.title}</strong>
+                        <span class="mt-1 block text-muted">{item.body}</span>
+                      </span>
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+
+    <section class="mt-14 rounded-2xl border border-line p-6 sm:p-8">
+      <h2 class="text-2xl sm:text-3xl">{score.h2}</h2>
+      <div aria-live="polite" class="hidden" data-score-live>
+        <p class="mt-4 text-lg font-semibold" data-score-count data-text={JSON.stringify(liveText)}>
+          {liveText[0]}
+        </p>
+        <p class="mt-1 text-brand" data-score-must data-text={JSON.stringify(mustText)}>
+          {mustText[mustCount]}
+        </p>
+      </div>
+      <ul class="mt-6 space-y-3">
+        {
+          bands.map((band) => (
+            <li
+              data-band={band.min}
+              class="rounded-lg border-l-4 border-line px-4 py-2 transition-colors data-current:border-brand data-current:bg-wash"
+            >
+              <strong>{band.label}{t.colon}</strong> {band.body}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+
+  <section class="mt-16 rounded-2xl bg-wash p-6 sm:p-10">
+    <h2 class="text-3xl">{copy.cta.h2}</h2>
+    <p class="measure mt-4">{copy.cta.body}</p>
+    <div class="mt-6 flex flex-wrap gap-4 print:hidden">
+      <CtaWhatsApp t={t} message={copy.cta.whatsappMessage} />
+      {booking && <Link class="btn btn-secondary" href={booking}>{t.cta.booking}</Link>}
+    </div>
+    <p class="mt-6 hidden font-semibold print:block">
+      {host}{phone && <> · WhatsApp {phone}</>}
+    </p>
+  </section>
+</Page>
+
+<script>
+  // Live score: counts the ticked boxes, names the band, and the "fix first" items still open.
+  const list = document.querySelector<HTMLElement>("[data-checklist]");
+  const live = document.querySelector<HTMLElement>("[data-score-live]");
+  const count = document.querySelector<HTMLElement>("[data-score-count]");
+  const must = document.querySelector<HTMLElement>("[data-score-must]");
+  const bands = [...document.querySelectorAll<HTMLElement>("[data-band]")];
+
+  if (list && live && count && must) {
+    const boxes = [...list.querySelectorAll<HTMLInputElement>("input[type=checkbox]")];
+    const countText: string[] = JSON.parse(count.dataset.text ?? "[]");
+    const mustText: string[] = JSON.parse(must.dataset.text ?? "[]");
+
+    const update = () => {
+      const checked = boxes.filter((b) => b.checked).length;
+      const mustLeft = boxes.filter((b) => b.dataset.must !== undefined && !b.checked).length;
+      count.textContent = countText[checked] ?? "";
+      must.textContent = mustText[mustLeft] ?? "";
+      // Bands are listed from the highest minimum down: the first one reached is the current one.
+      const current = bands.find((b) => checked >= Number(b.dataset.band));
+      for (const band of bands) band.toggleAttribute("data-current", band === current);
+    };
+
+    list.addEventListener("change", update);
+    live.classList.remove("hidden");
+    // Browsers can restore ticked boxes on back/forward navigation.
+    update();
+  }
+</script>
