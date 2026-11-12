@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Guide from "../../../components/views/Guide.astro";
+import { staticPathsFor } from "../../../lib/content.ts";
+
+export const getStaticPaths = () => staticPathsFor("guides", "en");
+
+interface Props {
+  entry: CollectionEntry<"guides">;
+}
+---
+
+<Guide entry={Astro.props.entry} />

@@ -88,4 +88,25 @@ const verticals = defineCollection({
     .strict(),
 });
 
-export const collections = { work, verticals };
+/**
+ * Guides for one kind of business (PLAN.md D34). Same key as its vertical, served at
+ * <vertical URL>guide/; `urlSlug` must match the vertical's in that locale.
+ */
+const guides = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/guides" }),
+  schema: z
+    .object({
+      urlSlug: z.string().optional(),
+      title: z.string().max(60),
+      description: z.string().max(155),
+      h1: z.string(),
+      lead: z.string(),
+      /** Last date every claim was checked against its source (yearly, or when Google changes). */
+      reviewed: z.coerce.date(),
+      /** Left out of production builds until the owner approves the copy; PR previews show it. */
+      draft: z.boolean().default(false),
+    })
+    .strict(),
+});
+
+export const collections = { work, verticals, guides };

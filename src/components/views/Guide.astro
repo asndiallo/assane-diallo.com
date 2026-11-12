@@ -1,0 +1,75 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import { SITE_URL } from "../../config.ts";
+import { getDictionary, staticRoutes } from "../../i18n/index.ts";
+import Page from "../../layouts/Page.astro";
+import { entryAlternates, entryLocale, entryPath, sibling } from "../../lib/content.ts";
+import { personSchema } from "../../lib/schema.ts";
+import CtaWhatsApp from "../CtaWhatsApp.astro";
+
+interface Props {
+  entry: CollectionEntry<"guides">;
+}
+const { entry } = Astro.props;
+const { title, description, h1, lead, reviewed, draft } = entry.data;
+const locale = entryLocale(entry);
+const t = getDictionary(locale);
+const { Content } = await render(entry);
+const alternates = await entryAlternates("guides", entry);
+
+// A guide belongs to a business type: same key, same locale. The build fails without one.
+const vertical = await sibling("verticals", entry);
+if (!vertical) throw new Error(`Guide ${entry.id} has no matching business type page`);
+const verticalUrl = entryPath("verticals", vertical);
+const url = new URL(entryPath("guides", entry), SITE_URL).href;
+const reviewedText = reviewed.toLocaleDateString(locale, { dateStyle: "long", timeZone: "UTC" });
+
+const article = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: h1,
+  description,
+  url,
+  inLanguage: locale,
+  dateModified: reviewed.toISOString().slice(0, 10),
+  author: { "@context": "https://schema.org", ...personSchema },
+};
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: t.caseStudy.home, item: new URL(staticRoutes.home[locale], SITE_URL).href },
+    { "@type": "ListItem", position: 2, name: t.guide.types, item: new URL(staticRoutes.verticals[locale], SITE_URL).href },
+    { "@type": "ListItem", position: 3, name: vertical.data.name, item: new URL(verticalUrl, SITE_URL).href },
+    { "@type": "ListItem", position: 4, name: h1, item: url },
+  ],
+};
+---
+
+<Page
+  title={title}
+  description={description}
+  h1={h1}
+  lead={lead}
+  locale={locale}
+  alternates={alternates}
+  ogType="article"
+  jsonLd={[article, breadcrumbs]}
+>
+  <p class="mt-4 text-sm text-muted" data-draft={draft || undefined}>
+    {t.guide.reviewed(reviewedText)} <a href={verticalUrl}>{t.guide.back(vertical.data.name)}</a>
+  </p>
+
+  <article class="prose mt-10">
+    <Content />
+  </article>
+
+  <section class="mt-16 rounded-2xl bg-wash p-6 sm:p-10">
+    <h2 class="text-3xl">{t.guide.nextH2}</h2>
+    <p class="measure mt-4">{t.guide.next}</p>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <CtaWhatsApp t={t} />
+      <a class="btn btn-secondary" href={staticRoutes.checklist[locale]}>{t.guide.checklist}</a>
+    </div>
+  </section>
+</Page>
