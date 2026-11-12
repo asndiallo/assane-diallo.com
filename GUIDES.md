@@ -3,7 +3,7 @@
 Draft outlines for the guides that sit next to the vertical pages. Nothing here is published.
 Each guide gets written from its outline, then approved by Assane (EN and FR) before it ships.
 Published: restaurants and home services (`src/content/guides/{en,fr}/`, both approved
-2026-11-12).
+2026-11-12). Draft: auto repair (research in `research/auto-repair.md`).
 
 ## Rules for every guide
 

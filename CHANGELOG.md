@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- Auto repair guide (EN and FR) at `/for/auto-repair/guide/` and `/fr/pour/garages/guide/`,
+  linked from the auto repair page, with its research notes in `research/auto-repair.md`.
+  Draft until the copy is approved (PLAN.md D34).
 - Home services guide (EN and FR) at `/for/home-services/guide/` and
   `/fr/pour/depannage-et-entretien/guide/`, linked from the home services page, with its
   research notes in `research/home-services.md` (PLAN.md D34).
