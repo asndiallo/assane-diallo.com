@@ -102,6 +102,8 @@ merge date.
 
 ### Fixed
 
+- `pnpm lhci:local` finds its results again after @lhci/cli 0.16 changed its report file
+  names (lhr-<time>-<random>.json); the merge accepts both formats. CI was not affected.
 - `pnpm lhci:local` no longer loses results: each parallel shard collects in its own folder
   before the merge (results saved in the same millisecond used to overwrite each other).
 - Client work: every card in the first row loads eagerly (Djidiawax was lazy but above the
