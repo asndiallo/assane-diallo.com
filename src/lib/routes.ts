@@ -21,6 +21,7 @@ export async function getPageGroups(): Promise<Alternates[]> {
     staticRoutes.home,
     staticRoutes.verticals,
     ...(await collectionGroups("verticals")),
+    staticRoutes.checklist,
     staticRoutes.work,
     ...(await collectionGroups("work")),
     staticRoutes.about,

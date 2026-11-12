@@ -25,6 +25,8 @@ merge date.
 
 ### Added
 
+- Free Google profile checklist page (EN and FR, linked from the footer): 19 checks, the
+  "Fix first" ones flagged, and a live score as you tick (PLAN.md D32).
 - Terms: "If Google suspends your profile" (EN and FR): the appeal is included, and the monthly
   price is paused or keeps running depending on the cause and the package.
 - Hero listing: the search and category fade once through hair salon, auto repair, plumber and
