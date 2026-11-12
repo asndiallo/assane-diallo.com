@@ -24,7 +24,8 @@ Each guide gets written from its outline, then approved by Assane (EN and FR) be
 
 ## 1. Restaurants & catering
 
-**Links from:** `/for/restaurants/` · **Working title:** "Getting your restaurant picked on
+**Research:** [research/restaurants.md](research/restaurants.md) (sources and live checks,
+2026-11-12) · **Links from:** `/for/restaurants/` · **Working title:** "Getting your restaurant picked on
 Google, when people are already hungry"
 
 **Searches it answers:** restaurant near me · [dish] near me · [cuisine] restaurant [city] ·
