@@ -28,6 +28,9 @@ merge date.
 
 ### Changed
 
+- French home services page and guide renamed from « Dépannage et entretien »
+  (`/fr/pour/depannage-et-entretien/`) to « Services à domicile » (`/fr/pour/services-a-domicile/`):
+  repair and maintenance left out cleaners and handymen. The old URLs are 301 redirects.
 - Restaurant and home services guides (EN and FR): the review section now also covers the
   FTC's rule on reviews (fake reviews, paying for positive ones, insiders, relatives),
   like the auto repair and braiding guides. The link check skips ftc.gov, whose bot

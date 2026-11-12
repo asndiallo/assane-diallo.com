@@ -278,6 +278,21 @@ test("old /about.html is a real 301 to /about/", async ({ page }) => {
   expect(res.headers().location).toMatch(/\/about\/$/);
 });
 
+test("the old French home services URLs are real 301s to the renamed page and guide", async ({
+  page,
+}) => {
+  for (const [from, to] of [
+    ["/fr/pour/depannage-et-entretien", "/fr/pour/services-a-domicile/"],
+    ["/fr/pour/depannage-et-entretien/", "/fr/pour/services-a-domicile/"],
+    ["/fr/pour/depannage-et-entretien/guide/", "/fr/pour/services-a-domicile/guide/"],
+  ] as const) {
+    const res = await page.request.get(from, { maxRedirects: 0 });
+    expect(res.status(), from).toBe(301);
+    expect(new URL(res.headers().location ?? "", "http://x").pathname, from).toBe(to);
+    expect((await page.request.get(to)).status(), to).toBe(200);
+  }
+});
+
 test("links inside sentences keep their spaces", async ({ page }) => {
   // Astro drops a line break between a text expression and a tag, gluing words to links.
   for (const path of await sitemapPaths(page)) {

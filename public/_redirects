@@ -2,3 +2,7 @@
 # Docs: https://developers.cloudflare.com/workers/static-assets/redirects/
 # The old portfolio's about page (removed in Nov 2024).
 /about.html /about/ 301
+# French home services page renamed on 2026-11-12: "dépannage et entretien" (repair and
+# maintenance) left out cleaners and handymen. Keep the old address and its guide working.
+/fr/pour/depannage-et-entretien /fr/pour/services-a-domicile/ 301
+/fr/pour/depannage-et-entretien/* /fr/pour/services-a-domicile/:splat 301
