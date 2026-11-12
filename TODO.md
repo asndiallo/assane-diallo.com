@@ -76,6 +76,13 @@ Everything below is my draft. Approve or change it before merging:
 - [x] **Stripe, Get Booked standard monthly $179 → $199** (2026-11-05, live and test): new price with the lookup key, $179 archived, new standard payment link `…oc05` (old `…oc03` deactivated), Get Found monthly description lists review requests
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
 
+### Vertical guides (PLAN.md D34, outlines in GUIDES.md)
+
+- [x] **Approve the approach** (2026-11-12): guides for each vertical instead of a blog, at `/for/<vertical>/guide/`
+- [ ] **Restaurant guide**: approve the copy (EN and FR)
+- [ ] **Home services guide**: approve the copy (EN and FR)
+- [ ] After both ship: use the guide link in outreach and compare reply rates in prospector
+
 ### Hosting, domain and email (status in DOMAIN-SETUP.md)
 
 - [x] **Zoho Mail** for <hello@assane-diallo.com> (Cloudflare forwarding removed 2026-10-18; mail bounces until Zoho's MX records are added)

@@ -9,6 +9,11 @@ merge date.
 
 ## [Unreleased]
 
+### Added
+
+- Plan: guides for each kind of business instead of a blog (PLAN.md D34), with outlines for
+  the restaurant and home services guides in GUIDES.md. Nothing published yet.
+
 ### Changed
 
 - Dependencies: astro 7.4.7, markdown-satteri 0.4.7, Tailwind 4.3.4, Biome 2.6.5, Wrangler
