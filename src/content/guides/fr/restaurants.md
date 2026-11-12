@@ -4,7 +4,6 @@ description: "Ce que les clients voient sur Google, Maps et ChatGPT avant de cho
 h1: Comment faire choisir votre restaurant sur Google
 lead: On choisit un restaurant en quelques secondes, sur son téléphone, souvent sans jamais ouvrir son site. Ce guide montre ce que les clients voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.
 reviewed: 2026-11-12
-draft: true
 ---
 
 ## Ce que les gens voient avant de vous choisir

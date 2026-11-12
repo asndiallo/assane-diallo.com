@@ -15,8 +15,7 @@ merge date.
   the restaurant and home services guides in GUIDES.md. Nothing published yet.
 - Restaurant guide (EN and FR) at `/for/restaurants/guide/` and `/fr/pour/restaurants/guide/`,
   linked from the restaurant page, with Article and breadcrumb structured data and a
-  "last checked" date. A `guides` collection serves it under its business type. Draft until the
-  copy is approved (PLAN.md D34).
+  "last checked" date. A `guides` collection serves it under its business type (PLAN.md D34).
 
 ### Changed
 

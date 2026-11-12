@@ -4,7 +4,6 @@ description: "What diners see on Google, Maps and ChatGPT before they choose a r
 h1: How to get your restaurant picked on Google
 lead: People choose a restaurant in a few seconds, on their phone, often before they ever open your website. This guide shows what they see and what you can fix yourself, most of it in an afternoon.
 reviewed: 2026-11-12
-draft: true
 ---
 
 ## What people see before they pick you
