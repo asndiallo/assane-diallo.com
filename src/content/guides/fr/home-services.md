@@ -1,6 +1,6 @@
 ---
-urlSlug: depannage-et-entretien
-title: "Guide dépannage : être appelé via Google | Assane Diallo"
+urlSlug: services-a-domicile
+title: "Guide services à domicile : être appelé | Assane Diallo"
 description: "Ce que voient les clients sur Google, Maps et l'IA avant d'appeler un plombier, un climaticien ou une entreprise de ménage, et quoi corriger d'abord."
 h1: Comment recevoir l'appel quand quelque chose tombe en panne
 lead: Quand la clim lâche ou qu'un tuyau éclate, les gens cherchent sur leur téléphone, appellent l'un des premiers noms et engagent celui qui décroche. Ce guide montre ce qu'ils voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.
