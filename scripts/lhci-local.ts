@@ -4,9 +4,10 @@
  * mostly waits on Chrome, so 4 at once take about a third of the time of one after another.
  * Scores stay well above the 0.95 gate under that load; CI's median of 3 runs is still the gate.
  *
- * LHCI names each result lhr-<Date.now()>.json, so shards sharing one folder overwrite each other
- * when two finish in the same millisecond. Each shard collects in its own folder instead, and the
- * results are merged into .lighthouseci/ before `lhci assert`.
+ * Each shard collects in its own folder, and the results are merged into .lighthouseci/ before
+ * `lhci assert`. LHCI 0.15 named results lhr-<Date.now()>.json (shards finishing in the same
+ * millisecond would overwrite each other); 0.16 adds a random suffix, lhr-<Date.now()>-<n>.json.
+ * The merge accepts both and adds the shard number, so names stay unique either way.
  */
 import { spawn } from "node:child_process";
 import { copyFileSync, mkdirSync, readdirSync, rmSync } from "node:fs";
@@ -47,19 +48,19 @@ const shards = shardDirs.map((cwd, i) => {
 });
 if ((await Promise.all(shards)).some((code) => code !== 0)) process.exit(1);
 
-// Merge: lhr-<timestamp>.json becomes lhr-<timestamp><shard>.json, unique across shards and still
-// matching LHCI's /^lhr-\d+\.json$/ (the .html report beside it keeps the same name).
+// Merge: lhr-<id>.json becomes lhr-<id><shard>.json, unique across shards and still a name LHCI
+// reads back (the .html report beside it keeps the same name).
 mkdirSync(DIR, { recursive: true });
 shardDirs.forEach((cwd, i) => {
   const from = join(cwd, DIR);
   for (const file of readdirSync(from)) {
-    const match = /^lhr-(\d+)\.(json|html)$/.exec(file);
+    const match = /^lhr-(\d+(?:-\d+)?)\.(json|html)$/.exec(file);
     if (match) copyFileSync(join(from, file), join(DIR, `lhr-${match[1]}${i + 1}.${match[2]}`));
   }
 });
 rmSync(SHARD_ROOT, { recursive: true, force: true });
 
-const collected = readdirSync(DIR).filter((f) => /^lhr-\d+\.json$/.test(f)).length;
+const collected = readdirSync(DIR).filter((f) => /^lhr-[\d-]+\.json$/.test(f)).length;
 if (collected !== expected) {
   console.error(`Expected ${expected} Lighthouse results, found ${collected}.`);
   process.exit(1);
