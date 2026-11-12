@@ -2,8 +2,8 @@
 
 Draft outlines for the guides that sit next to the vertical pages. Nothing here is published.
 Each guide gets written from its outline, then approved by Assane (EN and FR) before it ships.
-Published: restaurants, home services and braiding salons (`src/content/guides/{en,fr}/`,
-all approved 2026-11-12).
+Published: restaurants, home services, auto repair and braiding salons
+(`src/content/guides/{en,fr}/`, all approved 2026-11-12).
 
 ## Rules for every guide
 

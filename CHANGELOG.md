@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- Auto repair guide (EN and FR) at `/for/auto-repair/guide/` and `/fr/pour/garages/guide/`,
+  linked from the auto repair page, with its research notes in `research/auto-repair.md`
+  (PLAN.md D34).
 - Braiding salons guide (EN and FR) at `/for/braiding-salons/guide/` and
   `/fr/pour/salons-de-tresses/guide/`, linked from the braiding salons page, with its research
   notes in `research/braiding-salons.md` (PLAN.md D34).
