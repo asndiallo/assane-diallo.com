@@ -81,6 +81,7 @@ Everything below is my draft. Approve or change it before merging:
 - [x] **Approve the approach** (2026-11-12): guides for each vertical instead of a blog, at `/for/<vertical>/guide/`
 - [x] **Restaurant guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/restaurants.md`, sources in `research/restaurants.md`. Next check due 2027-11 (yearly), or sooner if Google changes ordering, menus or reviews
 - [x] **Home services guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/home-services.md`, sources in `research/home-services.md`. Next check due 2027-11 (yearly), or sooner if Google changes service areas, Local Services Ads or automated calls
+- [x] **Auto repair guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/auto-repair.md`, sources in `research/auto-repair.md`. Next check due 2027-11 (yearly), or sooner if Google changes services, categories or automated calls
 - [ ] After both ship: use the guide link in outreach and compare reply rates in prospector
 
 ### Hosting, domain and email (status in DOMAIN-SETUP.md)
