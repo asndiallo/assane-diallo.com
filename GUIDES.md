@@ -68,7 +68,8 @@ catering [city] · open now · how to add a menu to Google
 
 ## 2. Home services (HVAC, plumbing, cleaning, handyman)
 
-**Links from:** `/for/home-services/` · **Working title:** "Getting the call when something
+**Research:** [research/home-services.md](research/home-services.md) (sources and live
+checks, 2026-11-12) · **Links from:** `/for/home-services/` · **Working title:** "Getting the call when something
 breaks: Google for home service pros"
 
 **Searches it answers:** plumber near me · emergency plumber · AC repair [city] · HVAC
