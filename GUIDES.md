@@ -2,7 +2,8 @@
 
 Draft outlines for the guides that sit next to the vertical pages. Nothing here is published.
 Each guide gets written from its outline, then approved by Assane (EN and FR) before it ships.
-Published: restaurants (`src/content/guides/{en,fr}/restaurants.md`, approved 2026-11-12).
+Published: restaurants and home services (`src/content/guides/{en,fr}/`, both approved
+2026-11-12).
 
 ## Rules for every guide
 
@@ -68,7 +69,8 @@ catering [city] · open now · how to add a menu to Google
 
 ## 2. Home services (HVAC, plumbing, cleaning, handyman)
 
-**Links from:** `/for/home-services/` · **Working title:** "Getting the call when something
+**Research:** [research/home-services.md](research/home-services.md) (sources and live
+checks, 2026-11-12) · **Links from:** `/for/home-services/` · **Working title:** "Getting the call when something
 breaks: Google for home service pros"
 
 **Searches it answers:** plumber near me · emergency plumber · AC repair [city] · HVAC
