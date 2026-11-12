@@ -80,7 +80,7 @@ Everything below is my draft. Approve or change it before merging:
 
 - [x] **Approve the approach** (2026-11-12): guides for each vertical instead of a blog, at `/for/<vertical>/guide/`
 - [x] **Restaurant guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/restaurants.md`, sources in `research/restaurants.md`. Next check due 2027-11 (yearly), or sooner if Google changes ordering, menus or reviews
-- [ ] **Home services guide**: approve the copy (EN and FR)
+- [ ] **Home services guide** (`src/content/guides/{en,fr}/home-services.md`, sources in `research/home-services.md`): approve the copy in EN and FR, then remove `draft: true`. Check in particular: the first-person Google and ChatGPT examples, the neutral paragraph on paid Local Services Ads, the Google automated-calls opt-out, and the fake-competitor reporting section
 - [ ] After both ship: use the guide link in outreach and compare reply rates in prospector
 
 ### Hosting, domain and email (status in DOMAIN-SETUP.md)

@@ -88,11 +88,32 @@ Mode "my AC stopped working, who can fix it today in san antonio".
   question with "Check appointments for me: get availability and pricing from local businesses,
   then book the right fit". Google may call you on a customer's behalf.
 
-## ChatGPT (to do)
+## ChatGPT (owner's account, free plan, screenshots 2026-11-12, near San Antonio)
 
-Owner's account: "AC repair near me" and "emergency plumber near me". Note the sources it
-cites (Yelp, Angi, Thumbtack, BBB, news) and whether any listed business is closed or outside
-the area.
+**"AC repair near me"**
+
+- ChatGPT **assumed car A/C**, saying so, and listed auto repair and tire shops; it later asked
+  about the owner's own car by model. Answers are personalized from what ChatGPT remembers,
+  and "AC repair" alone is ambiguous. Home AC companies should write "home AC", "central air",
+  "HVAC" on their site and profiles.
+- Under the answer: **an ad** ("This might also interest you"), from **Angi**, "AC Install
+  Pros: Get quotes in minutes", labelled "Ad". ChatGPT shows ads, and marketplaces buy them.
+- Price ranges came from a repair shop's website (cited by name).
+
+**"emergency plumber near me"**
+
+- Five plumbers with rating, review count and distance, then three more "worth calling". The
+  first had 4.9 / 644 reviews, against 646 on Google the same day: the counts track Google's
+  closely here (the restaurant check showed Yelp's ratings; sources vary by answer).
+- Each line repeats **what the company's own website says**, with the website cited:
+  "emergency calls and texts accepted around the clock", "advertises immediate emergency
+  dispatch", "24/7 emergency service; advertises a 5% active-duty military discount",
+  "licensed emergency plumbers and round-the-clock phone answering", "listed as operating 24
+  hours daily".
+- It ended with advice for the customer: shut off the main water valve, and **ask three
+  questions before hiring**: can you dispatch now, what's the emergency service-call fee, will
+  you give a written estimate.
+- The first plumber also appeared in Google's free list for "plumber san antonio".
 
 ## Changes to the outline (GUIDES.md §2)
 
@@ -116,5 +137,9 @@ the area.
 8. **Beyond Google:** Yelp (feeds ChatGPT), Angi and Thumbtack (inside ChatGPT, reported),
    Reddit and local "best of" lists. Answer where you're mentioned; never post fake
    recommendations.
-9. **Licence:** keep "show your licence number if your state licenses your trade" as advice
-   (no source needed; no claim about Google using it).
+9. **From ChatGPT:** say "home" AC/HVAC plainly; put on the website, in plain words, what
+   ChatGPT quotes and tells customers to ask: whether you take emergency calls and texts and
+   when, how fast you can come, the service-call fee, written estimates, licence and
+   discounts. ChatGPT shows ads (an Angi ad appeared).
+10. **Licence:** keep "show your licence number if your state licenses your trade" as advice
+    (no source needed; no claim about Google using it).

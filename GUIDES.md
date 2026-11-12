@@ -3,6 +3,7 @@
 Draft outlines for the guides that sit next to the vertical pages. Nothing here is published.
 Each guide gets written from its outline, then approved by Assane (EN and FR) before it ships.
 Published: restaurants (`src/content/guides/{en,fr}/restaurants.md`, approved 2026-11-12).
+Draft: home services (`src/content/guides/{en,fr}/home-services.md`, `draft: true` until approved).
 
 ## Rules for every guide
 

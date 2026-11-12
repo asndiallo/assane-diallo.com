@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- Home services guide (EN and FR) at `/for/home-services/guide/` and
+  `/fr/pour/depannage-et-entretien/guide/`, linked from the home services page, with its
+  research notes in `research/home-services.md`. Draft until the copy is approved (PLAN.md D34).
 - Plan: guides for each kind of business instead of a blog (PLAN.md D34), with outlines for
   the restaurant and home services guides in GUIDES.md. Nothing published yet.
 - Restaurant guide (EN and FR) at `/for/restaurants/guide/` and `/fr/pour/restaurants/guide/`,
