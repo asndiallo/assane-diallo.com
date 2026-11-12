@@ -123,7 +123,7 @@ Mode "my AC stopped working, who can fix it today in san antonio".
   closely here (the restaurant check showed Yelp's ratings; sources vary by answer).
 - Each line repeats **what the company's own website says**, with the website cited:
   "emergency calls and texts accepted around the clock", "advertises immediate emergency
-  dispatch", "24/7 emergency service; advertises a 5% active-duty military discount",
+  dispatch", "24/7 emergency service; advertises a 5% discount for one group of customers",
   "licensed emergency plumbers and round-the-clock phone answering", "listed as operating 24
   hours daily".
 - It ended with advice for the customer: shut off the main water valve, and **ask three
