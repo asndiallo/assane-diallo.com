@@ -5,7 +5,6 @@ description: "Ce que voient les clientes sur Google, Maps et ChatGPT avant de r�
 h1: Comment les clientes trouvent une tresseuse, et comment être celle qu'elles réservent
 lead: Les clientes cherchent par style et par ville, regardent les photos et les prix, et réservent la tresseuse à qui elles confient leurs cheveux. Ce guide montre ce qu'elles voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.
 reviewed: 2026-11-12
-draft: true
 ---
 
 ## Ce que les clientes voient quand elles cherchent

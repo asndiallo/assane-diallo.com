@@ -4,7 +4,6 @@ description: "What clients see on Google, Maps and ChatGPT before they book a br
 h1: How clients find a braider, and how to be the one they book
 lead: Clients search by style and city, look at photos and prices, and book the braider they trust with their hair. This guide shows what they see and what you can fix yourself, most of it in an afternoon.
 reviewed: 2026-11-12
-draft: true
 ---
 
 ## What clients see when they search
