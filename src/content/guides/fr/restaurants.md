@@ -82,6 +82,8 @@ Les avis pèsent lourd. Dans [l'enquête 2026 de BrightLocal](https://www.bright
 
 **À ne pas faire.** Pas de réduction ni de dessert offert en échange d'un avis, et ne demandez pas seulement aux clients satisfaits : [les règles de Google interdisent les deux](https://support.google.com/contributionpolicy/answer/7400114?hl=fr), et les avis peuvent être supprimés. N'écrivez pas non plus les avis à la place des clients. Ce qu'ils écrivent avec leurs propres mots, c'est aussi ce que Google affiche : un avis qui parle de votre jollof rice est la ligne que voient les gens qui cherchent du jollof rice.
 
+**La loi aussi.** [La règle de la FTC sur les avis](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials), en vigueur depuis octobre 2024, interdit les faux avis (y compris écrits par une IA), le fait de payer pour des avis positifs, les avis non signalés de personnes qui travaillent pour vous, et les menaces pour faire retirer un mauvais avis. Elle limite aussi le fait, pour un patron ou un responsable, de demander des avis à sa famille. Les tribunaux peuvent sanctionner les entreprises qui l'enfreignent en connaissance de cause.
+
 **Comment répondre.** Court, personnel, et sur ce que la personne a dit. Pas de promotion dans les réponses. Pour un mauvais avis : remerciez, reconnaissez ce qui n'allait pas, dites ce que vous allez faire et proposez d'en parler directement. Ne partagez jamais les informations privées d'un client.
 
 ## Au-delà de Google : Yelp, Plans d'Apple et ChatGPT

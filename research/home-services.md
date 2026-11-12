@@ -159,3 +159,10 @@ Mode "my AC stopped working, who can fix it today in san antonio".
    discounts. ChatGPT shows ads (an Angi ad appeared).
 10. **Licence:** keep "show your licence number if your state licenses your trade" as advice
     (no source needed; no claim about Google using it).
+
+## Added 2026-11-12: the FTC review rule
+
+See research/auto-repair.md: the FTC Consumer Reviews and Testimonials Rule (in effect
+2024-10-21) bans fake reviews, buying reviews conditioned on sentiment, undisclosed insider
+reviews and review suppression by threats, and limits owners and managers asking relatives
+for reviews. Added to this guide's review section, EN and FR. ✅
