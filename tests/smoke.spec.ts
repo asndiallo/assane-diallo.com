@@ -48,7 +48,10 @@ test("the business-types page links every business type, and the footer links to
 }) => {
   const paths = await sitemapPaths(page);
   for (const index of ["/for/", "/fr/pour/"]) {
-    const expected = paths.filter((p) => p.startsWith(index) && p !== index).sort();
+    // One level below the index: the business types, not their guides.
+    const expected = paths
+      .filter((p) => p.startsWith(index) && p !== index && !p.slice(index.length, -1).includes("/"))
+      .sort();
     await page.goto(index);
     const linked = await page
       .locator("main li h2 a")
@@ -330,7 +333,7 @@ test("prices read with spaces, in both languages", async ({ page }) => {
   }
 });
 
-test("no draft case study is published", async ({ page }) => {
+test("no draft (case study or guide) is published", async ({ page }) => {
   // Production builds leave out draft: true entries (only PR previews include them).
   for (const path of await sitemapPaths(page)) {
     await page.goto(path);

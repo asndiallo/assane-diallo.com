@@ -363,6 +363,16 @@ export const en = {
     and: "and",
     how: "how it works",
     orMessage: ", or message me with your business name.",
+    guide: "Free guide:",
+    guideLink: "Read the guide: what to fix on Google, Maps and ChatGPT",
+  },
+  guide: {
+    reviewed: (date: string) => `Last checked against Google's and others' own pages on ${date}.`,
+    back: (name: string) => `Back to ${name}`,
+    types: "Business types",
+    nextH2: "Want a second pair of eyes?",
+    next: "Go through the free checklist on your own, or send me your business's name and I'll look at your Google profile for free in 15 minutes.",
+    checklist: "Open the free Google checklist",
   },
   aboutPage: {
     meta: {

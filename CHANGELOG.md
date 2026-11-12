@@ -13,6 +13,9 @@ merge date.
 
 - Plan: guides for each kind of business instead of a blog (PLAN.md D34), with outlines for
   the restaurant and home services guides in GUIDES.md. Nothing published yet.
+- Restaurant guide (EN and FR) at `/for/restaurants/guide/` and `/fr/pour/restaurants/guide/`,
+  linked from the restaurant page, with Article and breadcrumb structured data and a
+  "last checked" date. A `guides` collection serves it under its business type (PLAN.md D34).
 
 ### Changed
 

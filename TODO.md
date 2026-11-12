@@ -79,7 +79,7 @@ Everything below is my draft. Approve or change it before merging:
 ### Vertical guides (PLAN.md D34, outlines in GUIDES.md)
 
 - [x] **Approve the approach** (2026-11-12): guides for each vertical instead of a blog, at `/for/<vertical>/guide/`
-- [ ] **Restaurant guide**: approve the copy (EN and FR)
+- [x] **Restaurant guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/restaurants.md`, sources in `research/restaurants.md`. Next check due 2027-11 (yearly), or sooner if Google changes ordering, menus or reviews
 - [ ] **Home services guide**: approve the copy (EN and FR)
 - [ ] After both ship: use the guide link in outreach and compare reply rates in prospector
 

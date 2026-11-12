@@ -27,4 +27,5 @@ export const staticRoutes = {
 export const collectionBase = {
   work: staticRoutes.work,
   verticals: staticRoutes.verticals,
+  guides: staticRoutes.verticals,
 } as const satisfies Record<string, Record<Locale, string>>;

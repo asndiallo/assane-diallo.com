@@ -357,6 +357,17 @@ export const fr: Dictionary = {
     and: "et",
     how: "le fonctionnement",
     orMessage: ", ou envoyez-moi le nom de votre entreprise.",
+    guide: "Guide gratuit :",
+    guideLink: "Lire le guide : quoi corriger sur Google, Maps et ChatGPT",
+  },
+  guide: {
+    reviewed: (date: string) =>
+      `Vérifié pour la dernière fois sur les pages de Google et des autres sources le ${date}.`,
+    back: (name: string) => `Retour à ${name}`,
+    types: "Types d'entreprise",
+    nextH2: "Un deuxième regard ?",
+    next: "Parcourez la checklist gratuite par vous-même, ou envoyez-moi le nom de votre entreprise : je regarde votre fiche Google gratuitement en 15 minutes.",
+    checklist: "Ouvrir la checklist Google gratuite",
   },
   aboutPage: {
     meta: {
