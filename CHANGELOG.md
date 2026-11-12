@@ -9,6 +9,11 @@ merge date.
 
 ## [Unreleased]
 
+### Added
+
+- Plan: guides for each kind of business instead of a blog (PLAN.md D34), with outlines for
+  the restaurant and home services guides in GUIDES.md. Nothing published yet.
+
 ### Changed
 
 - Offer: the home hero and meta name ChatGPT next to Google; the free check-up looks at what
