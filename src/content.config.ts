@@ -103,6 +103,15 @@ const guides = defineCollection({
       lead: z.string(),
       /** Last date every claim was checked against its source (yearly, or when Google changes). */
       reviewed: z.coerce.date(),
+      /** "In 30 seconds": the 3 to 5 actions that matter most, shown above the guide. */
+      summary: z.array(z.string()).min(3).max(5),
+      /** The illustrated listing at the top: what this kind of business looks like on Google. */
+      listing: z.object({
+        category: z.string(),
+        /** The line that matches the search (a menu highlight, a style, a review). */
+        line: z.string(),
+        actions: z.array(z.string()).length(3),
+      }),
       /** Left out of production builds until the owner approves the copy; PR previews show it. */
       draft: z.boolean().default(false),
     })

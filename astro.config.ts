@@ -6,6 +6,7 @@ import { SITE_URL } from "./src/config.ts";
 import { defaultLocale, locales } from "./src/i18n/locales.ts";
 import { languageRedirectScript, themeInitScript } from "./src/lib/inline-scripts.ts";
 import { externalLinksPlugin } from "./src/lib/markdown-external-links.ts";
+import { guideBlocksPlugin } from "./src/lib/markdown-guide-blocks.ts";
 
 const sha256 = (source: string) =>
   `sha256-${createHash("sha256").update(source).digest("base64")}` as const;
@@ -32,10 +33,11 @@ export default defineConfig({
   },
   build: { format: "directory" },
   // External links in markdown open in a new tab (components use components/Link.astro).
+  // Guides: "Do this" / "What I saw" callouts and the translated Sources list.
   // No code blocks on the site, and Shiki's inline styles would conflict with the CSP.
   markdown: {
     syntaxHighlight: false,
-    processor: satteri({ hastPlugins: [externalLinksPlugin] }),
+    processor: satteri({ hastPlugins: [externalLinksPlugin, guideBlocksPlugin] }),
   },
   i18n: {
     locales: [...locales],

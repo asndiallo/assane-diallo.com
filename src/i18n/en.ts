@@ -373,6 +373,21 @@ export const en = {
     nextH2: "Want a second pair of eyes?",
     next: "Go through the free checklist on your own, or send me your business's name and I'll look at your Google profile for free in 15 minutes.",
     checklist: "Open the free Google checklist",
+    summaryH2: "In 30 seconds",
+    toc: "On this page",
+    callouts: { do: "Do this", saw: "What I saw" },
+    sources: "Sources",
+    backToText: (n: string) => `Back to the text (source ${n})`,
+    anatomy: {
+      h2: "What customers see first",
+      caption: "Illustration, not a real business. The numbers match the list.",
+      parts: [
+        "Stars and number of reviews: recent ones count most.",
+        'Open now, and when you close: wrong hours drop you from the "Open now" filter.',
+        "One line that matches the search: a dish from your menu, a style, or a review.",
+        "Buttons: call, order or book, directions. Each one needs to work on a phone.",
+      ],
+    },
   },
   aboutPage: {
     meta: {

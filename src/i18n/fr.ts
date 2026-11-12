@@ -368,6 +368,21 @@ export const fr: Dictionary = {
     nextH2: "Un deuxième regard ?",
     next: "Parcourez la checklist gratuite par vous-même, ou envoyez-moi le nom de votre entreprise : je regarde votre fiche Google gratuitement en 15 minutes.",
     checklist: "Ouvrir la checklist Google gratuite",
+    summaryH2: "En 30 secondes",
+    toc: "Sur cette page",
+    callouts: { do: "À faire", saw: "Ce que j'ai vu" },
+    sources: "Sources",
+    backToText: (n: string) => `Retour au texte (source ${n})`,
+    anatomy: {
+      h2: "Ce que les clients voient en premier",
+      caption: "Illustration, pas une vraie entreprise. Les numéros renvoient à la liste.",
+      parts: [
+        "Les étoiles et le nombre d'avis : les avis récents comptent le plus.",
+        "Ouvert maintenant, et l'heure de fermeture : des horaires faux vous font sortir du filtre « Ouvert ».",
+        "Une ligne qui correspond à la recherche : un plat de votre menu, un style ou un avis.",
+        "Les boutons : appeler, commander ou réserver, itinéraire. Chacun doit marcher sur téléphone.",
+      ],
+    },
   },
   aboutPage: {
     meta: {

@@ -17,6 +17,13 @@ Published: restaurants, home services, auto repair and braiding salons
 - **Shape:** 1,200–1,800 words, one `<h1>`, a "Last reviewed" date, linked from its vertical
   page and linking back to it and to `/google-checklist/`. Checked once a year, or sooner when
   Google changes something it covers (like the Q&A removal, D26).
+- **Layout** (enforced by the schema and a smoke test): frontmatter `summary` (3–5 actions,
+  shown as "In 30 seconds") and `listing` (category, matching line, 3 buttons for the drawn
+  Google listing). Each section opens with a `> **Do this**` box (FR `> **À faire**`) listing
+  its actions; the evidence from live checks goes in a `> **What I saw**` box (FR
+  `> **Ce que j'ai vu**`). Every external source is a footnote (`[^id]`), so the text has no
+  external links and the numbered Sources list sits at the end. Nothing is trimmed for the
+  layout: explanations stay between the boxes.
 - **Where:** URL `/for/<vertical>/guide/` (FR `/fr/pour/<vertical>/guide/`), so the
   guide stays with its page. Content in a `guides` collection, same key across locales.
 - **Measure:** link clicks from outreach, seen in Cloudflare Web Analytics by path. Search

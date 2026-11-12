@@ -28,6 +28,11 @@ merge date.
 
 ### Changed
 
+- Guides (all four, EN and FR) are easier to scan, with no content cut: an "In 30 seconds"
+  summary, a labelled drawing of a Google listing, jump links ("On this page", a sidebar on
+  wide screens), a "Do this" box opening each section, the evidence in "What I saw" boxes, and
+  the sources as numbered notes listed at the end. The schema requires the summary and the
+  listing, and a smoke test checks every guide keeps this shape.
 - French home services page and guide renamed from « Dépannage et entretien »
   (`/fr/pour/depannage-et-entretien/`) to « Services à domicile » (`/fr/pour/services-a-domicile/`):
   repair and maintenance left out cleaners and handymen. The old URLs are 301 redirects.
