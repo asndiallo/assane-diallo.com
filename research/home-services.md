@@ -100,6 +100,22 @@ Mode "my AC stopped working, who can fix it today in san antonio".
   Pros: Get quotes in minutes", labelled "Ad". ChatGPT shows ads, and marketplaces buy them.
 - Price ranges came from a repair shop's website (cited by name).
 
+**Follow-up "I meant HVAC"** (same chat)
+
+- Four companies 2–3 km away: 4.9 / 956 reviews, 5.0 / 138, 5.0 / 36, 5.0 / 14. The 138-review
+  company is the one seen in Google's free list for "ac repair san antonio". None of the big
+  firms with thousands of reviews (the Local Services Ads advertisers) appeared. One answer, so
+  no rule, but close and well rated beat big here.
+- Descriptions: "residential and commercial HVAC…", "advertises 24-hour service", "advertises
+  24/7 emergency residential and commercial HVAC service", "good candidate if you want
+  straightforward pricing" (one company's name and shirt say "affordable").
+- "Ratings and review counts are based on available business listings", citing a review
+  aggregator site.
+- A generic price table (service call $75–150 … full system $5,000–12,000+), labelled "rough
+  budgeting estimates, not quotes". Then it asked the problem, the **property type (house,
+  apartment, commercial)** and the urgency, and offered to compare contractors on "price,
+  reputation and whether they charge a diagnostic fee".
+
 **"emergency plumber near me"**
 
 - Five plumbers with rating, review count and distance, then three more "worth calling". The

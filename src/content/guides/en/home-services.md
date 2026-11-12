@@ -44,7 +44,7 @@ Google offers [a list of services suggested for your trade](https://support.goog
 This matters more than it looks. When I searched "emergency plumber near me", Google showed a single plumber's panel instead of a map, and the panel listed that company's services one by one: repiping, slab leak repair, water line repair, drain cleaning. Those came straight from the profile.
 
 - Use the words customers use: "water heater installation", "AC not cooling", "drain cleaning", "move-out cleaning".
-- Say "home" when it matters. When I asked ChatGPT for "AC repair near me", it assumed I meant a car and listed auto shops. Write "home AC repair", "central air" or "HVAC" so nobody has to guess.
+- Say "home" when it matters. When I asked ChatGPT for "AC repair near me", it assumed I meant a car and listed auto shops. Write "home AC repair", "central air" or "HVAC", and say who you serve (houses, apartments, businesses), so nobody has to guess.
 - Group them if you do several trades (plumbing, heating, cooling).
 - Don't put prices or phone numbers in a service's name: Google rejects them.
 
@@ -100,14 +100,14 @@ Whether ads are worth it depends on your margins and how many jobs you can take;
 - **Yelp, Thumbtack and Angi** pages and "Top 10" lists show up on the first page for plumbing and AC searches. Yelp says ChatGPT shows its [reviews, ratings, photos and business details](https://blog.yelp.com/news/yelp-chatgpt-integration/), and Angi and Thumbtack have announced apps inside ChatGPT. Claim your pages, keep them matching Google, and reply to reviews there too.
 - **Apple Maps** is the maps app on every iPhone. [Apple Business Connect](https://businessconnect.apple.com/) is free and lets you control your listing there.
 - **Neighbors and local news.** Reddit threads asking for an AC company and a local newspaper's "best HVAC companies" list both ranked on the first page. You can't make anyone recommend you, and you should never post fake recommendations; you can do work people mention, and tell local news about something real, like a free safety check for seniors.
-- **AI answers.** When I asked ChatGPT for an emergency plumber, each company it listed came with a line taken from that company's own website, cited as the source: "emergency calls and texts accepted around the clock", "advertises immediate emergency dispatch", a military discount. It then told the customer to ask three questions before hiring: can you come now, what's the emergency fee, will you give a written estimate. Answer those on your website, and they travel with you. ChatGPT also shows ads now: under one answer sat an ad from a home-services marketplace. In BrightLocal's survey, 45% had used ChatGPT or another AI tool to find a local business, up from 6% a year earlier. Nobody can promise what an AI will say about you. What you can do is make sure everything it reads, on Google, Yelp, Apple Maps and your website, is accurate, complete and the same everywhere.
+- **AI answers.** When I asked ChatGPT for an emergency plumber, each company it listed came with a line taken from that company's own website, cited as the source: "emergency calls and texts accepted around the clock", "advertises immediate emergency dispatch", a military discount. It then told the customer to ask three questions before hiring: can you come now, what's the emergency fee, will you give a written estimate. Answer those on your website, and they travel with you. When I told it I meant home HVAC, it listed four companies within a couple of miles, with 956, 138, 36 and 14 reviews, and none of the big firms with thousands. It showed a general price table ("rough budgeting estimates, not quotes") and offered to compare companies on price, reputation and whether they charge a diagnostic fee. If your fee is on your website, it can compare yours. ChatGPT also shows ads now: under one answer sat an ad from a home-services marketplace. In BrightLocal's survey, 45% had used ChatGPT or another AI tool to find a local business, up from 6% a year earlier. Nobody can promise what an AI will say about you. What you can do is make sure everything it reads, on Google, Yelp, Apple Maps and your website, is accurate, complete and the same everywhere.
 
 ## Your website, kept simple
 
 You don't need a fancy site. You need one that answers the same questions as your profile, on a phone:
 
 - a phone number people can tap to call, at the top of every page;
-- straight answers to what customers ask before hiring: whether you take emergency calls (and texts) and when, how fast you can usually come, your service-call fee, and whether you give a written estimate first;
+- straight answers to what customers ask before hiring: whether you take emergency calls (and texts) and when, how fast you can usually come, your service-call or diagnostic fee, and whether you give a written estimate first;
 - a page for each main service, with what's included and how to get a quote;
 - the cities you cover, written out, and the same as on Google;
 - your licence number if your state licenses your trade, and proof of insurance: customers check;
