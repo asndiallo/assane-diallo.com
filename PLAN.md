@@ -182,6 +182,7 @@ Nothing else. In particular: no UI framework, no icon library (inline SVG), no i
 **Pricing:** all numbers come from `config.ts`. Until you fill them, each one renders as a marked "[TODO]" price. The FAQ copy covers what's included, contract length, and cancellation, each as `[TODO]` for you to confirm.
 
 **FAQ** (draft questions; you approve the answers):
+
 - "How long until I see results?" → honest answer: SEO usually takes months, often 3–6 before clear changes, and **I can't promise rankings or timelines**. Google decides.
 - "Do I need a website already?"
 - "What do you need from me?"
@@ -245,6 +246,7 @@ Nothing else. In particular: no UI framework, no icon library (inline SVG), no i
 ## 9. CI / workflow
 
 `ci.yml` runs on PRs and on pushes to `develop`:
+
 1. `pnpm install --frozen-lockfile`
 2. `pnpm lint` (biome check)
 3. `pnpm typecheck` (astro check)
@@ -258,6 +260,7 @@ Nothing else. In particular: no UI framework, no icon library (inline SVG), no i
 **Playwright smoke checks:** every route returns 200; exactly one `h1`; non-empty unique title and description; canonical present and correct; the WhatsApp CTA is present with a `wa.me` href; no console errors; the 404 page renders; the first Tab reaches the skip link and the CTA is keyboard-reachable; no `hreflang` points at a page that doesn't exist.
 
 **Commits:** small conventional commits, in roughly this order:
+
 1. `chore: scaffold astro + tailwind + biome + ts strict`
 2. `feat: base layout, seo component, config`
 3. `feat(home): offer page sections`

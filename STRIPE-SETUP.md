@@ -95,6 +95,7 @@ Override the price on the quote line rather than editing the catalog.
 
 The client pays **once** to start (setup + month one, one invoice), and later months are charged
 to the same card automatically. Tested end to end in test mode on 2026-10-28.
+
 1. **Customers → Add customer**: business name, billing email, and the billing address (Stripe
    Tax needs it). No personal notes in Stripe.
 2. **Subscriptions → Create subscription** for that customer:

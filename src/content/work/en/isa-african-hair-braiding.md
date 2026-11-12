@@ -52,6 +52,7 @@ The salon's Google Business Profile had never been claimed. That meant the owner
 ## The last 3 months
 
 From the salon's Google Business Profile, for the 3 months to October 2026:
+
 - **4,723 people viewed the profile.** 87% of them (4,092) found it on Google Search on a phone. Another 312 found it on Google Maps on a phone.
 - **975 people took an action:** 450 called, 302 asked for directions, and 223 clicked through to the website.
 - **The profile showed up in 1,230 searches.** The top ones:
