@@ -153,3 +153,10 @@ from Google.
 ## Still to check before writing
 
 - Ask Maps (in the Maps app on a phone) wasn't checked: it isn't in desktop Chrome. Optional.
+
+## Added 2026-11-12: the FTC review rule
+
+See research/auto-repair.md: the FTC Consumer Reviews and Testimonials Rule (in effect
+2024-10-21) bans fake reviews, buying reviews conditioned on sentiment, undisclosed insider
+reviews and review suppression by threats, and limits owners and managers asking relatives
+for reviews. Added to this guide's review section, EN and FR. ✅

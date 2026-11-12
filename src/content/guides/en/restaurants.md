@@ -82,6 +82,8 @@ Reviews decide a lot. In [BrightLocal's 2026 survey](https://www.brightlocal.com
 
 **What not to do.** No discount or free dessert in exchange for a review, and no asking only your happy customers: [Google's rules forbid both](https://support.google.com/contributionpolicy/answer/7400114?hl=en), and the reviews can be removed. Don't write reviews for customers either. What they write in their own words is also what Google shows: a review that mentions your jollof rice is the line people see when they search for jollof rice.
 
+**The law says so too.** The FTC's [rule on reviews](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials), in effect since October 2024, bans fake reviews (including ones written by AI), paying for positive reviews, undisclosed reviews from people who work for you, and threats to get a bad review removed. It also limits owners and managers asking their relatives for reviews. Courts can fine businesses that break it knowingly.
+
 **How to reply.** Short, personal, and specific to what they said. No promotions in replies. For a bad review: thank them, own what went wrong, say what you'll do, and offer to talk directly. Never share a customer's private details.
 
 ## Beyond Google: Yelp, Apple Maps and ChatGPT

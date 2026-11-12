@@ -83,6 +83,8 @@ Dans [l'enquête 2026 de BrightLocal](https://www.brightlocal.com/research/local
 
 **À ne pas faire.** Pas de réduction sur la prochaine intervention en échange d'un avis, et ne demandez pas seulement aux clients dont vous savez qu'ils sont satisfaits : [les règles de Google interdisent les deux](https://support.google.com/contributionpolicy/answer/7400114?hl=fr), et les avis peuvent être supprimés. N'écrivez jamais les avis à la place des clients. Leurs propres mots sont ce que Google affiche : un avis qui dit « clim réparée le jour même » est la ligne que lira la personne suivante.
 
+**La loi aussi.** [La règle de la FTC sur les avis](https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials), en vigueur depuis octobre 2024, interdit les faux avis (y compris écrits par une IA), le fait de payer pour des avis positifs, les avis non signalés de personnes qui travaillent pour vous, et les menaces pour faire retirer un mauvais avis. Elle limite aussi le fait, pour un patron ou un responsable, de demander des avis à sa famille. Les tribunaux peuvent sanctionner les entreprises qui l'enfreignent en connaissance de cause.
+
 **Comment répondre.** Court, personnel, sur le chantier. Pour un mauvais avis : remerciez, reconnaissez ce qui n'allait pas, dites ce que vous allez faire et proposez d'appeler. Ne partagez jamais l'adresse ou les informations d'un client.
 
 ## Les faux concurrents

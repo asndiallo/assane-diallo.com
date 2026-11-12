@@ -22,6 +22,10 @@ merge date.
 
 ### Changed
 
+- Restaurant and home services guides (EN and FR): the review section now also covers the
+  FTC's rule on reviews (fake reviews, paying for positive ones, insiders, relatives),
+  like the auto repair and braiding guides. The link check skips ftc.gov, whose bot
+  protection blocks CI.
 - Offer: the home hero and meta name ChatGPT next to Google; the free check-up looks at what
   ChatGPT says about the business; both packages add a quarterly check of what ChatGPT says,
   in the report; a new FAQ says no one can promise what an AI will say; the check-up button
