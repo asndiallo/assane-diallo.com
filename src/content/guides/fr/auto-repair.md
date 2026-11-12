@@ -5,7 +5,6 @@ description: "Ce que les automobilistes voient sur Google, Maps et ChatGPT avant
 h1: Comment les automobilistes choisissent un garage, et comment être celui qu'ils appellent
 lead: Quand le voyant moteur s'allume, les automobilistes cherchent sur leur téléphone et veulent avant tout un garage qui ne les arnaquera pas. Ce guide montre ce qu'ils voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.
 reviewed: 2026-11-12
-draft: true
 ---
 
 ## Ce que les automobilistes voient quand ils cherchent

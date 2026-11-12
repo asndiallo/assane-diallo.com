@@ -4,7 +4,6 @@ description: "What drivers see on Google, Maps and ChatGPT before they choose a 
 h1: How drivers choose a repair shop, and how to be the one they call
 lead: When the check-engine light comes on, drivers search on their phone and look for one thing above all, a shop they can trust not to overcharge. This guide shows what they see and what you can fix yourself, most of it in an afternoon.
 reviewed: 2026-11-12
-draft: true
 ---
 
 ## What drivers see when they search
