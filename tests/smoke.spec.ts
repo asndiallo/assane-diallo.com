@@ -348,6 +348,25 @@ test("prices read with spaces, in both languages", async ({ page }) => {
   }
 });
 
+test("every guide has the summary, the listing, action boxes and its sources at the end", async ({
+  page,
+}) => {
+  const guides = (await sitemapPaths(page)).filter((p) => p.endsWith("/guide/"));
+  expect(guides.length).toBeGreaterThanOrEqual(8);
+  for (const path of guides) {
+    await page.goto(path);
+    await expect(page.locator("#summary"), path).toHaveCount(1);
+    await expect(page.locator("#anatomy"), path).toHaveCount(1);
+    expect(await page.locator("article .callout-do").count(), path).toBeGreaterThan(0);
+    await expect(page.locator("article [data-footnotes]"), path).toHaveCount(1);
+    // Sources live in the numbered list, so the text reads without links pulling readers away.
+    const strayLinks = await page
+      .locator('article a[href^="http"]')
+      .evaluateAll((links) => links.filter((a) => !a.closest("[data-footnotes]")).length);
+    expect(strayLinks, `${path} external links outside Sources`).toBe(0);
+  }
+});
+
 test("no draft (case study or guide) is published", async ({ page }) => {
   // Production builds leave out draft: true entries (only PR previews include them).
   for (const path of await sitemapPaths(page)) {

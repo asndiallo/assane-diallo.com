@@ -185,4 +185,46 @@
   .prose li + li {
     margin-top: 0.4em;
   }
+  .prose h2 {
+    scroll-margin-top: 1.5rem;
+  }
+
+  /* Guides: "Do this" (action) and "What I saw" (evidence) boxes, from markdown-guide-blocks.ts. */
+  .prose .callout {
+    @apply rounded-2xl p-5;
+  }
+  .prose .callout > * + * {
+    margin-top: 0.6em;
+  }
+  .prose .callout-label {
+    @apply text-sm font-bold tracking-wide uppercase;
+  }
+  .prose .callout-do {
+    @apply border-2 border-brand bg-wash;
+  }
+  .prose .callout-do .callout-label {
+    @apply text-brand;
+  }
+  .prose .callout-saw {
+    @apply border-l-4 border-line pl-5 text-muted;
+    border-radius: 0;
+    padding-block: 0.25rem;
+  }
+
+  /* Numbered sources: a tap target of about 24px (WCAG 2.2 target size) through padding that
+     doesn't push the lines apart, and the list at the end. */
+  .prose sup {
+    line-height: 0;
+  }
+  .prose [data-footnote-ref] {
+    @apply no-underline;
+    padding: 0.5rem 0.45rem;
+    margin: -0.5rem -0.2rem;
+  }
+  .prose .footnotes {
+    @apply mt-16 border-t border-line pt-6 text-sm text-muted;
+  }
+  .prose .footnotes h2 {
+    @apply mt-0 text-xl text-ink;
+  }
 }
