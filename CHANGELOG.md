@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- Braiding salons guide (EN and FR) at `/for/braiding-salons/guide/` and
+  `/fr/pour/salons-de-tresses/guide/`, linked from the braiding salons page, with its research
+  notes in `research/braiding-salons.md`. Draft until the copy is approved (PLAN.md D34).
 - Home services guide (EN and FR) at `/for/home-services/guide/` and
   `/fr/pour/depannage-et-entretien/guide/`, linked from the home services page, with its
   research notes in `research/home-services.md` (PLAN.md D34).
