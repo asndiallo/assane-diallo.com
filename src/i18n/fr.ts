@@ -39,8 +39,8 @@ export const fr: Dictionary = {
   cta: {
     whatsapp: "Écrivez-moi sur WhatsApp",
     whatsappMessage:
-      "Bonjour Assane, j'aimerais un bilan Google gratuit pour mon entreprise. Mon entreprise : ",
-    booking: "Réserver un bilan Google gratuit de 15 minutes",
+      "Bonjour Assane, j'aimerais un bilan gratuit pour mon entreprise. Mon entreprise : ",
+    booking: "Réserver un bilan gratuit de 15 minutes",
     email: "M'écrire par e-mail",
   },
   footer: {
@@ -64,11 +64,12 @@ export const fr: Dictionary = {
     meta: {
       title: "SEO local pour petites entreprises aux USA | Assane Diallo",
       description:
-        "J'aide les petites entreprises aux États-Unis à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan gratuit.",
+        "J'aide les petites entreprises aux États-Unis à être trouvées sur Google et ChatGPT et à recevoir plus d'appels et de réservations. Bilan gratuit.",
     },
     hero: {
-      h1: "Soyez visible sur Google. Recevez plus d'appels et de réservations.",
-      subhead: `J'aide les petites entreprises aux États-Unis à être bien présentées sur Google${nb}: les bons horaires, de vraies photos, un lien de réservation qui marche. Vous gérez votre entreprise. Je m'occupe de Google.`,
+      h1: "Soyez visible sur Google et ChatGPT. Recevez plus d'appels et de réservations.",
+      subhead:
+        "Les bons horaires, de vraies photos et un lien de réservation qui marche, partout où vos clients cherchent. Vous gérez votre entreprise. Je m'occupe du reste.",
       languages: "English et français.",
     },
     listing: {
@@ -100,7 +101,7 @@ export const fr: Dictionary = {
     problem: {
       h2: `Vos clients cherchent. Est-ce qu'ils vous trouvent${nb}?`,
       points: [
-        `Les gens tapent «${nb}plumber near me${nb}», «${nb}auto repair near me${nb}» ou «${nb}African restaurant near me${nb}» et choisissent parmi les premiers résultats.`,
+        `Les gens tapent «${nb}plumber near me${nb}», «${nb}auto repair near me${nb}» ou «${nb}African restaurant near me${nb}», ou demandent une recommandation à ChatGPT, et choisissent parmi les premiers noms qu'ils voient.`,
         "Si vos horaires, votre numéro ou vos prix sont faux ou absents sur Google, ils appellent quelqu'un d'autre.",
         "Si réserver est compliqué, ils abandonnent.",
       ],
@@ -122,7 +123,7 @@ export const fr: Dictionary = {
         },
         listings: {
           title: "Vos fiches Apple Plans, Bing et Yelp.",
-          body: "Le même nom, les mêmes horaires et le même numéro partout, pour que ceux qui ne cherchent pas sur Google vous trouvent aussi.",
+          body: "Le même nom, les mêmes horaires et le même numéro partout, pour que ceux qui ne cherchent pas sur Google vous trouvent aussi, et que les assistants IA comme ChatGPT aient les bonnes informations.",
         },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
@@ -142,7 +143,7 @@ export const fr: Dictionary = {
       items: [
         {
           title: "Bilan gratuit (15 minutes).",
-          body: "Sur WhatsApp ou par téléphone, je regarde comment votre entreprise apparaît sur Google et je vous donne les trois corrections prioritaires, même si vous ne travaillez pas avec moi ensuite.",
+          body: "Sur WhatsApp ou par téléphone, je regarde comment votre entreprise apparaît sur Google et ce que ChatGPT en dit, et je vous donne les trois corrections prioritaires, même si vous ne travaillez pas avec moi ensuite.",
         },
         {
           title: "Mise en place.",
@@ -195,7 +196,7 @@ export const fr: Dictionary = {
         },
         report: {
           title: "Un rapport en langage clair",
-          body: `Chaque mois${nb}: ce qui a changé et la suite.`,
+          body: `Chaque mois${nb}: ce qui a changé et la suite. Chaque trimestre${nb}: ce que ChatGPT dit de vous.`,
         },
       },
       monthlyItems: {
@@ -206,6 +207,7 @@ export const fr: Dictionary = {
         profileUpkeep: "Horaires, photos et services à jour",
         editWatch: "Modifications erronées repérées et corrigées",
         listingsCheck: "Apple Plans, Bing et Yelp vérifiés chaque trimestre",
+        aiCheck: "Ce que ChatGPT dit de vous, vérifié chaque trimestre dans votre rapport",
         report: "Un rapport en langage clair",
         hosting: "Hébergement, SSL et surveillance",
         siteEdits: "Petites modifications chaque mois (prix, menu, services)",
@@ -272,6 +274,10 @@ export const fr: Dictionary = {
           a: "Non. Personne ne peut honnêtement le faire. Je vous montrerai les changements et les chiffres.",
         },
         {
+          q: `Est-ce que ça m'aide à apparaître sur ChatGPT${nb}?`,
+          a: `Ça devrait aider, mais personne ne peut promettre ce qu'une IA va répondre. ChatGPT, Gemini et les réponses IA de Google se font une idée d'une entreprise locale à partir de ses fiches, de ses avis et de son site. C'est le travail que je fais${nb}: les mêmes informations partout, des avis récents avec des réponses, et des pages claires sur ce que vous proposez. Chaque trimestre, je pose à ChatGPT les questions de vos clients et je mets sa réponse dans votre rapport. Les réponses changent d'un jour à l'autre${nb}: c'est un instantané, pas un classement.`,
+        },
+        {
           q: `Combien ça coûte${nb}?`,
           a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. La partie mensuelle paie le travail continu${nb}: publications Google, réponses aux avis et rapport en langage clair, plus l'hébergement, les modifications et de nouvelles pages avec ${names.website}. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
         },
@@ -285,7 +291,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Que faites-vous chaque mois${nb}?`,
-          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, un rappel mensuel pour demander des avis (les nouveaux comptés dans votre rapport), vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
+          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, un rappel mensuel pour demander des avis (les nouveaux comptés dans votre rapport), vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, ce que ChatGPT dit de vous vérifié chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
         },
         {
           q: `Si je résilie, est-ce que je garde mon site${nb}?`,
@@ -671,7 +677,7 @@ export const fr: Dictionary = {
     },
     cta: {
       h2: `Vous voulez que je vérifie la vôtre${nb}?`,
-      body: `Bilan Google gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
+      body: `Bilan gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
       whatsappMessage: `Bonjour Assane, j'ai fait votre checklist Google et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
     },
   },

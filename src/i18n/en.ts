@@ -45,8 +45,8 @@ export const en = {
   },
   cta: {
     whatsapp: "Message me on WhatsApp",
-    whatsappMessage: "Hi Assane, I'd like a free Google check-up for my business. My business is: ",
-    booking: "Book a free 15-minute Google check-up",
+    whatsappMessage: "Hi Assane, I'd like a free check-up for my business. My business is: ",
+    booking: "Book a free 15-minute check-up",
     email: "Email me",
   },
   footer: {
@@ -69,12 +69,12 @@ export const en = {
     meta: {
       title: "Local SEO for small businesses in the US | Assane Diallo",
       description:
-        "I help small businesses in the US get found on Google and win more calls and bookings. Free check-up. English & French.",
+        "I help small businesses in the US get found on Google and ChatGPT and win more calls and bookings. Free check-up. English & French.",
     },
     hero: {
-      h1: "Get found on Google. Get more calls and bookings.",
+      h1: "Get found on Google and ChatGPT. Get more calls and bookings.",
       subhead:
-        "I help small businesses across the US look right on Google: correct hours, real photos, a booking link that works. You run your business. I handle the Google part.",
+        "Correct hours, real photos and a booking link that works, wherever customers look. You run your business. I handle the rest.",
       languages: "English et français.",
     },
     listing: {
@@ -106,7 +106,7 @@ export const en = {
     problem: {
       h2: "Your customers are searching. Are they finding you?",
       points: [
-        'People search things like "plumber near me", "auto repair near me" or "African restaurant near me" and choose from the first few results.',
+        'People search things like "plumber near me", "auto repair near me" or "African restaurant near me", or ask ChatGPT for a recommendation, and choose from the first few names they see.',
         "If your hours, phone number, or prices are wrong or missing on Google, they call someone else.",
         "If booking is hard, they give up.",
       ],
@@ -128,7 +128,7 @@ export const en = {
         },
         listings: {
           title: "Apple Maps, Bing and Yelp listings.",
-          body: "The same name, hours and phone everywhere, so people who don't search on Google find you too.",
+          body: "The same name, hours and phone everywhere, so people who don't search on Google find you too, and AI assistants like ChatGPT get your details right.",
         },
         reviews: {
           title: "An easy way to get reviews.",
@@ -148,7 +148,7 @@ export const en = {
       items: [
         {
           title: "Free check-up (15 minutes).",
-          body: "On WhatsApp or by phone, I look at how your business shows up on Google and tell you the top three fixes, even if you don't hire me.",
+          body: "On WhatsApp or by phone, I look at how your business shows up on Google and what ChatGPT says about it, and tell you the top three fixes, even if you don't hire me.",
         },
         {
           title: "Setup.",
@@ -200,7 +200,7 @@ export const en = {
         },
         report: {
           title: "A report in plain words",
-          body: "Every month: what changed and what's next.",
+          body: "Every month: what changed and what's next. Each quarter: what ChatGPT says about you.",
         },
       } satisfies Record<OutcomeId, { title: string; body: string }>,
       monthlyItems: {
@@ -211,6 +211,7 @@ export const en = {
         profileUpkeep: "Hours, photos and services kept right",
         editWatch: "Wrong edits caught and fixed",
         listingsCheck: "Apple Maps, Bing and Yelp checked quarterly",
+        aiCheck: "What ChatGPT says about you, checked quarterly in your report",
         report: "A report in plain language",
         hosting: "Hosting, SSL and uptime",
         siteEdits: "Small edits each month (prices, menu, services)",
@@ -277,6 +278,10 @@ export const en = {
           a: "No. Nobody honestly can. I'll show you the changes and the numbers.",
         },
         {
+          q: "Will this help me show up on ChatGPT?",
+          a: "It should help, but nobody can promise what an AI will say. ChatGPT, Gemini and Google's AI answers build their picture of a local business from its listings, reviews and website. That's the work I do: the same details everywhere, recent reviews with replies, and clear pages about what you offer. Every quarter, I ask ChatGPT what your customers would ask and put its answer in your report. Answers change from one day to the next, so it's a snapshot, not a ranking.",
+        },
+        {
           q: "What does it cost?",
           a: `${names.profile} (Google profile) starts at ${money(tier("profile").founding.setup)} setup and ${money(tier("profile").founding.monthly)} a month. ${names.website} (profile + website) starts at ${money(tier("website").founding.setup)} setup and ${money(tier("website").founding.monthly)} a month. The monthly part pays for the ongoing work: Google posts, review replies and a plain-language report, plus hosting, edits and new pages with ${names.website}. Those are founding prices for my first ${n} clients. You get a final quote after the free check-up.`,
         },
@@ -290,7 +295,7 @@ export const en = {
         },
         {
           q: "What do you do every month?",
-          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, a monthly reminder to ask for reviews (with the new ones counted in your report), your hours, photos and services kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
+          a: `With ${names.profile}: ${posts} Google posts, a reply to every review within ${hours} hours, a monthly reminder to ask for reviews (with the new ones counted in your report), your hours, photos and services kept right, wrong edits caught and fixed, Apple Maps, Bing and Yelp checked every quarter, what ChatGPT says about you checked every quarter, and a plain-language report. ${names.website} adds hosting for the site I build, one batch of small edits a month, a new or improved local page every quarter, a Search Console check, the clicks on your site's call and booking buttons in your report, and a 15-minute call every quarter.`,
         },
         {
           q: "If I cancel, do I keep my website?",
@@ -679,7 +684,7 @@ export const en = {
     },
     cta: {
       h2: "Want me to check yours?",
-      body: "Free 15-minute Google check-up: I go through this list with your profile and tell you what's missing, in plain language. No obligation.",
+      body: "Free 15-minute check-up: I go through this list with your profile and tell you what's missing, in plain language. No obligation.",
       whatsappMessage:
         "Hi Assane, I went through your Google checklist and I'd like a free check-up. My business is: ",
     },
