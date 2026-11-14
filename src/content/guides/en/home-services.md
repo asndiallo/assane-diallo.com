@@ -1,5 +1,6 @@
 ---
 title: "Home services guide: get the call on Google | Assane Diallo"
+label: Home services guide
 description: "What homeowners see on Google, Maps and AI before they call a plumber, HVAC tech or cleaner, and what to fix first: service area, services, hours, reviews."
 h1: How to get the call when something breaks
 lead: When the AC dies or a pipe bursts, people search on their phone, call one of the first few names, and hire whoever picks up. This guide shows what they see and what you can fix yourself, most of it in an afternoon.

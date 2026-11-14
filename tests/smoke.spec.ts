@@ -61,6 +61,18 @@ test("the business-types page links every business type, and the footer links to
   }
 });
 
+test("the footer links every guide in its locale, under Free resources", async ({ page }) => {
+  const paths = await sitemapPaths(page);
+  const homes = { "/for/": "/", "/fr/pour/": "/fr/" };
+  for (const [index, home] of Object.entries(homes)) {
+    const guides = paths.filter((p) => p.startsWith(index) && p.endsWith("/guide/"));
+    expect(guides.length, index).toBeGreaterThanOrEqual(2);
+    await page.goto(home);
+    for (const guide of guides)
+      await expect(page.locator(`footer a[href="${guide}"]`), guide).toHaveCount(1);
+  }
+});
+
 test("every page has one h1, unique title and description, canonical, and no console errors", async ({
   page,
 }) => {

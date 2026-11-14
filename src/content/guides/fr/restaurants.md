@@ -1,5 +1,6 @@
 ---
 title: "Guide restaurant : être choisi sur Google | Assane Diallo"
+label: Guide restaurants
 description: "Ce que les clients voient sur Google, Maps et ChatGPT avant de choisir un restaurant, et quoi corriger d'abord : horaires, menu, photos, commande, avis."
 h1: Comment faire choisir votre restaurant sur Google
 lead: On choisit un restaurant en quelques secondes, sur son téléphone, souvent sans jamais ouvrir son site. Ce guide montre ce que les clients voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.
