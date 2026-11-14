@@ -110,6 +110,22 @@ export const fr: Dictionary = {
     },
     services: {
       h2: "Ce que je mets en place pour vous",
+      groups: {
+        found: {
+          title: "Vos clients vous trouvent",
+          intro:
+            "Sur Google, sur Plans et partout où l'on cherche, y compris auprès des assistants IA comme ChatGPT.",
+        },
+        trusted: {
+          title: "Ils se fient à ce qu'ils voient",
+          intro:
+            "Des avis récents avec une réponse, de vraies photos, des horaires et des prix justes.",
+        },
+        reach: {
+          title: "Ils vous appellent ou réservent en un geste",
+          intro: `Un bouton pour appeler ou réserver sur votre fiche Google et, avec ${names.website}, un site qui reçoit appels et réservations.`,
+        },
+      },
       items: {
         profile: {
           title: "Une fiche Google bien configurée.",

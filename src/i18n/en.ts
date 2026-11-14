@@ -2,6 +2,7 @@ import {
   type MonthlyId,
   type OutcomeId,
   pricing,
+  type ServiceGroupId,
   type SetupId,
   type TierId,
   getTier as tier,
@@ -117,6 +118,21 @@ export const en = {
     },
     services: {
       h2: "What I set up for you",
+      groups: {
+        found: {
+          title: "Customers find you",
+          intro:
+            "On Google, on Maps, and wherever else people look, AI assistants like ChatGPT included.",
+        },
+        trusted: {
+          title: "They trust what they see",
+          intro: "Recent reviews with replies, real photos, and hours and prices that are right.",
+        },
+        reach: {
+          title: "They can call or book in one tap",
+          intro: `A call or book button on your Google profile, and with ${names.website}, a website that takes calls and bookings.`,
+        },
+      } satisfies Record<ServiceGroupId, { title: string; intro: string }>,
       items: {
         profile: {
           title: "Google Business Profile, set up right.",

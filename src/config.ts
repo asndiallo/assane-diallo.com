@@ -38,6 +38,8 @@ export const site = {
 export type TierId = "profile" | "website";
 /** Work done once, during the setup. */
 export type SetupId = "profile" | "listings" | "website" | "searchPages" | "reviews";
+/** The three steps of the sales message (PLAN.md D37): found, trusted, easy to reach. */
+export type ServiceGroupId = "found" | "trusted" | "reach";
 /** What the owner gets, in a few words: the face of each price card. The task lists sit behind it. */
 export type OutcomeId = "maps" | "reviews" | "website" | "report";
 /** Work done every month (or quarter) the client is subscribed. */
