@@ -1,7 +1,7 @@
 ---
 urlSlug: aide-a-domicile
 name: Aide à domicile
-order: 4
+order: 5
 title: "Fiche Google pour agences d'aide à domicile | Assane Diallo"
 description: "Faites trouver votre agence d'aide à domicile sur Google par les familles : services clairs, zones desservies et avis. Bilan gratuit de 15 minutes."
 h1: Faites trouver votre agence d'aide à domicile sur Google

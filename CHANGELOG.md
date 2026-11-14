@@ -31,6 +31,9 @@ merge date.
 
 ### Changed
 
+- Home "Who this is for" and the business-types page description (EN and FR) name the held
+  business types too: care agencies, clinics, daycares and tax offices. Home health care now
+  sorts after auto repair instead of tying with it (PLAN.md D23).
 - Guides (all four, EN and FR) are easier to scan, with no content cut: an "In 30 seconds"
   summary, a labelled drawing of a Google listing, jump links ("On this page", a sidebar on
   wide screens), a "Do this" box opening each section, the evidence in "What I saw" boxes, and
@@ -61,6 +64,10 @@ merge date.
   component (PLAN.md D31).
 - `pnpm check` runs Lighthouse in parallel shards with one run per page (about 2 min instead
   of 15), and the link check before it. CI still gates on the median of 3 runs.
+
+### Removed
+
+- Cargo & money transfer business type (EN and FR drafts), dropped in PLAN.md D23.
 
 ### Added
 

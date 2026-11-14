@@ -1,7 +1,7 @@
 ---
 urlSlug: garderies
 name: Garderies
-order: 6
+order: 7
 title: "Fiche Google pour garderies | Assane Diallo"
 description: "Faites trouver votre garderie sur Google par les parents du quartier : vos horaires, les âges accueillis et une visite facile à réserver. Bilan gratuit."
 h1: Faites trouver votre garderie sur Google

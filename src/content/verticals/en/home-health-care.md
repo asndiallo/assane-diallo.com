@@ -1,6 +1,6 @@
 ---
 name: Home health care
-order: 4
+order: 5
 title: "Google setup for home care agencies | Assane Diallo"
 description: "Get your home care or home health agency found on Google by the families who are looking, with clear services, areas served, and reviews. Free check-up."
 h1: Get your home care agency found on Google

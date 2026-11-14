@@ -1,6 +1,6 @@
 ---
 name: Clinics & med spas
-order: 5
+order: 6
 title: "Google setup for clinics and med spas | Assane Diallo"
 description: "Get your dental office, clinic, or med spa found on Google, with your services, insurance info, and an easy way to book. Free 15-minute check-up."
 h1: Get your clinic or med spa found on Google

@@ -1,6 +1,6 @@
 ---
 name: Daycares
-order: 6
+order: 7
 title: "Google setup for daycares | Assane Diallo"
 description: "Get your daycare or childcare center found on Google by parents nearby, with your hours, ages, and an easy way to book a tour. Free 15-minute check-up."
 h1: Get your daycare found on Google

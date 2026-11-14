@@ -97,7 +97,7 @@ export const en = {
       h2: "Who this is for",
       intro: "Small businesses in the US that serve customers nearby.",
       points: [
-        "Salons, restaurants, home services, garages, and shops that get customers from their own city.",
+        "Salons, restaurants, home services, garages, care agencies, clinics, daycares, tax offices, and shops that get customers from their own city.",
         "Owners who are busy running the business and don't have time to learn Google.",
         "Anyone who wants more calls and bookings, not a complicated marketing plan.",
       ],
@@ -336,7 +336,7 @@ export const en = {
     meta: {
       title: "Local SEO by type of business | Assane Diallo",
       description:
-        "Google profile and local SEO setup for home services, auto repair shops, braiding salons, restaurants and other local businesses.",
+        "Google profile and local SEO setup for home services, auto repair shops, braiding salons, restaurants, care agencies, clinics, daycares and tax offices.",
     },
     h1: "Who I help",
     lead: "Small businesses that get their customers nearby. Pick yours to see what customers look for and what I set up.",

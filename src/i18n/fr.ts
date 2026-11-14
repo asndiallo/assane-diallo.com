@@ -92,7 +92,7 @@ export const fr: Dictionary = {
       h2: `Pour qui${nb}?`,
       intro: "Les petites entreprises aux États-Unis qui servent une clientèle locale.",
       points: [
-        "Salons, restaurants, artisans, garages et boutiques dont les clients viennent de leur ville.",
+        "Salons, restaurants, artisans, garages, aide à domicile, cliniques, garderies, services fiscaux et boutiques dont les clients viennent de leur ville.",
         "Les propriétaires trop occupés par leur activité pour apprendre Google.",
         "Ceux qui veulent plus d'appels et de réservations, pas un plan marketing compliqué.",
       ],
@@ -332,7 +332,7 @@ export const fr: Dictionary = {
     meta: {
       title: "SEO local par type d'entreprise | Assane Diallo",
       description:
-        "Fiche Google et SEO local pour artisans, garages, salons de tresses, restaurants et autres entreprises locales.",
+        "Fiche Google et SEO local pour artisans, garages, salons de tresses, restaurants, aide à domicile, cliniques, garderies et services fiscaux.",
     },
     h1: "Qui j'aide",
     lead: "Les petites entreprises dont les clients viennent du quartier. Choisissez la vôtre pour voir ce que les clients regardent et ce que je mets en place.",

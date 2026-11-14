@@ -1,7 +1,7 @@
 ---
 urlSlug: cliniques
 name: Cliniques et med spas
-order: 5
+order: 6
 title: "Fiche Google pour cliniques et med spas | Assane Diallo"
 description: "Faites trouver votre cabinet dentaire, clinique ou med spa sur Google : vos soins, les assurances acceptées et la prise de rendez-vous. Bilan gratuit."
 h1: Faites trouver votre clinique ou votre med spa sur Google
