@@ -31,6 +31,11 @@ merge date.
 
 ### Changed
 
+- Home hero subhead and footer tagline (EN and FR) now say the sales message: get found, earn
+  trust, and make it easy to call or book, instead of listing services (PLAN.md D36).
+- Home "What I set up for you" (EN and FR): the setup work is grouped under the three steps of
+  the sales message (customers find you, trust what they see, call or book in one tap), each
+  with a one-line intro (PLAN.md D37).
 - Home "Who this is for" and the business-types page description (EN and FR) name the held
   business types too: care agencies, clinics, daycares and tax offices. Home health care now
   sorts after auto repair instead of tying with it (PLAN.md D23).

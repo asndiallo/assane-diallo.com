@@ -47,7 +47,7 @@ export const fr: Dictionary = {
   },
   footer: {
     tagline:
-      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis.",
+      "J'aide les entreprises locales aux États-Unis à se faire trouver, à gagner la confiance de leurs clients et à recevoir plus d'appels et de réservations.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
     terms: "Conditions",
@@ -71,7 +71,7 @@ export const fr: Dictionary = {
     hero: {
       h1: "Soyez visible sur Google et ChatGPT. Recevez plus d'appels et de réservations.",
       subhead:
-        "Les bons horaires, de vraies photos et un lien de réservation qui marche, partout où vos clients cherchent. Vous gérez votre entreprise. Je m'occupe du reste.",
+        "Je fais en sorte que vos clients vous trouvent, se fient à ce qu'ils voient et puissent vous appeler ou réserver en un geste. Vous gérez votre entreprise. Je m'occupe du reste.",
       languages: "English et français.",
     },
     listing: {
@@ -110,6 +110,22 @@ export const fr: Dictionary = {
     },
     services: {
       h2: "Ce que je mets en place pour vous",
+      groups: {
+        found: {
+          title: "Vos clients vous trouvent",
+          intro:
+            "Sur Google, sur Plans et partout où l'on cherche, y compris auprès des assistants IA comme ChatGPT.",
+        },
+        trusted: {
+          title: "Ils se fient à ce qu'ils voient",
+          intro:
+            "Des avis récents avec une réponse, de vraies photos, des horaires et des prix justes.",
+        },
+        reach: {
+          title: "Ils vous appellent ou réservent en un geste",
+          intro: `Un bouton pour appeler ou réserver sur votre fiche Google et, avec ${names.website}, un site qui reçoit appels et réservations.`,
+        },
+      },
       items: {
         profile: {
           title: "Une fiche Google bien configurée.",

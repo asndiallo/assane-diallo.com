@@ -1,5 +1,5 @@
 ---
-import { pricing } from "../../config.ts";
+import { pricing, type ServiceGroupId, type SetupId } from "../../config.ts";
 import type { Dictionary, Locale } from "../../i18n/index.ts";
 import { entryPath, getLocalized } from "../../lib/content.ts";
 import Section from "../Section.astro";
@@ -14,35 +14,62 @@ const shop = (await getLocalized("work", Astro.props.locale)).find(
   (e) => e.data.vertical === "online-shop",
 );
 const websiteTier = prices.tiers.website.name;
-// The setup work of the fullest package; the monthly work is summed up in one last item.
+// The setup work of the fullest package, under the three steps of the sales message (PLAN.md D37).
+// The monthly work is summed up in one last item.
 const ids = pricing.tiers.at(-1)?.includes ?? [];
+const groupOf = {
+  profile: "found",
+  listings: "found",
+  searchPages: "found",
+  reviews: "trusted",
+  website: "reach",
+} as const satisfies Record<SetupId, ServiceGroupId>;
+const groups = (Object.keys(services.groups) as ServiceGroupId[]).map((group) => ({
+  group,
+  ids: ids.filter((id) => groupOf[id] === group),
+}));
 const inEveryTier = (id: (typeof ids)[number]) =>
   pricing.tiers.every((tier) => tier.includes.some((i) => i === id));
 ---
 
 <Section id="services" heading={services.h2}>
-  <ul class="mt-10 grid gap-x-12 gap-y-8 md:grid-cols-2">
+  <div class="mt-10 divide-y divide-line">
     {
-      ids.map((id) => (
-        <li class="measure">
-          <h3>
-            {services.items[id].title}
-            {!inEveryTier(id) && <span class="sr-only"> ({websiteTier})</span>}
-          </h3>
-          <p class="mt-1 text-muted">{services.items[id].body}</p>
-          {!inEveryTier(id) && (
-            <p class="mt-2 inline-block rounded-full bg-wash px-3 py-0.5 text-sm" aria-hidden="true">
-              {websiteTier}
-            </p>
-          )}
-        </li>
+      groups.map(({ group, ids }) => (
+        <div class="grid gap-x-12 gap-y-6 py-8 first:pt-0 md:grid-cols-[1fr_2fr]">
+          <div class="measure">
+            <h3>{services.groups[group].title}</h3>
+            <p class="mt-1 text-muted">{services.groups[group].intro}</p>
+          </div>
+          <ul class="grid gap-y-6">
+            {ids.map((id) => (
+              <li class="measure">
+                <h4 class="font-semibold">
+                  {services.items[id].title}
+                  {!inEveryTier(id) && <span class="sr-only"> ({websiteTier})</span>}
+                </h4>
+                <p class="mt-1 text-muted">{services.items[id].body}</p>
+                {!inEveryTier(id) && (
+                  <p
+                    class="mt-2 inline-block rounded-full bg-wash px-3 py-0.5 text-sm"
+                    aria-hidden="true"
+                  >
+                    {websiteTier}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       ))
     }
-    <li class="measure">
+  </div>
+  <div class="mt-2 border-t border-line pt-8">
+    <div class="measure">
       <h3>{services.monthly.title}</h3>
       <p class="mt-1 text-muted">{services.monthly.body}</p>
-    </li>
-  </ul>
+    </div>
+  </div>
   <p class="measure mt-10 text-muted">{services.websiteOnly}</p>
   <p class="measure mt-3 text-muted">
     {services.onlineShops}{" "}

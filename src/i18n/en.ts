@@ -2,6 +2,7 @@ import {
   type MonthlyId,
   type OutcomeId,
   pricing,
+  type ServiceGroupId,
   type SetupId,
   type TierId,
   getTier as tier,
@@ -53,7 +54,8 @@ export const en = {
     email: "Email me",
   },
   footer: {
-    tagline: "Local SEO and Google Business Profile setup for small businesses in the US.",
+    tagline:
+      "I help local businesses in the US get found, earn trust, and get more calls and bookings.",
     engineering: "My software engineering work",
     privacy: "Privacy",
     terms: "Terms",
@@ -77,7 +79,7 @@ export const en = {
     hero: {
       h1: "Get found on Google and ChatGPT. Get more calls and bookings.",
       subhead:
-        "Correct hours, real photos and a booking link that works, wherever customers look. You run your business. I handle the rest.",
+        "I make sure customers find you, trust what they see, and can call or book in one tap. You run your business. I handle the rest.",
       languages: "English et français.",
     },
     listing: {
@@ -116,6 +118,21 @@ export const en = {
     },
     services: {
       h2: "What I set up for you",
+      groups: {
+        found: {
+          title: "Customers find you",
+          intro:
+            "On Google, on Maps, and wherever else people look, AI assistants like ChatGPT included.",
+        },
+        trusted: {
+          title: "They trust what they see",
+          intro: "Recent reviews with replies, real photos, and hours and prices that are right.",
+        },
+        reach: {
+          title: "They can call or book in one tap",
+          intro: `A call or book button on your Google profile, and with ${names.website}, a website that takes calls and bookings.`,
+        },
+      } satisfies Record<ServiceGroupId, { title: string; intro: string }>,
       items: {
         profile: {
           title: "Google Business Profile, set up right.",
