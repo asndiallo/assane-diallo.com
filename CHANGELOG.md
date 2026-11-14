@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- FAQ (EN and FR): "What if something goes wrong?": wrong edits reverted, same-day word on a
+  suspension with the appeal included, and a domain-expiry warning at least
+  `domainWarningDays` (60) days ahead (PLAN.md D35).
 - Auto repair guide (EN and FR) at `/for/auto-repair/guide/` and `/fr/pour/garages/guide/`,
   linked from the auto repair page, with its research notes in `research/auto-repair.md`
   (PLAN.md D34).
