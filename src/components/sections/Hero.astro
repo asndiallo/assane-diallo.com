@@ -76,10 +76,12 @@ const booking = bookingHref();
         document.addEventListener("visibilitychange", step, { once: true });
         return;
       }
+      const previous = index;
       index = (index + 1) % count;
       for (const group of groups) {
         for (const [i, item] of [...group.children].entries()) {
           item.classList.toggle("is-active", i === index);
+          item.classList.toggle("is-leaving", i === previous);
         }
       }
       if (index !== 0) setTimeout(step, delay);

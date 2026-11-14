@@ -129,6 +129,8 @@ merge date.
 
 ### Fixed
 
+- Home hero: the rotating search and listing category slide instead of crossfading, so the
+  text is never semi-transparent and PageSpeed's contrast audit no longer fails mid-change.
 - `pnpm lhci:local` finds its results again after @lhci/cli 0.16 changed its report file
   names (lhr-<time>-<random>.json); the merge accepts both formats. CI was not affected.
 - `pnpm lhci:local` no longer loses results: each parallel shard collects in its own folder

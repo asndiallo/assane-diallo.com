@@ -156,14 +156,27 @@
     background-position: -1.5rem 1rem;
   }
 
-  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift. */
+  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift.
+     Items slide (never fade): text stays fully opaque, so a contrast audit taken mid-change still passes.
+     The next item comes up from below, the old one leaves upwards, then hides. */
+  .rotate {
+    overflow: clip; /* clip, not hidden: keeps the inline box on the text baseline */
+  }
   .rotate > * {
     grid-area: 1 / 1;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    transform: translateY(100%);
+    visibility: hidden;
+    transition:
+      transform 0.4s ease,
+      visibility 0s linear 0.4s;
+  }
+  .rotate > .is-leaving {
+    transform: translateY(-100%);
   }
   .rotate > .is-active {
-    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition: transform 0.4s ease;
   }
 
   /* Markdown bodies (case studies). */
