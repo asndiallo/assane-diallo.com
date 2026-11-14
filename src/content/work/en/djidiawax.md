@@ -4,20 +4,20 @@ location: Online shop in France
 vertical: online-shop
 status: in-progress
 homepage: false
-summary: 'Rebuilt a fashion shop for phones: pages 10 times lighter, checkout fixes, photo reviews, clearer signals for Google. Results to come.'
+summary: "Rebuilt a fashion shop for phones: pages 10 times lighter, checkout fixes, photo reviews, clearer signals for Google. Results to come."
 consent: true
-disclosure: 'Disclosure: the owner of Djidiawax is my sister.'
+disclosure: "Disclosure: the owner of Djidiawax is my sister."
 website: https://djidiawax.com/
 services:
   - Phone-first home and product pages
-  - 'Site speed: photos, plugins, page cache'
-  - 'Checkout fixes: free delivery, pre-orders'
+  - "Site speed: photos, plugins, page cache"
+  - "Checkout fixes: free delivery, pre-orders"
   - Product reviews with photos
   - Welcome offer and email sign-ups
-  - 'Technical SEO: titles, categories, sitemap, structured data'
+  - "Technical SEO: titles, categories, sitemap, structured data"
 image:
   src: ../../../assets/work/djidiawax/en/hero.png
-  alt: 'The new home page of djidiawax.com, translated into English: the headline “Blazers and sets in wax” next to a woman wearing a burgundy and pink wax blazer.'
+  alt: "The new home page of djidiawax.com, translated into English: the headline “Blazers and sets in wax” next to a woman wearing a burgundy and pink wax blazer."
 order: 10
 ---
 

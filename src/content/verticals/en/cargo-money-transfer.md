@@ -1,8 +1,8 @@
 ---
 name: Cargo & money transfer
 order: 9
-title: 'Google setup for cargo and money transfer | Assane Diallo'
-description: 'Get your cargo shipping or money transfer business found on Google, with your destinations, hours, and an easy way to call. Free 15-minute check-up.'
+title: "Google setup for cargo and money transfer | Assane Diallo"
+description: "Get your cargo shipping or money transfer business found on Google, with your destinations, hours, and an easy way to call. Free 15-minute check-up."
 h1: Get your cargo or money transfer business found on Google
 intro: People search for a trusted way to send packages or money home, often by country. I help your business show up for those searches and make it easy to call or drop by.
 lookFor:
@@ -18,7 +18,7 @@ setup:
   items:
     - A Google profile with the right categories, your hours, and photos of your office
     - A simple page for each main destination (for example, shipping to Senegal from your city)
-    - 'A call or WhatsApp button that works on a phone'
+    - "A call or WhatsApp button that works on a phone"
     - A short review request you can send after each shipment
 wontDo:
   h2: What I won't do

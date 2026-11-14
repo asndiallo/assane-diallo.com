@@ -15,26 +15,27 @@
     "typecheck": "astro check",
     "test:e2e": "playwright test",
     "lhci": "lhci autorun",
+    "lhci:local": "node scripts/lhci-local.ts",
     "linkcheck": "node scripts/linkcheck.ts",
     "og": "node scripts/generate-og.ts",
-    "check": "pnpm lint && pnpm typecheck && pnpm build && pnpm test:e2e && pnpm lhci && pnpm linkcheck",
+    "check": "pnpm lint && pnpm typecheck && pnpm build && pnpm test:e2e && pnpm linkcheck && pnpm lhci:local",
     "verify:domain": "node scripts/verify-domain.ts"
   },
   "dependencies": {
-    "@astrojs/markdown-satteri": "0.4.4",
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.0",
-    "tailwindcss": "^4.3.3"
+    "@astrojs/markdown-satteri": "0.4.7",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.8",
+    "tailwindcss": "^4.3.5"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@biomejs/biome": "^2.5.15",
-    "@lhci/cli": "^0.15.1",
+    "@astrojs/check": "^0.9.12",
+    "@biomejs/biome": "^2.6.6",
+    "@lhci/cli": "^0.16.0",
     "@playwright/test": "^1.64.1",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "linkinator": "^8.1.0",
     "sharp": "^0.35.5",
     "typescript": "^6.0.3",
-    "wrangler": "4.151.1"
+    "wrangler": "4.158.0"
   }
 }

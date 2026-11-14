@@ -14,7 +14,7 @@ interface Props {
   entry: CollectionEntry<"work">;
 }
 const { t, entry } = Astro.props;
-const { business, location, summary, image, disclosure, results, quote } = entry.data;
+const { business, location, summary, image, disclosure, results, resultsNote, quote } = entry.data;
 const stats = results.slice(0, 3);
 const source = results[0]?.source;
 // On wide screens the image fills the panel's height (cover), so it renders about 720px wide.
@@ -60,6 +60,7 @@ const imageSizes = "(min-width: 768px) 720px, 100vw";
         </p>
       )
     }
+    {resultsNote && <p class="mt-1 text-xs text-muted" data-results-note>{resultsNote}</p>}
     <a class="mt-6 self-start font-semibold" href={entryPath("work", entry)}
       >{t.caseStudy.readMore(business)}</a
     >

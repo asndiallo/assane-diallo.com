@@ -1,10 +1,10 @@
 ---
-urlSlug: depannage-et-entretien
-name: Dépannage et entretien
+urlSlug: services-a-domicile
+name: Services à domicile
 order: 3
-title: "Fiche Google pour artisans et dépanneurs | Assane Diallo"
+title: "Fiche Google pour les services à domicile | Assane Diallo"
 description: "Faites trouver votre entreprise de climatisation, plomberie ou ménage sur Google : zone desservie, avis et appel en un geste. Bilan gratuit de 15 minutes."
-h1: Faites trouver votre entreprise de dépannage sur Google
+h1: Faites trouver votre entreprise de services à domicile sur Google
 intro: Quand la clim tombe en panne ou qu'un tuyau fuit, les gens cherchent, appellent un des premiers noms et engagent celui qui répond. J'aide votre entreprise à faire partie de ces noms.
 lookFor:
   h2: Ce que les clients regardent avant d'appeler

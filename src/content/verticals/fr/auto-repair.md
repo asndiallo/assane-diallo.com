@@ -1,7 +1,7 @@
 ---
 urlSlug: garages
 name: Garages
-order: 8
+order: 4
 title: "Fiche Google pour garages auto | Assane Diallo"
 description: "Faites trouver votre garage ou votre carrosserie sur Google : vos réparations, vos horaires, vos avis et un moyen rapide d'appeler. Bilan gratuit."
 h1: Faites trouver votre garage sur Google

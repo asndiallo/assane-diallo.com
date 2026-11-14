@@ -1,0 +1,81 @@
+---
+/**
+ * The illustrated Google listing: the site's signature picture of "found on Google".
+ * Used large in the hero (category rotating through the verticals) and small on the price cards.
+ * Decorative: callers wrap it in an aria-hidden container.
+ */
+import type { Dictionary } from "../i18n/index.ts";
+
+interface Props {
+  t: Dictionary;
+  /** A guide's own example (category, matching line, buttons) instead of the home page's. */
+  example?: { category: string; line: string; actions: string[] };
+  /** Numbered badges 1–4 next to the parts a guide explains (stars, hours, line, buttons). */
+  markers?: boolean;
+  /** Small version for the price cards. */
+  compact?: boolean;
+  /** Rotate the category with the hero's search box (the hero script drives [data-rotate]). */
+  rotate?: boolean;
+  class?: string;
+}
+const { t, example, markers = false, compact = false, rotate = false, class: extra } = Astro.props;
+const { listing } = t.home;
+const category = example?.category ?? listing.searches[0]?.category;
+const actions = example?.actions ?? listing.actions;
+const badge = "mr-2 inline-grid size-5 shrink-0 place-items-center rounded-full bg-ink text-[0.7rem] font-bold text-paper";
+const line = compact ? "text-[0.8rem]" : "text-[0.95rem]";
+---
+
+<div
+  class:list={[
+    "rounded-2xl border-2 border-ink bg-paper",
+    compact ? "p-3.5 shadow-[4px_4px_0_var(--color-ink)]" : "p-5 shadow-[6px_6px_0_var(--color-ink)]",
+    extra,
+  ]}
+>
+  <p class:list={["font-bold", compact ? "text-[0.95rem]" : "text-lg"]}>{listing.name}</p>
+  {
+    rotate ? (
+      <p class:list={["rotate grid text-muted", line]} data-rotate>
+        {listing.searches.map((search, i) => <span class:list={{ "is-active": i === 0 }}>{search.category}</span>)}
+      </p>
+    ) : (
+      <p class:list={["text-muted", line]}>{category}</p>
+    )
+  }
+  <p class:list={["mt-1.5 flex items-center gap-1", line]}>
+    {markers && <span class={badge}>1</span>}
+    <span class="tracking-widest text-sun">★★★★★</span>
+    <span class="text-muted">{listing.reviews}</span>
+  </p>
+  <p class:list={["mt-1 flex items-center", line]}>
+    {markers && <span class={badge}>2</span>}
+    <span><span class="font-semibold text-brand">{listing.open}</span><span class="text-muted"> · {listing.closes}</span></span>
+  </p>
+  {
+    !compact && (
+      <p class:list={["mt-1 flex items-center text-muted", line]}>
+        {markers && <span class={badge}>3</span>}
+        {example?.line ?? listing.prices}
+      </p>
+    )
+  }
+  <div class:list={["flex items-center", compact ? "mt-3" : "mt-4"]}>
+    {markers && <span class={badge}>4</span>}
+    <div class:list={["grid flex-1 grid-cols-3", compact ? "gap-1.5" : "gap-2"]}>
+      {
+        actions.map((action, i) => (
+          <span
+            class:list={[
+              "rounded-full text-center font-semibold",
+              compact ? "py-1 text-[0.65rem]" : "py-2 text-sm",
+              i === 0 ? "bg-brand text-on-brand" : "border border-line text-brand",
+            ]}
+          >
+            {action}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>

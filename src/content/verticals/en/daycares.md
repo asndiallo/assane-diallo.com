@@ -1,8 +1,8 @@
 ---
 name: Daycares
 order: 6
-title: 'Google setup for daycares | Assane Diallo'
-description: 'Get your daycare or childcare center found on Google by parents nearby, with your hours, ages, and an easy way to book a tour. Free 15-minute check-up.'
+title: "Google setup for daycares | Assane Diallo"
+description: "Get your daycare or childcare center found on Google by parents nearby, with your hours, ages, and an easy way to book a tour. Free 15-minute check-up."
 h1: Get your daycare found on Google
 intro: Parents search for childcare near home or work, read every review, and visit only a few places. I help your daycare show up and give parents what they need to book a visit.
 lookFor:
@@ -18,7 +18,7 @@ setup:
   items:
     - A Google profile with the right categories, your hours, and photos of your space
     - A simple page for each program you offer (for example, infant care in your neighborhood)
-    - 'A tour request that works on a phone'
+    - "A tour request that works on a phone"
     - A short review request you can send to parents
 wontDo:
   h2: What I won't do

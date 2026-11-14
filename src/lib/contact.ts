@@ -14,3 +14,10 @@ export const encodedEmail = (): string | null =>
   isTodo(CONTACT_EMAIL) ? null : btoa([...CONTACT_EMAIL].reverse().join(""));
 
 export const bookingHref = (): string | null => (isTodo(site.bookingUrl) ? null : site.bookingUrl);
+
+/** The WhatsApp number as people read it: "+1 210-960-5715" for US numbers. For print, where links don't work. */
+export const whatsappDisplay = (): string | null => {
+  if (isTodo(site.whatsappNumber)) return null;
+  const us = /^1(\d{3})(\d{3})(\d{4})$/.exec(site.whatsappNumber);
+  return us ? `+1 ${us[1]}-${us[2]}-${us[3]}` : `+${site.whatsappNumber}`;
+};

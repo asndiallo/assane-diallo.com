@@ -10,11 +10,12 @@ interface Props {
   class?: string;
 }
 const { t, entry, class: className } = Astro.props;
-const { business, location, highlight, disclosure } = entry.data;
+const { business, location, highlight, disclosure, resultsNote } = entry.data;
 ---
 
 <!-- data-highlight: a test checks that the disclosure travels with the number. -->
 <div class:list={["measure border-l-4 border-sun pl-4", className]} data-highlight>
   <p><strong>{highlight}</strong> <span class="text-muted">{business}, {location}.</span> <a href={entryPath("work", entry)}>{t.caseStudy.readShort}</a></p>
   {disclosure && <p class="mt-1 text-sm text-muted" data-disclosure>{disclosure}</p>}
+  {resultsNote && <p class="mt-1 text-sm text-muted" data-results-note>{resultsNote}</p>}
 </div>

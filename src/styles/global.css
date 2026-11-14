@@ -135,6 +135,78 @@
     @apply border-2 border-brand bg-paper text-brand hover:bg-wash hover:text-brand-strong;
   }
 
+  /* Listing illustrations (hero, price cards): a street grid as the "map" behind the listing. */
+  .map-grid {
+    background-image:
+      linear-gradient(
+        90deg,
+        transparent 47%,
+        var(--color-paper) 47%,
+        var(--color-paper) 53%,
+        transparent 53%
+      ),
+      linear-gradient(
+        0deg,
+        transparent 47%,
+        var(--color-paper) 47%,
+        var(--color-paper) 53%,
+        transparent 53%
+      );
+    background-size: 7.5rem 6rem;
+    background-position: -1.5rem 1rem;
+  }
+
+  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift.
+     Items slide (never fade): text stays fully opaque, so a contrast audit taken mid-change still passes.
+     The next item comes up from below, the old one leaves upwards, then hides. */
+  .rotate {
+    overflow: clip;
+  }
+  .rotate > * {
+    grid-area: 1 / 1;
+    transform: translateY(100%);
+    visibility: hidden;
+    transition:
+      transform 0.4s ease,
+      visibility 0s linear 0.4s;
+  }
+  .rotate > .is-leaving {
+    transform: translateY(-100%);
+  }
+  .rotate > .is-active {
+    transform: none;
+    visibility: visible;
+    transition: transform 0.4s ease;
+  }
+
+  /* The hero search box: every query sits hidden in the same grid cell to size the box to the longest
+     (no layout shift); one visible line on top is typed by the hero script. Always fully opaque. */
+  .typer > * {
+    grid-area: 1 / 1;
+  }
+  .typer > .typer-sizer {
+    visibility: hidden;
+  }
+  .typer-line {
+    position: relative;
+  }
+  .typer.is-typing > .typer-line::after {
+    content: "";
+    /* Absolute, left at its static position (right after the text): the caret never widens the box. */
+    position: absolute;
+    top: 50%;
+    width: 2px;
+    height: 1.1em;
+    margin: -0.55em 0 0 1px;
+    background: currentColor;
+    animation: caret-blink 1s steps(1) infinite;
+  }
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
   /* Markdown bodies (case studies). */
   .prose {
     max-width: 65ch;
@@ -153,5 +225,47 @@
   }
   .prose li + li {
     margin-top: 0.4em;
+  }
+  .prose h2 {
+    scroll-margin-top: 1.5rem;
+  }
+
+  /* Guides: "Do this" (action) and "What I saw" (evidence) boxes, from markdown-guide-blocks.ts. */
+  .prose .callout {
+    @apply rounded-2xl p-5;
+  }
+  .prose .callout > * + * {
+    margin-top: 0.6em;
+  }
+  .prose .callout-label {
+    @apply text-sm font-bold tracking-wide uppercase;
+  }
+  .prose .callout-do {
+    @apply border-2 border-brand bg-wash;
+  }
+  .prose .callout-do .callout-label {
+    @apply text-brand;
+  }
+  .prose .callout-saw {
+    @apply border-l-4 border-line pl-5 text-muted;
+    border-radius: 0;
+    padding-block: 0.25rem;
+  }
+
+  /* Numbered sources: a tap target of about 24px (WCAG 2.2 target size) through padding that
+     doesn't push the lines apart, and the list at the end. */
+  .prose sup {
+    line-height: 0;
+  }
+  .prose [data-footnote-ref] {
+    @apply no-underline;
+    padding: 0.5rem 0.45rem;
+    margin: -0.5rem -0.2rem;
+  }
+  .prose .footnotes {
+    @apply mt-16 border-t border-line pt-6 text-sm text-muted;
+  }
+  .prose .footnotes h2 {
+    @apply mt-0 text-xl text-ink;
   }
 }

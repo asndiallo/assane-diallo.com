@@ -13,7 +13,7 @@ interface Props {
   entry: CollectionEntry<"work">;
 }
 const { entry } = Astro.props;
-const { business, location, summary, website, services, results, quote, image, status, draft, disclosure } =
+const { business, location, summary, website, services, results, resultsNote, quote, image, status, draft, disclosure } =
   entry.data;
 const locale = entryLocale(entry);
 const t = getDictionary(locale);
@@ -104,6 +104,7 @@ const breadcrumbs = {
                 {t.caseStudy.source}{t.colon} {sharedSource}
               </p>
             )}
+            {resultsNote && <p class="mt-2 text-xs text-muted" data-results-note>{resultsNote}</p>}
           </div>
         )
       }

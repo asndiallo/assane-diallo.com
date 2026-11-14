@@ -1,21 +1,16 @@
+import type { SatteriProcessorOptions } from "@astrojs/markdown-satteri";
 import { defaultLocale, getDictionary, locales } from "../i18n/index.ts";
 import { EXTERNAL_REL, isExternal } from "./links.ts";
 
-/** The slice of Sätteri's hast visitor API this plugin uses. */
-interface AnchorNode {
-  properties?: Record<string, unknown>;
-}
-interface VisitContext {
-  setProperty(node: AnchorNode, key: string, value: unknown): void;
-  appendChild(node: AnchorNode, child: unknown): void;
-}
+/** A hast plugin entry as Sätteri accepts it: its own types, so upgrades are checked against them. */
+type HastPlugin = NonNullable<SatteriProcessorOptions["hastPlugins"]>[number];
 
 /**
  * Markdown counterpart of components/Link.astro (Sätteri hast plugin, see astro.config.ts):
  * external links open in a new tab, with a screen-reader hint in the content's language,
  * taken from its src/content/<collection>/<locale>/ path.
  */
-export const externalLinksPlugin = ({ fileURL }: { fileURL: URL | undefined }) => {
+export const externalLinksPlugin: HastPlugin = ({ fileURL }) => {
   const path = fileURL?.pathname ?? "";
   const locale = locales.find((l) => path.includes(`/${l}/`)) ?? defaultLocale;
   const hint = getDictionary(locale).newTab;
@@ -23,7 +18,7 @@ export const externalLinksPlugin = ({ fileURL }: { fileURL: URL | undefined }) =
     name: "external-links",
     element: {
       filter: ["a"],
-      visit(node: AnchorNode, ctx: VisitContext) {
+      visit(node, ctx) {
         if (!isExternal(String(node.properties?.href ?? ""))) return;
         ctx.setProperty(node, "target", "_blank");
         ctx.setProperty(node, "rel", [EXTERNAL_REL]);

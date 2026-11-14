@@ -14,7 +14,7 @@ const t = getDictionary(locale);
 const copy = t.privacy;
 
 /** Change this date whenever the note changes. */
-const updated = new Date("2026-10-19").toLocaleDateString(locale, {
+const updated = new Date("2026-10-28").toLocaleDateString(locale, {
   dateStyle: "long",
   timeZone: "UTC",
 });
@@ -32,6 +32,7 @@ const services = [
   { name: "WhatsApp (Meta)", href: "https://www.whatsapp.com/legal/privacy-policy" },
   { name: "Google", href: "https://policies.google.com/privacy" },
   { name: "Zoho Mail", href: "https://www.zoho.com/privacy.html" },
+  { name: "Stripe", href: "https://stripe.com/privacy" },
   { name: "Cloudflare", href: "https://www.cloudflare.com/privacypolicy/" },
 ];
 const heading = "mt-12 text-2xl sm:text-3xl";
@@ -62,6 +63,9 @@ const heading = "mt-12 text-2xl sm:text-3xl";
         ))
       }
     </ul>
+
+    <h2 class={heading}>{copy.work.h2}</h2>
+    <div class="mt-4 space-y-4">{copy.work.paragraphs.map((p) => <p>{p}</p>)}</div>
 
     <h2 class={heading}>{copy.use.h2}</h2>
     <p class="mt-4">{copy.use.body}</p>

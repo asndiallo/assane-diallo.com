@@ -60,13 +60,30 @@ Everything I wrote that isn't word-for-word from your `site-copy.md`:
 
 Everything below is my draft. Approve or change it before merging:
 
-- [ ] **Positioning line** (EN and FR): "small businesses in the US, with a focus on African-owned businesses" on home, about, client work, footer, OG image
+- [ ] **Positioning line** (EN and FR): home and footer say "small businesses in the US"; the African-owned focus stays on About, the braiding/restaurant pages and social (PLAN.md D24). Approve the wording.
 - [ ] **About**, new paragraph: "My focus is African-owned businesses. I share the culture, so we start on the same page." (no birthplace claim)
-- [ ] **New prices**: Get Found $300 setup (standard $450), Get Booked $650 (standard $1,000); optional monthly plan $79 / $129 (standard $99 / $179). Check the FAQ, pricing notes and step 3 wording.
-- [ ] **7 new business-type pages**, EN and FR (`src/content/verticals/{en,fr}/`): home services, home health care, clinics & med spas, daycares, tax & immigration, auto repair, cargo & money transfer. Check each "What I won't do" promise is one you'll keep.
-- [ ] **Tax & immigration**: the credentials listed (PTIN, enrolled agent, DOJ accreditation) and the "won't present you as a lawyer" line
+- [ ] **New prices**: Get Found $300 setup (standard $450), Get Booked $650 (standard $1,000); monthly $79 / $129 (standard $99 / $179), included in the package, cancel anytime. Check the FAQ, pricing notes and step 3 wording.
+- [ ] **2 new business-type pages**, EN and FR (`src/content/verticals/{en,fr}/`): home services, auto repair. Check each "What I won't do" promise is one you'll keep.
 - [ ] **Business types page** (`/for/`, `/fr/pour/`): heading, intro and "Don't see your kind of business?" line
+- [ ] **Held until a credential-check process exists**: home health care, clinics & med spas, daycares, tax & immigration (drafts on branch `parked/credentialed-verticals`). Decide how you'll verify a client's licence (state care licence, medical licence, childcare licence, PTIN / enrolled agent / DOJ accreditation) before publishing.
+- [ ] **Monthly scope and hosting (PLAN.md D25)**: check the monthly lists on both price cards, the new notes, the two new FAQ answers ("What do you do every month?", "If I cancel, do I keep my website?") and the terms changes (hosting, 30-day handover, upgrade credit, 2-business-day requests), EN and FR
+- [x] **Stripe catalog (PLAN.md D25)**: product descriptions and upgrade-credit coupons, live and test (2026-10-30)
+- [ ] **Upgrade flow**: run the Get Found → Get Booked upgrade once in test mode (STRIPE-SETUP.md) before the first real one
+- [ ] **Accountant**: Get Booked monthly now includes hosting; kept on Website Data Processing (same Texas tax as Website Hosting, see STRIPE-SETUP.md). Confirm with the data-processing vs advertising question
+- [ ] **Client sites**: add click tracking for the call, WhatsApp and booking buttons (for the Get Booked report), and keep one private repo per client so a handover is one export
+- [x] **Review requests and $199 (PLAN.md D29)** (approved 2026-11-05): approve the new monthly item, the QR code in the setup kit and the payback line (EN and FR)
+- [x] **Price cards (PLAN.md D30)** (approved 2026-11-05): approve the outcome titles and lines, the new taglines, the shorter promises and the "Start with …" buttons (EN and FR)
+- [x] **Stripe, Get Booked standard monthly $179 → $199** (2026-11-05, live and test): new price with the lookup key, $179 archived, new standard payment link `…oc05` (old `…oc03` deactivated), Get Found monthly description lists review requests
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
+
+### Vertical guides (PLAN.md D34, outlines in GUIDES.md)
+
+- [x] **Approve the approach** (2026-11-12): guides for each vertical instead of a blog, at `/for/<vertical>/guide/`
+- [x] **Restaurant guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/restaurants.md`, sources in `research/restaurants.md`. Next check due 2027-11 (yearly), or sooner if Google changes ordering, menus or reviews
+- [x] **Home services guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/home-services.md`, sources in `research/home-services.md`. Next check due 2027-11 (yearly), or sooner if Google changes service areas, Local Services Ads or automated calls
+- [x] **Auto repair guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/auto-repair.md`, sources in `research/auto-repair.md`. Next check due 2027-11 (yearly), or sooner if Google changes services, categories or automated calls
+- [x] **Braiding salons guide** (approved 2026-11-12, EN and FR): `src/content/guides/{en,fr}/braiding-salons.md`, sources in `research/braiding-salons.md`. Next check due 2027-11 (yearly), or sooner if Google changes bookings, categories or address rules
+- [ ] After both ship: use the guide link in outreach and compare reply rates in prospector
 
 ### Hosting, domain and email (status in DOMAIN-SETUP.md)
 

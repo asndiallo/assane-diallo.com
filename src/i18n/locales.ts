@@ -18,6 +18,8 @@ export const staticRoutes = {
   about: { en: "/about/", fr: "/fr/a-propos/" },
   thanks: { en: "/thanks/", fr: "/fr/merci/" },
   privacy: { en: "/privacy/", fr: "/fr/confidentialite/" },
+  terms: { en: "/terms/", fr: "/fr/conditions/" },
+  checklist: { en: "/google-checklist/", fr: "/fr/checklist-google/" },
   engineering: { en: "/engineering/" },
 } as const satisfies Record<string, Alternates>;
 
@@ -25,4 +27,5 @@ export const staticRoutes = {
 export const collectionBase = {
   work: staticRoutes.work,
   verticals: staticRoutes.verticals,
+  guides: staticRoutes.verticals,
 } as const satisfies Record<string, Record<Locale, string>>;

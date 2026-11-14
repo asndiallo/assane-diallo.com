@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Offer site for Assane Diallo: local SEO and Google Business Profile packages for small businesses in the US, with a focus on African-owned businesses. It's a credibility page that turns a referral or a Google check into a WhatsApp conversation.
+Offer site for Assane Diallo: local SEO and Google Business Profile packages for small businesses in the US. The home page and footer name no community; the African-owned focus lives on About, the braiding and restaurant pages, and Isa's case study (PLAN.md D24). It's a credibility page that turns a referral or a Google check into a WhatsApp conversation.
 
 Astro 7 (static) · Tailwind 4 · TypeScript strict · pnpm · Cloudflare Workers static assets, deployed by GitHub Actions.
 
@@ -12,7 +12,8 @@ pnpm lint         # biome check (lint + format check). `pnpm format` fixes.
 pnpm typecheck    # astro check
 pnpm build        # astro build + [TODO] report (warns, never fails)
 pnpm test:e2e     # Playwright smoke test against the built dist/ (port 4399)
-pnpm lhci         # Lighthouse CI, mobile, 100 in all four categories
+pnpm lhci         # Lighthouse CI, mobile, ≥ 0.95 in all four categories (CI: 3 runs/page)
+pnpm lhci:local   # same pages and gate, 1 run/page in parallel shards (used by `check`)
 pnpm linkcheck    # linkinator on dist/
 pnpm check        # all of the above, in order. Run before saying "done".
 pnpm og           # regenerate public/og-default.png
@@ -46,7 +47,7 @@ Port 4321 is often taken by another local project. Tests use 4399.
 - Language: `/` redirects French devices to `/fr/` (inline script in `src/lib/inline-scripts.ts`); a choice made with the header switch wins.
 - Security: hash-based CSP (Astro `security.csp`). Never add an `is:inline` script other than `src/lib/inline-scripts.ts` (it is hashed in astro.config.ts); use bundled `<script>` instead. Headers live in `public/_headers`, redirects in `public/_redirects`.
 - Market: US businesses only, in English and French. Online shops are a quiet side line ("audits by request"), never in the main pitch or home proof cards.
-- No spots-left counter. Prices are "starting at", with "final quote after a free check-up". Setup is paid once; the monthly plan is optional (`monthly` in each tier in `config.ts`).
+- No spots-left counter. Prices are "starting at", with "final quote after a free check-up". Setup is paid once; the monthly part (updates + report) is included in every package, cancel anytime (`monthly` in each tier in `config.ts`). Never call it optional.
 
 ## Technical rules
 

@@ -2,10 +2,11 @@
 business: "Isa's African Hair Braiding"
 location: Savannah, GA
 vertical: braiding-salons
-summary: 'Fiche Google revendiquée et corrigée, site rapide et alertes de réservation gratuites pour un salon de tresses. 450 appels via Google en 3 mois.'
-highlight: '450 appels via Google en 3 mois.'
+summary: "Fiche Google revendiquée et corrigée, site rapide et alertes de réservation gratuites pour un salon de tresses. 450 appels depuis sa fiche en 3 mois."
+highlight: "450 appels depuis sa fiche en 3 mois."
 consent: true
-disclosure: 'Transparence : Isa, la propriétaire, est ma cousine.'
+disclosure: "Transparence : Isa, la propriétaire, est ma cousine."
+resultsNote: "Sa fiche Google n'avait jamais été revendiquée, donc il n'y a pas de chiffre d'avant à comparer. Ce sont les totaux des 3 derniers mois, pas un avant-après."
 website: https://isabraiding.com/
 services:
   - Fiche d'établissement Google revendiquée et mise à jour
@@ -15,16 +16,16 @@ services:
   - Demandes de réservation envoyées à la propriétaire sur Telegram
 results:
   - label: Appels depuis la fiche Google
-    value: '450'
+    value: "450"
     source: Fiche d'établissement Google, 3 derniers mois (jusqu'à octobre 2026)
   - label: Demandes d'itinéraire
-    value: '302'
+    value: "302"
     source: Fiche d'établissement Google, 3 derniers mois (jusqu'à octobre 2026)
   - label: Clics vers le site
-    value: '223'
+    value: "223"
     source: Fiche d'établissement Google, 3 derniers mois (jusqu'à octobre 2026)
   - label: Personnes ayant vu la fiche
-    value: '4 723'
+    value: "4 723"
     source: Fiche d'établissement Google, 3 derniers mois (jusqu'à octobre 2026)
 quote:
   text: "J'ai été épatée par le site qu'Assane a créé pour moi. Beaucoup de mes clients m'ont dit avoir réservé chez moi parce que mon site a l'air bien plus professionnel que les autres. Une mère qui n'était jamais venue à Savannah m'a dit qu'elle nous avait choisis pour sa fille, qui vient d'arriver à Savannah, parce que le site lui avait donné confiance. J'ai reçu beaucoup de demandes de réservation grâce au site, et j'en suis vraiment contente."

@@ -48,7 +48,10 @@ test("the business-types page links every business type, and the footer links to
 }) => {
   const paths = await sitemapPaths(page);
   for (const index of ["/for/", "/fr/pour/"]) {
-    const expected = paths.filter((p) => p.startsWith(index) && p !== index).sort();
+    // One level below the index: the business types, not their guides.
+    const expected = paths
+      .filter((p) => p.startsWith(index) && p !== index && !p.slice(index.length, -1).includes("/"))
+      .sort();
     await page.goto(index);
     const linked = await page
       .locator("main li h2 a")
@@ -275,6 +278,21 @@ test("old /about.html is a real 301 to /about/", async ({ page }) => {
   expect(res.headers().location).toMatch(/\/about\/$/);
 });
 
+test("the old French home services URLs are real 301s to the renamed page and guide", async ({
+  page,
+}) => {
+  for (const [from, to] of [
+    ["/fr/pour/depannage-et-entretien", "/fr/pour/services-a-domicile/"],
+    ["/fr/pour/depannage-et-entretien/", "/fr/pour/services-a-domicile/"],
+    ["/fr/pour/depannage-et-entretien/guide/", "/fr/pour/services-a-domicile/guide/"],
+  ] as const) {
+    const res = await page.request.get(from, { maxRedirects: 0 });
+    expect(res.status(), from).toBe(301);
+    expect(new URL(res.headers().location ?? "", "http://x").pathname, from).toBe(to);
+    expect((await page.request.get(to)).status(), to).toBe(200);
+  }
+});
+
 test("links inside sentences keep their spaces", async ({ page }) => {
   // Astro drops a line break between a text expression and a tag, gluing words to links.
   for (const path of await sitemapPaths(page)) {
@@ -318,8 +336,8 @@ test("external links open in a new tab, safely, with a screen-reader hint", asyn
 test("prices read with spaces, in both languages", async ({ page }) => {
   // Astro drops line breaks between tags; a glued price ("$79a month") is easy to miss.
   for (const [path, pattern] of [
-    ["/", /\$\d[\d,]* setup \+ \$\d[\d,]* a month/],
-    ["/fr/", /\d[\d\s]*\u00a0\$ de mise en place \+ \d[\d\s]*\u00a0\$ par mois/],
+    ["/", /\$\d[\d,]* a month \+ \$\d[\d,]* setup/],
+    ["/fr/", /\d[\d\s]*\u00a0\$ par mois \+ \d[\d\s]*\u00a0\$ de mise en place/],
   ] as const) {
     await page.goto(path);
     const text = (await page.locator("#pricing article").first().textContent())?.replace(
@@ -330,7 +348,26 @@ test("prices read with spaces, in both languages", async ({ page }) => {
   }
 });
 
-test("no draft case study is published", async ({ page }) => {
+test("every guide has the summary, the listing, action boxes and its sources at the end", async ({
+  page,
+}) => {
+  const guides = (await sitemapPaths(page)).filter((p) => p.endsWith("/guide/"));
+  expect(guides.length).toBeGreaterThanOrEqual(8);
+  for (const path of guides) {
+    await page.goto(path);
+    await expect(page.locator("#summary"), path).toHaveCount(1);
+    await expect(page.locator("#anatomy"), path).toHaveCount(1);
+    expect(await page.locator("article .callout-do").count(), path).toBeGreaterThan(0);
+    await expect(page.locator("article [data-footnotes]"), path).toHaveCount(1);
+    // Sources live in the numbered list, so the text reads without links pulling readers away.
+    const strayLinks = await page
+      .locator('article a[href^="http"]')
+      .evaluateAll((links) => links.filter((a) => !a.closest("[data-footnotes]")).length);
+    expect(strayLinks, `${path} external links outside Sources`).toBe(0);
+  }
+});
+
+test("no draft (case study or guide) is published", async ({ page }) => {
   // Production builds leave out draft: true entries (only PR previews include them).
   for (const path of await sitemapPaths(page)) {
     await page.goto(path);
@@ -422,12 +459,34 @@ test.describe("home page follows the device language", () => {
   });
 });
 
+test("checklist: the score follows the ticked boxes, and the footer links to it", async ({
+  page,
+}) => {
+  for (const path of ["/google-checklist/", "/fr/checklist-google/"]) {
+    await page.goto(path);
+    const boxes = page.locator("main input[type=checkbox]");
+    const total = await boxes.count();
+    expect(total, path).toBeGreaterThan(10);
+    const count = page.locator("[data-score-count]");
+    await expect(count, path).toBeVisible();
+    await expect(count, path).toContainText(`0`);
+    await expect(page.locator("[data-band][data-current]"), path).toHaveCount(1);
+
+    // Ticking every box clears the "fix first" note and selects the top band.
+    for (const box of await boxes.all()) await box.check();
+    await expect(count, path).toContainText(`${total}`);
+    await expect(page.locator("[data-score-must]"), path).toHaveText("");
+    await expect(page.locator("[data-band]").first(), path).toHaveAttribute("data-current");
+    await expect(page.locator(`footer a[href="${path}"]`), path).toHaveCount(1);
+  }
+});
+
 // The personal phone number is deliberately not listed here: any form of it (digits or a hash,
 // which is trivially reversible for a phone number) would publish it in this repository.
 test("nothing personal is published", async ({ page }) => {
   for (const path of [...(await sitemapPaths(page)), "/404.html"]) {
     await page.goto(path);
-    const text = (await page.locator("body").innerText()).toLowerCase();
+    const text = ((await page.locator("body").textContent()) ?? "").toLowerCase();
     for (const banned of ["army", "military", "veteran", "sergeant", "savannah, ga 314"]) {
       expect(text, `${path} contains "${banned}"`).not.toContain(banned);
     }

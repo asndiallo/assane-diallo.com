@@ -1,8 +1,8 @@
 ---
 name: Tax & immigration services
 order: 7
-title: 'Google setup for tax and immigration offices | Assane Diallo'
-description: 'Get your tax preparation, translation, or immigration paperwork office found on Google, with clear services and an easy way to call. Free check-up.'
+title: "Google setup for tax and immigration offices | Assane Diallo"
+description: "Get your tax preparation, translation, or immigration paperwork office found on Google, with clear services and an easy way to call. Free check-up."
 h1: Get your tax or immigration services office found on Google
 intro: People bring you important paperwork, so they choose someone they trust. They search, read reviews, and look for someone who speaks their language. I help your office show up and look as reliable as you are.
 lookFor:
@@ -18,7 +18,7 @@ setup:
   items:
     - A Google profile with the right categories, your services, and your languages
     - A simple page for each main service (for example, tax preparation in your city)
-    - 'A booking link or call button that works on a phone'
+    - "A booking link or call button that works on a phone"
     - A short review request you can send after each appointment
 wontDo:
   h2: What I won't do

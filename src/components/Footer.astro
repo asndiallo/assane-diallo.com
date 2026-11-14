@@ -27,6 +27,7 @@ const columns: { heading: string; links: FooterLink[] }[] = [
       { href: staticRoutes.verticals[locale], label: groups.verticals },
       { href: homeAnchor(locale, "pricing"), label: groups.pricing },
       { href: homeAnchor(locale, "how"), label: groups.how },
+      { href: staticRoutes.checklist[locale], label: groups.checklist },
       { href: staticRoutes.work[locale], label: t.nav.work },
     ],
   },
@@ -75,5 +76,6 @@ const columns: { heading: string; links: FooterLink[] }[] = [
   </div>
   <p class="container-page pb-8 text-sm text-muted">
     © {new Date().getFullYear()} {SITE_NAME} · <a href={staticRoutes.privacy[locale]}>{t.footer.privacy}</a>
+    · <a href={staticRoutes.terms[locale]}>{t.footer.terms}</a>
   </p>
 </footer>

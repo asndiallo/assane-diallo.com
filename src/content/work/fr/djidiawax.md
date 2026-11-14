@@ -4,20 +4,20 @@ location: Boutique en ligne en France
 vertical: online-shop
 status: in-progress
 homepage: false
-summary: 'Une boutique de mode refaite pour le téléphone : pages 10 fois plus légères, paiement corrigé, avis avec photos, Google mieux guidé. Résultats à venir.'
+summary: "Une boutique de mode refaite pour le téléphone : pages 10 fois plus légères, paiement corrigé, avis avec photos, Google mieux guidé. Résultats à venir."
 consent: true
-disclosure: 'Transparence : la propriétaire de Djidiawax est ma sœur.'
+disclosure: "Transparence : la propriétaire de Djidiawax est ma sœur."
 website: https://djidiawax.com/
 services:
   - Accueil et fiches produits pensées pour le téléphone
-  - 'Vitesse du site : photos, extensions, cache'
-  - 'Paiement corrigé : livraison offerte, précommandes'
+  - "Vitesse du site : photos, extensions, cache"
+  - "Paiement corrigé : livraison offerte, précommandes"
   - Avis clients avec photos
   - Offre de bienvenue et inscriptions par e-mail
-  - 'SEO technique : titres, catégories, plan du site, données structurées'
+  - "SEO technique : titres, catégories, plan du site, données structurées"
 image:
   src: ../../../assets/work/djidiawax/fr/hero.png
-  alt: 'La nouvelle page d’accueil de djidiawax.com : le titre « Blazers et ensembles en wax » à côté d’une femme portant un blazer en wax bordeaux et rose.'
+  alt: "La nouvelle page d’accueil de djidiawax.com : le titre « Blazers et ensembles en wax » à côté d’une femme portant un blazer en wax bordeaux et rose."
 order: 10
 ---
 

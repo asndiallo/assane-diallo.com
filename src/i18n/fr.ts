@@ -3,6 +3,7 @@ import { pricing, getTier as tier } from "../config.ts";
 import type { Dictionary } from "./en.ts";
 
 const n = pricing.foundingClients;
+const { postsPerMonth: posts, reviewReplyHours: hours, requestReplyDays: days } = pricing;
 const names = { profile: "Visibilité", website: "Visibilité + Réservations" };
 const nb = " "; // French typography: non-breaking space before ? ! : and currency
 const money = (amount: number): string => `${amount.toLocaleString("fr-FR")}${nb}$`;
@@ -38,15 +39,16 @@ export const fr: Dictionary = {
   cta: {
     whatsapp: "Écrivez-moi sur WhatsApp",
     whatsappMessage:
-      "Bonjour Assane, j'aimerais un bilan Google gratuit pour mon entreprise. Mon entreprise : ",
-    booking: "Réserver un bilan Google gratuit de 15 minutes",
+      "Bonjour Assane, j'aimerais un bilan gratuit pour mon entreprise. Mon entreprise : ",
+    booking: "Réserver un bilan gratuit de 15 minutes",
     email: "M'écrire par e-mail",
   },
   footer: {
     tagline:
-      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis, en particulier les entreprises africaines.",
+      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
+    terms: "Conditions",
     social: "Suivre sur les réseaux sociaux",
     languages: "English et français.",
     groups: {
@@ -54,6 +56,7 @@ export const fr: Dictionary = {
       verticals: "Types d'entreprises",
       pricing: "Tarifs",
       how: "Fonctionnement",
+      checklist: "Checklist Google gratuite",
       about: "À propos",
     },
   },
@@ -61,18 +64,24 @@ export const fr: Dictionary = {
     meta: {
       title: "SEO local pour petites entreprises aux USA | Assane Diallo",
       description:
-        "J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google et à recevoir plus d'appels et de réservations. Bilan gratuit.",
+        "J'aide les petites entreprises aux États-Unis à être trouvées sur Google et ChatGPT et à recevoir plus d'appels et de réservations. Bilan gratuit.",
     },
     hero: {
-      h1: "Soyez visible sur Google. Recevez plus d'appels et de réservations.",
-      subhead: `J'aide les petites entreprises aux États-Unis à apparaître quand les clients cherchent près d'elles, et à faciliter les appels, les réservations et les visites. Ma spécialité${nb}: les entreprises africaines.`,
+      h1: "Soyez visible sur Google et ChatGPT. Recevez plus d'appels et de réservations.",
+      subhead:
+        "Les bons horaires, de vraies photos et un lien de réservation qui marche, partout où vos clients cherchent. Vous gérez votre entreprise. Je m'occupe du reste.",
       languages: "English et français.",
     },
     listing: {
       caption: `Illustration${nb}: à quoi peut ressembler votre entreprise sur Google quand votre fiche est complète.`,
-      query: "braiding near me",
+      // The searches stay in English: US customers search in English.
+      searches: [
+        { query: "hair salon near me", category: "Salon de coiffure" },
+        { query: "auto repair near me", category: "Garage automobile" },
+        { query: "plumber near me", category: "Plombier" },
+        { query: "restaurant near me", category: "Restaurant" },
+      ],
       name: "Le nom de votre entreprise",
-      category: "Salon de tresses",
       open: "Ouvert",
       closes: `Ferme à 19${nb}h`,
       prices: "Prix affichés",
@@ -81,10 +90,9 @@ export const fr: Dictionary = {
     },
     whoFor: {
       h2: `Pour qui${nb}?`,
-      intro:
-        "Les petites entreprises aux États-Unis qui servent une clientèle locale, en particulier les entreprises africaines.",
+      intro: "Les petites entreprises aux États-Unis qui servent une clientèle locale.",
       points: [
-        "Dépannage et entretien, aide à domicile, cliniques, garderies, services fiscaux, garages, salons et restaurants dont les clients viennent de leur ville.",
+        "Salons, restaurants, artisans, garages et boutiques dont les clients viennent de leur ville.",
         "Les propriétaires trop occupés par leur activité pour apprendre Google.",
         "Ceux qui veulent plus d'appels et de réservations, pas un plan marketing compliqué.",
       ],
@@ -93,7 +101,7 @@ export const fr: Dictionary = {
     problem: {
       h2: `Vos clients cherchent. Est-ce qu'ils vous trouvent${nb}?`,
       points: [
-        `Les gens tapent «${nb}plumber near me${nb}», «${nb}daycare near me${nb}» ou «${nb}African restaurant near me${nb}» et choisissent parmi les premiers résultats.`,
+        `Les gens tapent «${nb}plumber near me${nb}», «${nb}auto repair near me${nb}» ou «${nb}African restaurant near me${nb}», ou demandent une recommandation à ChatGPT, et choisissent parmi les premiers noms qu'ils voient.`,
         "Si vos horaires, votre numéro ou vos prix sont faux ou absents sur Google, ils appellent quelqu'un d'autre.",
         "Si réserver est compliqué, ils abandonnent.",
       ],
@@ -113,14 +121,18 @@ export const fr: Dictionary = {
           title: "Des pages pour ce que les gens cherchent vraiment.",
           body: "Par exemple, votre service, votre coiffure ou votre plat, suivi de votre ville.",
         },
+        listings: {
+          title: "Vos fiches Apple Plans, Bing et Yelp.",
+          body: "Le même nom, les mêmes horaires et le même numéro partout, pour que ceux qui ne cherchent pas sur Google vous trouvent aussi, et que les assistants IA comme ChatGPT aient les bonnes informations.",
+        },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
-          body: "Un lien et un court message à envoyer à vos clients satisfaits.",
+          body: "Un lien, un QR code et un court message à envoyer à vos clients satisfaits.",
         },
-        report: {
-          title: "Un suivi mensuel et un rapport en langage clair.",
-          body: "Je garde votre fiche à jour et je vous montre les appels, les demandes d'itinéraire, ce qui a changé et la suite.",
-        },
+      },
+      monthly: {
+        title: "Ensuite, chaque mois, le travail continue.",
+        body: `${posts}${nb}publications Google, une réponse à chaque avis, un rappel mensuel pour en demander de nouveaux, vos informations tenues à jour et un rapport en langage clair. Avec ${names.website}, j'héberge aussi votre site, je fais vos modifications et j'ajoute de nouvelles pages.`,
       },
       websiteOnly: `Le site et les pages de recherche sont inclus dans la formule ${names.website}.`,
       onlineShops: `Boutiques en ligne${nb}: audits sur demande.`,
@@ -131,15 +143,15 @@ export const fr: Dictionary = {
       items: [
         {
           title: "Bilan gratuit (15 minutes).",
-          body: "Sur WhatsApp ou par téléphone, je regarde comment votre entreprise apparaît sur Google et je vous donne les trois corrections prioritaires. Sans engagement.",
+          body: "Sur WhatsApp ou par téléphone, je regarde comment votre entreprise apparaît sur Google et ce que ChatGPT en dit, et je vous donne les trois corrections prioritaires, même si vous ne travaillez pas avec moi ensuite.",
         },
         {
           title: "Mise en place.",
-          body: `Je fais le travail. Vous validez vos photos, vos prix et les textes. En général ${pricing.setupWeeks}${nb}semaines.`,
+          body: `Je fais le travail. Vous validez vos photos, vos prix et les textes avant que quoi que ce soit soit en ligne. En général ${pricing.setupWeeks}${nb}semaines. Si ça doit prendre plus longtemps, je vous préviens avant, pas après.`,
         },
         {
-          title: "Croissance (en option).",
-          body: "Si vous le souhaitez, des mises à jour chaque mois et un court rapport pour voir ce qui marche. Sans engagement.",
+          title: "Croissance.",
+          body: "Chaque mois, je publie sur votre fiche, je réponds à vos avis et je garde vos informations à jour, puis je vous envoie un court rapport sur ce qui a changé. C'est compris dans la formule. Résiliable à tout moment.",
         },
       ],
     },
@@ -151,35 +163,91 @@ export const fr: Dictionary = {
     pricing: {
       h2: "Tarifs",
       intro: "Deux formules. Choisissez celle qui correspond à votre entreprise aujourd'hui.",
+      payback:
+        "Si un ou deux nouveaux clients par mois vous rapportent plus que le prix mensuel, c'est rentabilisé.",
       foundingLabel: `Pour mes ${n} premiers clients`,
       standardLabel: `Après mes ${n} premiers clients`,
       startingAt: "À partir de",
       startingAtLower: "à partir de",
       setup: "de mise en place",
+      setupOnce: "de mise en place, payée une fois",
       perMonth: "par mois",
-      optional: ", en option",
-      includes: "Mise en place, payée une fois",
-      monthlyPlan: "Suivi mensuel en option",
-      notes: [
-        "Devis final après un bilan gratuit.",
-        `La mise en place se paie une fois. Le suivi mensuel est en option${nb}: sans engagement, résiliable à tout moment.`,
+      quote: "Devis final après un bilan gratuit.",
+      details: "Voir tout ce que je fais",
+      includes: "Mise en place, faite une fois",
+      choose: (name: string) => `Choisir ${name}`,
+      chooseMessage: (name: string) =>
+        `Bonjour Assane, la formule ${name} m'intéresse. Mon entreprise${nb}: `,
+      monthlyPlan: "Chaque mois",
+      recommended: "Recommandée",
+      everythingIn: (name: string) => `Tout ce qu'inclut ${name}, plus${nb}:`,
+      outcomes: {
+        maps: {
+          title: "Visible sur Google Maps",
+          body: `Votre fiche bien configurée, ${posts}${nb}publications par mois, et Apple Plans, Bing et Yelp à l'identique.`,
+        },
+        reviews: {
+          title: "Des avis demandés et répondus",
+          body: `Un rappel mensuel pour en demander, et une réponse à chacun sous ${hours}${nb}heures.`,
+        },
+        website: {
+          title: "Votre propre site, hébergé",
+          body: "Des modifications chaque mois et une nouvelle page locale chaque trimestre.",
+        },
+        report: {
+          title: "Un rapport en langage clair",
+          body: `Chaque mois${nb}: ce qui a changé et la suite. Chaque trimestre${nb}: ce que ChatGPT dit de vous.`,
+        },
+      },
+      monthlyItems: {
+        posts: `${posts}${nb}publications Google par mois`,
+        reviewReplies: `Une réponse à chaque avis sous ${hours}${nb}heures`,
+        reviewRequests:
+          "Un rappel mensuel pour demander des avis, et les nouveaux avis comptés dans votre rapport",
+        profileUpkeep: "Horaires, photos et services à jour",
+        editWatch: "Modifications erronées repérées et corrigées",
+        listingsCheck: "Apple Plans, Bing et Yelp vérifiés chaque trimestre",
+        aiCheck: "Ce que ChatGPT dit de vous, vérifié chaque trimestre dans votre rapport",
+        report: "Un rapport en langage clair",
+        hosting: "Hébergement, SSL et surveillance",
+        siteEdits: "Petites modifications chaque mois (prix, menu, services)",
+        localPage: "Une page locale nouvelle ou améliorée par trimestre",
+        searchConsole: "Vérification de Search Console et corrections",
+        siteClicks: "Clics Appeler et Réserver dans votre rapport",
+        quarterlyCall: `Un appel de 15${nb}minutes par trimestre`,
+      },
+      promises: [
+        {
+          title: "Sans engagement",
+          body: "Mise en place payée une fois. Au mois, résiliable à tout moment.",
+        },
+        {
+          title: "Changements rapides",
+          body: `Nouveaux prix ou horaires de fêtes, faits sous ${days}${nb}jours ouvrés.`,
+        },
+        {
+          title: "Crédit de changement d'offre",
+          body: `Passez à ${names.website} dans les ${pricing.upgradeCreditMonths}${nb}mois${nb}: votre mise en place ${names.profile} est déduite.`,
+        },
+        {
+          title: "Votre site reste à vous",
+          body: "Si vous partez, vous gardez votre domaine et votre site.",
+        },
       ],
       tiers: {
         profile: {
           name: names.profile,
-          tagline: "Configuration de la fiche Google",
-          summary: "Pour les entreprises qui n'ont pas encore besoin d'un site.",
+          tagline: "Visible sur Google. Pas besoin de site.",
         },
         website: {
           name: names.website,
-          tagline: "Fiche Google + site",
-          summary: `Tout ce qu'inclut ${names.profile}, plus un site simple et des pages pour ce que les gens cherchent.`,
+          tagline: "Visible sur Google, avec un site qui reçoit appels et réservations.",
         },
       },
     },
     about: {
       h2: "Qui je suis",
-      body: "Je m'appelle Assane. Je suis ingénieur logiciel, avec un master en Data Engineering et IA. J'ai créé et développé une boutique en ligne d'environ 800 pages grâce au référencement naturel, sans publicité payante. Je parle français et anglais, et je construis des outils qui amènent des clients aux petites entreprises.",
+      body: "Je m'appelle Assane. Ma cousine tient un salon de tresses à Savannah, et sa fiche Google n'avait jamais été revendiquée. Tout a commencé quand je l'ai corrigée et que j'ai créé son site. Je suis ingénieur logiciel, avec un master en Data Engineering et IA, et j'ai créé et développé une boutique en ligne d'environ 800 pages grâce au référencement naturel, sans publicité payante. Je parle français et anglais, et je travaille avec des entreprises partout aux États-Unis, surtout sur WhatsApp.",
       more: "En savoir plus sur moi",
     },
     faq: {
@@ -195,7 +263,11 @@ export const fr: Dictionary = {
         },
         {
           q: `Est-ce que je garde le contrôle de mes comptes${nb}?`,
-          a: "Oui. Votre fiche Google et votre nom de domaine restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment.",
+          a: "Oui. Votre fiche Google, votre nom de domaine et le compte d'hébergement de votre site restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment.",
+        },
+        {
+          q: `Et si quelque chose tourne mal${nb}?`,
+          a: `Je vérifie votre fiche chaque jour ouvré. Si Google ou un inconnu modifie vos informations, je les remets en place et je le note dans votre rapport. Si Google suspend votre fiche, je vous préviens le jour même, j'arrête toute modification et je dépose la demande de réexamen avec vous, sans frais en plus${nb}; les conditions expliquent ce que vous payez pendant ce temps. Et si votre nom de domaine arrive à expiration, je vous préviens au moins ${pricing.domainWarningDays}${nb}jours avant et je vous relance jusqu'au renouvellement, car vous êtes la seule personne à pouvoir le renouveler.`,
         },
         {
           q: `De quoi avez-vous besoin de ma part${nb}?`,
@@ -206,12 +278,28 @@ export const fr: Dictionary = {
           a: "Non. Personne ne peut honnêtement le faire. Je vous montrerai les changements et les chiffres.",
         },
         {
+          q: `Est-ce que ça m'aide à apparaître sur ChatGPT${nb}?`,
+          a: `Ça devrait aider, mais personne ne peut promettre ce qu'une IA va répondre. ChatGPT, Gemini et les réponses IA de Google se font une idée d'une entreprise locale à partir de ses fiches, de ses avis et de son site. C'est le travail que je fais${nb}: les mêmes informations partout, des avis récents avec des réponses, et des pages claires sur ce que vous proposez. Chaque trimestre, je pose à ChatGPT les questions de vos clients et je mets sa réponse dans votre rapport. Les réponses changent d'un jour à l'autre${nb}: c'est un instantané, pas un classement.`,
+        },
+        {
           q: `Combien ça coûte${nb}?`,
-          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)}, payés une fois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)}, payés une fois. Le suivi mensuel avec rapport est en option, à partir de ${money(tier("profile").founding.monthly)} par mois. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
+          a: `La formule ${names.profile} (fiche Google) commence à ${money(tier("profile").founding.setup)} de mise en place et ${money(tier("profile").founding.monthly)} par mois. La formule ${names.website} (fiche + site) commence à ${money(tier("website").founding.setup)} de mise en place et ${money(tier("website").founding.monthly)} par mois. La partie mensuelle paie le travail continu${nb}: publications Google, réponses aux avis et rapport en langage clair, plus l'hébergement, les modifications et de nouvelles pages avec ${names.website}. Ce sont les tarifs fondateurs pour mes ${n} premiers clients. Vous recevez un devis final après le bilan gratuit.`,
         },
         {
           q: `Y a-t-il un contrat${nb}?`,
-          a: "Non. La mise en place se paie une fois. Si vous ajoutez le suivi mensuel, c'est sans engagement et vous pouvez arrêter à tout moment.",
+          a: "Pas d'engagement long. Le suivi mensuel se paie au mois et vous pouvez arrêter à tout moment.",
+        },
+        {
+          q: `Quelle différence avec une agence${nb}?`,
+          a: "Vous travaillez avec une seule personne, moi, du bilan gratuit au rapport mensuel, sur WhatsApp, en français ou en anglais. Pas de long contrat. Votre fiche, votre nom de domaine et vos comptes restent à votre nom, et si vous partez, vous gardez votre site. Et le prix mensuel paie un travail précis que vous pouvez vérifier chaque mois, détaillé dans les tarifs plus haut.",
+        },
+        {
+          q: `Que faites-vous chaque mois${nb}?`,
+          a: `Avec ${names.profile}${nb}: ${posts}${nb}publications Google, une réponse à chaque avis sous ${hours}${nb}heures, un rappel mensuel pour demander des avis (les nouveaux comptés dans votre rapport), vos horaires, photos et services tenus à jour, les modifications erronées repérées et corrigées, Apple Plans, Bing et Yelp vérifiés chaque trimestre, ce que ChatGPT dit de vous vérifié chaque trimestre, et un rapport en langage clair. ${names.website} ajoute l'hébergement du site que je crée, une série de petites modifications par mois, une page locale nouvelle ou améliorée chaque trimestre, une vérification de Search Console, les clics sur les boutons Appeler et Réserver de votre site dans votre rapport, et un appel de 15${nb}minutes chaque trimestre.`,
+        },
+        {
+          q: `Si je résilie, est-ce que je garde mon site${nb}?`,
+          a: `Oui. Votre nom de domaine et votre compte d'hébergement sont toujours à votre nom${nb}: le site reste en ligne et rien n'a besoin d'être transféré. Dans les ${pricing.handoverDays}${nb}jours qui suivent votre dernier mois payé, je vous envoie tous ses fichiers et je retire mon accès. Si vous aviez déjà votre propre hébergeur, rien ne change.`,
         },
         {
           q: `Travaillez-vous avec des entreprises hors de votre ville${nb}?`,
@@ -244,7 +332,7 @@ export const fr: Dictionary = {
     meta: {
       title: "SEO local par type d'entreprise | Assane Diallo",
       description:
-        "Fiche Google et SEO local pour artisans, aide à domicile, cliniques, garderies, services fiscaux, garages, salons, restaurants et plus encore.",
+        "Fiche Google et SEO local pour artisans, garages, salons de tresses, restaurants et autres entreprises locales.",
     },
     h1: "Qui j'aide",
     lead: "Les petites entreprises dont les clients viennent du quartier. Choisissez la vôtre pour voir ce que les clients regardent et ce que je mets en place.",
@@ -273,6 +361,32 @@ export const fr: Dictionary = {
     and: "et",
     how: "le fonctionnement",
     orMessage: ", ou envoyez-moi le nom de votre entreprise.",
+    guide: "Guide gratuit :",
+    guideLink: "Lire le guide : quoi corriger sur Google, Maps et ChatGPT",
+  },
+  guide: {
+    reviewed: (date: string) =>
+      `Vérifié pour la dernière fois sur les pages de Google et des autres sources le ${date}.`,
+    back: (name: string) => `Retour à ${name}`,
+    types: "Types d'entreprise",
+    nextH2: "Un deuxième regard ?",
+    next: "Parcourez la checklist gratuite par vous-même, ou envoyez-moi le nom de votre entreprise : je regarde votre fiche Google gratuitement en 15 minutes.",
+    checklist: "Ouvrir la checklist Google gratuite",
+    summaryH2: "En 30 secondes",
+    toc: "Sur cette page",
+    callouts: { do: "À faire", saw: "Ce que j'ai vu" },
+    sources: "Sources",
+    backToText: (n: string) => `Retour au texte (source ${n})`,
+    anatomy: {
+      h2: "Ce que les clients voient en premier",
+      caption: "Illustration, pas une vraie entreprise. Les numéros renvoient à la liste.",
+      parts: [
+        "Les étoiles et le nombre d'avis : les avis récents comptent le plus.",
+        "Ouvert maintenant, et l'heure de fermeture : des horaires faux vous font sortir du filtre « Ouvert ».",
+        "Une ligne qui correspond à la recherche : un plat de votre menu, un style ou un avis.",
+        "Les boutons : appeler, commander ou réserver, itinéraire. Chacun doit marcher sur téléphone.",
+      ],
+    },
   },
   aboutPage: {
     meta: {
@@ -305,7 +419,7 @@ export const fr: Dictionary = {
     meta: {
       title: "Confidentialité | Assane Diallo",
       description:
-        "Ce que ce site collecte (pas de cookies, pas de publicité) et ce que je fais de vos informations quand vous m'écrivez ou réservez un bilan gratuit.",
+        "Ce que ce site collecte (pas de cookies, pas de publicité) et ce que je fais de vos informations quand vous m'écrivez, réservez un bilan ou m'engagez.",
     },
     h1: "Confidentialité",
     lead: "Pas de cookies, pas de publicité, pas de suivi d'un site à l'autre. Quand vous me contactez, j'utilise vos informations uniquement pour vous répondre et, si nous travaillons ensemble, pour faire le travail.",
@@ -338,13 +452,20 @@ export const fr: Dictionary = {
         body: "votre nom, votre entreprise, le moyen de vous répondre et votre message, que me transmet un service de formulaires.",
       },
     },
+    work: {
+      h2: "Quand vous faites appel à moi",
+      paragraphs: [
+        `La facturation passe par Stripe. Sur une facture ou un lien de paiement, vous indiquez votre nom, le nom de votre entreprise, votre e-mail, votre téléphone et votre adresse de facturation. Stripe utilise l'adresse pour calculer la taxe de vente (sales tax). Les informations de carte et de compte bancaire vont uniquement à Stripe${nb}: je ne les vois jamais.`,
+        `Pour faire le travail, je suis ajouté comme gestionnaire des comptes nécessaires${nb}: votre fiche Google, et des outils comme Google Search Console (les recherches qui amènent les gens sur votre site) ou les statistiques de votre site. Je vois ce que ces comptes affichent, comme vos statistiques et vos avis, et je ne m'en sers que pour votre travail et votre rapport mensuel.`,
+      ],
+    },
     use: {
       h2: "Ce que j'en fais",
       body: "Uniquement vous répondre, préparer votre bilan gratuit et, si vous faites appel à moi, faire le travail et le facturer. Je ne vends pas vos informations, je ne les partage pas à des fins publicitaires et je ne vous inscris à aucune liste de diffusion.",
     },
     keep: {
       h2: "Combien de temps je les garde",
-      body: "Tant que nous échangeons ou travaillons ensemble. Si nous ne travaillons finalement pas ensemble, je supprime nos messages et vos informations dans les 12 mois suivant notre dernier échange. Pour mes clients, je garde ce qu'exigent le travail et mes obligations fiscales.",
+      body: `Tant que nous échangeons ou travaillons ensemble. Si nous ne travaillons finalement pas ensemble, je supprime nos messages et vos informations dans les 12 mois suivant notre dernier échange. Pour mes clients, je garde ce dont le travail a besoin, ainsi que les factures et les données de facturation aussi longtemps que la loi fiscale l'exige (au Texas, au moins 4${nb}ans).`,
     },
     rights: {
       h2: "Consulter, corriger ou supprimer vos informations",
@@ -354,6 +475,240 @@ export const fr: Dictionary = {
     services: {
       h2: "Services utilisés",
       intro: `Chacun a sa propre politique de confidentialité${nb}:`,
+    },
+  },
+  terms: {
+    meta: {
+      title: "Conditions de service | Assane Diallo",
+      description:
+        "Mise en place, paiement mensuel, résiliation et remboursements quand vous faites appel à moi pour votre fiche Google ou votre site. Sans long contrat.",
+    },
+    h1: "Conditions de service",
+    lead: "Les règles pour travailler ensemble, en termes simples. Payer une facture ou un lien de paiement de ma part signifie que vous les acceptez.",
+    updated: "Dernière mise à jour",
+    sections: [
+      {
+        h2: "Ce que vous obtenez",
+        paragraphs: [
+          `Votre offre et son prix sont ceux de votre devis, de votre facture ou de votre lien de paiement. Chaque offre comprend une mise en place, payée une seule fois, et une partie mensuelle incluse dans l'offre${nb}: le travail continu indiqué pour votre offre dans les tarifs de ma page d'accueil.`,
+          `Je termine en général la mise en place ${pricing.setupWeeks}${nb}semaines après avoir reçu ce dont j'ai besoin de votre part. Ensuite, je fais les petites demandes (un nouveau prix, une fermeture pour un jour férié) sous ${days}${nb}jours ouvrés.`,
+          `Changement d'offre${nb}: si vous passez de ${names.profile} à ${names.website} dans les ${pricing.upgradeCreditMonths}${nb}mois suivant votre mise en place ${names.profile}, ce que vous avez payé pour cette mise en place est déduit de celle de ${names.website}.`,
+        ],
+      },
+      {
+        h2: "Paiement",
+        paragraphs: [
+          "Vous payez la mise en place et le premier mois ensemble, avant que je commence. Ensuite, le prix mensuel est prélevé sur la même carte ou le même compte bancaire au début de chaque mois, et Stripe vous envoie un reçu par e-mail.",
+          "Les prix ne comprennent pas la taxe de vente (sales tax). Quand elle est due, elle s'ajoute au prix et figure sur la facture.",
+          `Si un paiement échoue, Stripe réessaie pendant 2${nb}semaines au plus. S'il échoue toujours, l'abonnement prend fin, le travail mensuel s'arrête et un site que j'ai créé reste à vous, comme indiqué dans «${nb}Vos comptes et votre site restent à vous${nb}».`,
+          `Si je change mes prix, je vous préviens au moins 30${nb}jours avant. Les premiers clients gardent leur prix de lancement.`,
+        ],
+      },
+      {
+        h2: "Résiliation",
+        paragraphs: [
+          "Pas de long contrat. Résiliez quand vous voulez avec le lien de vos e-mails Stripe, ou dites-le-moi simplement. La résiliation prend effet à la fin du mois déjà payé, et je continue le travail jusque-là.",
+        ],
+      },
+      {
+        h2: "Remboursements",
+        paragraphs: [
+          `Mise en place${nb}: remboursement complet si vous annulez avant que je commence le travail. Je vous préviens sur WhatsApp ou par e-mail le jour où je commence. Une fois le travail commencé, la mise en place n'est pas remboursée, car ce travail se fait au début.`,
+          `Mensuel${nb}: pas de remboursement d'un mois déjà commencé, sauf accord entre nous.`,
+          "Si j'arrête moi-même le travail avant la fin de la mise en place, je rembourse la partie non faite.",
+        ],
+      },
+      {
+        h2: "Ce dont j'ai besoin de votre part",
+        paragraphs: [
+          `L'accès à votre fiche Google et aux autres outils nécessaires (comme Google Search Console, ou votre site pour l'offre ${names.website}), vos horaires, vos prix et vos photos, et votre accord sur les textes. Je ne peux pas avancer plus vite que je ne les reçois.`,
+          `Si j'attends après vous pendant plus de 60${nb}jours, je termine ce que je peux et la mise en place est considérée comme terminée. La partie mensuelle continue jusqu'à ce que vous résiliiez.`,
+          "Vous êtes responsable de l'exactitude des informations que vous me donnez, et d'avoir le droit d'utiliser les photos et logos que vous m'envoyez.",
+        ],
+      },
+      {
+        h2: "Vos comptes et votre site restent à vous",
+        paragraphs: [
+          `Votre fiche Google, vos comptes Search Console et de statistiques, votre nom de domaine et tout autre compte restent à votre nom. Vous achetez et payez votre nom de domaine directement${nb}: il ne fait pas partie de mes prix. Je suis ajouté comme gestionnaire, jamais comme propriétaire, et je n'ai jamais besoin de vos mots de passe.`,
+          `Hébergement${nb}: un site que je crée avec ${names.website} tourne sur un compte d'hébergement gratuit à votre nom, où je suis ajouté comme administrateur. Le faire fonctionner (mises à jour, SSL, surveillance) est compris dans le prix mensuel. Si vous avez déjà votre propre hébergeur, vous le gardez et le payez directement.`,
+          "Quand nous arrêtons de travailler ensemble, il vous suffit de me retirer de vos comptes. Tout ce que j'ai fait pour vous et que vous avez payé (site, pages, textes) vous appartient.",
+          `Quand la partie mensuelle prend fin, le site continue de tourner sur votre compte. Dans les ${pricing.handoverDays}${nb}jours, je vous envoie tous ses fichiers et je retire mon accès, sans frais.`,
+        ],
+      },
+      {
+        h2: "Aucune garantie de classement",
+        paragraphs: [
+          `C'est Google qui décide des classements, et il peut changer le fonctionnement de la recherche ou suspendre une fiche à tout moment. Je ne garantis ni un classement, ni une position, ni un délai${nb}: le référencement prend en général plusieurs mois. Ce que je promets, c'est de faire le travail prévu dans votre offre et de vous montrer ce qui a changé dans le rapport mensuel.`,
+        ],
+      },
+      {
+        h2: "Si Google suspend votre fiche",
+        paragraphs: [
+          "Google suspend parfois une fiche d'établissement, souvent sans dire pourquoi. Si cela arrive, je vous préviens le jour même, j'arrête toute modification de la fiche, et je prépare et dépose la demande de réexamen avec vous. Cette démarche est comprise dans votre formule.",
+          "Pendant la suspension, vous ne payez que le travail que je peux encore faire. Si la suspension vient de quelque chose que j'ai fait, le prix mensuel est suspendu jusqu'au retour de votre fiche, quelle que soit votre formule.",
+          `Si c'est une erreur de Google ou si la cause n'est pas claire${nb}: avec la formule ${names.profile}, le prix mensuel est suspendu à partir de la facture suivante, car presque tout ce travail se fait sur la fiche. Avec la formule ${names.website}, il continue, car le travail sur votre site continue.`,
+          `Si la suspension vient de quelque chose que les règles de Google n'autorisent pas (par exemple une adresse qui ne remplit pas les conditions, des mots-clés ajoutés au nom de l'établissement ou des avis payés), je dépose la demande une fois le problème corrigé. Entre-temps, le prix mensuel est suspendu avec la formule ${names.profile} et continue avec la formule ${names.website}. Si vous préférez ne pas corriger, nous arrêtons de travailler ensemble, comme indiqué dans «${nb}Résiliation${nb}».`,
+          "Je vous dis par écrit quel cas s'applique et pourquoi. Les paiements reprennent le jour où votre fiche revient.",
+        ],
+      },
+      {
+        h2: "Partager vos résultats",
+        paragraphs: [
+          "Je ne publie le nom de votre entreprise, vos résultats, des captures d'écran ou vos mots qu'avec votre accord écrit (un message WhatsApp suffit).",
+        ],
+      },
+      {
+        h2: "Responsabilité",
+        paragraphs: [
+          `Si un problème vient de mon travail, ma responsabilité se limite à ce que vous m'avez payé pendant les 12${nb}mois précédents. Je ne suis pas responsable des ventes perdues, ni des décisions de Google ou d'autres plateformes.`,
+        ],
+      },
+      {
+        h2: "Le reste",
+        paragraphs: [
+          `En cas de problème, parlez-m'en d'abord${nb}: la plupart des choses se règlent en un message, et c'est plus rapide qu'une contestation auprès de votre banque.`,
+          `Ces conditions relèvent du droit du Texas. Si je les modifie, je préviens mes clients actuels par e-mail avant que le changement s'applique. La version française est une traduction${nb}: en cas de différence, la version anglaise s'applique.`,
+        ],
+      },
+    ],
+    contact: {
+      h2: `Des questions${nb}?`,
+      body: "Posez-les-moi avant de payer, ou à tout moment après.",
+      whatsappMessage: `Bonjour Assane, une question sur vos conditions${nb}: `,
+    },
+  },
+  checklist: {
+    meta: {
+      title: "Checklist gratuite pour votre fiche Google | Assane Diallo",
+      description: `Vérifiez votre fiche Google comme vos clients la voient${nb}: accès, horaires, photos, avis, tarifs. Environ 10 minutes, gratuit, sans inscription.`,
+    },
+    h1: "Checklist de votre fiche Google",
+    lead: (count) =>
+      `${count} points à vérifier sur votre fiche d'établissement Google, celle que les gens voient avant de vous appeler. Environ 10 minutes sur votre téléphone. Gratuit, sans inscription.`,
+    honesty:
+      "Cette checklist vous dit quoi vérifier, pas quoi acheter. Personne ne peut honnêtement vous garantir une position sur Google, et je ne le fais pas.",
+    mustHave: "À corriger d'abord",
+    mustHaveNote: `Les points marqués «${nb}À corriger d'abord${nb}» vous font perdre des clients dès qu'ils sont faux. Commencez par eux.`,
+    sections: [
+      {
+        h2: `1. Première impression${nb}: ce que voit un client qui vous cherche`,
+        items: [
+          {
+            must: true,
+            title: "Vous pouvez vous connecter et modifier votre fiche vous-même.",
+            body: "Si un ancien employé, un proche ou une agence l'a créée, demandez-leur de vous ajouter comme propriétaire. Tant que vous ne pouvez pas la modifier, rien d'autre sur cette liste ne peut être corrigé.",
+          },
+          {
+            title: "Le nom est écrit comme vos clients vous connaissent.",
+            body: `Sans mots-clés ajoutés comme «${nb}meilleures tresses de la ville${nb}». Les règles de Google l'interdisent, et cela peut faire suspendre une fiche.`,
+          },
+          {
+            title: "Votre catégorie principale est la plus précise possible.",
+            body: `Par exemple «${nb}Restaurant mexicain${nb}», pas seulement «${nb}Restaurant${nb}». Ajoutez ensuite les autres catégories qui correspondent vraiment à votre activité.`,
+          },
+          {
+            must: true,
+            title: "Au moins une vraie photo de votre travail, de votre équipe ou de votre lieu.",
+            body: "Pas seulement un logo ou une image d'illustration. De vraies photos montrent à un inconnu que vous existez vraiment, avant qu'il appelle.",
+          },
+          {
+            title: "Votre description dit ce que vous faites, pour qui et où.",
+            body: "Avec vos propres mots. Pas de texte copié d'un autre site.",
+          },
+        ],
+      },
+      {
+        h2: `2. Peut-on vous joindre${nb}?`,
+        items: [
+          {
+            must: true,
+            title: "Vos horaires sont justes, jours fériés compris.",
+            body: "Utilisez les horaires exceptionnels pour les jours fériés. Des horaires faux, c'est le moyen le plus rapide de perdre un client qui s'est déplacé.",
+          },
+          {
+            must: true,
+            title: "Le numéro de téléphone fonctionne, et c'est celui auquel vous répondez.",
+            body: "Appelez-le depuis un autre téléphone pour en être sûr.",
+          },
+          {
+            must: true,
+            title: "Il y a un moyen simple d'appeler ou de réserver.",
+            body: "Un bouton d'appel, un lien de réservation, ou les deux. Si vous prenez les réservations sur un autre site, le lien y mène directement, pas vers votre page d'accueil.",
+          },
+          {
+            title: "Le lien vers votre site fonctionne et ouvre une page utile.",
+            body: `Services, tarifs ou réservation${nb}: ce que le client cherche. Pas une page morte.`,
+          },
+          {
+            title: "Le repère sur Google Maps est bien devant votre porte.",
+            body: "Et l'adresse est juste. Si c'est vous qui vous déplacez chez vos clients, votre zone desservie est renseignée et votre adresse personnelle est masquée.",
+          },
+        ],
+      },
+      {
+        h2: `3. Confiance${nb}: pourquoi un inconnu vous choisit plutôt que le voisin`,
+        items: [
+          {
+            title: "Au moins un avis des 3 derniers mois.",
+            body: `Des avis anciens uniquement donnent l'impression que l'entreprise est fermée. Demandez à vos clients satisfaits, mais ne payez jamais et n'offrez jamais de réduction contre un avis${nb}: Google l'interdit.`,
+          },
+          {
+            title: "Chaque avis a une réponse.",
+            body: "Remerciez pour les bons. Répondez aux mauvais calmement, en public.",
+          },
+          {
+            title: "Vos tarifs, ou une fourchette de prix, sont faciles à trouver.",
+            body: `Sur votre fiche, votre site ou vos publications. «${nb}Appelez pour le prix${nb}» partout vous coûte des appels.`,
+          },
+          {
+            title: "Vos attributs sont renseignés.",
+            body: `Par exemple${nb}: entreprise détenue par une personne noire ou par une femme, entrée accessible en fauteuil roulant, moyens de paiement acceptés. Ils aident les bons clients à vous trouver.`,
+          },
+          {
+            title: "Quelque chose de nouveau dans le dernier mois.",
+            body: "Une publication, une photo, une offre. Une fiche qui n'a pas bougé depuis un an a l'air abandonnée.",
+          },
+        ],
+      },
+      {
+        h2: "4. Trouvé par de nouveaux clients",
+        items: [
+          {
+            title: "Vous apparaissez quand vous cherchez comme un nouveau client.",
+            body: `Sur votre téléphone, essayez «${nb}[votre service] près de moi${nb}» ou «${nb}[votre service] [votre ville]${nb}», pas le nom de votre entreprise. C'est cette recherche qui amène les gens qui ne vous connaissent pas encore.`,
+          },
+          {
+            title: "Vos services sont listés sur votre fiche.",
+            body: "Avec les mots que vos clients tapent vraiment, pas seulement vos propres noms.",
+          },
+          {
+            title: "Votre nom, téléphone et site sont les mêmes partout.",
+            body: "Sur Google, Facebook, Instagram, Yelp et votre site. Un ancien numéro sur Yelp envoie vos clients au mauvais endroit, et des informations différentes ne vous aident pas sur Google.",
+          },
+          {
+            title: "Votre entreprise n'a qu'une seule fiche Google.",
+            body: "Cherchez votre nom sur Google Maps. Une ancienne fiche avec une ancienne adresse ou un ancien numéro divise vos avis et envoie les gens au mauvais endroit.",
+          },
+        ],
+      },
+    ],
+    score: {
+      h2: "Votre score",
+      live: (checked, total) => `${checked} sur ${total} cochés.`,
+      mustLeft: (left) =>
+        left === 1
+          ? `Il reste 1 point «${nb}À corriger d'abord${nb}»${nb}: commencez par lui.`
+          : `Il reste ${left} points «${nb}À corriger d'abord${nb}»${nb}: commencez par eux.`,
+      range: (from, to) => `${from} à ${to} cochés`,
+      under: (n) => `Moins de ${n}`,
+      good: "En bonne forme. Continuez avec les avis et les publications.",
+      fair: `Quelques corrections rapides se verront vite. Commencez par les points «${nb}À corriger d'abord${nb}», puis répondez à un avis.`,
+      poor: `Votre fiche vous coûte probablement des appels. Corrigez les points «${nb}À corriger d'abord${nb}», puis descendez dans la liste.`,
+    },
+    cta: {
+      h2: `Vous voulez que je vérifie la vôtre${nb}?`,
+      body: `Bilan gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
+      whatsappMessage: `Bonjour Assane, j'ai fait votre checklist Google et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
     },
   },
   form: {

@@ -1,6 +1,6 @@
 # assane-diallo.com
 
-Local SEO and Google Business Profile setup for African-owned businesses in the US.
+Local SEO and Google Business Profile setup for small businesses in the US.
 Live at <https://assane-diallo.com>. The domain is set only in `src/config.ts` (`SITE_URL`).
 
 Static site: Astro 7, Tailwind 4, TypeScript strict. No client-side JavaScript, no cookies.
@@ -17,10 +17,11 @@ pnpm dev            # http://localhost:4321 (or the next free port)
 Before you push:
 
 ```bash
-pnpm check          # lint → typecheck → build → Playwright → Lighthouse CI → link check
+pnpm check          # lint → typecheck → build → Playwright → link check → Lighthouse CI
 ```
 
 The first time, run `pnpm exec playwright install chromium`. Lighthouse uses your installed Chrome.
+Locally it audits every page once, in parallel shards (about 2 min); CI takes the median of 3 runs.
 
 `pnpm build` ends with a list of every `[TODO]` placeholder still on the site. It warns but never fails.
 
@@ -50,7 +51,7 @@ Hosting is **Cloudflare Workers static assets** (`wrangler.jsonc`). The architec
 
 ## Languages and theme
 
-The site is in English (`/`) and French (`/fr/`), for African-owned businesses in the US.
+The site is in English (`/`) and French (`/fr/`), for small businesses in the US.
 
 - UI and home page copy: `src/i18n/en.ts` and `src/i18n/fr.ts`. `fr.ts` is typed as the English dictionary, so a missing French key fails `pnpm typecheck`.
 - URLs per language: `src/i18n/locales.ts` (`staticRoutes`, `collectionBase`). French URLs are translated (`/fr/realisations/`, `/fr/a-propos/`, `/fr/pour/…`).
@@ -65,6 +66,7 @@ The site is in English (`/`) and French (`/fr/`), for African-owned businesses i
 
 ```markdown
 ---
+
 business: 'Business name'
 location: City, ST # or "Online shop"
 vertical: braiding-salons # braiding-salons | restaurants | online-shop | other
@@ -76,19 +78,20 @@ highlight: '450 calls from Google in 3 months.' # optional: word for word from s
 consent: true # required: the build fails without it
 website: https://example.com/ # optional
 services:
-  - Google Business Profile
-results: # optional: only numbers the owner approved
-  - label: Calls from Google, per month # example format only
-    value: '12 → 31'
-    source: Google Business Profile insights, Jan vs. Apr 2027
-quote: # optional: only with permission
+- Google Business Profile
+  results: # optional: only numbers the owner approved
+- label: Calls from Google, per month # example format only
+  value: '12 → 31'
+  source: Google Business Profile insights, Jan vs. Apr 2027
+  quote: # optional: only with permission
   text: '…'
   author: Name, Business
-image:
+  image:
   src: ../../../assets/work/<file>.png
   alt: 'What the image shows.'
-order: 2 # position on the home page and the work page
-urlSlug: … # optional: a different URL segment for this language
+  order: 2 # position on the home page and the work page
+  urlSlug: … # optional: a different URL segment for this language
+
 ---
 
 ## Before

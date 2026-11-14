@@ -30,6 +30,8 @@ const work = defineCollection({
         consent: z.literal(true),
         /** Any personal relationship with the client, shown on the card and the page. */
         disclosure: z.string().optional(),
+        /** What the numbers can't show (no baseline, no attribution), shown wherever they are. */
+        resultsNote: z.string().optional(),
         website: z.url().optional(),
         services: z.array(z.string()).min(1),
         /** Only numbers the owner approved, each with where it came from. */
@@ -86,4 +88,34 @@ const verticals = defineCollection({
     .strict(),
 });
 
-export const collections = { work, verticals };
+/**
+ * Guides for one kind of business (PLAN.md D34). Same key as its vertical, served at
+ * <vertical URL>guide/; `urlSlug` must match the vertical's in that locale.
+ */
+const guides = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/guides" }),
+  schema: z
+    .object({
+      urlSlug: z.string().optional(),
+      title: z.string().max(60),
+      description: z.string().max(155),
+      h1: z.string(),
+      lead: z.string(),
+      /** Last date every claim was checked against its source (yearly, or when Google changes). */
+      reviewed: z.coerce.date(),
+      /** "In 30 seconds": the 3 to 5 actions that matter most, shown above the guide. */
+      summary: z.array(z.string()).min(3).max(5),
+      /** The illustrated listing at the top: what this kind of business looks like on Google. */
+      listing: z.object({
+        category: z.string(),
+        /** The line that matches the search (a menu highlight, a style, a review). */
+        line: z.string(),
+        actions: z.array(z.string()).length(3),
+      }),
+      /** Left out of production builds until the owner approves the copy; PR previews show it. */
+      draft: z.boolean().default(false),
+    })
+    .strict(),
+});
+
+export const collections = { work, verticals, guides };

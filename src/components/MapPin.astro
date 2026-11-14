@@ -1,0 +1,16 @@
+---
+/** The yellow map pin of the listing illustrations. Decorative. */
+interface Props {
+  class?: string;
+}
+---
+
+<svg class={Astro.props.class} viewBox="0 0 48 48" role="presentation">
+  <path
+    d="M24 3c-8.3 0-15 6.5-15 14.6C9 29 24 45 24 45s15-16 15-27.4C39 9.5 32.3 3 24 3z"
+    fill="var(--color-sun)"
+    stroke="var(--color-ink)"
+    stroke-width="2"
+  />
+  <circle cx="24" cy="18" r="5.5" fill="var(--color-paper)" stroke="var(--color-ink)" stroke-width="2" />
+</svg>
