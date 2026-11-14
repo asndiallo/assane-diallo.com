@@ -47,7 +47,7 @@ export const fr: Dictionary = {
   },
   footer: {
     tagline:
-      "Référencement local et fiche d'établissement Google pour les petites entreprises aux États-Unis.",
+      "J'aide les entreprises locales aux États-Unis à se faire trouver, à gagner la confiance de leurs clients et à recevoir plus d'appels et de réservations.",
     engineering: "Mon travail d'ingénieur logiciel (en anglais)",
     privacy: "Confidentialité",
     terms: "Conditions",
@@ -71,7 +71,7 @@ export const fr: Dictionary = {
     hero: {
       h1: "Soyez visible sur Google et ChatGPT. Recevez plus d'appels et de réservations.",
       subhead:
-        "Les bons horaires, de vraies photos et un lien de réservation qui marche, partout où vos clients cherchent. Vous gérez votre entreprise. Je m'occupe du reste.",
+        "Je fais en sorte que vos clients vous trouvent, se fient à ce qu'ils voient et puissent vous appeler ou réserver en un geste. Vous gérez votre entreprise. Je m'occupe du reste.",
       languages: "English et français.",
     },
     listing: {

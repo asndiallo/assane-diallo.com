@@ -31,6 +31,8 @@ merge date.
 
 ### Changed
 
+- Home hero subhead and footer tagline (EN and FR) now say the sales message: get found, earn
+  trust, and make it easy to call or book, instead of listing services (PLAN.md D36).
 - Header (EN and FR): the nav is now Who I help, Prices, Client work, About (Contact goes: the
   new "Free check-up" WhatsApp button covers it, icon-only on phones). Links are plain ink with a
   green underline on the current section and 44px-tall tap targets. The three-button theme

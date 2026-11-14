@@ -53,7 +53,8 @@ export const en = {
     email: "Email me",
   },
   footer: {
-    tagline: "Local SEO and Google Business Profile setup for small businesses in the US.",
+    tagline:
+      "I help local businesses in the US get found, earn trust, and get more calls and bookings.",
     engineering: "My software engineering work",
     privacy: "Privacy",
     terms: "Terms",
@@ -77,7 +78,7 @@ export const en = {
     hero: {
       h1: "Get found on Google and ChatGPT. Get more calls and bookings.",
       subhead:
-        "Correct hours, real photos and a booking link that works, wherever customers look. You run your business. I handle the rest.",
+        "I make sure customers find you, trust what they see, and can call or book in one tap. You run your business. I handle the rest.",
       languages: "English et français.",
     },
     listing: {
