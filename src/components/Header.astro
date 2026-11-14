@@ -7,6 +7,7 @@ import {
   locales,
   staticRoutes,
 } from "../i18n/index.ts";
+import CtaWhatsApp from "./CtaWhatsApp.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
 interface Props {
@@ -18,39 +19,76 @@ const { t, locale, alternates } = Astro.props;
 const other = locales.find((l) => l !== locale) ?? locale;
 // The same page in the other language, or that language's home page if it has no translation.
 const switchHref = alternates[other] ?? staticRoutes.home[other];
+
+// `section`: pages under this URL (a business type, a case study) also mark the link as current.
+const links = [
+  { href: staticRoutes.verticals[locale], label: t.nav.verticals, section: true },
+  { href: homeAnchor(locale, "pricing"), label: t.nav.pricing, section: false },
+  { href: staticRoutes.work[locale], label: t.nav.work, section: true },
+  { href: staticRoutes.about[locale], label: t.nav.about, section: false },
+];
+const path = Astro.url.pathname;
+const current = (href: string, section: boolean) =>
+  path === href ? "page" : section && path.startsWith(href) ? "true" : undefined;
+// Colour is set per state (never both text-ink and text-brand on one link: the CSS order would decide).
+const link =
+  "inline-flex min-h-11 items-center px-1.5 text-[0.95rem] no-underline hover:text-brand hover:underline max-[379px]:px-1 max-[379px]:text-[0.9rem]";
+const idle = "text-ink";
+const active = "font-semibold text-brand underline decoration-2 underline-offset-8";
 ---
 
 <header class="border-b border-line">
   <!--
-    Phones: row 1 = name + language + theme, row 2 = nav. Wider screens: one row.
-    Under 380px the language link shows "FR"/"EN" so row 1 still fits (its aria-label is the full name).
+    Below lg: row 1 = name + language + theme + check-up button, row 2 = nav. lg and up: one row.
+    Under 640px the check-up button is the WhatsApp icon (its label stays as the accessible name);
+    under 380px the language link shows "FR"/"EN" (its aria-label is the full name).
     DOM order (name, nav, controls) is the reading and focus order; only the layout changes.
   -->
-  <div class="container-page flex flex-wrap items-center gap-x-4 gap-y-2 py-3 sm:gap-x-6 sm:py-4">
+  <div class="container-page flex flex-wrap items-center gap-x-6 py-2 lg:flex-nowrap lg:py-3">
     <a
       href={staticRoutes.home[locale]}
-      class="order-1 font-serif text-xl font-bold text-ink no-underline hover:text-brand">Assane Diallo</a
+      class="order-1 font-serif text-xl font-bold whitespace-nowrap text-ink no-underline hover:text-brand"
+      >Assane Diallo</a
     >
-    <nav aria-label={t.nav.label} class="order-3 w-full sm:order-2 sm:ml-auto sm:w-auto">
-      <ul class="flex flex-wrap gap-x-5 gap-y-1 text-[0.95rem]">
-        <li><a href={staticRoutes.work[locale]}>{t.nav.work}</a></li>
-        <li><a href={staticRoutes.about[locale]}>{t.nav.about}</a></li>
-        <li><a href={homeAnchor(locale, "contact")}>{t.nav.contact}</a></li>
+    <nav aria-label={t.nav.label} class="order-3 -ml-1.5 w-full lg:order-2 lg:ml-auto lg:w-auto">
+      <ul class="flex flex-wrap gap-x-1 sm:gap-x-3">
+        {
+          links.map(({ href, label, section }) => {
+            const state = current(href, section);
+            return (
+              <li>
+                <a
+                  href={href}
+                  aria-current={state}
+                  class:list={[link, state ? active : idle]}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })
+        }
       </ul>
     </nav>
-    <div class="order-2 ml-auto flex items-center gap-x-3 sm:gap-x-4 sm:order-3 sm:ml-0">
+    <div class="order-2 ml-auto flex items-center gap-x-2 sm:gap-x-3 lg:order-3 lg:ml-0">
       <a
         href={switchHref}
         hreflang={other}
         lang={t.language.switchLang}
         aria-label={t.language.switchLabel}
         data-lang-choice={other}
-        class="text-[0.95rem] font-semibold"
+        class:list={[link, idle, "font-semibold"]}
         ><span class="max-[379px]:hidden">{t.language.switchTo}</span><span class="min-[380px]:hidden"
           >{t.language.switchToShort}</span
         ></a
       >
       <ThemeToggle t={t} />
+      <CtaWhatsApp
+        t={t}
+        label={t.nav.cta}
+        labelClass="max-sm:sr-only"
+        class="min-h-10 shrink-0 px-4 py-2 text-sm max-sm:w-10 max-sm:px-0"
+      />
     </div>
   </div>
 </header>

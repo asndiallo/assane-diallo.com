@@ -120,7 +120,16 @@
     display: none;
   }
   html[data-js] [data-theme-toggle] {
-    display: inline-flex;
+    display: grid;
+  }
+  /* The toggle shows only the current theme's icon and label (system when html has no data-theme). */
+  [data-theme-option] {
+    display: none;
+  }
+  html:not([data-theme]) [data-theme-option="system"],
+  html[data-theme="light"] [data-theme-option="light"],
+  html[data-theme="dark"] [data-theme-option="dark"] {
+    display: block;
   }
 
   .btn {
