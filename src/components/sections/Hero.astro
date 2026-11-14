@@ -49,7 +49,7 @@ const booking = bookingHref();
         <MapPin class="absolute top-4 right-8 h-14 w-14" />
 
         <div class="rounded-full border border-line bg-paper px-4 py-2.5 text-[0.95rem] text-muted shadow-sm">
-          <svg aria-hidden="true" class="mr-2 inline h-4 w-4 align-[-2px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m20 20-4.8-4.8" /></svg><span class="typer inline-grid" data-typer>
+          <svg aria-hidden="true" class="mr-2 inline h-4 w-4 align-middle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m20 20-4.8-4.8" /></svg><span class="typer inline-grid" data-typer>
             {listing.searches.map((search) => <span class="typer-sizer">{search.query}</span>)}
             <span class="typer-line" data-typed>{listing.searches[0]?.query}</span>
           </span>
