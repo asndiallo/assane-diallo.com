@@ -49,8 +49,9 @@ const booking = bookingHref();
         <MapPin class="absolute top-4 right-8 h-14 w-14" />
 
         <div class="rounded-full border border-line bg-paper px-4 py-2.5 text-[0.95rem] text-muted shadow-sm">
-          <svg aria-hidden="true" class="mr-2 inline h-4 w-4 align-[-2px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m20 20-4.8-4.8" /></svg><span class="rotate inline-grid" data-rotate>
-            {listing.searches.map((search, i) => <span class:list={{ "is-active": i === 0 }}>{search.query}</span>)}
+          <svg aria-hidden="true" class="mr-2 inline h-4 w-4 align-[-2px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m20 20-4.8-4.8" /></svg><span class="typer inline-grid" data-typer>
+            {listing.searches.map((search) => <span class="typer-sizer">{search.query}</span>)}
+            <span class="typer-line" data-typed>{listing.searches[0]?.query}</span>
           </span>
         </div>
 
@@ -62,30 +63,56 @@ const booking = bookingHref();
 </section>
 
 <script>
-  // One slow pass through the verticals, ending back on the first. The illustration is
-  // aria-hidden, so screen readers never hear the changes; reduced motion keeps the first pair.
-  const groups = document.querySelectorAll<HTMLElement>("[data-rotate]");
-  const count = groups[0]?.children.length ?? 0;
-  const delay = 2600;
+  // One slow pass through the verticals, ending back on the first: each search is typed like a
+  // visitor would, then the listing's category answers it. The illustration is aria-hidden, so
+  // screen readers never hear the changes; reduced motion (and no JS) keeps the first pair.
+  const typer = document.querySelector<HTMLElement>("[data-typer]");
+  const typed = typer?.querySelector<HTMLElement>("[data-typed]");
+  const queries = [...(typer?.querySelectorAll(".typer-sizer") ?? [])].map((el) => el.textContent ?? "");
+  const categories = document.querySelectorAll<HTMLElement>("[data-rotate]");
+  const count = queries.length;
 
-  if (count > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    let index = 0;
-    const step = () => {
-      // A hidden tab waits: the visitor should see the pass, not miss it.
-      if (document.hidden) {
-        document.addEventListener("visibilitychange", step, { once: true });
-        return;
+  const HOLD = 1800; // reading time for a search and its result
+  const ERASE = 30; // per character
+  const TYPE = 65; // per character, ± a little so it feels typed, not printed
+
+  const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+  // A hidden tab waits: the visitor should see the pass, not miss it.
+  const shown = async () => {
+    while (document.hidden) {
+      await new Promise((resolve) => document.addEventListener("visibilitychange", resolve, { once: true }));
+    }
+  };
+
+  const showCategory = (index: number, previous: number) => {
+    for (const group of categories) {
+      for (const [i, item] of [...group.children].entries()) {
+        item.classList.toggle("is-active", i === index);
+        item.classList.toggle("is-leaving", i === previous);
       }
-      const previous = index;
-      index = (index + 1) % count;
-      for (const group of groups) {
-        for (const [i, item] of [...group.children].entries()) {
-          item.classList.toggle("is-active", i === index);
-          item.classList.toggle("is-leaving", i === previous);
-        }
+    }
+  };
+
+  const run = async (line: HTMLElement, box: HTMLElement) => {
+    box.classList.add("is-typing");
+    for (let index = 1; index <= count; index++) {
+      await wait(HOLD);
+      await shown();
+      const next = index % count;
+      while (line.textContent) {
+        line.textContent = line.textContent.slice(0, -1);
+        await wait(ERASE);
       }
-      if (index !== 0) setTimeout(step, delay);
-    };
-    setTimeout(step, delay);
+      for (const char of queries[next] ?? "") {
+        line.textContent += char;
+        await wait(TYPE + (Math.random() - 0.5) * 40);
+      }
+      showCategory(next, index - 1);
+    }
+    box.classList.remove("is-typing");
+  };
+
+  if (typer && typed && count > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    run(typed, typer);
   }
 </script>
