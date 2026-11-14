@@ -34,6 +34,10 @@ merge date.
 - Home "Who this is for" and the business-types page description (EN and FR) name the held
   business types too: care agencies, clinics, daycares and tax offices. Home health care now
   sorts after auto repair instead of tying with it (PLAN.md D23).
+- Header (EN and FR): the nav is now Who I help, Prices, Client work, About (Contact goes: the
+  new "Free check-up" WhatsApp button covers it, icon-only on phones). Links are plain ink with a
+  green underline on the current section and 44px-tall tap targets. The three-button theme
+  switch becomes one button that cycles system, light and dark. One row from `lg`, two below.
 - Guides (all four, EN and FR) are easier to scan, with no content cut: an "In 30 seconds"
   summary, a labelled drawing of a Google listing, jump links ("On this page", a sidebar on
   wide screens), a "Do this" box opening each section, the evidence in "What I saw" boxes, and
@@ -136,6 +140,8 @@ merge date.
 
 ### Fixed
 
+- Guides (EN and FR): on tablets and desktops, "Directions" no longer spills out of its button
+  in the listing drawing, which gets a wider column (22rem, side by side from `md`).
 - Home hero: each search is now typed into the search box (with a caret), then the listing
   category slides in to answer it. Nothing crossfades any more, so the text is never
   semi-transparent and PageSpeed's contrast audit no longer fails mid-change.

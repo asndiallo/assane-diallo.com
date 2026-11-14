@@ -19,9 +19,11 @@ export const fr: Dictionary = {
   nav: {
     label: "Principal",
     skip: "Aller au contenu principal",
+    verticals: "Qui j'aide",
+    pricing: "Tarifs",
     work: "Réalisations",
     about: "À propos",
-    contact: "Contact",
+    cta: "Bilan gratuit",
   },
   language: {
     switchTo: "English",

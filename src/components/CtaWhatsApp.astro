@@ -12,8 +12,17 @@ interface Props {
   label?: string;
   message?: string;
   class?: string;
+  /** Classes for the label, e.g. "max-sm:sr-only" for an icon-only button on phones. */
+  labelClass?: string;
 }
-const { t, variant = "default", label = t.cta.whatsapp, message = t.cta.whatsappMessage, class: extra } = Astro.props;
+const {
+  t,
+  variant = "default",
+  label = t.cta.whatsapp,
+  message = t.cta.whatsappMessage,
+  class: extra,
+  labelClass,
+} = Astro.props;
 const href = whatsappHref(message);
 const variants = {
   default: "btn btn-primary",
@@ -29,7 +38,7 @@ const style = [variants[variant], extra].filter(Boolean).join(" ");
       <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z" />
       </svg>
-      {label}
+      {labelClass ? <span class={labelClass}>{label}</span> : label}
     </Link>
   ) : (
     <span class={`${style} flex-col gap-1`} data-cta="whatsapp">

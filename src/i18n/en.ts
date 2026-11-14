@@ -25,9 +25,12 @@ export const en = {
   nav: {
     label: "Main",
     skip: "Skip to main content",
+    verticals: "Who I help",
+    pricing: "Prices",
     work: "Client work",
     about: "About",
-    contact: "Contact",
+    /** The header's WhatsApp button (icon only on phones; this stays its accessible name). */
+    cta: "Free check-up",
   },
   language: {
     /** Text of the link to the other language, written in that language. */
