@@ -147,29 +147,52 @@ test("theme: follows the system, and a saved choice wins and persists", async ({
   const systemDark = await background();
   expect(systemDark).not.toBe("rgb(255, 255, 255)");
 
+  // One button, showing the current theme; each click moves system → light → dark → system.
   const toggle = page.locator("[data-theme-toggle]").first();
-  await expect(toggle.getByRole("button", { name: "System" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
-  await toggle.getByRole("button", { name: "Light" }).click();
+  await expect(toggle).toHaveAccessibleName("Color theme: System");
+  await toggle.click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(toggle).toHaveAccessibleName("Color theme: Light");
   expect(await background()).toBe("rgb(255, 255, 255)");
 
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
-  await expect(toggle.getByRole("button", { name: "Light" })).toHaveAttribute(
-    "aria-pressed",
-    "true",
-  );
+  await expect(toggle).toHaveAccessibleName("Color theme: Light");
 
-  await toggle.getByRole("button", { name: "Dark" }).click();
+  await toggle.click();
+  await expect(toggle).toHaveAccessibleName("Color theme: Dark");
   await page.emulateMedia({ colorScheme: "light" });
   expect(await background()).toBe(systemDark);
 
-  await toggle.getByRole("button", { name: "System" }).click();
+  await toggle.click();
   await expect(page.locator("html")).not.toHaveAttribute("data-theme", /.+/);
+  await expect(toggle).toHaveAccessibleName("Color theme: System");
   expect(await background()).toBe("rgb(255, 255, 255)");
+});
+
+test("header: the current section is marked, and the check-up button opens WhatsApp", async ({
+  page,
+}) => {
+  const nav = page.getByRole("navigation", { name: "Main" });
+  for (const [path, name, state] of [
+    ["/for/", "Who I help", "page"],
+    ["/for/restaurants/guide/", "Who I help", "true"],
+    ["/work/", "Client work", "page"],
+    ["/about/", "About", "page"],
+  ] as const) {
+    await page.goto(path);
+    await expect(nav.locator("[aria-current]"), path).toHaveCount(1);
+    await expect(nav.getByRole("link", { name, exact: true }), path).toHaveAttribute(
+      "aria-current",
+      state,
+    );
+  }
+  await page.goto("/");
+  await expect(nav.locator("[aria-current]")).toHaveCount(0);
+  const cta = page.locator('header [data-cta="whatsapp"]');
+  await expect(cta).toHaveAccessibleName(/Free check-up/);
+  const href = await cta.getAttribute("href");
+  if (href) expect(href).toMatch(/^https:\/\/wa\.me\/\d+\?text=/);
 });
 
 test("theme toggle is laid out before its script runs, so it never shifts the page", async ({
