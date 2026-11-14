@@ -270,6 +270,10 @@ export const en = {
           a: "Yes. Your Google profile, your domain and your website's hosting account stay in your name. I'm added as a manager, and you can remove me anytime.",
         },
         {
+          q: "What if something goes wrong?",
+          a: `I check your profile every business day. If Google or a stranger changes your details, I put them back and note it in your report. If Google suspends your profile, I tell you the same day, stop all changes and file the appeal with you, at no extra cost; the terms explain what you pay in the meantime. And if your domain is about to expire, I warn you at least ${pricing.domainWarningDays} days ahead and keep reminding you until it's renewed, because only you can renew it.`,
+        },
+        {
           q: "What do you need from me?",
           a: "Your hours, price list, photos, and access to your Google profile. I'll guide you through it.",
         },

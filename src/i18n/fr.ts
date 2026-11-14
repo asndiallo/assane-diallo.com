@@ -266,6 +266,10 @@ export const fr: Dictionary = {
           a: "Oui. Votre fiche Google, votre nom de domaine et le compte d'hébergement de votre site restent à votre nom. Je suis ajouté comme gestionnaire, et vous pouvez me retirer à tout moment.",
         },
         {
+          q: `Et si quelque chose tourne mal${nb}?`,
+          a: `Je vérifie votre fiche chaque jour ouvré. Si Google ou un inconnu modifie vos informations, je les remets en place et je le note dans votre rapport. Si Google suspend votre fiche, je vous préviens le jour même, j'arrête toute modification et je dépose la demande de réexamen avec vous, sans frais en plus${nb}; les conditions expliquent ce que vous payez pendant ce temps. Et si votre nom de domaine arrive à expiration, je vous préviens au moins ${pricing.domainWarningDays}${nb}jours avant et je vous relance jusqu'au renouvellement, car vous êtes la seule personne à pouvoir le renouveler.`,
+        },
+        {
           q: `De quoi avez-vous besoin de ma part${nb}?`,
           a: "Vos horaires, votre liste de prix, des photos et l'accès à votre fiche Google. Je vous guide à chaque étape.",
         },
