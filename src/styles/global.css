@@ -156,14 +156,55 @@
     background-position: -1.5rem 1rem;
   }
 
-  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift. */
+  /* Every item sits in the same grid cell, so the box keeps the size of the longest: no layout shift.
+     Items slide (never fade): text stays fully opaque, so a contrast audit taken mid-change still passes.
+     The next item comes up from below, the old one leaves upwards, then hides. */
+  .rotate {
+    overflow: clip;
+  }
   .rotate > * {
     grid-area: 1 / 1;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    transform: translateY(100%);
+    visibility: hidden;
+    transition:
+      transform 0.4s ease,
+      visibility 0s linear 0.4s;
+  }
+  .rotate > .is-leaving {
+    transform: translateY(-100%);
   }
   .rotate > .is-active {
-    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition: transform 0.4s ease;
+  }
+
+  /* The hero search box: every query sits hidden in the same grid cell to size the box to the longest
+     (no layout shift); one visible line on top is typed by the hero script. Always fully opaque. */
+  .typer > * {
+    grid-area: 1 / 1;
+  }
+  .typer > .typer-sizer {
+    visibility: hidden;
+  }
+  .typer-line {
+    position: relative;
+  }
+  .typer.is-typing > .typer-line::after {
+    content: "";
+    /* Absolute, left at its static position (right after the text): the caret never widens the box. */
+    position: absolute;
+    top: 50%;
+    width: 2px;
+    height: 1.1em;
+    margin: -0.55em 0 0 1px;
+    background: currentColor;
+    animation: caret-blink 1s steps(1) infinite;
+  }
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
   }
 
   /* Markdown bodies (case studies). */
