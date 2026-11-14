@@ -1,5 +1,6 @@
 ---
 title: "Braiding salon guide: get booked from Google | Assane Diallo"
+label: Braiding salon guide
 description: "What clients see on Google, Maps and ChatGPT before they book a braider, and what to fix first: styles and prices, address, booking, photos and reviews."
 h1: How clients find a braider, and how to be the one they book
 lead: Clients search by style and city, look at photos and prices, and book the braider they trust with their hair. This guide shows what they see and what you can fix yourself, most of it in an afternoon.

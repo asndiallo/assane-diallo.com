@@ -11,6 +11,8 @@ merge date.
 
 ### Added
 
+- Footer: a "Free resources" column with the Google profile checklist (moved from Services)
+  and every guide, each by name, so every page links to them (PLAN.md D34).
 - FAQ (EN and FR): "What if something goes wrong?": wrong edits reverted, same-day word on a
   suspension with the appeal included, and a domain-expiry warning at least
   `domainWarningDays` (60) days ahead (PLAN.md D35).

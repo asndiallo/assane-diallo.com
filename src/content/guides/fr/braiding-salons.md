@@ -1,6 +1,7 @@
 ---
 urlSlug: salons-de-tresses
 title: "Guide salon de tresses : réservé via Google | Assane Diallo"
+label: Guide salons de tresses
 description: "Ce que voient les clientes sur Google, Maps et ChatGPT avant de réserver une tresseuse, et quoi corriger d'abord : styles, prix, adresse, avis."
 h1: Comment les clientes trouvent une tresseuse, et comment être celle qu'elles réservent
 lead: Les clientes cherchent par style et par ville, regardent les photos et les prix, et réservent la tresseuse à qui elles confient leurs cheveux. Ce guide montre ce qu'elles voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.

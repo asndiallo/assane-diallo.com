@@ -1,6 +1,7 @@
 ---
 urlSlug: garages
 title: "Guide garage : être choisi sur Google | Assane Diallo"
+label: Guide garages
 description: "Ce que les automobilistes voient sur Google, Maps et ChatGPT avant de choisir un garage, et quoi corriger d'abord : services, marques, horaires, avis."
 h1: Comment les automobilistes choisissent un garage, et comment être celui qu'ils appellent
 lead: Quand le voyant moteur s'allume, les automobilistes cherchent sur leur téléphone et veulent avant tout un garage qui ne les arnaquera pas. Ce guide montre ce qu'ils voient et ce que vous pouvez corriger vous-même, presque tout en un après-midi.

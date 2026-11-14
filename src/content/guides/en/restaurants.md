@@ -1,5 +1,6 @@
 ---
 title: "Restaurant guide: get picked on Google | Assane Diallo"
+label: Restaurant guide
 description: "What diners see on Google, Maps and ChatGPT before they choose a restaurant, and what to fix first: hours, menu, photos, ordering link and reviews."
 h1: How to get your restaurant picked on Google
 lead: People choose a restaurant in a few seconds, on their phone, often before they ever open your website. This guide shows what they see and what you can fix yourself, most of it in an afternoon.
