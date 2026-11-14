@@ -72,9 +72,9 @@ const boxH2 = "text-2xl";
         <ol class="mt-4 list-decimal space-y-2 pl-6">{summary.map((item) => <li>{item}</li>)}</ol>
       </section>
 
-      <section class="mt-12 grid max-w-3xl items-start gap-8 sm:grid-cols-[minmax(0,18rem)_1fr]" aria-labelledby="anatomy">
-        <h2 id="anatomy" class:list={[boxH2, "sm:col-span-2"]}>{t.guide.anatomy.h2}</h2>
-        <figure>
+      <section class="mt-12 grid max-w-3xl items-start gap-8 md:grid-cols-[minmax(0,22rem)_1fr]" aria-labelledby="anatomy">
+        <h2 id="anatomy" class:list={[boxH2, "md:col-span-2"]}>{t.guide.anatomy.h2}</h2>
+        <figure class="max-w-[22rem]">
           <div aria-hidden="true">
             <ListingCard t={t} example={listing} markers />
           </div>

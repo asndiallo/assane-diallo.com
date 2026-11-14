@@ -129,6 +129,8 @@ merge date.
 
 ### Fixed
 
+- Guides (EN and FR): on tablets and desktops, "Directions" no longer spills out of its button
+  in the listing drawing, which gets a wider column (22rem, side by side from `md`).
 - Home hero: each search is now typed into the search box (with a caret), then the listing
   category slides in to answer it. Nothing crossfades any more, so the text is never
   semi-transparent and PageSpeed's contrast audit no longer fails mid-change.
