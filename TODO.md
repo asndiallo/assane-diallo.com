@@ -75,6 +75,7 @@ Everything below is my draft. Approve or change it before merging:
 - [x] **Price cards (PLAN.md D30)** (approved 2026-11-05): approve the outcome titles and lines, the new taglines, the shorter promises and the "Start with …" buttons (EN and FR)
 - [x] **Stripe, Get Booked standard monthly $179 → $199** (2026-11-05, live and test): new price with the lookup key, $179 archived, new standard payment link `…oc05` (old `…oc03` deactivated), Get Found monthly description lists review requests
 - [ ] **Sales message (PLAN.md D36)**: approve the new hero subhead and footer tagline (EN and FR)
+- [ ] **Services grouped (PLAN.md D37)**: approve the three group headings and their one-line intros (EN and FR)
 - [ ] Update your own `site-copy.md` once approved, so it stays the source of truth
 
 ### Vertical guides (PLAN.md D34, outlines in GUIDES.md)
