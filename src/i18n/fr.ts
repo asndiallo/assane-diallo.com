@@ -298,7 +298,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Est-ce que ça m'aide à apparaître sur ChatGPT${nb}?`,
-          a: `Ça devrait aider, mais personne ne peut promettre ce qu'une IA va répondre. ChatGPT, Gemini et les réponses IA de Google se font une idée d'une entreprise locale à partir de ses fiches, de ses avis et de son site. C'est le travail que je fais${nb}: les mêmes informations partout, des avis récents avec des réponses, et des pages claires sur ce que vous proposez. Chaque trimestre, je pose à ChatGPT les questions de vos clients et je mets sa réponse dans votre rapport. Les réponses changent d'un jour à l'autre${nb}: c'est un instantané, pas un classement.`,
+          a: `Ça devrait aider, mais personne ne peut promettre ce qu'une IA va répondre. ChatGPT, Gemini et les réponses IA de Google se font une idée d'une entreprise locale à partir de ses fiches, de ses avis et de son site. C'est le travail que je fais${nb}: les mêmes informations partout, des avis récents avec des réponses, et des pages claires sur ce que vous proposez. Chaque trimestre, je pose à ChatGPT les questions de vos clients et je mets sa réponse dans votre rapport. Les réponses changent d'un jour à l'autre${nb}: c'est un instantané, pas un classement. Si ChatGPT affiche déjà une fiche pour votre entreprise, je vous aide aussi à la revendiquer (gratuitement, depuis votre propre compte ChatGPT) pour que vos informations soient justes. La revendiquer ne pousse pas ChatGPT à vous recommander davantage.`,
         },
         {
           q: `Combien ça coûte${nb}?`,

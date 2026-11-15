@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- FAQ (EN and FR): "Will this help me show up on ChatGPT?" adds that I help owners claim
+  an existing ChatGPT listing (Business Hub, free, their own account), and that claiming doesn't
+  make ChatGPT recommend them more (PLAN.md D38).
 - Footer: a "Free resources" column with the Google profile checklist (moved from Services)
   and every guide, each by name, so every page links to them (PLAN.md D34).
 - FAQ (EN and FR): "What if something goes wrong?": wrong edits reverted, same-day word on a

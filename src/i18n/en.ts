@@ -304,7 +304,7 @@ export const en = {
         },
         {
           q: "Will this help me show up on ChatGPT?",
-          a: "It should help, but nobody can promise what an AI will say. ChatGPT, Gemini and Google's AI answers build their picture of a local business from its listings, reviews and website. That's the work I do: the same details everywhere, recent reviews with replies, and clear pages about what you offer. Every quarter, I ask ChatGPT what your customers would ask and put its answer in your report. Answers change from one day to the next, so it's a snapshot, not a ranking.",
+          a: "It should help, but nobody can promise what an AI will say. ChatGPT, Gemini and Google's AI answers build their picture of a local business from its listings, reviews and website. That's the work I do: the same details everywhere, recent reviews with replies, and clear pages about what you offer. Every quarter, I ask ChatGPT what your customers would ask and put its answer in your report. Answers change from one day to the next, so it's a snapshot, not a ranking. If ChatGPT already lists your business, I also help you claim that listing (free, from your own ChatGPT account) so your details are right. Claiming it doesn't make ChatGPT recommend you more.",
         },
         {
           q: "What does it cost?",
