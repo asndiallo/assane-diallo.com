@@ -11,6 +11,13 @@ merge date.
 
 ### Added
 
+- Structured data: a `WebSite` entity on the home page (the site name Google shows in results);
+  `Service` + `BreadcrumbList` on each business type page (replacing a repeated
+  `ProfessionalService`); `Article` (author, image) on case studies. Shared builders in
+  `src/lib/schema.ts`; a smoke test checks them.
+- Sitemap: `<lastmod>` for case studies, business types and guides, from the last commit of
+  each page's markdown file. Left out for static pages and shallow clones (CI now fetches full
+  history for the deployed build).
 - FAQ (EN and FR): "Will this help me show up on ChatGPT?" adds that I help owners claim
   an existing ChatGPT listing (Business Hub, free, their own account), and that claiming doesn't
   make ChatGPT recommend them more (PLAN.md D38).

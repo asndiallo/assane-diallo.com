@@ -4,10 +4,10 @@ import { getPageGroups } from "../lib/routes.ts";
 
 export const GET: APIRoute = async ({ site }) => {
   const abs = (path: string) => new URL(path, site).href;
-  const urls = (await getPageGroups()).flatMap((group) => {
+  const urls = (await getPageGroups()).flatMap(({ paths, lastmod }) => {
     const versions = locales.flatMap((locale) => {
-      const path = group[locale];
-      return path ? [{ locale, href: abs(path) }] : [];
+      const path = paths[locale];
+      return path ? [{ locale, href: abs(path), lastmod: lastmod[locale] }] : [];
     });
     // Each language version is its own <url>, listing every version (itself included).
     const links =
@@ -16,7 +16,10 @@ export const GET: APIRoute = async ({ site }) => {
             .map((v) => `<xhtml:link rel="alternate" hreflang="${v.locale}" href="${v.href}"/>`)
             .join("")
         : "";
-    return versions.map((v) => `<url><loc>${v.href}</loc>${links}</url>`);
+    return versions.map(
+      (v) =>
+        `<url><loc>${v.href}</loc>${v.lastmod ? `<lastmod>${v.lastmod}</lastmod>` : ""}${links}</url>`,
+    );
   });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
