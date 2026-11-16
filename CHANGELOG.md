@@ -11,6 +11,9 @@ merge date.
 
 ### Added
 
+- Smoke tests: every built page is in the sitemap or marked noindex; internal links use the
+  final URL (trailing slash, not a `_redirects` source). Description limit in the tests is now
+  155, matching CLAUDE.md; the French about description is trimmed to fit ("français, anglais"). CLAUDE.md gains the matching rules for new pages and structured data.
 - Structured data: a `WebSite` entity on the home page (the site name Google shows in results);
   `Service` + `BreadcrumbList` on each business type page (replacing a repeated
   `ProfessionalService`); `Article` (author, image) on case studies. Shared builders in

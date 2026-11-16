@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { type BrowserContext, expect, type Page, test } from "@playwright/test";
 import { SITE_URL as SITE } from "../src/config.ts";
 
@@ -20,6 +22,17 @@ async function sitemapPaths(page: Page): Promise<string[]> {
   expect(res.ok()).toBe(true);
   const xml = await res.text();
   return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1] ?? "").pathname);
+}
+
+/** Every built HTML page, as its URL path and contents (dist/ is what deploys). */
+function builtPages(): { path: string; html: string }[] {
+  const dist = "dist";
+  return readdirSync(dist, { recursive: true, encoding: "utf8" })
+    .filter((f) => f.endsWith(".html"))
+    .map((f) => ({
+      path: `/${f.replace(/(^|\/)index\.html$/, "$1")}`,
+      html: readFileSync(join(dist, f), "utf8"),
+    }));
 }
 
 test("sitemap lists the core pages", async ({ page }) => {
@@ -100,7 +113,7 @@ test("every page has one h1, unique title and description, canonical, and no con
     const description =
       (await page.locator('meta[name="description"]').getAttribute("content")) ?? "";
     expect(description.length, `${path} description length`).toBeGreaterThan(50);
-    expect(description.length, `${path} description length`).toBeLessThanOrEqual(160);
+    expect(description.length, `${path} description length`).toBeLessThanOrEqual(155);
     expect(descriptions.has(description), `${path} duplicate description`).toBe(false);
     descriptions.add(description);
 
@@ -563,5 +576,34 @@ test("structured data: site name on home, breadcrumbs and Article/Service where 
   const xml = await (await page.request.get("/sitemap.xml")).text();
   for (const [, date] of xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) {
     expect(date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  }
+});
+
+test("every built page is in the sitemap or marked noindex", async ({ page }) => {
+  // The other checks loop over the sitemap: a page missing from src/lib/routes.ts would skip
+  // them all, and Google would only find it by chance.
+  const listed = new Set(await sitemapPaths(page));
+  for (const { path, html } of builtPages()) {
+    if (listed.has(path)) continue;
+    expect(html, `${path}: add it to src/lib/routes.ts, or pass noindex`).toContain(
+      '<meta name="robots" content="noindex">',
+    );
+  }
+});
+
+test("internal links point at the final URL (trailing slash, no redirect)", async () => {
+  // "/about" works, but through a 307 to "/about/": a wasted hop for every visitor and crawler.
+  const redirected = new Set(
+    readFileSync("public/_redirects", "utf8")
+      .split("\n")
+      .filter((line) => line.startsWith("/"))
+      .map((line) => line.split(/\s+/)[0]),
+  );
+  for (const { path, html } of builtPages()) {
+    for (const [, href = ""] of html.matchAll(/<a\s[^>]*?href="(\/(?!\/)[^"#?]*)/g)) {
+      const isFile = /\.[a-z0-9]+$/i.test(href);
+      expect(isFile || href.endsWith("/"), `${path} links to ${href}`).toBe(true);
+      expect(redirected.has(href), `${path} links to redirected ${href}`).toBe(false);
+    }
   }
 });
