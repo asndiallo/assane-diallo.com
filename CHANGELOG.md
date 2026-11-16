@@ -74,6 +74,8 @@ merge date.
 - Dependencies: astro 7.4.7, markdown-satteri 0.4.7, Tailwind 4.3.4, Biome 2.6.5, Wrangler
   4.156.1. A pnpm override keeps rolldown's optional wasm binding off the @emnapi 2.0 beta,
   which broke `astro check`; Markdown files gain a blank line before lists (Biome).
+- Dependencies: Biome 2.6.7, Lighthouse CI and Playwright (dev group). Biome now indents
+  task-list continuation lines past the checkbox, so `STRIPE-SETUP.md` is reformatted.
 - Prices: both packages now include a monthly reminder to ask for reviews, with new reviews
   counted in the report; the setup review kit adds a QR code; Get Booked's standard monthly
   price goes from $179 to $199; the pricing section adds a line on judging the price by what
