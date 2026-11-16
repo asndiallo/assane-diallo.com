@@ -411,7 +411,7 @@ export const fr: Dictionary = {
     meta: {
       title: "À propos d'Assane Diallo | SEO local en français",
       description:
-        "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google. Ingénieur logiciel, français et anglais.",
+        "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google. Ingénieur logiciel, français, anglais.",
     },
     h1: "À propos",
     paragraphs: [
