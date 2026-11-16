@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { getDictionary, homeAnchor } from "../../i18n/index.ts";
+import { getDictionary, homeAnchor, staticRoutes } from "../../i18n/index.ts";
 import Page from "../../layouts/Page.astro";
 import { entryAlternates, entryKey, entryLocale, entryPath, getLocalized, sibling } from "../../lib/content.ts";
-import { professionalServiceSchema } from "../../lib/schema.ts";
+import { breadcrumbSchema, serviceSchema } from "../../lib/schema.ts";
 import CtaWhatsApp from "../CtaWhatsApp.astro";
 import ProofLine from "../ProofLine.astro";
 import TodoText from "../TodoText.astro";
@@ -20,6 +20,15 @@ const proof = (await getLocalized("work", locale)).filter(
   (e) => e.data.vertical === entryKey(entry) && e.data.highlight,
 );
 const guide = await sibling("guides", entry);
+const path = entryPath("verticals", entry);
+const jsonLd = [
+  serviceSchema({ name: v.name, description: v.description, path, locale }),
+  breadcrumbSchema([
+    { name: t.caseStudy.home, path: staticRoutes.home[locale] },
+    { name: t.guide.types, path: staticRoutes.verticals[locale] },
+    { name: v.name, path },
+  ]),
+];
 ---
 
 <Page
@@ -29,7 +38,7 @@ const guide = await sibling("guides", entry);
   lead={v.intro}
   locale={locale}
   alternates={alternates}
-  jsonLd={[professionalServiceSchema(v.description)]}
+  jsonLd={jsonLd}
 >
   <div class="mt-8"><CtaWhatsApp t={t} /></div>
   {proof.map((e) => <ProofLine t={t} entry={e} class="mt-8" />)}

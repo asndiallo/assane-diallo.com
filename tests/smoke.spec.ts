@@ -537,3 +537,31 @@ test("nothing personal is published", async ({ page }) => {
   const resume = await page.request.get("/assets/docs/assane_diallo_software_engineer_cv.pdf");
   expect(resume.status()).toBe(404);
 });
+
+test("structured data: site name on home, breadcrumbs and Article/Service where expected", async ({
+  page,
+}) => {
+  const types = async (path: string): Promise<string[]> => {
+    await page.goto(path);
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    return blocks.flatMap((b) =>
+      [JSON.parse(b)].flat().map((d: { "@type": string }) => d["@type"]),
+    );
+  };
+  expect(await types("/")).toContain("WebSite");
+  for (const path of await sitemapPaths(page)) {
+    const nested = path.split("/").filter(Boolean).length - (path.startsWith("/fr/") ? 1 : 0);
+    if (nested < 2) continue; // Only pages below a section: /for/x/, /work/x/, guides.
+    const found = await types(path);
+    expect(found, path).toContain("BreadcrumbList");
+    expect(
+      found.some((t) => t === "Article" || t === "Service"),
+      path,
+    ).toBe(true);
+  }
+  // lastmod, when present, is a plain date (sitemaps.org W3C format).
+  const xml = await (await page.request.get("/sitemap.xml")).text();
+  for (const [, date] of xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) {
+    expect(date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  }
+});
