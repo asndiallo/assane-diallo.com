@@ -1,0 +1,92 @@
+---
+import { getDictionary, type Locale, staticRoutes } from "../../i18n/index.ts";
+import Page from "../../layouts/Page.astro";
+import { bookingHref } from "../../lib/contact.ts";
+import CtaWhatsApp from "../CtaWhatsApp.astro";
+import Link from "../Link.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const copy = t.reviewLink;
+const { steps, where, rules } = copy;
+
+/** Google's own pages: the steps and the rules quoted here come from them. */
+const sources = {
+  steps: "https://support.google.com/business/answer/16816815",
+  rules: "https://support.google.com/contributionpolicy/answer/7400114",
+};
+
+const booking = bookingHref();
+const heading = "mt-14 text-2xl sm:text-3xl";
+const note = "mt-4 text-muted";
+---
+
+<Page
+  title={copy.meta.title}
+  description={copy.meta.description}
+  h1={copy.h1}
+  lead={copy.lead}
+  locale={locale}
+  alternates={staticRoutes.reviewLink}
+>
+  <div class="measure">
+    <div class="mt-8 border-l-8 border-sun pl-6">
+      <p class="text-lg">{copy.honesty}</p>
+    </div>
+
+    <section>
+      <h2 class={heading}>{steps.h2}</h2>
+      <ol class="mt-6 list-decimal space-y-3 pl-6 marker:font-semibold marker:text-brand">
+        {steps.items.map((step) => <li class="pl-2">{step}</li>)}
+      </ol>
+      <p class={note}>
+        {steps.access} <a href={staticRoutes.checklist[locale]}>{steps.accessLink}</a>.
+      </p>
+      <p class={note}>{steps.share}</p>
+      <p class={note}>
+        {steps.checked} <Link href={sources.steps}>{steps.source}</Link>. {steps.changes}
+      </p>
+    </section>
+
+    <section>
+      <h2 class={heading}>{where.h2}</h2>
+      <ul class="mt-6 list-disc space-y-3 pl-6">
+        {where.items.map((item) => <li class="pl-2">{item}</li>)}
+      </ul>
+      <p class="mt-8">{where.messageIntro}</p>
+      {
+        where.messages.map((message) => (
+          <figure class="mt-4">
+            {message.label && <figcaption class="mb-2 text-sm text-muted">{message.label}</figcaption>}
+            <blockquote lang={message.lang} class="rounded-xl border border-line bg-wash p-4">
+              {message.text}
+            </blockquote>
+          </figure>
+        ))
+      }
+    </section>
+
+    <section>
+      <h2 class={heading}>{rules.h2}</h2>
+      <p class="mt-6">{rules.intro}</p>
+      <ul class="mt-4 list-disc space-y-3 pl-6">
+        {rules.items.map((rule) => <li class="pl-2">{rule}</li>)}
+      </ul>
+      <p class={note}>
+        <Link href={sources.rules}>{rules.source}</Link>
+      </p>
+    </section>
+  </div>
+
+  <section class="mt-16 rounded-2xl bg-wash p-6 sm:p-10">
+    <h2 class="text-3xl">{copy.cta.h2}</h2>
+    <p class="measure mt-4">{copy.cta.body}</p>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <CtaWhatsApp t={t} message={copy.cta.whatsappMessage} />
+      {booking && <Link class="btn btn-secondary" href={booking}>{t.cta.booking}</Link>}
+    </div>
+  </section>
+</Page>

@@ -20,6 +20,7 @@ export const staticRoutes = {
   privacy: { en: "/privacy/", fr: "/fr/confidentialite/" },
   terms: { en: "/terms/", fr: "/fr/conditions/" },
   checklist: { en: "/google-checklist/", fr: "/fr/checklist-google/" },
+  reviewLink: { en: "/google-review-link/", fr: "/fr/lien-avis-google/" },
   engineering: { en: "/engineering/" },
 } as const satisfies Record<string, Alternates>;
 

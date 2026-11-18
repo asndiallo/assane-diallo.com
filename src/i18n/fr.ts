@@ -59,6 +59,7 @@ export const fr: Dictionary = {
       pricing: "Tarifs",
       how: "Fonctionnement",
       checklist: "Checklist fiche Google",
+      reviewLink: "Votre lien d'avis Google",
       free: "Ressources gratuites",
       about: "À propos",
     },
@@ -728,6 +729,71 @@ export const fr: Dictionary = {
       h2: `Vous voulez que je vérifie la vôtre${nb}?`,
       body: `Bilan gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
       whatsappMessage: `Bonjour Assane, j'ai fait votre checklist Google et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
+    },
+  },
+  reviewLink: {
+    meta: {
+      title: "Votre lien et QR code d'avis Google | Assane Diallo",
+      description: `Où trouver le lien et le QR code gratuits que Google crée pour recevoir des avis, où les utiliser et les règles à suivre. 5 minutes, sans inscription.`,
+    },
+    h1: "Votre lien et votre QR code d'avis Google",
+    lead: "Google crée un lien et un QR code qui ouvrent directement le formulaire d'avis de votre entreprise. Ils sont gratuits et se récupèrent en 5 minutes environ. Voici où les trouver, où les utiliser et les règles à suivre.",
+    honesty:
+      "Pas besoin d'application ni d'outil payant pour ça. Google vous donne les deux, et personne ne peut vous vendre de meilleurs avis.",
+    steps: {
+      h2: "1. Récupérez le lien et le QR code",
+      items: [
+        "Utilisez un ordinateur. Pour l'instant, Google ne crée le QR code que dans un navigateur d'ordinateur, pas sur téléphone.",
+        "Connectez-vous avec le compte Google qui gère votre fiche, et ouvrez votre fiche d'établissement.",
+        `Choisissez «${nb}Lire les avis${nb}», puis «${nb}Obtenir plus d'avis${nb}».`,
+        `Pour copier le lien, choisissez «${nb}Copier${nb}». Collez-le à un endroit que vous retrouverez sur votre téléphone, comme une note ou un message à vous-même.`,
+        `Pour enregistrer le QR code, faites un clic droit dessus et choisissez «${nb}Enregistrer l'image sous…${nb}».`,
+      ],
+      access: `Vous ne pouvez pas modifier votre fiche${nb}? Réglez ça d'abord${nb}: c'est le premier point de la`,
+      accessLink: "checklist fiche Google",
+      share: `Utilisez ce lien, pas le bouton Partager de Google Maps${nb}: celui-là ouvre votre fiche, et le client doit encore trouver où écrire un avis.`,
+      checked: "Étapes vérifiées sur la page d'aide de Google le 17 novembre 2026.",
+      source: "Page d'aide de Google (en anglais)",
+      changes: `Google renomme souvent ses boutons${nb}: si l'un d'eux est différent, cherchez «${nb}avis${nb}» sur votre fiche.`,
+    },
+    where: {
+      h2: "2. Où l'utiliser",
+      items: [
+        "Dans un SMS ou un message WhatsApp juste après la visite, quand le souvenir est frais.",
+        "Sur les reçus et les factures.",
+        "Imprimé près de la caisse, sur les tables ou à l'entrée.",
+        "À la fin d'un e-mail de remerciement ou d'une conversation avec un client.",
+      ],
+      messageIntro: `Un court message à copier, puis à adapter à votre façon de parler${nb}:`,
+      messages: [
+        {
+          lang: "en",
+          label: "En anglais, pour la plupart de vos clients",
+          text: "Thank you for choosing [your business]! If you have a minute, a review on Google helps other people find us: [your link]",
+        },
+        {
+          lang: "fr",
+          label: "En français",
+          text: `Merci d'avoir choisi [votre entreprise]${nb}! Si vous avez une minute, un avis sur Google aide d'autres personnes à nous trouver${nb}: [votre lien]`,
+        },
+      ],
+    },
+    rules: {
+      h2: "3. Les règles de Google",
+      intro:
+        "Google supprime les avis qui enfreignent ces règles. Elles s'appliquent à vous et à toute personne qui travaille pour vous.",
+      items: [
+        "Demandez à tous vos clients de la même façon, pas seulement à ceux dont vous savez qu'ils sont satisfaits.",
+        "Pas de réduction, de cadeau ni de service offert en échange d'un avis, même honnête.",
+        "Ne dites pas aux clients quoi écrire, et ne fixez pas à votre équipe un nombre d'avis à obtenir.",
+        "Pas d'avis écrits par vous-même, votre équipe ou toute personne payée par l'entreprise.",
+      ],
+      source: "Règles de Google sur les avis (en anglais)",
+    },
+    cta: {
+      h2: `Vous voulez que je m'en occupe${nb}?`,
+      body: `Les deux formules l'incluent${nb}: le lien, un QR code prêt à imprimer, un court message pour vos clients et un rappel mensuel pour demander des avis. Ou commencez par le bilan gratuit de 15 minutes.`,
+      whatsappMessage: `Bonjour Assane, j'aimerais de l'aide pour obtenir plus d'avis Google. Mon entreprise${nb}: `,
     },
   },
   form: {

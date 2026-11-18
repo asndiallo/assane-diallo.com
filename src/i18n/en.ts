@@ -67,6 +67,7 @@ export const en = {
       pricing: "Prices",
       how: "How it works",
       checklist: "Google profile checklist",
+      reviewLink: "Your Google review link",
       free: "Free resources",
       about: "About",
     },
@@ -737,6 +738,69 @@ export const en = {
       body: "Free 15-minute check-up: I go through this list with your profile and tell you what's missing, in plain language. No obligation.",
       whatsappMessage:
         "Hi Assane, I went through your Google checklist and I'd like a free check-up. My business is: ",
+    },
+  },
+  reviewLink: {
+    meta: {
+      title: "Get your Google review link and QR code | Assane Diallo",
+      description:
+        "Where to find the free review link and QR code Google makes for your business, where to use them, and the rules to follow. 5 minutes, no sign-up.",
+    },
+    h1: "Your Google review link and QR code",
+    lead: "Google makes a link and a QR code that open the review form for your business. They're free and take about 5 minutes to get. Here's where to find them, where to use them, and the rules to follow.",
+    honesty:
+      "You don't need an app or a paid tool for this. Google gives you both, and nobody can sell you better reviews.",
+    steps: {
+      h2: "1. Get the link and the QR code",
+      items: [
+        "Use a computer. For now, Google only makes the QR code in a computer browser, not on a phone.",
+        "Sign in with the Google account that manages your profile, and open your Business Profile.",
+        "Select “Read reviews”, then “Get more reviews”.",
+        "To copy the link, select “Copy”. Paste it somewhere you'll find it on your phone, like a note or a message to yourself.",
+        "To save the QR code, right-click it and choose “Save image as…”.",
+      ],
+      access: "Can't edit your profile? Fix that first: it's the first item on the",
+      accessLink: "Google profile checklist",
+      share:
+        "Use this link, not the Share button on Google Maps: that one opens your profile, and the customer still has to find where to write a review.",
+      checked: "Steps checked against Google's help page on November 17, 2026.",
+      source: "Google's help page",
+      changes:
+        "Google often renames its buttons: if one looks different, look for “reviews” on your profile.",
+    },
+    where: {
+      h2: "2. Where to use it",
+      items: [
+        "In a text or WhatsApp message right after the visit, while it's fresh.",
+        "On receipts and invoices.",
+        "Printed by the counter, on the tables or by the door.",
+        "At the end of a thank-you email or a chat with a customer.",
+      ],
+      messageIntro: "A short message you can copy, then change to sound like you:",
+      messages: [
+        {
+          lang: "en",
+          label: "",
+          text: "Thank you for choosing [your business]! If you have a minute, a review on Google helps other people find us: [your link]",
+        },
+      ],
+    },
+    rules: {
+      h2: "3. Google's rules",
+      intro:
+        "Google removes reviews that break these rules. They apply to you and to anyone working for you.",
+      items: [
+        "Ask every customer the same way, not only the ones you know are happy.",
+        "No discount, gift or free service in exchange for a review, even an honest one.",
+        "Don't tell customers what to write, and don't give your staff a number of reviews to get.",
+        "No reviews from yourself, your staff or anyone paid by the business.",
+      ],
+      source: "Google's rules for reviews",
+    },
+    cta: {
+      h2: "Want me to set it up?",
+      body: "Both packages include it: the link, a QR code ready to print, a short message for your customers, and a monthly reminder to ask. Or start with the free 15-minute check-up.",
+      whatsappMessage: "Hi Assane, I'd like help getting more Google reviews. My business is: ",
     },
   },
   form: {

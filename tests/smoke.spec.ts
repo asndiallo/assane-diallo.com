@@ -529,6 +529,22 @@ test("checklist: the score follows the ticked boxes, and the footer links to it"
   }
 });
 
+test("review link page: Google's steps and rules, sourced, and linked from the footer", async ({
+  page,
+}) => {
+  for (const path of ["/google-review-link/", "/fr/lien-avis-google/"]) {
+    await page.goto(path);
+    expect(await page.locator("main ol li").count(), path).toBeGreaterThanOrEqual(4);
+    // Every claim comes from Google's own pages, opened in a new tab.
+    const sources = page.locator('main a[href^="https://support.google.com/"]');
+    await expect(sources, path).toHaveCount(2);
+    for (const source of await sources.all()) {
+      await expect(source, path).toHaveAttribute("target", "_blank");
+    }
+    await expect(page.locator(`footer a[href="${path}"]`), path).toHaveCount(1);
+  }
+});
+
 // The personal phone number is deliberately not listed here: any form of it (digits or a hash,
 // which is trivially reversible for a phone number) would publish it in this repository.
 test("nothing personal is published", async ({ page }) => {

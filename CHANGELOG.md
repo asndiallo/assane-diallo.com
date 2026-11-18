@@ -11,6 +11,10 @@ merge date.
 
 ### Added
 
+- Free resource (EN and FR): "Your Google review link and QR code" at `/google-review-link/`
+  and `/fr/lien-avis-google/`. Google's own steps to get the link and QR code (no tool or app
+  needed), where to use them, a message to copy, and Google's review rules, each sourced to
+  Google's help pages. Linked from the footer (PLAN.md D39).
 - Smoke tests: every built page is in the sitemap or marked noindex; internal links use the
   final URL (trailing slash, not a `_redirects` source). Description limit in the tests is now
   155, matching CLAUDE.md; the French about description is trimmed to fit ("français, anglais"). CLAUDE.md gains the matching rules for new pages and structured data.
@@ -46,6 +50,8 @@ merge date.
 
 ### Changed
 
+- Review copy (EN and FR): the review kit is "for every customer" and the checklist says to ask
+  every customer, not only "happy customers": asking only happy ones is against Google's rules.
 - Home hero subhead and footer tagline (EN and FR) now say the sales message: get found, earn
   trust, and make it easy to call or book, instead of listing services (PLAN.md D36).
 - Home "What I set up for you" (EN and FR): the setup work is grouped under the three steps of
