@@ -11,6 +11,10 @@ merge date.
 
 ### Added
 
+- Cloudflare free-plan review, logged in DOMAIN-SETUP.md: Certificate Transparency Monitoring,
+  Speed Brain, 0-RTT, email notifications, DMARC at `p=quarantine; pct=25`, and why there is
+  no CAA record.
+
 - Free resources page (EN and FR) at `/resources/` and `/fr/ressources/`: the Google checklist,
   the review link page and every guide, one card each, with a check-up CTA. The footer's Free
   resources column drops from 6 links to 3 (checklist, review link, "All free guides and

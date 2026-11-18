@@ -53,13 +53,15 @@ The runbook for how the site is hosted and how the domain and email are wired. T
 | ✅  | Cloudflare Web Analytics (cookieless) in every page; Workers Logs enabled                                                                                                                                                                                                                                                                                               | Claude       | 2026-10-18 |
 | ✅  | Zone: Always Use HTTPS, TLS 1.3, HTTP/3 on; minimum TLS 1.2; email obfuscation off; Bot Fight Mode and JavaScript detections off (they challenged CI checks and injected a script the CSP blocks)                                                                                                                                                                       | Claude + you | 2026-10-18 |
 | ✅  | DNSSEC active (DS record added at Spaceship)                                                                                                                                                                                                                                                                                                                            | Claude + you | 2026-10-18 |
-| ⏳  | **Access on preview URLs** (drafts): needs Zero Trust enabled once in the dashboard (below)                                                                                                                                                                                                                                                                             | you          |            |
+| ✅  | **Access on preview URLs** (drafts): Zero Trust enabled, PR previews redirect to a Cloudflare Access login; the live site is unaffected                                                                                                                                                                                                                                 | you          | 2026-11    |
+| ✅  | Crawler Hints on (tells Bing and other IndexNow engines when pages change)                                                                                                                                                                                                                                                                                              | you          | 2026-11    |
+| ✅  | Free-plan review: Certificate Transparency Monitoring on, Speed Brain on (conservative prefetch via `Speculation-Rules` header), 0-RTT on                                                                                                                                                                                                                               | Claude + you | 2026-11-17 |
+| ✅  | Notifications (email to the Cloudflare login): Universal SSL events, HTTP DDoS attack, abuse report, Trust & Safety block, Security Insights, Web Analytics metrics update                                                                                                                                                                                              | Claude       | 2026-11-17 |
+| ✅  | DMARC `p=quarantine; pct=25; sp=quarantine` (Zoho passes 100%; the only failures were mail auto-forwarded by a recipient's Google server)                                                                                                                                                                                                                               | Claude       | 2026-11-17 |
 
 ## Remaining dashboard steps
 
-1. **Access on preview URLs.** Zero Trust → enable it once (team name `assane-diallo`, **Free** plan). Then **Workers & Pages → assane-diallo → Access → Protect this Worker behind Access → Previews only**, policy **Cloudflare account** (only you), **Apply Access**. PR previews then ask for a one-time code; the live site is unaffected. (The API refuses until Zero Trust is enabled: "Access is not enabled".)
-2. **Crawler Hints.** Caching → Configuration → **Crawler Hints** on (dashboard only; tells Bing and other IndexNow engines when pages change).
-3. **Account security.** Make sure 2FA is on for Cloudflare and GitHub, and give the deploy API token an expiry date you'll remember to renew.
+1. **Account security.** Make sure 2FA is on for Cloudflare and GitHub, and give the deploy API token an expiry date you'll remember to renew.
 
 ## Initial dashboard steps (done)
 
@@ -104,6 +106,10 @@ If you switch to a mailbox provider: remove Email Routing, follow that provider'
 **SPF**, in plain words: the list of servers allowed to send mail as `@assane-diallo.com`. `~all` means "treat anything else as suspicious".
 
 **DMARC**, in plain words: what receiving servers should do with mail that fails those checks, plus where to send reports. Start with `p=none` (monitor only). After 2–4 weeks of clean reports, move to `p=quarantine`, then `p=reject`. That timeline is a recommendation, not a Cloudflare rule. You don't send mail from this domain yet, so `p=reject` will be safe sooner.
+
+**Current step (2026-11-17):** `p=quarantine; pct=25`. If DMARC Management still shows only Zoho passing and forwarded mail failing after a few weeks, raise `pct` to 100, then move to `p=reject`.
+
+**CAA records: deliberately none.** Cloudflare adds CAA records automatically only for Universal SSL, and the apex certificate comes from the Worker Custom Domain, so a hand-made CAA record could block its renewal. Certificate Transparency Monitoring covers the "someone got a certificate for my domain" case instead.
 
 ## Spaceship checklist (do once)
 
