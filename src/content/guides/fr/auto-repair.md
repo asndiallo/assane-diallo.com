@@ -183,7 +183,7 @@ Dans les mois qui suivent : un avis après chaque réparation, une réponse à c
 [^guidelines]: Aide Google Business Profile, [Consignes de représentation de votre établissement sur Google](https://support.google.com/business/answer/3038177?hl=fr).
 [^opening]: Aide Google Business Profile, [Date d'ouverture de l'établissement](https://support.google.com/business/answer/10515606?hl=fr).
 [^special]: Aide Google Business Profile, [Définir des horaires exceptionnels](https://support.google.com/business/answer/6303076?hl=fr).
-[^calls]: Aide Google Business Profile, [Appels et SMS automatisés de Google à votre établissement](https://support.google.com/business/answer/16190256?hl=fr).
+[^calls]: Aide Google Business Profile, [Appels et SMS automatisés de Google à votre établissement](https://support.google.com/business/answer/7690269?hl=fr).
 [^areas]: Aide Google Business Profile, [Gérer vos zones desservies](https://support.google.com/business/answer/9157481?hl=fr).
 [^photos]: Aide Google Business Profile, [Gérer les photos et vidéos de votre fiche](https://support.google.com/business/answer/6103862?hl=fr).
 [^brightlocal]: BrightLocal, [Local Consumer Review Survey 2026](https://www.brightlocal.com/research/local-consumer-review-survey/) (en anglais), 1 002 adultes aux États-Unis, publiée le 11 février 2026.

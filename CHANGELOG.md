@@ -175,6 +175,10 @@ merge date.
 
 ### Fixed
 
+- Link check: a 429 (Too Many Requests) is now a warning, not a failure. LinkedIn rate-limits
+  CI runners because its link is on every page, which failed `develop` at random.
+- Home services and auto repair guides (EN and FR): the "automated calls and texts" citation
+  points at Google's current article (7690269); the old ID only worked through a redirect.
 - Guides (EN and FR): on tablets and desktops, "Directions" no longer spills out of its button
   in the listing drawing, which gets a wider column (22rem, side by side from `md`).
 - Home hero: each search is now typed into the search box (with a caret), then the listing
