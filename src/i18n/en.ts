@@ -719,6 +719,19 @@ export const en = {
           },
         ],
       },
+      {
+        h2: "5. What AI assistants like ChatGPT say about you",
+        items: [
+          {
+            title: "You've asked ChatGPT what your customers would ask.",
+            body: "Try “[your service] in [your town]”, then ask about your business by name. Check the hours, phone and address it gives. If they're wrong, fix them at the source: your website and your listings, Yelp included. ChatGPT reads them.",
+          },
+          {
+            title: "If ChatGPT already lists your business, you've claimed the listing.",
+            body: "It's free, from your own ChatGPT account, for businesses in the US that already have a listing. Claiming it lets you keep your details right. It doesn't make ChatGPT recommend you more, and nobody can promise what an AI will say.",
+          },
+        ],
+      },
     ] as { h2: string; items: { title: string; body: string; must?: boolean }[] }[],
     score: {
       h2: "Your score",

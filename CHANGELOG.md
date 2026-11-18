@@ -11,6 +11,10 @@ merge date.
 
 ### Added
 
+- Google profile checklist (EN and FR): a fifth group, "What AI assistants like ChatGPT say
+  about you": ask ChatGPT what customers would ask and fix wrong details at the source, and
+  claim an existing ChatGPT listing (free; it doesn't make ChatGPT recommend you more). The
+  score bands follow the new total (PLAN.md D40).
 - Free resource (EN and FR): "Your Google review link and QR code" at `/google-review-link/`
   and `/fr/lien-avis-google/`. Google's own steps to get the link and QR code (no tool or app
   needed), where to use them, a message to copy, and Google's review rules, each sourced to
