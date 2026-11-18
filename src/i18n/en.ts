@@ -68,6 +68,7 @@ export const en = {
       how: "How it works",
       checklist: "Google profile checklist",
       reviewLink: "Your Google review link",
+      allResources: "All free guides and tools",
       free: "Free resources",
       about: "About",
     },
@@ -751,6 +752,23 @@ export const en = {
       body: "Free 15-minute check-up: I go through this list with your profile and tell you what's missing, in plain language. No obligation.",
       whatsappMessage:
         "Hi Assane, I went through your Google checklist and I'd like a free check-up. My business is: ",
+    },
+  },
+  resources: {
+    meta: {
+      title: "Free Google guides and tools | Assane Diallo",
+      description:
+        "Free, no sign-up: a Google profile checklist, your review link and QR code, and a guide for your kind of business. Do it yourself, in plain language.",
+    },
+    h1: "Free guides and tools",
+    lead: "Everything here is free, with no sign-up. Check your Google profile yourself, get your review link, and read the guide written for your kind of business.",
+    tools: "Tools you can use today",
+    guides: "Guides by business type",
+    cta: {
+      h2: "Rather have me look?",
+      body: "Free 15-minute check-up: I look at your Google profile and tell you what to fix first, in plain language. No obligation.",
+      whatsappMessage:
+        "Hi Assane, I read your free guides and I'd like a free check-up. My business is: ",
     },
   },
   reviewLink: {

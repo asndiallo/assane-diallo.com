@@ -74,15 +74,27 @@ test("the business-types page links every business type, and the footer links to
   }
 });
 
-test("the footer links every guide in its locale, under Free resources", async ({ page }) => {
+test("the resources page links every guide and free tool, and the footer links to it", async ({
+  page,
+}) => {
   const paths = await sitemapPaths(page);
-  const homes = { "/for/": "/", "/fr/pour/": "/fr/" };
-  for (const [index, home] of Object.entries(homes)) {
+  const pages = [
+    { hub: "/resources/", index: "/for/", tools: ["/google-checklist/", "/google-review-link/"] },
+    {
+      hub: "/fr/ressources/",
+      index: "/fr/pour/",
+      tools: ["/fr/checklist-google/", "/fr/lien-avis-google/"],
+    },
+  ];
+  for (const { hub, index, tools } of pages) {
     const guides = paths.filter((p) => p.startsWith(index) && p.endsWith("/guide/"));
-    expect(guides.length, index).toBeGreaterThanOrEqual(2);
-    await page.goto(home);
-    for (const guide of guides)
-      await expect(page.locator(`footer a[href="${guide}"]`), guide).toHaveCount(1);
+    expect(guides.length, hub).toBeGreaterThanOrEqual(2);
+    await page.goto(hub);
+    const linked = await page
+      .locator("main li h3 a")
+      .evaluateAll((links) => links.map((a) => new URL((a as HTMLAnchorElement).href).pathname));
+    expect(linked.sort(), hub).toEqual([...tools, ...guides].sort());
+    await expect(page.locator(`footer a[href="${hub}"]`), hub).toHaveCount(1);
   }
 });
 
