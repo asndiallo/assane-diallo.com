@@ -42,6 +42,7 @@ const columns: { heading: string; links: FooterLink[] }[] = [
     heading: groups.free,
     links: [
       { href: staticRoutes.checklist[locale], label: groups.checklist },
+      { href: staticRoutes.reviewLink[locale], label: groups.reviewLink },
       ...guides.map((guide) => ({ href: entryPath("guides", guide), label: guide.data.label })),
     ],
   },
