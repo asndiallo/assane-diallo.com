@@ -11,6 +11,8 @@ merge date.
 
 ### Added
 
+- TODO.md: a reminder to revisit a geo-grid rank tool and paid citation building after the
+  first 3 paying clients log real hours (playbook freeze).
 - Google profile checklist (EN and FR): a fifth group, "What AI assistants like ChatGPT say
   about you": ask ChatGPT what customers would ask and fix wrong details at the source, and
   claim an existing ChatGPT listing (free; it doesn't make ChatGPT recommend you more). The
