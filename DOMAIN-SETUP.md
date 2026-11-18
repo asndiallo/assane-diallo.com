@@ -87,6 +87,8 @@ Each step is shown before it runs.
 
 **HSTS note.** The site sends `Strict-Transport-Security: max-age=31536000; includeSubDomains`. Once browsers have seen it, they refuse plain HTTP on the domain and its subdomains for a year. That's intended. Don't add `preload` unless you're sure, because removal from browsers' preload lists takes months.
 
+**0-RTT note.** 0-RTT Connection Resumption is on (since 2026-11-17). Cloudflare uses it only for GET, HEAD and OPTIONS requests, and those can be replayed. POST never uses 0-RTT, so a form that submits with POST, or one embedded from another service (Tally, Google Forms, Calendly), is safe. The rule: never let a GET request change anything (`/unsubscribe?token=…`, `/confirm?id=…`, a `method="get"` form that saves data). If server code ever has to handle a request like that, check for the `Early-Data: 1` header Cloudflare adds and answer `425 Too Early` (the browser retries after the full handshake), or turn 0-RTT off.
+
 ## Email
 
 **Receiving** works once the routing rule exists: `hello@assane-diallo.com` forwards to Gmail.
