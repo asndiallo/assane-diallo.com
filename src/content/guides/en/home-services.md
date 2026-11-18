@@ -216,7 +216,7 @@ Over the following months: a review after every job, a reply to each one, new ph
 [^services]: Google Business Profile Help, [Manage your services](https://support.google.com/business/answer/9455399?hl=en).
 [^opening]: Google Business Profile Help, [Business opening date](https://support.google.com/business/answer/10515606?hl=en).
 [^special]: Google Business Profile Help, [How to set special hours](https://support.google.com/business/answer/6303076?hl=en).
-[^calls]: Google Business Profile Help, [About automated calls and texts from Google to your business](https://support.google.com/business/answer/16190256?hl=en).
+[^calls]: Google Business Profile Help, [About automated calls and texts from Google to your business](https://support.google.com/business/answer/7690269?hl=en).
 [^photos]: Google Business Profile Help, [Manage your Business Profile photos and videos](https://support.google.com/business/answer/6103862?hl=en).
 [^brightlocal]: BrightLocal, [Local Consumer Review Survey 2026](https://www.brightlocal.com/research/local-consumer-review-survey/), 1,002 US adults, published February 11, 2026.
 [^policy]: Google Maps, [Prohibited and restricted content](https://support.google.com/contributionpolicy/answer/7400114?hl=en).

@@ -217,7 +217,7 @@ Dans les mois qui suivent : un avis après chaque chantier, une réponse à chac
 [^services]: Aide Google Business Profile, [Gérer vos services](https://support.google.com/business/answer/9455399?hl=fr).
 [^opening]: Aide Google Business Profile, [Date d'ouverture de l'établissement](https://support.google.com/business/answer/10515606?hl=fr).
 [^special]: Aide Google Business Profile, [Définir des horaires exceptionnels](https://support.google.com/business/answer/6303076?hl=fr).
-[^calls]: Aide Google Business Profile, [Appels et SMS automatisés de Google à votre établissement](https://support.google.com/business/answer/16190256?hl=fr).
+[^calls]: Aide Google Business Profile, [Appels et SMS automatisés de Google à votre établissement](https://support.google.com/business/answer/7690269?hl=fr).
 [^photos]: Aide Google Business Profile, [Gérer les photos et vidéos de votre fiche](https://support.google.com/business/answer/6103862?hl=fr).
 [^brightlocal]: BrightLocal, [Local Consumer Review Survey 2026](https://www.brightlocal.com/research/local-consumer-review-survey/) (en anglais), 1 002 adultes aux États-Unis, publiée le 11 février 2026.
 [^policy]: Google Maps, [Contenus interdits et soumis à des restrictions](https://support.google.com/contributionpolicy/answer/7400114?hl=fr).
