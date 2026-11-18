@@ -153,7 +153,7 @@ export const en = {
         },
         reviews: {
           title: "An easy way to get reviews.",
-          body: "A link, a QR code and a short message you can send to happy customers.",
+          body: "A link, a QR code and a short message you can send to every customer.",
         },
       } satisfies Record<SetupId, { title: string; body: string }>,
       monthly: {
@@ -677,7 +677,7 @@ export const en = {
         items: [
           {
             title: "At least one review from the last 3 months.",
-            body: "Old reviews alone make a business look closed. Ask happy customers, but never pay or offer a discount for a review: Google forbids it.",
+            body: "Old reviews alone make a business look closed. Ask every customer, not only the happy ones, and never pay or offer a discount for a review: Google forbids both.",
           },
           {
             title: "Every review has a reply.",

@@ -146,7 +146,7 @@ export const fr: Dictionary = {
         },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
-          body: "Un lien, un QR code et un court message à envoyer à vos clients satisfaits.",
+          body: "Un lien, un QR code et un court message à envoyer à chaque client.",
         },
       },
       monthly: {
@@ -669,7 +669,7 @@ export const fr: Dictionary = {
         items: [
           {
             title: "Au moins un avis des 3 derniers mois.",
-            body: `Des avis anciens uniquement donnent l'impression que l'entreprise est fermée. Demandez à vos clients satisfaits, mais ne payez jamais et n'offrez jamais de réduction contre un avis${nb}: Google l'interdit.`,
+            body: `Des avis anciens uniquement donnent l'impression que l'entreprise est fermée. Demandez à tous vos clients, pas seulement aux satisfaits, et ne payez jamais ni n'offrez de réduction contre un avis${nb}: Google interdit les deux.`,
           },
           {
             title: "Chaque avis a une réponse.",
