@@ -77,3 +77,10 @@ export async function sibling<C extends Localized>(
   const [match] = await getVisible(collection, (e) => e.id === entry.id);
   return match;
 }
+
+/** Guides in business-type order (guides have no order of their own: one per business type). */
+export async function getGuides(locale: Locale): Promise<CollectionEntry<"guides">[]> {
+  const verticals = await getLocalized("verticals", locale);
+  const guides = await Promise.all(verticals.map((v) => sibling("guides", v)));
+  return guides.filter((guide) => guide !== undefined);
+}

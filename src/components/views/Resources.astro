@@ -1,0 +1,64 @@
+---
+import { getDictionary, type Locale, staticRoutes } from "../../i18n/index.ts";
+import Page from "../../layouts/Page.astro";
+import { entryPath, getGuides } from "../../lib/content.ts";
+import CtaWhatsApp from "../CtaWhatsApp.astro";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = getDictionary(locale);
+const copy = t.resources;
+
+// Each card reuses the page's own name and meta description: one source for both.
+const tools = [
+  { href: staticRoutes.checklist[locale], name: t.checklist.h1, body: t.checklist.meta.description },
+  { href: staticRoutes.reviewLink[locale], name: t.reviewLink.h1, body: t.reviewLink.meta.description },
+];
+const guides = (await getGuides(locale)).map((guide) => ({
+  href: entryPath("guides", guide),
+  name: guide.data.label,
+  body: guide.data.description,
+}));
+const groups = [
+  { h2: copy.tools, cards: tools },
+  { h2: copy.guides, cards: guides },
+];
+---
+
+<Page
+  title={copy.meta.title}
+  description={copy.meta.description}
+  h1={copy.h1}
+  lead={copy.lead}
+  locale={locale}
+  alternates={staticRoutes.resources}
+>
+  {
+    groups.map((group) => (
+      <section>
+        <h2 class="mt-14 text-2xl sm:text-3xl">{group.h2}</h2>
+        <ul class="mt-6 grid gap-6 md:grid-cols-2">
+          {group.cards.map((card) => (
+            <li class="relative flex flex-col rounded-2xl border border-line bg-paper p-6 transition-colors hover:border-brand">
+              <h3 class="text-xl">
+                {/* The whole card is clickable; the link text stays the resource's name. */}
+                <a href={card.href} class="no-underline after:absolute after:inset-0">
+                  {card.name}
+                </a>
+              </h3>
+              <p class="mt-2 text-muted">{card.body}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+
+  <section class="mt-16 rounded-2xl bg-wash p-6 sm:p-10">
+    <h2 class="text-3xl">{copy.cta.h2}</h2>
+    <p class="measure mt-4">{copy.cta.body}</p>
+    <div class="mt-6"><CtaWhatsApp t={t} message={copy.cta.whatsappMessage} /></div>
+  </section>
+</Page>

@@ -11,6 +11,10 @@ merge date.
 
 ### Added
 
+- Free resources page (EN and FR) at `/resources/` and `/fr/ressources/`: the Google checklist,
+  the review link page and every guide, one card each, with a check-up CTA. The footer's Free
+  resources column drops from 6 links to 3 (checklist, review link, "All free guides and
+  tools"); guides are no longer listed one by one there (PLAN.md D41, amends D34).
 - Google profile checklist (EN and FR): a fifth group, "What AI assistants like ChatGPT say
   about you": ask ChatGPT what customers would ask and fix wrong details at the source, and
   claim an existing ChatGPT listing (free; it doesn't make ChatGPT recommend you more). The

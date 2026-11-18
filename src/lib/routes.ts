@@ -38,6 +38,7 @@ export async function getPageGroups(): Promise<PageGroup[]> {
     staticGroup(staticRoutes.verticals),
     ...(await collectionGroups("verticals")),
     ...(await collectionGroups("guides")),
+    staticGroup(staticRoutes.resources),
     staticGroup(staticRoutes.checklist),
     staticGroup(staticRoutes.reviewLink),
     staticGroup(staticRoutes.work),

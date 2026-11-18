@@ -60,6 +60,7 @@ export const fr: Dictionary = {
       how: "Fonctionnement",
       checklist: "Checklist fiche Google",
       reviewLink: "Votre lien d'avis Google",
+      allResources: "Tous les guides et outils gratuits",
       free: "Ressources gratuites",
       about: "À propos",
     },
@@ -742,6 +743,21 @@ export const fr: Dictionary = {
       h2: `Vous voulez que je vérifie la vôtre${nb}?`,
       body: `Bilan gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
       whatsappMessage: `Bonjour Assane, j'ai fait votre checklist Google et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
+    },
+  },
+  resources: {
+    meta: {
+      title: "Guides et outils Google gratuits | Assane Diallo",
+      description: `Gratuit, sans inscription${nb}: une checklist pour votre fiche Google, votre lien et QR code d'avis, et un guide pour votre type d'entreprise.`,
+    },
+    h1: "Guides et outils gratuits",
+    lead: "Tout est gratuit, sans inscription. Vérifiez votre fiche Google vous-même, récupérez votre lien d'avis et lisez le guide écrit pour votre type d'entreprise.",
+    tools: "Des outils à utiliser dès aujourd'hui",
+    guides: "Guides par type d'entreprise",
+    cta: {
+      h2: `Vous préférez que je regarde${nb}?`,
+      body: `Bilan gratuit de 15 minutes${nb}: je regarde votre fiche Google et je vous dis quoi corriger en premier, en langage simple. Sans engagement.`,
+      whatsappMessage: `Bonjour Assane, j'ai lu vos guides gratuits et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
     },
   },
   reviewLink: {
