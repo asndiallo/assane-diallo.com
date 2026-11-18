@@ -67,6 +67,8 @@ export const en = {
       pricing: "Prices",
       how: "How it works",
       checklist: "Google profile checklist",
+      reviewLink: "Your Google review link",
+      allResources: "All free guides and tools",
       free: "Free resources",
       about: "About",
     },
@@ -153,7 +155,7 @@ export const en = {
         },
         reviews: {
           title: "An easy way to get reviews.",
-          body: "A link, a QR code and a short message you can send to happy customers.",
+          body: "A link, a QR code and a short message you can send to every customer.",
         },
       } satisfies Record<SetupId, { title: string; body: string }>,
       monthly: {
@@ -304,7 +306,7 @@ export const en = {
         },
         {
           q: "Will this help me show up on ChatGPT?",
-          a: "It should help, but nobody can promise what an AI will say. ChatGPT, Gemini and Google's AI answers build their picture of a local business from its listings, reviews and website. That's the work I do: the same details everywhere, recent reviews with replies, and clear pages about what you offer. Every quarter, I ask ChatGPT what your customers would ask and put its answer in your report. Answers change from one day to the next, so it's a snapshot, not a ranking.",
+          a: "It should help, but nobody can promise what an AI will say. ChatGPT, Gemini and Google's AI answers build their picture of a local business from its listings, reviews and website. That's the work I do: the same details everywhere, recent reviews with replies, and clear pages about what you offer. Every quarter, I ask ChatGPT what your customers would ask and put its answer in your report. Answers change from one day to the next, so it's a snapshot, not a ranking. If ChatGPT already lists your business, I also help you claim that listing (free, from your own ChatGPT account) so your details are right. Claiming it doesn't make ChatGPT recommend you more.",
         },
         {
           q: "What does it cost?",
@@ -677,7 +679,7 @@ export const en = {
         items: [
           {
             title: "At least one review from the last 3 months.",
-            body: "Old reviews alone make a business look closed. Ask happy customers, but never pay or offer a discount for a review: Google forbids it.",
+            body: "Old reviews alone make a business look closed. Ask every customer, not only the happy ones, and never pay or offer a discount for a review: Google forbids both.",
           },
           {
             title: "Every review has a reply.",
@@ -718,6 +720,19 @@ export const en = {
           },
         ],
       },
+      {
+        h2: "5. What AI assistants like ChatGPT say about you",
+        items: [
+          {
+            title: "You've asked ChatGPT what your customers would ask.",
+            body: "Try “[your service] in [your town]”, then ask about your business by name. Check the hours, phone and address it gives. If they're wrong, fix them at the source: your website and your listings, Yelp included. ChatGPT reads them.",
+          },
+          {
+            title: "If ChatGPT already lists your business, you've claimed the listing.",
+            body: "It's free, from your own ChatGPT account, for businesses in the US that already have a listing. Claiming it lets you keep your details right. It doesn't make ChatGPT recommend you more, and nobody can promise what an AI will say.",
+          },
+        ],
+      },
     ] as { h2: string; items: { title: string; body: string; must?: boolean }[] }[],
     score: {
       h2: "Your score",
@@ -737,6 +752,86 @@ export const en = {
       body: "Free 15-minute check-up: I go through this list with your profile and tell you what's missing, in plain language. No obligation.",
       whatsappMessage:
         "Hi Assane, I went through your Google checklist and I'd like a free check-up. My business is: ",
+    },
+  },
+  resources: {
+    meta: {
+      title: "Free Google guides and tools | Assane Diallo",
+      description:
+        "Free, no sign-up: a Google profile checklist, your review link and QR code, and a guide for your kind of business. Do it yourself, in plain language.",
+    },
+    h1: "Free guides and tools",
+    lead: "Everything here is free, with no sign-up. Check your Google profile yourself, get your review link, and read the guide written for your kind of business.",
+    tools: "Tools you can use today",
+    guides: "Guides by business type",
+    cta: {
+      h2: "Rather have me look?",
+      body: "Free 15-minute check-up: I look at your Google profile and tell you what to fix first, in plain language. No obligation.",
+      whatsappMessage:
+        "Hi Assane, I read your free guides and I'd like a free check-up. My business is: ",
+    },
+  },
+  reviewLink: {
+    meta: {
+      title: "Get your Google review link and QR code | Assane Diallo",
+      description:
+        "Where to find the free review link and QR code Google makes for your business, where to use them, and the rules to follow. 5 minutes, no sign-up.",
+    },
+    h1: "Your Google review link and QR code",
+    lead: "Google makes a link and a QR code that open the review form for your business. They're free and take about 5 minutes to get. Here's where to find them, where to use them, and the rules to follow.",
+    honesty:
+      "You don't need an app or a paid tool for this. Google gives you both, and nobody can sell you better reviews.",
+    steps: {
+      h2: "1. Get the link and the QR code",
+      items: [
+        "Use a computer. For now, Google only makes the QR code in a computer browser, not on a phone.",
+        "Sign in with the Google account that manages your profile, and open your Business Profile.",
+        "Select “Read reviews”, then “Get more reviews”.",
+        "To copy the link, select “Copy”. Paste it somewhere you'll find it on your phone, like a note or a message to yourself.",
+        "To save the QR code, right-click it and choose “Save image as…”.",
+      ],
+      access: "Can't edit your profile? Fix that first: it's the first item on the",
+      accessLink: "Google profile checklist",
+      share:
+        "Use this link, not the Share button on Google Maps: that one opens your profile, and the customer still has to find where to write a review.",
+      checked: "Steps checked against Google's help page on November 17, 2026.",
+      source: "Google's help page",
+      changes:
+        "Google often renames its buttons: if one looks different, look for “reviews” on your profile.",
+    },
+    where: {
+      h2: "2. Where to use it",
+      items: [
+        "In a text or WhatsApp message right after the visit, while it's fresh.",
+        "On receipts and invoices.",
+        "Printed by the counter, on the tables or by the door.",
+        "At the end of a thank-you email or a chat with a customer.",
+      ],
+      messageIntro: "A short message you can copy, then change to sound like you:",
+      messages: [
+        {
+          lang: "en",
+          label: "",
+          text: "Thank you for choosing [your business]! If you have a minute, a review on Google helps other people find us: [your link]",
+        },
+      ],
+    },
+    rules: {
+      h2: "3. Google's rules",
+      intro:
+        "Google removes reviews that break these rules. They apply to you and to anyone working for you.",
+      items: [
+        "Ask every customer the same way, not only the ones you know are happy.",
+        "No discount, gift or free service in exchange for a review, even an honest one.",
+        "Don't tell customers what to write, and don't give your staff a number of reviews to get.",
+        "No reviews from yourself, your staff or anyone paid by the business.",
+      ],
+      source: "Google's rules for reviews",
+    },
+    cta: {
+      h2: "Want me to set it up?",
+      body: "Both packages include it: the link, a QR code ready to print, a short message for your customers, and a monthly reminder to ask. Or start with the free 15-minute check-up.",
+      whatsappMessage: "Hi Assane, I'd like help getting more Google reviews. My business is: ",
     },
   },
   form: {

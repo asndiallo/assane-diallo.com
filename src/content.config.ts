@@ -99,7 +99,7 @@ const guides = defineCollection({
       urlSlug: z.string().optional(),
       title: z.string().max(60),
       description: z.string().max(155),
-      /** Short link name in the footer's "Free resources" column, e.g. "Restaurant guide". */
+      /** Short link name on the resources page, e.g. "Restaurant guide". */
       label: z.string().max(30),
       h1: z.string(),
       lead: z.string(),

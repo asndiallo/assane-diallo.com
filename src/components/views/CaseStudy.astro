@@ -1,10 +1,10 @@
 ---
 import { getImage, Image } from "astro:assets";
 import { type CollectionEntry, render } from "astro:content";
-import { SITE_URL } from "../../config.ts";
 import { getDictionary, staticRoutes } from "../../i18n/index.ts";
 import Page from "../../layouts/Page.astro";
 import { entryAlternates, entryLocale, entryPath } from "../../lib/content.ts";
+import { articleSchema, breadcrumbSchema } from "../../lib/schema.ts";
 import CtaWhatsApp from "../CtaWhatsApp.astro";
 import Link from "../Link.astro";
 import Testimonial from "../Testimonial.astro";
@@ -13,7 +13,7 @@ interface Props {
   entry: CollectionEntry<"work">;
 }
 const { entry } = Astro.props;
-const { business, location, summary, website, services, results, resultsNote, quote, image, status, draft, disclosure } =
+const { business, location, summary, website, services, results, resultsNote, quote, image, status, draft, disclosure, published } =
   entry.data;
 const locale = entryLocale(entry);
 const t = getDictionary(locale);
@@ -27,27 +27,33 @@ const ogImage =
   image &&
   (await getImage({ src: image.src, width: 1200, height: 630, fit: "cover", position: "top", format: "jpg" })).src;
 
-const breadcrumbs = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: t.caseStudy.home, item: new URL(staticRoutes.home[locale], SITE_URL).href },
-    { "@type": "ListItem", position: 2, name: t.work.h1, item: new URL(staticRoutes.work[locale], SITE_URL).href },
-    { "@type": "ListItem", position: 3, name: business, item: new URL(entryPath("work", entry), SITE_URL).href },
-  ],
-};
+const path = entryPath("work", entry);
+const h1 = t.caseStudy.title(business, location);
+const article = articleSchema({
+  headline: h1,
+  description: summary,
+  path,
+  locale,
+  image: ogImage,
+  datePublished: published,
+});
+const breadcrumbs = breadcrumbSchema([
+  { name: t.caseStudy.home, path: staticRoutes.home[locale] },
+  { name: t.work.h1, path: staticRoutes.work[locale] },
+  { name: business, path },
+]);
 ---
 
 <Page
   title={t.caseStudy.metaTitle(business).slice(0, 60)}
   description={summary}
-  h1={t.caseStudy.title(business, location)}
+  h1={h1}
   lead={summary}
   locale={locale}
   alternates={alternates}
   ogType="article"
   {...(ogImage && { ogImage })}
-  jsonLd={[breadcrumbs]}
+  jsonLd={[article, breadcrumbs]}
 >
   {disclosure && <p class="measure mt-3 text-muted" data-disclosure>{disclosure}</p>}
   <p class="mt-2 text-sm"><a href={staticRoutes.work[locale]}>{t.caseStudy.all}</a></p>

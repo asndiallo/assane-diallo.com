@@ -166,17 +166,17 @@ replaced by `…oc05` at $199 on 2026-11-05 (PLAN.md D29), same settings.
 ## One-time Dashboard settings
 
 - [x] **Settings → Business → Branding** (live, 2026-10-28): icon from `public/favicon.svg`
-  (512 px PNG), brand `#0b6b4c`, accent `#07503a`, the site's `brand` and `brand-strong`
-  tokens. No wide logo yet.
+      (512 px PNG), brand `#0b6b4c`, accent `#07503a`, the site's `brand` and `brand-strong`
+      tokens. No wide logo yet.
 - [x] Roll the test secret key that was pasted in a chat (done 2026-10-28).
 - [x] **Settings → Payment methods** (live, 2026-10-28): cards and ACH Direct Debit (cheaper
-  for clients paying by bank), plus Stripe's defaults (Apple Pay, Google Pay, Link…).
+      for clients paying by bank), plus Stripe's defaults (Apple Pay, Google Pay, Link…).
 - [x] **Settings → Business → Public details** (live, 2026-10-28): support email is the pro
-  address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
-  Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
-  sending from our own domain needs DNS records (Cloudflare, owner's approval).
+      address (`CONTACT_EMAIL` in `src/config.ts`), so client replies to Stripe emails reach it.
+      Support phone is the business WhatsApp number. Emails are still sent from stripe.com:
+      sending from our own domain needs DNS records (Cloudflare, owner's approval).
 - [x] **Terms and privacy links** (live, 2026-10-29). Public details and the invoice footer are
-  Dashboard only (the API can't edit the account's own settings):
+      Dashboard only (the API can't edit the account's own settings):
   - **Settings → Business → Public details**: terms of service URL
     `https://assane-diallo.com/terms/`, privacy policy URL `https://assane-diallo.com/privacy/`.
     Stripe's checkout pages link to both.
@@ -189,27 +189,27 @@ replaced by `…oc05` at $199 on 2026-11-05 (PLAN.md D29), same settings.
   - When the terms change: update the "Last updated" date and email current clients before
     the change applies (the terms promise it).
 - [x] **Settings → Business → Customer emails**: receipts on for successful payments and
-  refunds.
+      refunds.
 - [x] **Settings → Billing → Customer portal** (live): cancel at period end with a reason,
-  card and billing info updates, invoice history. No plan switching. Login link:
-  <https://billing.stripe.com/p/login/6oUfZh8UVdiXbB07CM9oc00> (the client enters their
-  email to sign in).
+      card and billing info updates, invoice history. No plan switching. Login link:
+      <https://billing.stripe.com/p/login/6oUfZh8UVdiXbB07CM9oc00> (the client enters their
+      email to sign in).
 - [x] **Settings → Billing → Subscriptions and emails**: emails for expiring cards and failed
-  card or bank payments, linking to Stripe's hosted page (switch confirmed, irreversible).
-  Emails include a link to the customer portal.
+      card or bank payments, linking to Stripe's hosted page (switch confirmed, irreversible).
+      Emails include a link to the customer portal.
 - [x] **Revenue recovery → Retries**: Smart Retries on (up to 8 times within 2 weeks), then
-  cancel the subscription.
+      cancel the subscription.
 - [x] **Settings → Tax** (live): active, head office set, default tax code `txcd_10701300`,
-  tax-exclusive. Texas registration scheduled from 2026-11-01 (see Sales tax); threshold
-  monitoring watches the other states.
+      tax-exclusive. Texas registration scheduled from 2026-11-01 (see Sales tax); threshold
+      monitoring watches the other states.
 - [x] **Settings → Tax → Integrations**: "Use automatic tax" on (live), so new Dashboard
-  invoices, subscriptions, quotes and payment links calculate tax by default.
+      invoices, subscriptions, quotes and payment links calculate tax by default.
 - [x] **Plan**: Tax Basic, pay as you go: 0.5% of each transaction in a state where we're
-  registered (Texas only). No monthly fee. Tax Complete (from $90/month, 1-year contract,
-  filing included) isn't worth it at this volume: file Texas returns ourselves from the
-  Stripe location report.
+      registered (Texas only). No monthly fee. Tax Complete (from $90/month, 1-year contract,
+      filing included) isn't worth it at this volume: file Texas returns ourselves from the
+      Stripe location report.
 - [ ] When the Texas permit arrives: check that its start date matches 2026-11-01 (update the
-  Stripe registration if not) and note the filing frequency here.
+      Stripe registration if not) and note the filing frequency here.
 - [ ] Ask an accountant: data processing or advertising for profile and SEO work (see Catalog).
 - [x] Account activated (bank details, identity), 2026-10-28.
 

@@ -59,6 +59,8 @@ export const fr: Dictionary = {
       pricing: "Tarifs",
       how: "Fonctionnement",
       checklist: "Checklist fiche Google",
+      reviewLink: "Votre lien d'avis Google",
+      allResources: "Tous les guides et outils gratuits",
       free: "Ressources gratuites",
       about: "À propos",
     },
@@ -146,7 +148,7 @@ export const fr: Dictionary = {
         },
         reviews: {
           title: "Un moyen simple d'obtenir des avis.",
-          body: "Un lien, un QR code et un court message à envoyer à vos clients satisfaits.",
+          body: "Un lien, un QR code et un court message à envoyer à chaque client.",
         },
       },
       monthly: {
@@ -298,7 +300,7 @@ export const fr: Dictionary = {
         },
         {
           q: `Est-ce que ça m'aide à apparaître sur ChatGPT${nb}?`,
-          a: `Ça devrait aider, mais personne ne peut promettre ce qu'une IA va répondre. ChatGPT, Gemini et les réponses IA de Google se font une idée d'une entreprise locale à partir de ses fiches, de ses avis et de son site. C'est le travail que je fais${nb}: les mêmes informations partout, des avis récents avec des réponses, et des pages claires sur ce que vous proposez. Chaque trimestre, je pose à ChatGPT les questions de vos clients et je mets sa réponse dans votre rapport. Les réponses changent d'un jour à l'autre${nb}: c'est un instantané, pas un classement.`,
+          a: `Ça devrait aider, mais personne ne peut promettre ce qu'une IA va répondre. ChatGPT, Gemini et les réponses IA de Google se font une idée d'une entreprise locale à partir de ses fiches, de ses avis et de son site. C'est le travail que je fais${nb}: les mêmes informations partout, des avis récents avec des réponses, et des pages claires sur ce que vous proposez. Chaque trimestre, je pose à ChatGPT les questions de vos clients et je mets sa réponse dans votre rapport. Les réponses changent d'un jour à l'autre${nb}: c'est un instantané, pas un classement. Si ChatGPT affiche déjà une fiche pour votre entreprise, je vous aide aussi à la revendiquer (gratuitement, depuis votre propre compte ChatGPT) pour que vos informations soient justes. La revendiquer ne pousse pas ChatGPT à vous recommander davantage.`,
         },
         {
           q: `Combien ça coûte${nb}?`,
@@ -411,7 +413,7 @@ export const fr: Dictionary = {
     meta: {
       title: "À propos d'Assane Diallo | SEO local en français",
       description:
-        "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google. Ingénieur logiciel, français et anglais.",
+        "Je m'appelle Assane. J'aide les petites entreprises aux États-Unis, surtout africaines, à être trouvées sur Google. Ingénieur logiciel, français, anglais.",
     },
     h1: "À propos",
     paragraphs: [
@@ -669,7 +671,7 @@ export const fr: Dictionary = {
         items: [
           {
             title: "Au moins un avis des 3 derniers mois.",
-            body: `Des avis anciens uniquement donnent l'impression que l'entreprise est fermée. Demandez à vos clients satisfaits, mais ne payez jamais et n'offrez jamais de réduction contre un avis${nb}: Google l'interdit.`,
+            body: `Des avis anciens uniquement donnent l'impression que l'entreprise est fermée. Demandez à tous vos clients, pas seulement aux satisfaits, et ne payez jamais ni n'offrez de réduction contre un avis${nb}: Google interdit les deux.`,
           },
           {
             title: "Chaque avis a une réponse.",
@@ -710,6 +712,19 @@ export const fr: Dictionary = {
           },
         ],
       },
+      {
+        h2: "5. Ce que disent les assistants IA comme ChatGPT",
+        items: [
+          {
+            title: "Vous avez posé à ChatGPT les questions de vos clients.",
+            body: `Essayez «${nb}[votre service] in [votre ville]${nb}», puis demandez-lui ce qu'il sait de votre entreprise, par son nom. Vérifiez les horaires, le téléphone et l'adresse qu'il donne. S'ils sont faux, corrigez-les à la source${nb}: votre site et vos fiches, Yelp compris. ChatGPT les lit.`,
+          },
+          {
+            title: "Si ChatGPT a déjà une fiche pour votre entreprise, vous l'avez revendiquée.",
+            body: "C'est gratuit, depuis votre propre compte ChatGPT, pour les entreprises aux États-Unis qui ont déjà une fiche. La revendiquer vous permet de garder vos informations exactes. Ça ne pousse pas ChatGPT à vous recommander davantage, et personne ne peut promettre ce que dira une IA.",
+          },
+        ],
+      },
     ],
     score: {
       h2: "Votre score",
@@ -728,6 +743,86 @@ export const fr: Dictionary = {
       h2: `Vous voulez que je vérifie la vôtre${nb}?`,
       body: `Bilan gratuit de 15 minutes${nb}: je passe votre fiche en revue avec cette liste et je vous dis ce qui manque, en langage simple. Sans engagement.`,
       whatsappMessage: `Bonjour Assane, j'ai fait votre checklist Google et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
+    },
+  },
+  resources: {
+    meta: {
+      title: "Guides et outils Google gratuits | Assane Diallo",
+      description: `Gratuit, sans inscription${nb}: une checklist pour votre fiche Google, votre lien et QR code d'avis, et un guide pour votre type d'entreprise.`,
+    },
+    h1: "Guides et outils gratuits",
+    lead: "Tout est gratuit, sans inscription. Vérifiez votre fiche Google vous-même, récupérez votre lien d'avis et lisez le guide écrit pour votre type d'entreprise.",
+    tools: "Des outils à utiliser dès aujourd'hui",
+    guides: "Guides par type d'entreprise",
+    cta: {
+      h2: `Vous préférez que je regarde${nb}?`,
+      body: `Bilan gratuit de 15 minutes${nb}: je regarde votre fiche Google et je vous dis quoi corriger en premier, en langage simple. Sans engagement.`,
+      whatsappMessage: `Bonjour Assane, j'ai lu vos guides gratuits et j'aimerais un bilan gratuit. Mon entreprise${nb}: `,
+    },
+  },
+  reviewLink: {
+    meta: {
+      title: "Votre lien et QR code d'avis Google | Assane Diallo",
+      description: `Où trouver le lien et le QR code gratuits que Google crée pour recevoir des avis, où les utiliser et les règles à suivre. 5 minutes, sans inscription.`,
+    },
+    h1: "Votre lien et votre QR code d'avis Google",
+    lead: "Google crée un lien et un QR code qui ouvrent directement le formulaire d'avis de votre entreprise. Ils sont gratuits et se récupèrent en 5 minutes environ. Voici où les trouver, où les utiliser et les règles à suivre.",
+    honesty:
+      "Pas besoin d'application ni d'outil payant pour ça. Google vous donne les deux, et personne ne peut vous vendre de meilleurs avis.",
+    steps: {
+      h2: "1. Récupérez le lien et le QR code",
+      items: [
+        "Utilisez un ordinateur. Pour l'instant, Google ne crée le QR code que dans un navigateur d'ordinateur, pas sur téléphone.",
+        "Connectez-vous avec le compte Google qui gère votre fiche, et ouvrez votre fiche d'établissement.",
+        `Choisissez «${nb}Lire les avis${nb}», puis «${nb}Obtenir plus d'avis${nb}».`,
+        `Pour copier le lien, choisissez «${nb}Copier${nb}». Collez-le à un endroit que vous retrouverez sur votre téléphone, comme une note ou un message à vous-même.`,
+        `Pour enregistrer le QR code, faites un clic droit dessus et choisissez «${nb}Enregistrer l'image sous…${nb}».`,
+      ],
+      access: `Vous ne pouvez pas modifier votre fiche${nb}? Réglez ça d'abord${nb}: c'est le premier point de la`,
+      accessLink: "checklist fiche Google",
+      share: `Utilisez ce lien, pas le bouton Partager de Google Maps${nb}: celui-là ouvre votre fiche, et le client doit encore trouver où écrire un avis.`,
+      checked: "Étapes vérifiées sur la page d'aide de Google le 17 novembre 2026.",
+      source: "Page d'aide de Google (en anglais)",
+      changes: `Google renomme souvent ses boutons${nb}: si l'un d'eux est différent, cherchez «${nb}avis${nb}» sur votre fiche.`,
+    },
+    where: {
+      h2: "2. Où l'utiliser",
+      items: [
+        "Dans un SMS ou un message WhatsApp juste après la visite, quand le souvenir est frais.",
+        "Sur les reçus et les factures.",
+        "Imprimé près de la caisse, sur les tables ou à l'entrée.",
+        "À la fin d'un e-mail de remerciement ou d'une conversation avec un client.",
+      ],
+      messageIntro: `Un court message à copier, puis à adapter à votre façon de parler${nb}:`,
+      messages: [
+        {
+          lang: "en",
+          label: "En anglais, pour la plupart de vos clients",
+          text: "Thank you for choosing [your business]! If you have a minute, a review on Google helps other people find us: [your link]",
+        },
+        {
+          lang: "fr",
+          label: "En français",
+          text: `Merci d'avoir choisi [votre entreprise]${nb}! Si vous avez une minute, un avis sur Google aide d'autres personnes à nous trouver${nb}: [votre lien]`,
+        },
+      ],
+    },
+    rules: {
+      h2: "3. Les règles de Google",
+      intro:
+        "Google supprime les avis qui enfreignent ces règles. Elles s'appliquent à vous et à toute personne qui travaille pour vous.",
+      items: [
+        "Demandez à tous vos clients de la même façon, pas seulement à ceux dont vous savez qu'ils sont satisfaits.",
+        "Pas de réduction, de cadeau ni de service offert en échange d'un avis, même honnête.",
+        "Ne dites pas aux clients quoi écrire, et ne fixez pas à votre équipe un nombre d'avis à obtenir.",
+        "Pas d'avis écrits par vous-même, votre équipe ou toute personne payée par l'entreprise.",
+      ],
+      source: "Règles de Google sur les avis (en anglais)",
+    },
+    cta: {
+      h2: `Vous voulez que je m'en occupe${nb}?`,
+      body: `Les deux formules l'incluent${nb}: le lien, un QR code prêt à imprimer, un court message pour vos clients et un rappel mensuel pour demander des avis. Ou commencez par le bilan gratuit de 15 minutes.`,
+      whatsappMessage: `Bonjour Assane, j'aimerais de l'aide pour obtenir plus d'avis Google. Mon entreprise${nb}: `,
     },
   },
   form: {

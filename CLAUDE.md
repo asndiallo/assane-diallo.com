@@ -54,6 +54,8 @@ Port 4321 is often taken by another local project. Tests use 4399.
 - No client-side JS framework. No cookies, no consent banner. Analytics: Cloudflare Web Analytics beacon in every page (`CF_WEB_ANALYTICS_TOKEN` in config.ts; external script allowed by host in the CSP). Tests stub it and Lighthouse blocks it, so they never depend on Cloudflare.
 - One `<h1>` per page. Unique title (≤ 60) and description (≤ 155). Every page goes through `layouts/Base.astro`.
 - JSON-LD `ProfessionalService` has `areaServed` and **no address**.
+- A new page goes in `src/lib/routes.ts` (sitemap, hreflang groups, every smoke test) or passes `noindex`; a test fails otherwise. Internal links use the final URL with its trailing slash, never a redirected one.
+- Structured data comes from the builders in `src/lib/schema.ts`. Any page below a section gets a `BreadcrumbList`, plus the most specific type that fits (`Article` for guides and case studies, `Service` for business types). Never invent dates: `datePublished`/`dateModified` come from frontmatter only.
 - System fonts only (zero layout shift). Colours come from `@theme` tokens in `src/styles/global.css`, which are AA-checked.
 - GitHub Actions are pinned to full commit SHAs with a `# vX.Y.Z` comment; Dependabot (`.github/dependabot.yml`) keeps them and npm packages current (weekly, with a cooldown). Never switch back to tags.
 - `develop` is protected by a ruleset: changes land through pull requests with CI (`check`) passing; no force pushes or deletion. Merge only after CI passes.

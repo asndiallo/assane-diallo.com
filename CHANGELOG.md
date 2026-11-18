@@ -11,6 +11,37 @@ merge date.
 
 ### Added
 
+- Cloudflare free-plan review, logged in DOMAIN-SETUP.md: Certificate Transparency Monitoring,
+  Speed Brain, 0-RTT, email notifications, DMARC at `p=quarantine; pct=25`, and why there is
+  no CAA record.
+
+- Free resources page (EN and FR) at `/resources/` and `/fr/ressources/`: the Google checklist,
+  the review link page and every guide, one card each, with a check-up CTA. The footer's Free
+  resources column drops from 6 links to 3 (checklist, review link, "All free guides and
+  tools"); guides are no longer listed one by one there (PLAN.md D41, amends D34).
+- TODO.md: a reminder to revisit a geo-grid rank tool and paid citation building after the
+  first 3 paying clients log real hours (playbook freeze).
+- Google profile checklist (EN and FR): a fifth group, "What AI assistants like ChatGPT say
+  about you": ask ChatGPT what customers would ask and fix wrong details at the source, and
+  claim an existing ChatGPT listing (free; it doesn't make ChatGPT recommend you more). The
+  score bands follow the new total (PLAN.md D40).
+- Free resource (EN and FR): "Your Google review link and QR code" at `/google-review-link/`
+  and `/fr/lien-avis-google/`. Google's own steps to get the link and QR code (no tool or app
+  needed), where to use them, a message to copy, and Google's review rules, each sourced to
+  Google's help pages. Linked from the footer (PLAN.md D39).
+- Smoke tests: every built page is in the sitemap or marked noindex; internal links use the
+  final URL (trailing slash, not a `_redirects` source). Description limit in the tests is now
+  155, matching CLAUDE.md; the French about description is trimmed to fit ("français, anglais"). CLAUDE.md gains the matching rules for new pages and structured data.
+- Structured data: a `WebSite` entity on the home page (the site name Google shows in results);
+  `Service` + `BreadcrumbList` on each business type page (replacing a repeated
+  `ProfessionalService`); `Article` (author, image) on case studies. Shared builders in
+  `src/lib/schema.ts`; a smoke test checks them.
+- Sitemap: `<lastmod>` for case studies, business types and guides, from the last commit of
+  each page's markdown file. Left out for static pages and shallow clones (CI now fetches full
+  history for the deployed build).
+- FAQ (EN and FR): "Will this help me show up on ChatGPT?" adds that I help owners claim
+  an existing ChatGPT listing (Business Hub, free, their own account), and that claiming doesn't
+  make ChatGPT recommend them more (PLAN.md D38).
 - Footer: a "Free resources" column with the Google profile checklist (moved from Services)
   and every guide, each by name, so every page links to them (PLAN.md D34).
 - FAQ (EN and FR): "What if something goes wrong?": wrong edits reverted, same-day word on a
@@ -33,6 +64,8 @@ merge date.
 
 ### Changed
 
+- Review copy (EN and FR): the review kit is "for every customer" and the checklist says to ask
+  every customer, not only "happy customers": asking only happy ones is against Google's rules.
 - Home hero subhead and footer tagline (EN and FR) now say the sales message: get found, earn
   trust, and make it easy to call or book, instead of listing services (PLAN.md D36).
 - Home "What I set up for you" (EN and FR): the setup work is grouped under the three steps of
@@ -64,6 +97,8 @@ merge date.
 - Dependencies: astro 7.4.7, markdown-satteri 0.4.7, Tailwind 4.3.4, Biome 2.6.5, Wrangler
   4.156.1. A pnpm override keeps rolldown's optional wasm binding off the @emnapi 2.0 beta,
   which broke `astro check`; Markdown files gain a blank line before lists (Biome).
+- Dependencies: Biome 2.6.7, Lighthouse CI and Playwright (dev group). Biome now indents
+  task-list continuation lines past the checkbox, so `STRIPE-SETUP.md` is reformatted.
 - Prices: both packages now include a monthly reminder to ask for reviews, with new reviews
   counted in the report; the setup review kit adds a QR code; Get Booked's standard monthly
   price goes from $179 to $199; the pricing section adds a line on judging the price by what

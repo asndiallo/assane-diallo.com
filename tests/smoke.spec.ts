@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { type BrowserContext, expect, type Page, test } from "@playwright/test";
 import { SITE_URL as SITE } from "../src/config.ts";
 
@@ -20,6 +22,17 @@ async function sitemapPaths(page: Page): Promise<string[]> {
   expect(res.ok()).toBe(true);
   const xml = await res.text();
   return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1] ?? "").pathname);
+}
+
+/** Every built HTML page, as its URL path and contents (dist/ is what deploys). */
+function builtPages(): { path: string; html: string }[] {
+  const dist = "dist";
+  return readdirSync(dist, { recursive: true, encoding: "utf8" })
+    .filter((f) => f.endsWith(".html"))
+    .map((f) => ({
+      path: `/${f.replace(/(^|\/)index\.html$/, "$1")}`,
+      html: readFileSync(join(dist, f), "utf8"),
+    }));
 }
 
 test("sitemap lists the core pages", async ({ page }) => {
@@ -61,15 +74,27 @@ test("the business-types page links every business type, and the footer links to
   }
 });
 
-test("the footer links every guide in its locale, under Free resources", async ({ page }) => {
+test("the resources page links every guide and free tool, and the footer links to it", async ({
+  page,
+}) => {
   const paths = await sitemapPaths(page);
-  const homes = { "/for/": "/", "/fr/pour/": "/fr/" };
-  for (const [index, home] of Object.entries(homes)) {
+  const pages = [
+    { hub: "/resources/", index: "/for/", tools: ["/google-checklist/", "/google-review-link/"] },
+    {
+      hub: "/fr/ressources/",
+      index: "/fr/pour/",
+      tools: ["/fr/checklist-google/", "/fr/lien-avis-google/"],
+    },
+  ];
+  for (const { hub, index, tools } of pages) {
     const guides = paths.filter((p) => p.startsWith(index) && p.endsWith("/guide/"));
-    expect(guides.length, index).toBeGreaterThanOrEqual(2);
-    await page.goto(home);
-    for (const guide of guides)
-      await expect(page.locator(`footer a[href="${guide}"]`), guide).toHaveCount(1);
+    expect(guides.length, hub).toBeGreaterThanOrEqual(2);
+    await page.goto(hub);
+    const linked = await page
+      .locator("main li h3 a")
+      .evaluateAll((links) => links.map((a) => new URL((a as HTMLAnchorElement).href).pathname));
+    expect(linked.sort(), hub).toEqual([...tools, ...guides].sort());
+    await expect(page.locator(`footer a[href="${hub}"]`), hub).toHaveCount(1);
   }
 });
 
@@ -100,7 +125,7 @@ test("every page has one h1, unique title and description, canonical, and no con
     const description =
       (await page.locator('meta[name="description"]').getAttribute("content")) ?? "";
     expect(description.length, `${path} description length`).toBeGreaterThan(50);
-    expect(description.length, `${path} description length`).toBeLessThanOrEqual(160);
+    expect(description.length, `${path} description length`).toBeLessThanOrEqual(155);
     expect(descriptions.has(description), `${path} duplicate description`).toBe(false);
     descriptions.add(description);
 
@@ -516,6 +541,22 @@ test("checklist: the score follows the ticked boxes, and the footer links to it"
   }
 });
 
+test("review link page: Google's steps and rules, sourced, and linked from the footer", async ({
+  page,
+}) => {
+  for (const path of ["/google-review-link/", "/fr/lien-avis-google/"]) {
+    await page.goto(path);
+    expect(await page.locator("main ol li").count(), path).toBeGreaterThanOrEqual(4);
+    // Every claim comes from Google's own pages, opened in a new tab.
+    const sources = page.locator('main a[href^="https://support.google.com/"]');
+    await expect(sources, path).toHaveCount(2);
+    for (const source of await sources.all()) {
+      await expect(source, path).toHaveAttribute("target", "_blank");
+    }
+    await expect(page.locator(`footer a[href="${path}"]`), path).toHaveCount(1);
+  }
+});
+
 // The personal phone number is deliberately not listed here: any form of it (digits or a hash,
 // which is trivially reversible for a phone number) would publish it in this repository.
 test("nothing personal is published", async ({ page }) => {
@@ -536,4 +577,61 @@ test("nothing personal is published", async ({ page }) => {
 
   const resume = await page.request.get("/assets/docs/assane_diallo_software_engineer_cv.pdf");
   expect(resume.status()).toBe(404);
+});
+
+test("structured data: site name on home, breadcrumbs and Article/Service where expected", async ({
+  page,
+}) => {
+  const types = async (path: string): Promise<string[]> => {
+    await page.goto(path);
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    return blocks.flatMap((b) =>
+      [JSON.parse(b)].flat().map((d: { "@type": string }) => d["@type"]),
+    );
+  };
+  expect(await types("/")).toContain("WebSite");
+  for (const path of await sitemapPaths(page)) {
+    const nested = path.split("/").filter(Boolean).length - (path.startsWith("/fr/") ? 1 : 0);
+    if (nested < 2) continue; // Only pages below a section: /for/x/, /work/x/, guides.
+    const found = await types(path);
+    expect(found, path).toContain("BreadcrumbList");
+    expect(
+      found.some((t) => t === "Article" || t === "Service"),
+      path,
+    ).toBe(true);
+  }
+  // lastmod, when present, is a plain date (sitemaps.org W3C format).
+  const xml = await (await page.request.get("/sitemap.xml")).text();
+  for (const [, date] of xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) {
+    expect(date).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  }
+});
+
+test("every built page is in the sitemap or marked noindex", async ({ page }) => {
+  // The other checks loop over the sitemap: a page missing from src/lib/routes.ts would skip
+  // them all, and Google would only find it by chance.
+  const listed = new Set(await sitemapPaths(page));
+  for (const { path, html } of builtPages()) {
+    if (listed.has(path)) continue;
+    expect(html, `${path}: add it to src/lib/routes.ts, or pass noindex`).toContain(
+      '<meta name="robots" content="noindex">',
+    );
+  }
+});
+
+test("internal links point at the final URL (trailing slash, no redirect)", async () => {
+  // "/about" works, but through a 307 to "/about/": a wasted hop for every visitor and crawler.
+  const redirected = new Set(
+    readFileSync("public/_redirects", "utf8")
+      .split("\n")
+      .filter((line) => line.startsWith("/"))
+      .map((line) => line.split(/\s+/)[0]),
+  );
+  for (const { path, html } of builtPages()) {
+    for (const [, href = ""] of html.matchAll(/<a\s[^>]*?href="(\/(?!\/)[^"#?]*)/g)) {
+      const isFile = /\.[a-z0-9]+$/i.test(href);
+      expect(isFile || href.endsWith("/"), `${path} links to ${href}`).toBe(true);
+      expect(redirected.has(href), `${path} links to redirected ${href}`).toBe(false);
+    }
+  }
 });

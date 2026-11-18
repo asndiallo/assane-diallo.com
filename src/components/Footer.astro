@@ -1,7 +1,6 @@
 ---
 import { SITE_NAME, site } from "../config.ts";
 import { type Dictionary, homeAnchor, type Locale, staticRoutes } from "../i18n/index.ts";
-import { entryPath, getLocalized, sibling } from "../lib/content.ts";
 import Link from "./Link.astro";
 import SocialLinks from "./SocialLinks.astro";
 
@@ -20,13 +19,6 @@ interface FooterLink {
   external?: boolean;
 }
 
-// Guides in business-type order. Listed one by one (unlike business types, which link to the
-// index page): D34 caps them at 3 to 5, and a site-wide link helps each one get found.
-const verticals = await getLocalized("verticals", locale);
-const guides = (await Promise.all(verticals.map((v) => sibling("guides", v)))).filter(
-  (guide) => guide !== undefined,
-);
-
 // Grouped links instead of one per business type: the business-types page lists them all.
 const columns: { heading: string; links: FooterLink[] }[] = [
   {
@@ -42,7 +34,9 @@ const columns: { heading: string; links: FooterLink[] }[] = [
     heading: groups.free,
     links: [
       { href: staticRoutes.checklist[locale], label: groups.checklist },
-      ...guides.map((guide) => ({ href: entryPath("guides", guide), label: guide.data.label })),
+      { href: staticRoutes.reviewLink[locale], label: groups.reviewLink },
+      // The guides are listed on the resources page, not one by one here (PLAN.md D41).
+      { href: staticRoutes.resources[locale], label: groups.allResources },
     ],
   },
   {
