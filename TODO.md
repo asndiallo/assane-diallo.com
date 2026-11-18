@@ -107,6 +107,7 @@ Everything below is my draft. Approve or change it before merging:
 - [ ] **Analytics**: Cloudflare Web Analytics (recommended, free, cookieless). Set `PUBLIC_ANALYTICS=cloudflare` and `PUBLIC_CF_BEACON_TOKEN`.
 - [x] Photo of you: on /about/ and the home page (added 2026-10-18)
 - [ ] **More case studies** as founding clients finish. The home page shows only case studies with approved results (no empty cards); with a single one, its numbers fill the row.
+- [ ] **After the first 3 paying clients log real hours** (playbook freeze, 2026-11-14): revisit a geo-grid rank tool for before/after report maps, and paid citation building (about $2 each) to speed up the listings setup. Ideas from the BrightLocal comparison, 2026-11-17.
 - [ ] **Languages**: anything besides English and French (e.g. Wolof)?
 - [ ] **Canada / France**: deferred. France would need a French legal notice page (mentions légales) and EUR (HT) prices.
 - [ ] **Old resume PDF**: removed from the site, but it's still in git history, which is public on GitHub (it has your phone number). Rewriting history is a separate decision.
