@@ -711,6 +711,19 @@ export const fr: Dictionary = {
           },
         ],
       },
+      {
+        h2: "5. Ce que disent les assistants IA comme ChatGPT",
+        items: [
+          {
+            title: "Vous avez posé à ChatGPT les questions de vos clients.",
+            body: `Essayez «${nb}[votre service] in [votre ville]${nb}», puis demandez-lui ce qu'il sait de votre entreprise, par son nom. Vérifiez les horaires, le téléphone et l'adresse qu'il donne. S'ils sont faux, corrigez-les à la source${nb}: votre site et vos fiches, Yelp compris. ChatGPT les lit.`,
+          },
+          {
+            title: "Si ChatGPT a déjà une fiche pour votre entreprise, vous l'avez revendiquée.",
+            body: "C'est gratuit, depuis votre propre compte ChatGPT, pour les entreprises aux États-Unis qui ont déjà une fiche. La revendiquer vous permet de garder vos informations exactes. Ça ne pousse pas ChatGPT à vous recommander davantage, et personne ne peut promettre ce que dira une IA.",
+          },
+        ],
+      },
     ],
     score: {
       h2: "Votre score",
